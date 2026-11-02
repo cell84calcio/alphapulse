@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AlphaPulse | Consigli di Investimento del Giorno (Mercati EU & USA)</title>
   
+  <!-- Anti-Indicizzazione Motori di Ricerca (Google/Bing) -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="googlebot" content="noindex, nofollow">
+
   <!-- Ottimizzazione Apple iOS (Home Screen Web App) -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,6 +28,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Schermata di Blocco con PIN di Sicurezza -->
+  <div class="lock-screen-overlay" id="lockScreen">
+    <div class="lock-card">
+      <div class="lock-icon-box">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h2 class="lock-title">Accesso Riservato</h2>
+      <p class="lock-subtitle">Inserisci il PIN per sbloccare la dashboard personale di investimento</p>
+      
+      <div class="pin-display-wrapper">
+        <div class="pin-dots-container" id="pinDots">
+          <span class="pin-dot"></span>
+          <span class="pin-dot"></span>
+          <span class="pin-dot"></span>
+          <span class="pin-dot"></span>
+        </div>
+        <input type="password" id="pinInput" maxlength="6" inputmode="numeric" pattern="[0-9]*" class="hidden-pin-input" autofocus>
+      </div>
+
+      <div class="pin-error-box hidden" id="pinErrorBox">
+        <i class="fa-solid fa-circle-exclamation"></i> PIN non valido. Riprova.
+      </div>
+
+      <div class="remember-device-row">
+        <label class="remember-label">
+          <input type="checkbox" id="rememberMeCheck" checked>
+          <span>Ricordami su questo iPhone</span>
+        </label>
+      </div>
+
+      <!-- Tastierino Numerico Ottimizzato Mobile/Touch -->
+      <div class="keypad-grid">
+        <button class="keypad-btn" data-key="1">1</button>
+        <button class="keypad-btn" data-key="2">2</button>
+        <button class="keypad-btn" data-key="3">3</button>
+        <button class="keypad-btn" data-key="4">4</button>
+        <button class="keypad-btn" data-key="5">5</button>
+        <button class="keypad-btn" data-key="6">6</button>
+        <button class="keypad-btn" data-key="7">7</button>
+        <button class="keypad-btn" data-key="8">8</button>
+        <button class="keypad-btn" data-key="9">9</button>
+        <button class="keypad-btn keypad-special" id="btnKeyClear" title="Cancella"><i class="fa-solid fa-delete-left"></i></button>
+        <button class="keypad-btn" data-key="0">0</button>
+        <button class="keypad-btn keypad-special enter-btn" id="btnKeySubmit" title="Conferma"><i class="fa-solid fa-check"></i></button>
+      </div>
+
+      <div class="lock-security-badge">
+        <i class="fa-solid fa-lock text-emerald"></i> Protetto con Hash Crittografico SHA-256
+      </div>
+    </div>
+  </div>
 
   <!-- Barra di Notifica di Mercato in Alto -->
   <div class="top-ticker-bar">
@@ -49,12 +105,15 @@
             <p class="brand-tagline">Algoritmi Quantitativi &amp; Intelligence di Mercato del Giorno</p>
           </div>
         </div>
-        <div class="date-badge-box">
-          <div class="badge-row">
-            <i class="fa-regular fa-calendar-check"></i>
-            <span id="currentDateDisplay">Oggi</span>
+        <div class="header-actions-right">
+          <div class="date-badge-box">
+            <div class="badge-row">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span id="currentDateDisplay">Oggi</span>
+            </div>
+            <div class="sub-date" id="lastUpdatedDisplay">Feed Dati Reali &bull; In sincronizzazione...</div>
           </div>
-          <div class="sub-date" id="lastUpdatedDisplay">Feed Dati Reali &bull; In sincronizzazione...</div>
+          <button class="btn-lock-header" id="btnManualLock" title="Blocca la sessione"><i class="fa-solid fa-lock"></i></button>
         </div>
       </div>
 

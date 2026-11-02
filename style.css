@@ -1648,9 +1648,256 @@ body {
   box-shadow: 0 0 6px var(--color-bullish);
 }
 
+.header-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-lock-header {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-lock-header:hover {
+  color: var(--color-bullish);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 12px var(--color-bullish-glow);
+}
+
 /* ==========================================================================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
+   SCHERMATA DI BLOCCO CON PIN (SECURITY LOCK SCREEN)
    ========================================================================== */
+.lock-screen-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f172a 0%, #060a12 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lock-screen-overlay.unlocked {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lock-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.12);
+}
+
+.lock-icon-box {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2));
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 1.8rem;
+  color: var(--color-bullish);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+}
+
+.lock-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.lock-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.pin-display-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.pin-dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding: 10px;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pin-dot.filled {
+  background: var(--color-bullish);
+  border-color: var(--color-bullish);
+  box-shadow: 0 0 12px var(--color-bullish);
+  transform: scale(1.15);
+}
+
+.hidden-pin-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.pin-error-box {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.remember-device-row {
+  margin-bottom: 20px;
+}
+
+.remember-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.remember-label input[type="checkbox"] {
+  accent-color: var(--color-bullish);
+  cursor: pointer;
+}
+
+/* Tastierino Stile iOS */
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.keypad-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-white);
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.45rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.keypad-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.04);
+}
+
+.keypad-btn:active {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--color-bullish);
+  transform: scale(0.96);
+}
+
+.keypad-special {
+  font-size: 1.1rem;
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.keypad-special:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-white);
+}
+
+.enter-btn {
+  color: var(--color-bullish);
+}
+
+.enter-btn:hover {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-bullish);
+}
+
+.lock-security-badge {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Animazione Errore Shake */
+@keyframes shakeAnimation {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.shake {
+  animation: shakeAnimation 0.4s ease-in-out;
+}
+
+/* Responsività Mobile per Keypad */
+@media (max-width: 480px) {
+  .lock-card {
+    padding: 24px 20px;
+  }
+  .keypad-btn {
+    height: 54px;
+    font-size: 1.3rem;
+  }
+}
+
 @media (max-width: 992px) {
   .app-container {
     padding: 16px 20px 48px;

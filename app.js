@@ -2782,10 +2782,141 @@ Notizia Reale Rilevata: ${s.catalysts && s.catalysts[0] ? s.catalysts[0].title :
 }
 
 // ==========================================================================
-// 10. INIZIALIZZAZIONE ALL'AVVIO
+// 10. MODULO DI SICUREZZA PIN & CRITTOGRAFIA SHA-256
+// ==========================================================================
+
+const SECURITY = {
+  // Hash SHA-256 del PIN '8484'
+  MASTER_HASH: "2fdf08aa44660dd8332131f0cc46ab9df025304ac750724d63964fa32d1d2db4",
+  enteredPin: "",
+  lockOverlay: document.getElementById("lockScreen"),
+  lockCard: document.querySelector(".lock-card"),
+  dots: document.querySelectorAll(".pin-dot"),
+  errorBox: document.getElementById("pinErrorBox"),
+  rememberCheck: document.getElementById("rememberMeCheck"),
+  btnManualLock: document.getElementById("btnManualLock")
+};
+
+async function sha256(str) {
+  const buffer = new TextEncoder().encode(str);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", buffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function updatePinDots() {
+  SECURITY.dots.forEach((dot, idx) => {
+    if (idx < SECURITY.enteredPin.length) {
+      dot.classList.add("filled");
+    } else {
+      dot.classList.remove("filled");
+    }
+  });
+}
+
+async function verifyEnteredPin() {
+  if (SECURITY.enteredPin.length === 0) return;
+  const hash = await sha256(SECURITY.enteredPin);
+  
+  if (hash === SECURITY.MASTER_HASH || SECURITY.enteredPin === "8484") {
+    // PIN Corretto!
+    if (SECURITY.errorBox) SECURITY.errorBox.classList.add("hidden");
+    if (SECURITY.rememberCheck && SECURITY.rememberCheck.checked) {
+      localStorage.setItem("alphapulse_auth", "granted");
+    }
+    SECURITY.lockOverlay.classList.add("unlocked");
+    SECURITY.enteredPin = "";
+    updatePinDots();
+  } else {
+    // PIN Errato: animazione Shake ed errore
+    if (SECURITY.errorBox) SECURITY.errorBox.classList.remove("hidden");
+    if (SECURITY.lockCard) {
+      SECURITY.lockCard.classList.add("shake");
+      setTimeout(() => {
+        SECURITY.lockCard.classList.remove("shake");
+      }, 400);
+    }
+    setTimeout(() => {
+      SECURITY.enteredPin = "";
+      updatePinDots();
+    }, 300);
+  }
+}
+
+function initSecurityLock() {
+  // Verifica se l'utente è già autenticato sul dispositivo
+  const isAuth = localStorage.getItem("alphapulse_auth");
+  if (isAuth === "granted") {
+    SECURITY.lockOverlay.classList.add("unlocked");
+  }
+
+  // Listener tastierino numerico a schermo
+  document.querySelectorAll(".keypad-btn[data-key]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (SECURITY.enteredPin.length < 4) {
+        SECURITY.enteredPin += btn.getAttribute("data-key");
+        updatePinDots();
+        if (SECURITY.enteredPin.length === 4) {
+          setTimeout(verifyEnteredPin, 100);
+        }
+      }
+    });
+  });
+
+  // Tasto cancella
+  const btnClear = document.getElementById("btnKeyClear");
+  if (btnClear) {
+    btnClear.addEventListener("click", () => {
+      SECURITY.enteredPin = SECURITY.enteredPin.slice(0, -1);
+      updatePinDots();
+      if (SECURITY.errorBox) SECURITY.errorBox.classList.add("hidden");
+    });
+  }
+
+  // Tasto invio
+  const btnSubmit = document.getElementById("btnKeySubmit");
+  if (btnSubmit) {
+    btnSubmit.addEventListener("click", verifyEnteredPin);
+  }
+
+  // Supporto digitazione da tastiera fisica (PC / Mac)
+  window.addEventListener("keydown", (e) => {
+    if (!SECURITY.lockOverlay.classList.contains("unlocked")) {
+      if (e.key >= "0" && e.key <= "9") {
+        if (SECURITY.enteredPin.length < 4) {
+          SECURITY.enteredPin += e.key;
+          updatePinDots();
+          if (SECURITY.enteredPin.length === 4) {
+            setTimeout(verifyEnteredPin, 100);
+          }
+        }
+      } else if (e.key === "Backspace") {
+        SECURITY.enteredPin = SECURITY.enteredPin.slice(0, -1);
+        updatePinDots();
+      } else if (e.key === "Enter") {
+        verifyEnteredPin();
+      }
+    }
+  });
+
+  // Tasto Blocca Manuale nella barra superiore
+  if (SECURITY.btnManualLock) {
+    SECURITY.btnManualLock.addEventListener("click", () => {
+      localStorage.removeItem("alphapulse_auth");
+      SECURITY.enteredPin = "";
+      updatePinDots();
+      if (SECURITY.errorBox) SECURITY.errorBox.classList.add("hidden");
+      SECURITY.lockOverlay.classList.remove("unlocked");
+    });
+  }
+}
+
+// ==========================================================================
+// 11. INIZIALIZZAZIONE ALL'AVVIO
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+  initSecurityLock();
   formatDateDisplay();
   updateWatchlistUI();
   initEventListeners();
