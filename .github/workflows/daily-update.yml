@@ -1,0 +1,33 @@
+name: Aggiornamento Automatico Dati Borsa
+
+on:
+  schedule:
+    # Esegue da lunedì a venerdì alle 07:30 UTC (08:30 CET italiane, prima dell'apertura delle borse)
+    - cron: '30 7 * * 1-5'
+  workflow_dispatch: # Permette anche di avviarlo manualmente con un pulsante su GitHub
+
+jobs:
+  update-market-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Configura Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Esegui Scansione Dati Reali & News
+        run: |
+          python3 server.py --update-only
+
+      - name: Commit e Push dei Dati Aggiornati
+        run: |
+          git config --global user.name "AlphaPulse Bot"
+          git config --global user.email "bot@alphapulse.local"
+          git add market_data.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d')" && git push)
