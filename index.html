@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlphaPulse | Consigli di Investimento del Giorno (Mercati EU & USA)</title>
+  
+  <!-- Ottimizzazione Apple iOS (Home Screen Web App) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AlphaPulse">
+  <meta name="theme-color" content="#080c14">
+  
+  <!-- Font Google & Icone -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Chart.js per i grafici interattivi -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Fogli di stile personalizzati -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra di Notifica di Mercato in Alto -->
+  <div class="top-ticker-bar">
+    <div class="ticker-content">
+      <div class="ticker-item"><span class="badge live-badge" id="liveFeedStatus"><i class="fa-solid fa-circle"></i> FEED REALE ATTIVO</span> Prezzi Yahoo Finance &amp; News NLP</div>
+      <div class="ticker-item"><i class="fa-solid fa-bolt text-amber"></i> Filtro Quantitativo: Large Cap &gt; €/$ 10 Miliardi</div>
+      <div class="ticker-item"><i class="fa-solid fa-microchip text-cyan"></i> Algoritmo: Momentum RSI(14) + Spike Volumi 20D</div>
+      <div class="ticker-item"><i class="fa-solid fa-shield-halved text-purple"></i> Auto-Aggiornamento Giornaliero Server</div>
+    </div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- Header Principale -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+          <div>
+            <h1 class="brand-title">AlphaPulse <span class="brand-sub">PRO</span></h1>
+            <p class="brand-tagline">Algoritmi Quantitativi &amp; Intelligence di Mercato del Giorno</p>
+          </div>
+        </div>
+        <div class="date-badge-box">
+          <div class="badge-row">
+            <i class="fa-regular fa-calendar-check"></i>
+            <span id="currentDateDisplay">Oggi</span>
+          </div>
+          <div class="sub-date" id="lastUpdatedDisplay">Feed Dati Reali &bull; In sincronizzazione...</div>
+        </div>
+      </div>
+
+      <!-- Barra Metriche e Sentiment Globale -->
+      <div class="market-overview-grid">
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Sentiment News &amp; Web</span>
+            <i class="fa-solid fa-satellite-dish text-cyan"></i>
+          </div>
+          <div class="metric-val text-emerald">82/100 <span class="metric-status">Molto Bullish</span></div>
+          <div class="metric-bar-bg">
+            <div class="metric-bar-fill" style="width: 82%;"></div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Flussi Istituzionali Net</span>
+            <i class="fa-solid fa-money-bill-transfer text-emerald"></i>
+          </div>
+          <div class="metric-val text-emerald">+$4.85 Mrd <span class="metric-status">+18% vs media</span></div>
+          <div class="metric-subtext">Acquisti Dark Pool concentrati su Large Cap</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Accuratezza Modello (30gg)</span>
+            <i class="fa-solid fa-bullseye text-purple"></i>
+          </div>
+          <div class="metric-val text-purple">79.2% <span class="metric-status">Win Rate</span></div>
+          <div class="metric-subtext">152 previsioni su 192 concluse in gain</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-label">Watchlist Personale</span>
+            <i class="fa-solid fa-star text-amber"></i>
+          </div>
+          <div class="metric-val text-amber"><span id="watchlistCount">0</span> Titoli</div>
+          <button class="btn-text-action" id="openWatchlistBtn">Apri Monitor Watchlist &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Controlli Principali: Switcher View Mercati EU vs USA -->
+      <div class="controls-toolbar">
+        <div class="view-switch-wrapper">
+          <button class="view-tab active" data-market="eu" id="tabEU">
+            <span class="flag-icon">🇪🇺</span>
+            <div class="tab-text">
+              <span class="tab-title">Mercati Europei</span>
+              <span class="tab-subtitle">Top 10 Titoli Stoxx / Euronext &gt; €10B</span>
+            </div>
+            <span class="tab-counter">10</span>
+          </button>
+
+          <button class="view-tab" data-market="usa" id="tabUSA">
+            <span class="flag-icon">🇺🇸</span>
+            <div class="tab-text">
+              <span class="tab-title">Mercati USA</span>
+              <span class="tab-subtitle">Top 10 Titoli S&amp;P 500 / Nasdaq &gt; $10B</span>
+            </div>
+            <span class="tab-counter">10</span>
+          </button>
+        </div>
+
+        <!-- Strumenti di Filtro, Ricerca e Layout -->
+        <div class="filter-actions-wrapper">
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Cerca ticker, azienda o settore...">
+          </div>
+
+          <div class="select-wrapper">
+            <i class="fa-solid fa-filter"></i>
+            <select id="sectorFilter">
+              <option value="all">Tutti i Settori</option>
+              <option value="Tecnologia">Tecnologia &amp; AI</option>
+              <option value="Healthcare">Healthcare &amp; Pharma</option>
+              <option value="Finanza">Banche &amp; Finanza</option>
+              <option value="Lusso & Consumi">Lusso &amp; Consumi</option>
+              <option value="Industria & Energia">Industria &amp; Energia</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            <select id="sortBy">
+              <option value="score">Ordina per: Probabilità di Salita</option>
+              <option value="upside">Ordina per: Target Upside (%)</option>
+              <option value="cap">Ordina per: Capitalizzazione</option>
+              <option value="rsi">Ordina per: Momentum RSI</option>
+            </select>
+          </div>
+
+          <div class="display-toggle">
+            <button class="toggle-btn active" id="btnGrid" title="Vista Schede"><i class="fa-solid fa-table-cells-large"></i></button>
+            <button class="toggle-btn" id="btnTable" title="Vista Tabella Dettagliata"><i class="fa-solid fa-table-list"></i></button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner Metodologia del Modello Quantitativo -->
+    <section class="methodology-banner">
+      <div class="methodology-info">
+        <div class="badge model-tag"><i class="fa-solid fa-brain"></i> Modello Quantitativo Multi-Fattoriale "AlphaMomentum 360"</div>
+        <p>I 10 titoli selezionati per questa view hanno una capitalizzazione superiore a <strong>10 Miliardi</strong> e combinano 4 pilastri analitici odierni: <strong>News Sentiment NLP (30%)</strong>, <strong>Breakout Tecnico &amp; RSI (25%)</strong>, <strong>Flussi Istituzionali / Dark Pools (25%)</strong> e <strong>Revisione Target Analisti (20%)</strong>.</p>
+      </div>
+      <div class="methodology-pillars">
+        <div class="pillar-chip"><span class="dot green"></span> NLP News Positive</div>
+        <div class="pillar-chip"><span class="dot cyan"></span> RSI Momentum 55-68</div>
+        <div class="pillar-chip"><span class="dot purple"></span> Spike Volumi &gt;1.4x</div>
+        <div class="pillar-chip"><span class="dot amber"></span> Consensus Buy/Strong Buy</div>
+      </div>
+    </section>
+
+    <!-- Sezione Principale Contenuti: Griglia o Tabella -->
+    <main class="main-content">
+      
+      <!-- Intestazione View Corrente -->
+      <div class="view-header-bar">
+        <div>
+          <h2 class="view-title" id="currentMarketTitle">Mercati Europei &bull; Top 10 Consigli del Giorno</h2>
+          <p class="view-description" id="currentMarketDesc">Selezione titoli ad alta capitalizzazione europea con massimi catalizzatori rialzisti per la seduta odierna.</p>
+        </div>
+        <div class="view-actions">
+          <span class="stocks-count-badge"><span id="visibleStocksCount">10</span> Titoli Analizzati</span>
+          <button class="btn-secondary" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Aggiorna Dati</button>
+        </div>
+      </div>
+
+      <!-- Contenitore Griglia Titoli -->
+      <div class="stocks-grid" id="stocksGrid">
+        <!-- Generato Dinamicamente via JavaScript -->
+      </div>
+
+      <!-- Contenitore Tabella Titoli (Nascosto di Default) -->
+      <div class="stocks-table-wrapper hidden" id="stocksTableContainer">
+        <table class="stocks-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Ticker / Società</th>
+              <th>Settore</th>
+              <th>Cap. di Mercato</th>
+              <th>Prezzo Attuale</th>
+              <th>Target Price</th>
+              <th>Upside (%)</th>
+              <th>Probabilità Rialzo</th>
+              <th>Segnale Chiave</th>
+              <th>Azione</th>
+            </tr>
+          </thead>
+          <tbody id="stocksTableBody">
+            <!-- Generato Dinamicamente via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Stato Nessun Risultato Ricerca -->
+      <div class="no-results hidden" id="noResultsBox">
+        <i class="fa-solid fa-chart-line-down"></i>
+        <h3>Nessun titolo corrisponde ai criteri di ricerca</h3>
+        <p>Prova a modificare i filtri settoriali o il testo cercato.</p>
+        <button class="btn-primary" id="resetFiltersBtn">Ripristina Filtri</button>
+      </div>
+
+    </main>
+
+    <!-- Modal Dettaglio Titolo (Con Grafico Chart.js e Breakdown Analitico) -->
+    <div class="modal-overlay hidden" id="stockModal">
+      <div class="modal-dialog">
+        <button class="modal-close" id="modalCloseBtn">&times;</button>
+        
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <div class="modal-ticker-badge" id="mTicker">NVDA</div>
+            <div>
+              <h2 class="modal-company-name" id="mName">Nvidia Corporation</h2>
+              <div class="modal-meta-row">
+                <span id="mExchange">NASDAQ</span> &bull; 
+                <span id="mSector">Semiconduttori & AI</span> &bull; 
+                Cap: <strong id="mMarketCap">$3.25T</strong>
+              </div>
+            </div>
+          </div>
+          <div class="modal-price-box">
+            <div class="modal-current-price" id="mPrice">$138.50</div>
+            <div class="modal-target-info">Target: <strong id="mTargetPrice" class="text-emerald">$155.00</strong> (<span id="mUpside">+11.9%</span>)</div>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <!-- Sezione Punteggio e Probabilità -->
+          <div class="modal-score-banner">
+            <div class="score-circle-wrapper">
+              <div class="score-circle">
+                <span class="score-number" id="mScore">94%</span>
+                <span class="score-label">Probabilità</span>
+              </div>
+            </div>
+            <div class="score-details">
+              <div class="score-headline">Forte Probabilità di Chiusura Positiva Odierna</div>
+              <p id="mRationaleSummary">Il titolo mostra una combinazione rara di catalizzatori istituzionali, breakout grafico e sentiment mediatico eccellente.</p>
+              
+              <!-- 4 Barre dei Pilastri -->
+              <div class="pillars-breakdown-grid">
+                <div class="pillar-progress-item">
+                  <div class="pillar-label-row">
+                    <span>NLP News &amp; Web Sentiment</span>
+                    <strong id="mPillarNews">96/100</strong>
+                  </div>
+                  <div class="bar-track"><div class="bar-fill bg-emerald" id="mBarNews" style="width: 96%;"></div></div>
+                </div>
+
+                <div class="pillar-progress-item">
+                  <div class="pillar-label-row">
+                    <span>Momentum Tecnico (EMA/RSI)</span>
+                    <strong id="mPillarTech">91/100</strong>
+                  </div>
+                  <div class="bar-track"><div class="bar-fill bg-cyan" id="mBarTech" style="width: 91%;"></div></div>
+                </div>
+
+                <div class="pillar-progress-item">
+                  <div class="pillar-label-row">
+                    <span>Flussi Volumi &amp; Dark Pools</span>
+                    <strong id="mPillarVolume">93/100</strong>
+                  </div>
+                  <div class="bar-track"><div class="bar-fill bg-purple" id="mBarVolume" style="width: 93%;"></div></div>
+                </div>
+
+                <div class="pillar-progress-item">
+                  <div class="pillar-label-row">
+                    <span>Consensus Revisione Analisti</span>
+                    <strong id="mPillarAnalyst">95/100</strong>
+                  </div>
+                  <div class="bar-track"><div class="bar-fill bg-amber" id="mBarAnalyst" style="width: 95%;"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grafico Interattivo Intraday/5D -->
+          <div class="chart-container-box">
+            <div class="chart-header">
+              <div class="chart-title">
+                <i class="fa-solid fa-chart-line text-emerald"></i> Proiezione &amp; Andamento Prezzo
+              </div>
+              <div class="chart-range-buttons">
+                <button class="chart-range-btn active" data-range="1D">1G Intraday</button>
+                <button class="chart-range-btn" data-range="5D">5 Giorni</button>
+                <button class="chart-range-btn" data-range="1M">1 Mese</button>
+              </div>
+            </div>
+            <div class="chart-canvas-wrapper">
+              <canvas id="stockDetailChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Metriche e Livelli Operativi (Stop Loss, R/R, RSI) -->
+          <div class="key-metrics-grid">
+            <div class="key-metric-item">
+              <span class="km-label">Stop Loss Consigliato</span>
+              <span class="km-value text-red" id="mStopLoss">$132.80 (-4.1%)</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Rapporto Rischio/Rendimento</span>
+              <span class="km-value text-emerald" id="mRiskReward">1 : 2.9</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">RSI a 14 Periodi</span>
+              <span class="km-value text-cyan" id="mRsi">62 (Espansivo)</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Spike Volumi Giornalieri</span>
+              <span class="km-value text-amber" id="mVolumeSpike">1.85x la media</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">P/E Forward</span>
+              <span class="km-value" id="mPe">32.4x</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Consensus Wall St. / City</span>
+              <span class="km-value text-emerald" id="mConsensus">Strong Buy (92%)</span>
+            </div>
+          </div>
+
+          <!-- News e Driver Rilevati -->
+          <div class="news-catalysts-section">
+            <h4 class="section-subheading"><i class="fa-solid fa-newspaper text-cyan"></i> Catalizzatori di Notizie &amp; Fonti Web Rilevate</h4>
+            <div class="catalyst-items" id="mNewsContainer">
+              <!-- Riempito via JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-outline" id="mWatchlistToggleBtn"><i class="fa-regular fa-star"></i> Aggiungi alla Watchlist</button>
+          <button class="btn-primary" id="mCopyReportBtn"><i class="fa-regular fa-copy"></i> Copia Scheda Titolo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer / Monitor Watchlist Personale -->
+    <div class="drawer-overlay hidden" id="watchlistDrawer">
+      <div class="drawer-content">
+        <div class="drawer-header">
+          <h3><i class="fa-solid fa-star text-amber"></i> Il Tuo Portafoglio / Watchlist di Oggi</h3>
+          <button class="drawer-close" id="drawerCloseBtn">&times;</button>
+        </div>
+        <div class="drawer-body">
+          <p class="drawer-info">Titoli contrassegnati con la stella. Monitora il loro potenziale aggregato di giornata.</p>
+          
+          <div class="watchlist-summary-card">
+            <div class="ws-col">
+              <span class="ws-label">Titoli in Watchlist</span>
+              <span class="ws-value" id="wsTotalStocks">0</span>
+            </div>
+            <div class="ws-col">
+              <span class="ws-label">Probabilità Media</span>
+              <span class="ws-value text-emerald" id="wsAvgProb">--%</span>
+            </div>
+            <div class="ws-col">
+              <span class="ws-label">Upside Medio Atteso</span>
+              <span class="ws-value text-cyan" id="wsAvgUpside">--%</span>
+            </div>
+          </div>
+
+          <div class="watchlist-items-list" id="watchlistItemsList">
+            <!-- Riempito dinamicamente -->
+          </div>
+        </div>
+        <div class="drawer-footer">
+          <button class="btn-outline" id="clearWatchlistBtn">Svuota Watchlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Istituzionale & Disclaimer di Legge -->
+    <footer class="app-footer">
+      <div class="footer-card">
+        <div class="disclaimer-header">
+          <i class="fa-solid fa-triangle-exclamation text-amber"></i>
+          <h4>Dichiarazione di Non Responsabilità &amp; Metodologia (Disclaimer Finanziario)</h4>
+        </div>
+        <p class="disclaimer-text">
+          Le informazioni, i dati, le percentuali di probabilità e i modelli quantitativi forniti in questa pagina hanno scopo esclusivamente <strong>informativo, didattico e di analisi algoritmica</strong>. Non costituiscono in alcun modo sollecitazione al pubblico risparmio, consulenza finanziaria personalizzata o raccomandazione operativa di investimento ai sensi della direttiva MiFID II o delle normative Consob/SEC.
+        </p>
+        <p class="disclaimer-text">
+          Le performance passate e i modelli probabilistici non sono garanzia di risultati futuri. Gli investimenti azionari comportano il rischio di perdita totale o parziale del capitale investito. Si raccomanda di consultare un consulente finanziario abilitato prima di assumere qualsiasi decisione di trading o investimento.
+        </p>
+        <div class="footer-meta-row">
+          <span>&copy; AlphaPulse Analytics &bull; Modello di Scoring Multi-Fattoriale Large Cap (&gt; €/$ 10 Mld)</span>
+          <span>Stato Feed Dati: <span class="status-indicator online"></span> Live &bull; Latenza &lt; 150ms</span>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Script Applicativo Principale -->
+  <script src="app.js"></script>
+</body>
+</html>
