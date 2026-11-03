@@ -3533,8 +3533,22 @@ function closeModal() {
 // 9. EVENT LISTENERS E CONTROLLI INTERFACCIA
 // ==========================================================================
 
-function switchMarketSection(market, scrollIfNeeded = false) {
+let isProgrammaticCarouselScroll = false;
+
+function centerActiveCarouselTab(market) {
+  const track = document.getElementById('marketCarouselTrack');
+  if (!track) return;
+  const activeTab = track.querySelector(`.view-tab[data-market="${market}"]`);
+  if (!activeTab) return;
+  const targetLeft = activeTab.offsetLeft - (track.clientWidth - activeTab.offsetWidth) / 2;
+  isProgrammaticCarouselScroll = true;
+  track.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+  setTimeout(() => { isProgrammaticCarouselScroll = false; }, 380);
+}
+
+function switchMarketSection(market, scrollIfNeeded = false, fromCarouselSwipe = false) {
   if (state.currentMarket === market) {
+    if (!fromCarouselSwipe) centerActiveCarouselTab(market);
     if (scrollIfNeeded) {
       const mainEl = document.querySelector('.main-content');
       if (mainEl) mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -3549,6 +3563,11 @@ function switchMarketSection(market, scrollIfNeeded = false) {
   if (elements.tabUSA) elements.tabUSA.classList.toggle('active', market === 'usa');
   if (elements.tabSummary) elements.tabSummary.classList.toggle('active', market === 'summary');
 
+  // Sincronizza indicatori carosello mobile
+  document.querySelectorAll('.m-carousel-dot').forEach(dot => {
+    dot.classList.toggle('active', dot.getAttribute('data-market') === market);
+  });
+
   // Sincronizza barra fissa in basso
   const bEU = document.getElementById('bottomTabEU');
   const bUSA = document.getElementById('bottomTabUSA');
@@ -3556,6 +3575,10 @@ function switchMarketSection(market, scrollIfNeeded = false) {
   if (bEU) bEU.classList.toggle('active', market === 'eu');
   if (bUSA) bUSA.classList.toggle('active', market === 'usa');
   if (bSum) bSum.classList.toggle('active', market === 'summary');
+
+  if (!fromCarouselSwipe) {
+    centerActiveCarouselTab(market);
+  }
 
   if (market === 'eu') {
     elements.currentMarketTitle.innerHTML = `EuroStoxx 50 (Europa) &bull; Top 10 Consigli a 5 Giorni`;
@@ -3581,6 +3604,40 @@ function initEventListeners() {
   elements.tabUSA.addEventListener('click', () => switchMarketSection('usa', false));
   if (elements.tabSummary) {
     elements.tabSummary.addEventListener('click', () => switchMarketSection('summary', false));
+  }
+
+  // Listener per i pill-dots del carosello mobile
+  document.querySelectorAll('.m-carousel-dot').forEach(dot => {
+    dot.addEventListener('click', () => {
+      const mkt = dot.getAttribute('data-market');
+      if (mkt) switchMarketSection(mkt, false);
+    });
+  });
+
+  // Sincronizzazione automatica allo swipe del carosello superiore su mobile
+  const carouselTrack = document.getElementById('marketCarouselTrack');
+  if (carouselTrack) {
+    let scrollTimer = null;
+    carouselTrack.addEventListener('scroll', () => {
+      if (isProgrammaticCarouselScroll) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        const trackCenter = carouselTrack.scrollLeft + carouselTrack.clientWidth / 2;
+        let closestMarket = null;
+        let minDistance = Infinity;
+        carouselTrack.querySelectorAll('.view-tab').forEach(tab => {
+          const tabCenter = tab.offsetLeft + tab.offsetWidth / 2;
+          const dist = Math.abs(trackCenter - tabCenter);
+          if (dist < minDistance) {
+            minDistance = dist;
+            closestMarket = tab.getAttribute('data-market');
+          }
+        });
+        if (closestMarket && closestMarket !== state.currentMarket) {
+          switchMarketSection(closestMarket, false, true);
+        }
+      }, 120);
+    }, { passive: true });
   }
 
   const bEU = document.getElementById('bottomTabEU');
