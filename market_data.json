@@ -1,7 +1,21 @@
 {
-  "lastUpdated": "2026-11-03 09:26:32 CET",
+  "lastUpdated": "2026-11-03 09:32:06 CET",
   "dateFormatted": "Tuesday 03 November 2026",
   "isRealTime": true,
+  "marketRegime": {
+    "vix": 21.62,
+    "vixScore": 68,
+    "sp500Change": -0.51,
+    "stoxx50Change": -0.89,
+    "marketSentiment": "Neutro / Selettivo"
+  },
+  "weights": {
+    "breakout": 30,
+    "news": 25,
+    "volume": 20,
+    "analyst": 15,
+    "market": 10
+  },
   "eu": [
     {
       "id": "eu-tte",
@@ -11,24 +25,30 @@
       "currency": "€",
       "sector": "Industria & Energia",
       "marketCap": "€198 Mld",
-      "marketCapRaw": 198.1,
-      "currentPrice": 83.59,
-      "targetPrice": 93.2,
-      "stopLoss": 80.66,
-      "dayChangePct": -0.02,
-      "score": 87,
-      "strength": "Alta",
+      "marketCapRaw": 198.2,
+      "currentPrice": 83.62,
+      "targetPrice": 95.33,
+      "stopLoss": 80.69,
+      "dayChangePct": 0.01,
+      "score": 89,
+      "strength": "Molto Alta",
       "volumeSpike": "0.05x",
-      "rsi": 64.9,
+      "rsi": 65.0,
       "pe": "Consolidato",
-      "riskReward": "1 : 3.3",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €83.59. RSI a 14 periodi calcolato a 64.9 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "riskReward": "1 : 4.0",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale €83.62 (+0.01%). RSI 14 a 65.0 con volume spike 0.05x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+0.9% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+0.9% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
+        "breakout": 97,
         "news": 92,
-        "tech": 94,
-        "volume": 72,
-        "analyst": 88
+        "volume": 68,
+        "analyst": 87,
+        "market": 62
       },
       "catalysts": [
         {
@@ -38,15 +58,21 @@
           "impact": "Favorevole"
         },
         {
-          "title": "Should Value Investors Buy TotalEnergies (TTE) Stock? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Thu, 29 Oct 2026",
+          "title": "TOTALENERGIES SE (TTE) Equity Price and Quote - London Stock Exchange",
+          "source": "London Stock Exchange",
+          "time": "Thu, 22 Oct 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "TotalEnergies Q3 Earnings Call Highlights - TradingView",
-          "source": "TradingView",
-          "time": "Sat, 31 Oct 2026",
+          "title": "TotalEnergies SE (TTE) Q3 2026 Earnings Call Highlights: Record Refining Margins and Strong ... - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Change of names and ticker symbols on market places - TotalEnergies.com",
+          "source": "TotalEnergies.com",
+          "time": "Thu, 23 Apr 2026",
           "impact": "Favorevole"
         }
       ],
@@ -62,13 +88,13 @@
             "16:00"
           ],
           "values": [
-            82.92,
-            83.26,
-            83.17,
-            83.42,
-            83.59,
-            83.84,
-            84.09
+            82.95,
+            83.29,
+            83.2,
+            83.45,
+            83.62,
+            83.87,
+            84.12
           ]
         },
         "5D": {
@@ -84,7 +110,7 @@
             83.6,
             84.6,
             85.43,
-            83.59
+            83.62
           ]
         },
         "1M": {
@@ -104,449 +130,61 @@
       }
     },
     {
-      "id": "eu-sap",
-      "ticker": "SAP",
-      "name": "SAP SE",
-      "exchange": "XETRA (Germania)",
+      "id": "eu-ibe",
+      "ticker": "IBE",
+      "name": "Iberdrola S.A.",
+      "exchange": "Bolsa de Madrid",
       "currency": "€",
-      "sector": "Tecnologia",
-      "marketCap": "€253 Mld",
-      "marketCapRaw": 253.5,
-      "currentPrice": 206.1,
-      "targetPrice": 228.77,
-      "stopLoss": 198.89,
-      "dayChangePct": -2.09,
-      "score": 86,
-      "strength": "Alta",
-      "volumeSpike": "0.05x",
-      "rsi": 61.4,
+      "sector": "Industria & Energia",
+      "marketCap": "€141 Mld",
+      "marketCapRaw": 141.2,
+      "currentPrice": 22.24,
+      "targetPrice": 25.35,
+      "stopLoss": 21.46,
+      "dayChangePct": -0.04,
+      "score": 89,
+      "strength": "Molto Alta",
+      "volumeSpike": "0.02x",
+      "rsi": 67.3,
       "pe": "Consolidato",
-      "riskReward": "1 : 3.1",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €206.1. RSI a 14 periodi calcolato a 61.4 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 97,
-        "tech": 92,
-        "volume": 72,
-        "analyst": 82
-      },
-      "catalysts": [
-        {
-          "title": "SAP SE (SAP) Could Benefit From AI Integration as Cloud Growth Accelerates, Janus Henderson Says - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "SAP Shares Have Tumbled From Their Highs. Is the Software Stock a Buy Now? - Morningstar",
-          "source": "Morningstar",
-          "time": "Wed, 24 Jun 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "SAP SE $SAP Stock Acquired by Vise Technologies Inc. - MarketBeat",
-          "source": "MarketBeat",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        }
+      "riskReward": "1 : 4.0",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale €22.24 (-0.04%). RSI 14 a 67.3 con volume spike 0.02x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+0.84% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+0.84% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
       ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            204.45,
-            205.28,
-            205.07,
-            205.69,
-            206.1,
-            206.72,
-            207.34
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            213.15,
-            211.2,
-            208.9,
-            211.25,
-            206.1
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            185.04,
-            194.46,
-            199.84,
-            212.25
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-rms",
-      "ticker": "RMS",
-      "name": "Hermès International",
-      "exchange": "Euronext Parigi",
-      "currency": "€",
-      "sector": "Lusso & Consumi",
-      "marketCap": "€137 Mld",
-      "marketCapRaw": 137.2,
-      "currentPrice": 1307.0,
-      "targetPrice": 1437.7,
-      "stopLoss": 1261.25,
-      "dayChangePct": -1.02,
-      "score": 84,
-      "strength": "Alta",
-      "volumeSpike": "0.05x",
-      "rsi": 53.8,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.9",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €1307.0. RSI a 14 periodi calcolato a 53.8 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
       "pillars": {
-        "news": 97,
-        "tech": 88,
-        "volume": 72,
-        "analyst": 75
+        "breakout": 92,
+        "news": 96,
+        "volume": 68,
+        "analyst": 88,
+        "market": 62
       },
       "catalysts": [
         {
-          "title": "Hermès (ENXTPA:RMS) Posts Slowest Quarterly Growth In Six Years But Keeps Targets - Yahoo Finance",
+          "title": "Assessing Iberdrola (BME:IBE) Valuation As Shares Trade Near Analyst Fair Value Estimates - Yahoo Finance",
           "source": "Yahoo Finance",
-          "time": "Sun, 25 Oct 2026",
+          "time": "Fri, 05 Jun 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Hermès, Kering Record Stock Spread Highlights Diverging Paths - Bloomberg.com",
-          "source": "Bloomberg.com",
-          "time": "Wed, 29 Jul 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Hermes Plummets 13% on the Anniversary of the RMS Titanic Disaster ⚓ - XTB.com",
-          "source": "XTB.com",
-          "time": "Wed, 15 Apr 2026",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            1296.54,
-            1301.77,
-            1300.46,
-            1304.39,
-            1307.0,
-            1310.92,
-            1314.84
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            1268.5,
-            1259.5,
-            1266.0,
-            1293.5,
-            1307.0
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            1286.0,
-            1310.0,
-            1337.0,
-            1278.5
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-race",
-      "ticker": "RACE",
-      "name": "Ferrari N.V.",
-      "exchange": "Borsa Italiana",
-      "currency": "€",
-      "sector": "Lusso & Consumi",
-      "marketCap": "€64 Mld",
-      "marketCapRaw": 64.6,
-      "currentPrice": 359.05,
-      "targetPrice": 394.96,
-      "stopLoss": 346.48,
-      "dayChangePct": 0.03,
-      "score": 84,
-      "strength": "Alta",
-      "volumeSpike": "0.07x",
-      "rsi": 58.5,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.9",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €359.05. RSI a 14 periodi calcolato a 58.5 con volume spike pari a 0.07x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 87,
-        "tech": 91,
-        "volume": 72,
-        "analyst": 86
-      },
-      "catalysts": [
-        {
-          "title": "Earnings To Watch: Ferrari NV (MIL:RACE) Q3 2026 -- GF Value Sees 38% Upside - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "If You Invested $1000 In Ferrari Stock 10 Years Ago, You Would Have This Much Today - Benzinga",
-          "source": "Benzinga",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Ferrari Nv Stock Price Forecast. Should You Buy RACE? - StockInvest.us",
-          "source": "StockInvest.us",
-          "time": "Fri, 30 Oct 2026",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            356.18,
-            357.61,
-            357.25,
-            358.33,
-            359.05,
-            360.13,
-            361.2
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            349.4,
-            352.15,
-            357.2,
-            355.1,
-            359.05
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            341.2,
-            351.0,
-            353.35,
-            353.25
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-alv",
-      "ticker": "ALV",
-      "name": "Allianz SE",
-      "exchange": "XETRA (Germania)",
-      "currency": "€",
-      "sector": "Finanza",
-      "marketCap": "€171 Mld",
-      "marketCapRaw": 171.2,
-      "currentPrice": 438.9,
-      "targetPrice": 482.79,
-      "stopLoss": 423.54,
-      "dayChangePct": -0.34,
-      "score": 84,
-      "strength": "Alta",
-      "volumeSpike": "0.05x",
-      "rsi": 65.1,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.9",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €438.9. RSI a 14 periodi calcolato a 65.1 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 82,
-        "tech": 94,
-        "volume": 72,
-        "analyst": 87
-      },
-      "catalysts": [
-        {
-          "title": "Allianz SE (ALV.DE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-          "source": "Yahoo! Finance Canada",
-          "time": "Sun, 01 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Is Allianz (XTRA:ALV) Cheap Or Already Fairly Priced Today? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Tue, 25 Aug 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "ALV Forecast — Price Target — Prediction for 2027 - TradingView",
+          "title": "IBE Forecast — Price Target — Prediction for 2027 - TradingView",
           "source": "TradingView",
           "time": "Thu, 25 Jun 2026",
           "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            435.39,
-            437.14,
-            436.71,
-            438.02,
-            438.9,
-            440.22,
-            441.53
-          ]
         },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            434.8,
-            435.3,
-            439.6,
-            438.7,
-            438.9
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            419.2,
-            420.5,
-            425.9,
-            431.2
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-air",
-      "ticker": "AIR",
-      "name": "Airbus SE",
-      "exchange": "Euronext Parigi",
-      "currency": "€",
-      "sector": "Industria & Energia",
-      "marketCap": "€152 Mld",
-      "marketCapRaw": 152.9,
-      "currentPrice": 193.54,
-      "targetPrice": 210.96,
-      "stopLoss": 186.77,
-      "dayChangePct": -1.29,
-      "score": 82,
-      "strength": "Buona",
-      "volumeSpike": "0.02x",
-      "rsi": 58.6,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.6",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €193.54. RSI a 14 periodi calcolato a 58.6 con volume spike pari a 0.02x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 82,
-        "tech": 91,
-        "volume": 72,
-        "analyst": 81
-      },
-      "catalysts": [
         {
-          "title": "Airbus SE (AIR.PA) stock price, news, quote and history - Yahoo Finance Singapore",
-          "source": "Yahoo Finance Singapore",
-          "time": "Mon, 02 Nov 2026",
+          "title": "Iberdrola stock rises after Barclays upgrade to buy - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Tue, 26 May 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Airbus reports Nine-Month (9m) 2026 results - Airbus",
-          "source": "Airbus",
-          "time": "Wed, 28 Oct 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Airbus takes off in the stock market under the watchful eye of a crowd of analysts - www.marketscreener.com",
-          "source": "www.marketscreener.com",
-          "time": "Thu, 29 Oct 2026",
+          "title": "Iberdrola raises its interim dividend to €0.253 per share - Iberdrola",
+          "source": "Iberdrola",
+          "time": "Thu, 08 Jan 2026",
           "impact": "Favorevole"
         }
       ],
@@ -562,13 +200,13 @@
             "16:00"
           ],
           "values": [
-            191.99,
-            192.77,
-            192.57,
-            193.15,
-            193.54,
-            194.12,
-            194.7
+            22.06,
+            22.15,
+            22.13,
+            22.2,
+            22.24,
+            22.31,
+            22.37
           ]
         },
         "5D": {
@@ -580,11 +218,11 @@
             "Oggi"
           ],
           "values": [
-            192.74,
-            191.92,
-            196.34,
-            192.4,
-            193.54
+            21.97,
+            22.03,
+            22.1,
+            22.18,
+            22.24
           ]
         },
         "1M": {
@@ -595,10 +233,10 @@
             "Sett 4"
           ],
           "values": [
-            189.08,
-            188.14,
-            194.34,
-            193.4
+            21.0,
+            21.68,
+            21.23,
+            21.97
           ]
         }
       }
@@ -613,40 +251,52 @@
       "marketCap": "€94 Mld",
       "marketCapRaw": 94.9,
       "currentPrice": 9.34,
-      "targetPrice": 10.18,
-      "stopLoss": 9.01,
-      "dayChangePct": 0.05,
-      "score": 82,
-      "strength": "Buona",
+      "targetPrice": 10.46,
+      "stopLoss": 9.02,
+      "dayChangePct": 0.07,
+      "score": 85,
+      "strength": "Alta",
       "volumeSpike": "0.03x",
       "rsi": 72.5,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.5",
+      "riskReward": "1 : 3.5",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €9.34. RSI a 14 periodi calcolato a 72.5 con volume spike pari a 0.03x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale €9.34 (+0.07%). RSI 14 a 72.5 con volume spike 0.03x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+0.96% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+0.96% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 92,
-        "tech": 81,
-        "volume": 72,
-        "analyst": 83
+        "breakout": 84,
+        "news": 96,
+        "volume": 68,
+        "analyst": 82,
+        "market": 62
       },
       "catalysts": [
         {
-          "title": "Are Utilities Stocks Lagging Enel (ENLAY) This Year? - Yahoo Finance",
+          "title": "Enel SpA (ENLAY) (H1 2026) Earnings Call Highlights: EBITDA and EPS Rise 3-5% as Strategic ... - Yahoo Finance",
           "source": "Yahoo Finance",
-          "time": "Wed, 10 Jun 2026",
+          "time": "Tue, 04 Aug 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "ENEL Forecast — Price Target — Prediction for 2027 - TradingView",
-          "source": "TradingView",
-          "time": "Thu, 25 Jun 2026",
+          "title": "Enel SpA (ENLAY) Q1 2026 Earnings Call Highlights: Strong Network Contributions and Cash ... - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Fri, 08 May 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Enel SpA (OTCMKTS:ENLAY) Stock Short Interest Jumps 590.4% - MarketBeat",
-          "source": "MarketBeat",
-          "time": "Tue, 27 Oct 2026",
+          "title": "Enel Stock Forecast | H1 Growth, Q3 Results Ahead - Capital.com",
+          "source": "Capital.com",
+          "time": "Mon, 26 Jan 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Enel Stock Price Today | BIT: ENEI Live - Investing.com",
+          "source": "Investing.com",
+          "time": "Mon, 02 Jan 2017",
           "impact": "Favorevole"
         }
       ],
@@ -664,7 +314,7 @@
           "values": [
             9.27,
             9.3,
-            9.29,
+            9.3,
             9.32,
             9.34,
             9.37,
@@ -704,49 +354,61 @@
       }
     },
     {
-      "id": "eu-novo-b",
-      "ticker": "NOVO-B",
-      "name": "Novo Nordisk A/S",
-      "exchange": "Copenhagen (DKK/EUR)",
+      "id": "eu-alv",
+      "ticker": "ALV",
+      "name": "Allianz SE",
+      "exchange": "XETRA (Germania)",
       "currency": "€",
-      "sector": "Healthcare",
-      "marketCap": "€160 Mld",
-      "marketCapRaw": 160.7,
-      "currentPrice": 269.55,
-      "targetPrice": 292.46,
-      "stopLoss": 260.12,
-      "dayChangePct": -0.24,
-      "score": 81,
-      "strength": "Buona",
-      "volumeSpike": "0.05x",
-      "rsi": 63.4,
+      "sector": "Finanza",
+      "marketCap": "€171 Mld",
+      "marketCapRaw": 171.4,
+      "currentPrice": 439.5,
+      "targetPrice": 490.04,
+      "stopLoss": 424.12,
+      "dayChangePct": -0.2,
+      "score": 84,
+      "strength": "Alta",
+      "volumeSpike": "0.06x",
+      "rsi": 65.5,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.4",
+      "riskReward": "1 : 3.3",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €269.55. RSI a 14 periodi calcolato a 63.4 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale €439.5 (-0.2%). RSI 14 a 65.5 con volume spike 0.06x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (+0.69% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (+0.69% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 81,
-        "tech": 93,
-        "volume": 72,
-        "analyst": 75
+        "breakout": 97,
+        "news": 88,
+        "volume": 68,
+        "analyst": 86,
+        "market": 62
       },
       "catalysts": [
         {
-          "title": "Novo Nordisk (NVO) Stock Declines While Market Improves: Some Information for Investors - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Tue, 27 Oct 2026",
-          "impact": "Attenzione / Moderato"
-        },
-        {
-          "title": "NVO Stock Price and Chart — BX:NVO - TradingView",
-          "source": "TradingView",
-          "time": "Tue, 27 Oct 2026",
+          "title": "Allianz SE (ALV.DE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "time": "Sun, 01 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Novo Nordisk (NVO) Stock Sinks As Market Gains: Here's Why - Yahoo Finance",
+          "title": "Is Allianz (XTRA:ALV) Cheap Or Already Fairly Priced Today? - Yahoo Finance",
           "source": "Yahoo Finance",
-          "time": "Mon, 19 Oct 2026",
+          "time": "Tue, 25 Aug 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "ALV Forecast — Price Target — Prediction for 2027 - TradingView",
+          "source": "TradingView",
+          "time": "Thu, 25 Jun 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Allianz Stock Forecast | Record H1 Profit, Q3 Earnings Ahead - Capital.com",
+          "source": "Capital.com",
+          "time": "Wed, 30 Sep 2026",
           "impact": "Favorevole"
         }
       ],
@@ -762,13 +424,237 @@
             "16:00"
           ],
           "values": [
-            267.39,
-            268.47,
-            268.2,
-            269.01,
-            269.55,
-            270.36,
-            271.17
+            435.98,
+            437.74,
+            437.3,
+            438.62,
+            439.5,
+            440.82,
+            442.14
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            434.8,
+            435.3,
+            439.6,
+            438.7,
+            439.5
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            419.2,
+            420.5,
+            425.9,
+            431.2
+          ]
+        }
+      }
+    },
+    {
+      "id": "eu-dte",
+      "ticker": "DTE",
+      "name": "Deutsche Telekom",
+      "exchange": "XETRA (Germania)",
+      "currency": "€",
+      "sector": "Tecnologia",
+      "marketCap": "€129 Mld",
+      "marketCapRaw": 129.3,
+      "currentPrice": 25.97,
+      "targetPrice": 28.96,
+      "stopLoss": 25.06,
+      "dayChangePct": 0.5,
+      "score": 84,
+      "strength": "Alta",
+      "volumeSpike": "0.04x",
+      "rsi": 59.4,
+      "pe": "Consolidato",
+      "riskReward": "1 : 3.3",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €25.97 (+0.5%). RSI 14 a 59.4 con volume spike 0.04x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+1.39% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+1.39% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
+      "pillars": {
+        "breakout": 97,
+        "news": 80,
+        "volume": 68,
+        "analyst": 72,
+        "market": 62
+      },
+      "catalysts": [
+        {
+          "title": "Deutsche Telekom AG (DTE.DE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "time": "Sat, 31 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Deutsche Telekom AG: Release of a capital market information - MarketScreener",
+          "source": "MarketScreener",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Deutsche Telekom (XTRA:DTE) Stock Looks Undervalued Relative To Fair Value - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sun, 11 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Deutsche Telekom (XTRA:DTE) Taps Bond Markets As Its Valuation Starts To Look Compelling - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sun, 11 Oct 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            25.76,
+            25.87,
+            25.84,
+            25.92,
+            25.97,
+            26.05,
+            26.13
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            25.14,
+            25.14,
+            25.62,
+            26.09,
+            25.97
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            26.83,
+            24.98,
+            25.57,
+            24.98
+          ]
+        }
+      }
+    },
+    {
+      "id": "eu-novo-b",
+      "ticker": "NOVO-B",
+      "name": "Novo Nordisk",
+      "exchange": "Copenhagen",
+      "currency": "€",
+      "sector": "Healthcare",
+      "marketCap": "€160 Mld",
+      "marketCapRaw": 160.5,
+      "currentPrice": 269.2,
+      "targetPrice": 297.47,
+      "stopLoss": 259.78,
+      "dayChangePct": -0.37,
+      "score": 82,
+      "strength": "Alta",
+      "volumeSpike": "0.06x",
+      "rsi": 63.1,
+      "pe": "Consolidato",
+      "riskReward": "1 : 3.0",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €269.2 (-0.37%). RSI 14 a 63.1 con volume spike 0.06x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (+0.52% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (+0.52% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
+      "pillars": {
+        "breakout": 93,
+        "news": 92,
+        "volume": 68,
+        "analyst": 72,
+        "market": 62
+      },
+      "catalysts": [
+        {
+          "title": "Novo Nordisk Trades at 10 Times Earnings While Buying Back Billions in Stock. Is This the Bottom? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sun, 01 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Is Novo Nordisk Stock a Buy Ahead of Earnings? - Morningstar",
+          "source": "Morningstar",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Novo Nordisk set to report Q3 results as investors watch GLP-1 sales and outlook (NVO:NYSE) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Novo Nordisk Trades at 10 Times Earnings While Buying Back Billions in Stock. Is This the Bottom? - The Motley Fool",
+          "source": "The Motley Fool",
+          "time": "Sun, 01 Nov 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            267.05,
+            268.12,
+            267.85,
+            268.66,
+            269.2,
+            270.01,
+            270.82
           ]
         },
         "5D": {
@@ -784,7 +670,7 @@
             255.0,
             260.35,
             266.1,
-            269.55
+            269.2
           ]
         },
         "1M": {
@@ -813,22 +699,28 @@
       "marketCap": "€197 Mld",
       "marketCapRaw": 197.4,
       "currentPrice": 394.75,
-      "targetPrice": 426.33,
+      "targetPrice": 436.2,
       "stopLoss": 380.93,
       "dayChangePct": 0.28,
-      "score": 80,
-      "strength": "Buona",
+      "score": 82,
+      "strength": "Alta",
       "volumeSpike": "0.05x",
       "rsi": 59.9,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.3",
+      "riskReward": "1 : 3.0",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €394.75. RSI a 14 periodi calcolato a 59.9 con volume spike pari a 0.05x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale €394.75 (+0.28%). RSI 14 a 59.9 con volume spike 0.05x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+1.17% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+1.17% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 82,
-        "tech": 91,
-        "volume": 72,
-        "analyst": 75
+        "breakout": 97,
+        "news": 75,
+        "volume": 68,
+        "analyst": 72,
+        "market": 62
       },
       "catalysts": [
         {
@@ -844,10 +736,16 @@
           "impact": "Favorevole"
         },
         {
-          "title": "Lvmh Moët Hennessy - Louis Vuitton, Société Européenne - MC - Stock Price & News - The Motley Fool",
-          "source": "The Motley Fool",
-          "time": "Fri, 14 Aug 2026",
+          "title": "LVMH (ENXTPA:MC) Stock Seems Fully Priced Following Dior Board Changes - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Thu, 08 Oct 2026",
           "impact": "Favorevole"
+        },
+        {
+          "title": "LVMH Moët Hennessy Louis Vuitton Société Européenne (ENXTPA:MC) After China Led Weakness Tests Valuation - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Tue, 13 Oct 2026",
+          "impact": "Attenzione / Moderato"
         }
       ],
       "chartData": {
@@ -904,149 +802,59 @@
       }
     },
     {
-      "id": "eu-su",
-      "ticker": "SU",
-      "name": "Schneider Electric",
-      "exchange": "Euronext Parigi",
+      "id": "eu-race",
+      "ticker": "RACE",
+      "name": "Ferrari N.V.",
+      "exchange": "Borsa Italiana",
       "currency": "€",
-      "sector": "Industria & Energia",
-      "marketCap": "€134 Mld",
-      "marketCapRaw": 134.9,
-      "currentPrice": 236.7,
-      "targetPrice": 254.45,
-      "stopLoss": 228.42,
-      "dayChangePct": -1.56,
-      "score": 79,
-      "strength": "Buona",
-      "volumeSpike": "0.03x",
-      "rsi": 30.1,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.1",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a €236.7. RSI a 14 periodi calcolato a 30.1 con volume spike pari a 0.03x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 86,
-        "tech": 80,
-        "volume": 72,
-        "analyst": 75
-      },
-      "catalysts": [
-        {
-          "title": "Schneider Electric (ENXTPA:SU) Stock May Be Near Fair Value After AI Demand Surge - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Wed, 21 Oct 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Is Schneider Electric (ENXTPA:SU) Overvalued After A 108% Five Year Return? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Thu, 03 Sep 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Schneider Electric falls after PTC acquisition, market concerned about price tag - marketscreener.com",
-          "source": "marketscreener.com",
-          "time": "Mon, 05 Oct 2026",
-          "impact": "Attenzione / Moderato"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            234.81,
-            235.75,
-            235.52,
-            236.23,
-            236.7,
-            237.41,
-            238.12
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            242.7,
-            246.2,
-            247.6,
-            237.5,
-            236.7
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            272.8,
-            265.35,
-            252.6,
-            235.7
-          ]
-        }
-      }
-    }
-  ],
-  "usa": [
-    {
-      "id": "usa-jpm",
-      "ticker": "JPM",
-      "name": "JPMorgan Chase & Co.",
-      "exchange": "NYSE",
-      "currency": "$",
-      "sector": "Finanza",
-      "marketCap": "$967 Mld",
-      "marketCapRaw": 967.2,
-      "currentPrice": 340.58,
-      "targetPrice": 378.04,
-      "stopLoss": 328.66,
-      "dayChangePct": 1.05,
-      "score": 86,
+      "sector": "Lusso & Consumi",
+      "marketCap": "€64 Mld",
+      "marketCapRaw": 64.2,
+      "currentPrice": 356.6,
+      "targetPrice": 394.04,
+      "stopLoss": 344.12,
+      "dayChangePct": -0.66,
+      "score": 82,
       "strength": "Alta",
-      "volumeSpike": "0.87x",
-      "rsi": 60.2,
+      "volumeSpike": "0.09x",
+      "rsi": 56.2,
       "pe": "Consolidato",
-      "riskReward": "1 : 3.1",
+      "riskReward": "1 : 3.0",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $340.58. RSI a 14 periodi calcolato a 60.2 con volume spike pari a 0.87x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale €356.6 (-0.66%). RSI 14 a 56.2 con volume spike 0.09x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (+0.23% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (+0.23% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 92,
-        "tech": 92,
-        "volume": 72,
-        "analyst": 85
+        "breakout": 93,
+        "news": 88,
+        "volume": 68,
+        "analyst": 85,
+        "market": 62
       },
       "catalysts": [
         {
-          "title": "META_TITLE_QUOTE - Yahoo Finance",
-          "source": "Yahoo Finance",
+          "title": "Ferrari N.V. (RACE) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "If You Invested $1000 In Ferrari Stock 10 Years Ago, You Would Have This Much Today - Benzinga",
+          "source": "Benzinga",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "JPM Stock Price and Chart — NYSE:JPM - TradingView",
-          "source": "TradingView",
-          "time": "Tue, 27 Oct 2026",
+          "title": "Ferrari bought back 370,061 shares for €130.5 million on the Milan exchange since Sept. 1 - Stock Titan",
+          "source": "Stock Titan",
+          "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "JPMorgan Chase & Co. (NYSE:JPM) Stock Price Up 1.1% After Analyst Upgrade - MarketBeat",
+          "title": "International Assets Investment Management LLC Buys 15,709 Shares of Ferrari N.V. $RACE - MarketBeat",
           "source": "MarketBeat",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
@@ -1064,13 +872,13 @@
             "16:00"
           ],
           "values": [
-            337.86,
-            339.22,
-            338.88,
-            339.9,
-            340.58,
-            341.6,
-            342.62
+            353.75,
+            355.17,
+            354.82,
+            355.89,
+            356.6,
+            357.67,
+            358.74
           ]
         },
         "5D": {
@@ -1082,11 +890,11 @@
             "Oggi"
           ],
           "values": [
-            335.79,
-            339.3,
-            343.58,
-            337.04,
-            340.58
+            349.4,
+            352.15,
+            357.2,
+            355.1,
+            356.6
           ]
         },
         "1M": {
@@ -1097,58 +905,70 @@
             "Sett 4"
           ],
           "values": [
-            332.38,
-            334.3,
-            333.53,
-            334.04
+            341.2,
+            351.0,
+            353.35,
+            353.25
           ]
         }
       }
     },
     {
-      "id": "usa-aapl",
-      "ticker": "AAPL",
-      "name": "Apple Inc.",
-      "exchange": "NASDAQ",
-      "currency": "$",
-      "sector": "Tecnologia",
-      "marketCap": "$5.14 Tln",
-      "marketCapRaw": 5142.5,
-      "currentPrice": 338.32,
-      "targetPrice": 375.54,
-      "stopLoss": 326.48,
-      "dayChangePct": -1.83,
-      "score": 86,
-      "strength": "Alta",
-      "volumeSpike": "1.54x",
-      "rsi": 46.6,
+      "id": "eu-air",
+      "ticker": "AIR",
+      "name": "Airbus SE",
+      "exchange": "Euronext Parigi",
+      "currency": "€",
+      "sector": "Industria & Energia",
+      "marketCap": "€153 Mld",
+      "marketCapRaw": 153.1,
+      "currentPrice": 193.74,
+      "targetPrice": 213.11,
+      "stopLoss": 186.96,
+      "dayChangePct": -1.19,
+      "score": 81,
+      "strength": "Buona",
+      "volumeSpike": "0.03x",
+      "rsi": 58.8,
       "pe": "Consolidato",
-      "riskReward": "1 : 3.1",
+      "riskReward": "1 : 2.9",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $338.32. RSI a 14 periodi calcolato a 46.6 con volume spike pari a 1.54x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale €193.74 (-1.19%). RSI 14 a 58.8 con volume spike 0.03x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (-0.3% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (-0.3% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 87,
-        "tech": 84,
-        "volume": 84,
-        "analyst": 87
+        "breakout": 95,
+        "news": 84,
+        "volume": 68,
+        "analyst": 80,
+        "market": 62
       },
       "catalysts": [
         {
-          "title": "Apple slips even as Q4 results, guidance top estimates on iPhone strength (AAPL:NASDAQ) - Seeking Alpha",
-          "source": "Seeking Alpha",
+          "title": "Airbus SE (AIR.PA) stock price, news, quote and history - Yahoo Finance Singapore",
+          "source": "Yahoo Finance Singapore",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Apple’s (NASDAQ:AAPL) Q3 CY2026 sales beat estimates - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
+          "title": "Airbus reports Nine-Month (9m) 2026 results - Airbus",
+          "source": "Airbus",
+          "time": "Wed, 28 Oct 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Apple (NASDAQ: AAPL) stock price forecast: Wall Street targets ahead of Q4 earnings - Beinsure",
-          "source": "Beinsure",
-          "time": "Mon, 02 Nov 2026",
+          "title": "Airbus takes off in the stock market under the watchful eye of a crowd of analysts - www.marketscreener.com",
+          "source": "www.marketscreener.com",
+          "time": "Thu, 29 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Airbus commences limited share buyback - Airbus",
+          "source": "Airbus",
+          "time": "Fri, 11 Sep 2026",
           "impact": "Favorevole"
         }
       ],
@@ -1164,13 +984,13 @@
             "16:00"
           ],
           "values": [
-            335.61,
-            336.97,
-            336.63,
-            337.64,
-            338.32,
-            339.33,
-            340.35
+            192.19,
+            192.97,
+            192.77,
+            193.35,
+            193.74,
+            194.32,
+            194.9
           ]
         },
         "5D": {
@@ -1182,11 +1002,11 @@
             "Oggi"
           ],
           "values": [
-            347.1,
-            343.83,
-            348.91,
-            344.63,
-            338.32
+            192.74,
+            191.92,
+            196.34,
+            192.4,
+            193.74
           ]
         },
         "1M": {
@@ -1197,14 +1017,128 @@
             "Sett 4"
           ],
           "values": [
-            332.89,
-            340.97,
-            342.94,
-            343.91
+            189.08,
+            188.14,
+            194.34,
+            193.4
           ]
         }
       }
     },
+    {
+      "id": "eu-rhm",
+      "ticker": "RHM",
+      "name": "Rheinmetall AG",
+      "exchange": "XETRA (Germania)",
+      "currency": "€",
+      "sector": "Industria & Energia",
+      "marketCap": "€43 Mld",
+      "marketCapRaw": 43.8,
+      "currentPrice": 995.7,
+      "targetPrice": 1095.27,
+      "stopLoss": 960.85,
+      "dayChangePct": -0.43,
+      "score": 81,
+      "strength": "Buona",
+      "volumeSpike": "0.06x",
+      "rsi": 56.2,
+      "pe": "Consolidato",
+      "riskReward": "1 : 2.9",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €995.7 (-0.43%). RSI 14 a 56.2 con volume spike 0.06x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (+0.46% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (+0.46% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
+      "pillars": {
+        "breakout": 96,
+        "news": 88,
+        "volume": 68,
+        "analyst": 72,
+        "market": 62
+      },
+      "catalysts": [
+        {
+          "title": "Rheinmetall: Shares Down 15% on Frigate Cancellation; Market Reaction Disproportionate - Morningstar",
+          "source": "Morningstar",
+          "time": "Wed, 24 Jun 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Rheinmetall (ETR:RHM) Could Be A Buy For Its Upcoming Dividend - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sat, 09 May 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Rheinmetall (XTRA:RHM) Stock Forecast & Analyst Predictions - Simply Wall St",
+          "source": "Simply Wall St",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Rheinmetall (RHM) Stock Forecast & Analyst Price Targets - TipRanks",
+          "source": "TipRanks",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            987.73,
+            991.72,
+            990.72,
+            993.71,
+            995.7,
+            998.69,
+            1001.67
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            1025.2,
+            1012.0,
+            1048.2,
+            1037.6,
+            995.7
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            980.2,
+            962.2,
+            1059.8,
+            1034.2
+          ]
+        }
+      }
+    }
+  ],
+  "usa": [
     {
       "id": "usa-tsla",
       "ticker": "TSLA",
@@ -1215,22 +1149,28 @@
       "marketCap": "$1296 Mld",
       "marketCapRaw": 1296.3,
       "currentPrice": 403.82,
-      "targetPrice": 448.24,
+      "targetPrice": 464.39,
       "stopLoss": 389.69,
       "dayChangePct": 1.0,
-      "score": 86,
-      "strength": "Alta",
+      "score": 91,
+      "strength": "Molto Alta",
       "volumeSpike": "1.19x",
       "rsi": 62.6,
       "pe": "Consolidato",
-      "riskReward": "1 : 3.1",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $403.82. RSI a 14 periodi calcolato a 62.6 con volume spike pari a 1.19x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "riskReward": "1 : 4.3",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale $403.82 (+1.0%). RSI 14 a 62.6 con volume spike 1.19x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+1.51% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+1.51% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
       "pillars": {
-        "news": 92,
-        "tech": 93,
-        "volume": 78,
-        "analyst": 76
+        "breakout": 94,
+        "news": 88,
+        "volume": 83,
+        "analyst": 75,
+        "market": 68
       },
       "catalysts": [
         {
@@ -1249,6 +1189,12 @@
           "title": "1,659 Tesla, Inc. $TSLA Shares Purchased by Bank Julius Baer & Co. Ltd Zurich - MarketBeat",
           "source": "MarketBeat",
           "time": "Tue, 03 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Tesla (TSLA) Laps the Stock Market: Here's Why - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Mon, 05 Oct 2026",
           "impact": "Favorevole"
         }
       ],
@@ -1306,48 +1252,284 @@
       }
     },
     {
-      "id": "usa-lly",
-      "ticker": "LLY",
-      "name": "Eli Lilly and Company",
+      "id": "usa-jpm",
+      "ticker": "JPM",
+      "name": "JPMorgan Chase & Co.",
       "exchange": "NYSE",
       "currency": "$",
-      "sector": "Healthcare",
-      "marketCap": "$1340 Mld",
-      "marketCapRaw": 1340.4,
-      "currentPrice": 1410.99,
-      "targetPrice": 1552.09,
-      "stopLoss": 1361.61,
-      "dayChangePct": -0.46,
-      "score": 84,
-      "strength": "Alta",
-      "volumeSpike": "1.43x",
-      "rsi": 81.9,
+      "sector": "Finanza",
+      "marketCap": "$967 Mld",
+      "marketCapRaw": 967.2,
+      "currentPrice": 340.58,
+      "targetPrice": 389.96,
+      "stopLoss": 328.66,
+      "dayChangePct": 1.05,
+      "score": 90,
+      "strength": "Molto Alta",
+      "volumeSpike": "0.87x",
+      "rsi": 60.2,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.9",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $1410.99. RSI a 14 periodi calcolato a 81.9 con volume spike pari a 1.43x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "riskReward": "1 : 4.1",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale $340.58 (+1.05%). RSI 14 a 60.2 con volume spike 0.87x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+1.56% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+1.56% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 91,
-        "tech": 73,
-        "volume": 82,
-        "analyst": 88
+        "breakout": 92,
+        "news": 96,
+        "volume": 73,
+        "analyst": 84,
+        "market": 68
       },
       "catalysts": [
         {
-          "title": "Eli Lilly Just Delivered Another Blowout Quarter. Is This Unstoppable Growth Stock Still a Buy? - Yahoo Finance",
+          "title": "JPMorgan Chase & Co. (JPM) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "JPMorgan Chase & Co. stock outperforms market on strong trading day - MarketWatch",
+          "source": "MarketWatch",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "JPMorgan Chase & Co. (NYSE:JPM) Stock Price Up 1.1% After Analyst Upgrade - MarketBeat",
+          "source": "MarketBeat",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "JPMorgan posts rare profit miss as dealmaking, bond trading lose momentum - Reuters",
+          "source": "Reuters",
+          "time": "Tue, 13 Oct 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            337.86,
+            339.22,
+            338.88,
+            339.9,
+            340.58,
+            341.6,
+            342.62
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            335.79,
+            339.3,
+            343.58,
+            337.04,
+            340.58
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            332.38,
+            334.3,
+            333.53,
+            334.04
+          ]
+        }
+      }
+    },
+    {
+      "id": "usa-v",
+      "ticker": "V",
+      "name": "Visa Inc.",
+      "exchange": "NYSE",
+      "currency": "$",
+      "sector": "Finanza",
+      "marketCap": "$859 Mld",
+      "marketCapRaw": 859.5,
+      "currentPrice": 425.51,
+      "targetPrice": 485.08,
+      "stopLoss": 410.62,
+      "dayChangePct": 2.88,
+      "score": 89,
+      "strength": "Molto Alta",
+      "volumeSpike": "1.15x",
+      "rsi": 72.2,
+      "pe": "Consolidato",
+      "riskReward": "1 : 4.0",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale $425.51 (+2.88%). RSI 14 a 72.2 con volume spike 1.15x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+3.39% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+3.39% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
+      "pillars": {
+        "breakout": 86,
+        "news": 84,
+        "volume": 83,
+        "analyst": 88,
+        "market": 68
+      },
+      "catalysts": [
+        {
+          "title": "Visa Inc. (V) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+          "source": "Yahoo! Finance Canada",
+          "time": "Sun, 01 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Visa Inc Stock (V) Moved Up by 3.14% on Nov 2: What Investors Need To Know - TradingKey",
+          "source": "TradingKey",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Investors Heavily Search Visa Inc. (V): Here is What You Need to Know - Yahoo Finance",
           "source": "Yahoo Finance",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Eli Lilly: Softer Growth Ahead (Rating Downgrade) (NYSE:LLY) - Seeking Alpha",
-          "source": "Seeking Alpha",
+          "title": "Visa Inc. $V Stock Sold by Aware Super Pty Ltd as trustee of Aware Super - MarketBeat",
+          "source": "MarketBeat",
+          "time": "Tue, 03 Nov 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            422.11,
+            423.81,
+            423.38,
+            424.66,
+            425.51,
+            426.79,
+            428.06
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            401.86,
+            400.6,
+            410.54,
+            413.59,
+            425.51
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            369.71,
+            389.27,
+            402.92,
+            404.16
+          ]
+        }
+      }
+    },
+    {
+      "id": "usa-cost",
+      "ticker": "COST",
+      "name": "Costco Wholesale",
+      "exchange": "NASDAQ",
+      "currency": "$",
+      "sector": "Lusso & Consumi",
+      "marketCap": "$457 Mld",
+      "marketCapRaw": 457.8,
+      "currentPrice": 1040.55,
+      "targetPrice": 1186.23,
+      "stopLoss": 1004.13,
+      "dayChangePct": 2.79,
+      "score": 89,
+      "strength": "Molto Alta",
+      "volumeSpike": "1.41x",
+      "rsi": 75.2,
+      "pe": "Consolidato",
+      "riskReward": "1 : 4.0",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale $1040.55 (+2.79%). RSI 14 a 75.2 con volume spike 1.41x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+3.3% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+3.3% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
+      "pillars": {
+        "breakout": 83,
+        "news": 84,
+        "volume": 87,
+        "analyst": 85,
+        "market": 68
+      },
+      "catalysts": [
+        {
+          "title": "Costco (COST) Weighs Special Dividend Amid Strategic Investment Plans for 2027 - GuruFocus",
+          "source": "GuruFocus",
+          "time": "Sat, 31 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Costco Wholesale Stock Is Trading Over $1,000. Here's Why a Stock Split Still May Not Come in 2027. - The Motley Fool",
+          "source": "The Motley Fool",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Musk Predicts “Banger Drugs Coming Out” from Eli Lilly - TIKR.com",
-          "source": "TIKR.com",
+          "title": "$100 Invested In Costco Wholesale 5 Years Ago Would Be Worth This Much Today - Benzinga",
+          "source": "Benzinga",
+          "time": "Fri, 30 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Costco Wholesale Stock Is Trading Over $1,000. Here's Why a Stock Split Still May Not Come in 2027. - Yahoo Finance",
+          "source": "Yahoo Finance",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         }
@@ -1364,13 +1546,13 @@
             "16:00"
           ],
           "values": [
-            1399.7,
-            1405.35,
-            1403.94,
-            1408.17,
-            1410.99,
-            1415.22,
-            1419.46
+            1032.23,
+            1036.39,
+            1035.35,
+            1038.47,
+            1040.55,
+            1043.67,
+            1046.79
           ]
         },
         "5D": {
@@ -1382,11 +1564,11 @@
             "Oggi"
           ],
           "values": [
-            1281.91,
-            1288.3,
-            1373.7,
-            1417.54,
-            1410.99
+            992.13,
+            982.73,
+            996.08,
+            1012.28,
+            1040.55
           ]
         },
         "1M": {
@@ -1397,10 +1579,10 @@
             "Sett 4"
           ],
           "values": [
-            1143.12,
-            1182.62,
-            1240.34,
-            1279.14
+            923.52,
+            959.44,
+            995.53,
+            1005.16
           ]
         }
       }
@@ -1415,22 +1597,28 @@
       "marketCap": "$2.58 Tln",
       "marketCapRaw": 2579.1,
       "currentPrice": 245.63,
-      "targetPrice": 268.96,
+      "targetPrice": 278.79,
       "stopLoss": 237.03,
       "dayChangePct": 2.2,
-      "score": 83,
-      "strength": "Buona",
+      "score": 88,
+      "strength": "Molto Alta",
       "volumeSpike": "1.37x",
       "rsi": 39.8,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.7",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $245.63. RSI a 14 periodi calcolato a 39.8 con volume spike pari a 1.37x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "riskReward": "1 : 3.9",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale $245.63 (+2.2%). RSI 14 a 39.8 con volume spike 1.37x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+2.71% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+2.71% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
       "pillars": {
-        "news": 87,
-        "tech": 82,
-        "volume": 81,
-        "analyst": 79
+        "breakout": 80,
+        "news": 88,
+        "volume": 86,
+        "analyst": 78,
+        "market": 68
       },
       "catalysts": [
         {
@@ -1446,8 +1634,14 @@
           "impact": "Favorevole"
         },
         {
-          "title": "Amazon Stock Rises: What's Going On? - Benzinga",
-          "source": "Benzinga",
+          "title": "Amazon's Report Passed Both Tests I Set for It. I'd Buy More of the Stock Now. - The Motley Fool",
+          "source": "The Motley Fool",
+          "time": "Tue, 03 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Amazon vs. Intel: One AI Stock Is a Gift, the Other Can Wait, Says Top Investor - TipRanks",
+          "source": "TipRanks",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         }
@@ -1506,48 +1700,60 @@
       }
     },
     {
-      "id": "usa-avgo",
-      "ticker": "AVGO",
-      "name": "Broadcom Inc.",
-      "exchange": "NASDAQ",
+      "id": "usa-wmt",
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "exchange": "NYSE",
       "currency": "$",
-      "sector": "Tecnologia",
-      "marketCap": "$1508 Mld",
-      "marketCapRaw": 1508.0,
-      "currentPrice": 322.23,
-      "targetPrice": 351.23,
-      "stopLoss": 310.95,
-      "dayChangePct": -1.18,
-      "score": 82,
-      "strength": "Buona",
-      "volumeSpike": "0.92x",
-      "rsi": 34.6,
+      "sector": "Lusso & Consumi",
+      "marketCap": "$1027 Mld",
+      "marketCapRaw": 1027.9,
+      "currentPrice": 127.69,
+      "targetPrice": 143.01,
+      "stopLoss": 123.22,
+      "dayChangePct": 3.38,
+      "score": 85,
+      "strength": "Alta",
+      "volumeSpike": "1.36x",
+      "rsi": 83.6,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.6",
+      "riskReward": "1 : 3.4",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $322.23. RSI a 14 periodi calcolato a 34.6 con volume spike pari a 0.92x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale $127.69 (+3.38%). RSI 14 a 83.6 con volume spike 1.36x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+3.89% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+3.89% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
       "pillars": {
-        "news": 96,
-        "tech": 81,
-        "volume": 73,
-        "analyst": 75
+        "breakout": 74,
+        "news": 79,
+        "volume": 86,
+        "analyst": 85,
+        "market": 68
       },
       "catalysts": [
         {
-          "title": "Broadcom’s Supply Bottlenecks – Not Demand – Continue to Offer Investors a Discount I Keep Buying - Yahoo Finance",
+          "title": "Walmart Inc Stock (WMT) Moved Up by 3.00% on Nov 2: Facts Behind the Movement - TradingKey",
+          "source": "TradingKey",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Walmart Stock: Is Wall Street Bullish or Bearish? - Yahoo Finance",
           "source": "Yahoo Finance",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Yes, I'm Buying The Tech Crash - Seeking Alpha",
-          "source": "Seeking Alpha",
+          "title": "Walmart (WMT) Stock Price, Chart & Analysis - www.debelegger.nl",
+          "source": "www.debelegger.nl",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "John McGuire sells Broadcom, buys Micron stock - Investing.com",
-          "source": "Investing.com",
+          "title": "Walmart Inc. (WMT) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance Singapore",
+          "source": "Yahoo Finance Singapore",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         }
@@ -1564,13 +1770,13 @@
             "16:00"
           ],
           "values": [
-            319.65,
-            320.94,
-            320.62,
-            321.59,
-            322.23,
-            323.2,
-            324.16
+            126.67,
+            127.18,
+            127.05,
+            127.43,
+            127.69,
+            128.07,
+            128.46
           ]
         },
         "5D": {
@@ -1582,11 +1788,11 @@
             "Oggi"
           ],
           "values": [
-            342.33,
-            351.81,
-            345.0,
-            326.08,
-            322.23
+            119.32,
+            118.77,
+            121.25,
+            123.51,
+            127.69
           ]
         },
         "1M": {
@@ -1597,57 +1803,293 @@
             "Sett 4"
           ],
           "values": [
-            362.51,
-            354.73,
-            334.59,
-            329.17
+            105.07,
+            113.08,
+            118.7,
+            120.29
           ]
         }
       }
     },
     {
-      "id": "usa-pltr",
-      "ticker": "PLTR",
-      "name": "Palantir Technologies",
+      "id": "usa-uber",
+      "ticker": "UBER",
+      "name": "Uber Technologies",
       "exchange": "NYSE",
       "currency": "$",
       "sector": "Tecnologia",
-      "marketCap": "$399 Mld",
-      "marketCapRaw": 399.5,
-      "currentPrice": 178.34,
-      "targetPrice": 193.5,
-      "stopLoss": 172.1,
-      "dayChangePct": -3.13,
-      "score": 81,
-      "strength": "Buona",
-      "volumeSpike": "1.55x",
-      "rsi": 28.4,
+      "marketCap": "$138 Mld",
+      "marketCapRaw": 138.8,
+      "currentPrice": 66.71,
+      "targetPrice": 73.71,
+      "stopLoss": 64.38,
+      "dayChangePct": 2.24,
+      "score": 82,
+      "strength": "Alta",
+      "volumeSpike": "1.09x",
+      "rsi": 35.0,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.4",
+      "riskReward": "1 : 3.0",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $178.34. RSI a 14 periodi calcolato a 28.4 con volume spike pari a 1.55x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale $66.71 (+2.24%). RSI 14 a 35.0 con volume spike 1.09x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+2.75% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+2.75% vs Indice)",
+        "✅ Conferma Intraday: Prezzi e Volumi coerenti"
+      ],
       "pillars": {
-        "news": 82,
-        "tech": 79,
-        "volume": 84,
-        "analyst": 78
+        "breakout": 82,
+        "news": 74,
+        "volume": 76,
+        "analyst": 72,
+        "market": 68
       },
       "catalysts": [
         {
-          "title": "Palantir Technologies (PLTR) to report earnings tomorrow: here is what to expect - Yahoo Finance",
+          "title": "Wall Street Is Betting Big on Uber Ahead of Q3 - Yahoo Finance",
           "source": "Yahoo Finance",
-          "time": "Sun, 01 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Stocks making the biggest moves after hours: Fabrinet, Clorox, Apple, Palantir & more - CNBC",
-          "source": "CNBC",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Palantir Technologies Inc. (PLTR) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-          "source": "Yahoo! Finance Canada",
+          "title": "Uber Technologies Stock Outlook: Is Wall Street Bullish or Bearish? - Barchart.com",
+          "source": "Barchart.com",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Grab: Discount To Uber Makes Little Sense (NASDAQ:GRAB) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Uber Stock Underperforming Ahead of Earnings - Schaeffer's Investment Research",
+          "source": "Schaeffer's Investment Research",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Attenzione / Moderato"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            66.18,
+            66.44,
+            66.38,
+            66.58,
+            66.71,
+            66.91,
+            67.11
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            65.78,
+            65.27,
+            65.74,
+            65.25,
+            66.71
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            69.48,
+            71.5,
+            69.96,
+            66.13
+          ]
+        }
+      }
+    },
+    {
+      "id": "usa-gs",
+      "ticker": "GS",
+      "name": "Goldman Sachs Group",
+      "exchange": "NYSE",
+      "currency": "$",
+      "sector": "Finanza",
+      "marketCap": "$287 Mld",
+      "marketCapRaw": 287.6,
+      "currentPrice": 898.72,
+      "targetPrice": 993.09,
+      "stopLoss": 867.26,
+      "dayChangePct": 0.47,
+      "score": 82,
+      "strength": "Alta",
+      "volumeSpike": "0.82x",
+      "rsi": 51.8,
+      "pe": "Consolidato",
+      "riskReward": "1 : 3.0",
+      "consensus": "Buy",
+      "summary": "Quotazione reale $898.72 (+0.47%). RSI 14 a 51.8 con volume spike 0.82x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+0.98% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+0.98% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
+      "pillars": {
+        "breakout": 81,
+        "news": 88,
+        "volume": 72,
+        "analyst": 73,
+        "market": 68
+      },
+      "catalysts": [
+        {
+          "title": "GS: SEC Form FWP filed by Goldman Sachs Group Inc. - Quantisnow",
+          "source": "Quantisnow",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Is Goldman Sachs Group (GS) Undervalued Following Strong Third Quarter 2026 Results? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Tue, 27 Oct 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "The Goldman Sachs Group, Inc. $GS Shares Bought by Bank Julius Baer & Co. Ltd Zurich - MarketBeat",
+          "source": "MarketBeat",
+          "time": "Tue, 03 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Market Spotlight - Goldman Sachs",
+          "source": "Goldman Sachs",
+          "time": "Wed, 14 Oct 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            891.53,
+            895.13,
+            894.23,
+            896.92,
+            898.72,
+            901.42,
+            904.11
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            911.77,
+            925.17,
+            927.73,
+            894.55,
+            898.72
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            893.46,
+            893.95,
+            875.78,
+            893.28
+          ]
+        }
+      }
+    },
+    {
+      "id": "usa-lly",
+      "ticker": "LLY",
+      "name": "Eli Lilly and Company",
+      "exchange": "NYSE",
+      "currency": "$",
+      "sector": "Healthcare",
+      "marketCap": "$1340 Mld",
+      "marketCapRaw": 1340.4,
+      "currentPrice": 1410.99,
+      "targetPrice": 1552.09,
+      "stopLoss": 1361.61,
+      "dayChangePct": -0.46,
+      "score": 81,
+      "strength": "Buona",
+      "volumeSpike": "1.43x",
+      "rsi": 81.9,
+      "pe": "Consolidato",
+      "riskReward": "1 : 2.9",
+      "consensus": "Buy",
+      "summary": "Quotazione reale $1410.99 (-0.46%). RSI 14 a 81.9 con volume spike 1.43x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; ⚖️ In Linea con l'Indice (+0.05% Alpha).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "⚖️ In Linea con l'Indice (+0.05% Alpha)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
+      "pillars": {
+        "breakout": 72,
+        "news": 95,
+        "volume": 81,
+        "analyst": 87,
+        "market": 68
+      },
+      "catalysts": [
+        {
+          "title": "Eli Lilly Just Delivered Another Blowout Quarter. Is This Unstoppable Growth Stock Still a Buy? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Eli Lilly: Softer Growth Ahead (Rating Downgrade) (NYSE:LLY) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Musk Predicts “Banger Drugs Coming Out” from Eli Lilly - TIKR.com",
+          "source": "TIKR.com",
+          "time": "Mon, 02 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "3 Healthcare Stocks with ‘Strong Buy’ Analyst Ratings and ‘Perfect 10’ Smart Scores - TipRanks",
+          "source": "TipRanks",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
         }
@@ -1664,13 +2106,13 @@
             "16:00"
           ],
           "values": [
-            176.91,
-            177.63,
-            177.45,
-            177.98,
-            178.34,
-            178.88,
-            179.41
+            1399.7,
+            1405.35,
+            1403.94,
+            1408.17,
+            1410.99,
+            1415.22,
+            1419.46
           ]
         },
         "5D": {
@@ -1682,11 +2124,11 @@
             "Oggi"
           ],
           "values": [
-            198.73,
-            196.81,
-            196.42,
-            184.11,
-            178.34
+            1281.91,
+            1288.3,
+            1373.7,
+            1417.54,
+            1410.99
           ]
         },
         "1M": {
@@ -1697,10 +2139,10 @@
             "Sett 4"
           ],
           "values": [
-            189.4,
-            209.0,
-            194.15,
-            198.84
+            1143.12,
+            1182.62,
+            1240.34,
+            1279.14
           ]
         }
       }
@@ -1715,7 +2157,7 @@
       "marketCap": "$26 Mld",
       "marketCapRaw": 26.8,
       "currentPrice": 62.34,
-      "targetPrice": 67.64,
+      "targetPrice": 68.57,
       "stopLoss": 60.16,
       "dayChangePct": 0.42,
       "score": 81,
@@ -1723,33 +2165,45 @@
       "volumeSpike": "0.91x",
       "rsi": 26.3,
       "pe": "Consolidato",
-      "riskReward": "1 : 2.4",
+      "riskReward": "1 : 2.9",
       "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $62.34. RSI a 14 periodi calcolato a 26.3 con volume spike pari a 0.91x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
+      "summary": "Quotazione reale $62.34 (+0.42%). RSI 14 a 26.3 con volume spike 0.91x. Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa Elevata (+0.93% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa Elevata (+0.93% vs Indice)",
+        "ℹ️ Movimento in fase di consolidamento"
+      ],
       "pillars": {
-        "news": 92,
-        "tech": 79,
+        "breakout": 79,
+        "news": 83,
         "volume": 73,
-        "analyst": 75
+        "analyst": 72,
+        "market": 68
       },
       "catalysts": [
         {
-          "title": "Netflix, Inc. (NFLX) Is a Trending Stock: Facts to Know Before Betting on It - Yahoo Finance",
+          "title": "Why Netflix Stock Could Double From This Dip - Yahoo Finance",
           "source": "Yahoo Finance",
-          "time": "Mon, 12 Oct 2026",
+          "time": "Sun, 01 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Netflix Shares Are Down 9% Since Earnings. Is the Stock a Buy? - Morningstar",
-          "source": "Morningstar",
-          "time": "Wed, 28 Oct 2026",
+          "title": "Why Now Is Not the Time to Load Up on Netflix Stock - Barchart.com",
+          "source": "Barchart.com",
+          "time": "Sun, 01 Nov 2026",
           "impact": "Favorevole"
         },
         {
-          "title": "Netflix, Inc. $NFLX Stock: Heritage Investors Management Corp Boosts Holdings - MarketBeat",
-          "source": "MarketBeat",
+          "title": "Prediction: Netflix Will Begin Paying a Dividend in 2027 and Beat the S&P 500 During the Next Decade - The Motley Fool",
+          "source": "The Motley Fool",
           "time": "Mon, 02 Nov 2026",
           "impact": "Favorevole"
+        },
+        {
+          "title": "Netflix's U.S. Audience Engagement Problem Is Hurting The Stock (Rating Downgrade) - Seeking Alpha",
+          "source": "Seeking Alpha",
+          "time": "Sun, 01 Nov 2026",
+          "impact": "Attenzione / Moderato"
         }
       ],
       "chartData": {
@@ -1801,206 +2255,6 @@
             70.61,
             69.85,
             63.9
-          ]
-        }
-      }
-    },
-    {
-      "id": "usa-msft",
-      "ticker": "MSFT",
-      "name": "Microsoft Corporation",
-      "exchange": "NASDAQ",
-      "currency": "$",
-      "sector": "Tecnologia",
-      "marketCap": "$3.77 Tln",
-      "marketCapRaw": 3767.9,
-      "currentPrice": 507.12,
-      "targetPrice": 547.69,
-      "stopLoss": 489.37,
-      "dayChangePct": -2.83,
-      "score": 80,
-      "strength": "Buona",
-      "volumeSpike": "1.55x",
-      "rsi": 27.8,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.3",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $507.12. RSI a 14 periodi calcolato a 27.8 con volume spike pari a 1.55x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 75,
-        "tech": 79,
-        "volume": 84,
-        "analyst": 84
-      },
-      "catalysts": [
-        {
-          "title": "It would shock you how bearish Wall Street is on hyperscalers Microsoft, Amazon, Alphabet, Meta and Oracle - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Attenzione / Moderato"
-        },
-        {
-          "title": "Does Microsoft's Prudent Approach to the AI Infrastructure Buildout Make the Stock a Buy? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Microsoft: The AI Race Has A Winner, And The Market Completely Missed It (NASDAQ:MSFT) - Seeking Alpha",
-          "source": "Seeking Alpha",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Attenzione / Moderato"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            503.06,
-            505.09,
-            504.58,
-            506.11,
-            507.12,
-            508.64,
-            510.16
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            531.33,
-            531.01,
-            530.14,
-            521.91,
-            507.12
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            525.18,
-            541.15,
-            533.52,
-            532.6
-          ]
-        }
-      }
-    },
-    {
-      "id": "usa-amd",
-      "ticker": "AMD",
-      "name": "Advanced Micro Devices",
-      "exchange": "NASDAQ",
-      "currency": "$",
-      "sector": "Tecnologia",
-      "marketCap": "$756 Mld",
-      "marketCapRaw": 756.3,
-      "currentPrice": 466.84,
-      "targetPrice": 501.85,
-      "stopLoss": 450.5,
-      "dayChangePct": -7.52,
-      "score": 79,
-      "strength": "Buona",
-      "volumeSpike": "1.5x",
-      "rsi": 29.3,
-      "pe": "Consolidato",
-      "riskReward": "1 : 2.1",
-      "consensus": "Buy",
-      "summary": "Quotazione reale aggiornata a $466.84. RSI a 14 periodi calcolato a 29.3 con volume spike pari a 1.5x. Sentiment mediatico positivo guidato dalle ultime notizie reali di mercato.",
-      "pillars": {
-        "news": 76,
-        "tech": 79,
-        "volume": 84,
-        "analyst": 75
-      },
-      "catalysts": [
-        {
-          "title": "Ahead of Advanced Micro Devices Earnings, Here’s What Barchart Data Says Comes Next for AMD Stock - Barchart.com",
-          "source": "Barchart.com",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "AMD, Nvidia, Micron haven't sold off enough to say market is oversold: LossDog's Sosnoff - CNBC",
-          "source": "CNBC",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Attenzione / Moderato"
-        },
-        {
-          "title": "META_TITLE_QUOTE - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Mon, 02 Nov 2026",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            463.11,
-            464.97,
-            464.51,
-            465.91,
-            466.84,
-            468.24,
-            469.64
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            560.26,
-            578.44,
-            566.42,
-            504.8,
-            466.84
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            631.75,
-            594.24,
-            538.05,
-            531.28
           ]
         }
       }

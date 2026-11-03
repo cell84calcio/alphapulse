@@ -217,17 +217,17 @@
       </div>
     </header>
 
-    <!-- Banner Metodologia del Modello Quantitativo -->
+    <!-- Banner Metodologia del Modello Quantitativo v5.0 -->
     <section class="methodology-banner">
       <div class="methodology-info">
-        <div class="badge model-tag"><i class="fa-solid fa-brain"></i> Modello Quantitativo Multi-Fattoriale "AlphaMomentum 360"</div>
-        <p>I 10 titoli selezionati per questa view hanno una capitalizzazione superiore a <strong>10 Miliardi</strong> e combinano 4 pilastri analitici odierni: <strong>News Sentiment NLP (30%)</strong>, <strong>Breakout Tecnico &amp; RSI (25%)</strong>, <strong>Flussi Istituzionali / Dark Pools (25%)</strong> e <strong>Revisione Target Analisti (20%)</strong>.</p>
+        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v5.0 &bull; Pesi Calibrati &amp; 3 Controlli di Rischio</div>
+        <p>I 10 titoli sono selezionati su oltre <strong>50 large cap (&gt; 10 Mld)</strong> con i 5 pesi ponderati: <strong>Breakout &amp; RSI (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
       </div>
       <div class="methodology-pillars">
-        <div class="pillar-chip"><span class="dot green"></span> NLP News Positive</div>
-        <div class="pillar-chip"><span class="dot cyan"></span> RSI Momentum 55-68</div>
-        <div class="pillar-chip"><span class="dot purple"></span> Spike Volumi &gt;1.4x</div>
-        <div class="pillar-chip"><span class="dot amber"></span> Consensus Buy/Strong Buy</div>
+        <div class="pillar-chip" title="Esclusione scommesse binarie"><span class="dot green"></span> 🛡️ No Rischio Binario</div>
+        <div class="pillar-chip" title="Alpha vs S&P500 / EuroStoxx50"><span class="dot cyan"></span> 📈 Forza Relativa vs Indice</div>
+        <div class="pillar-chip" title="Verifica Prezzi + Volumi reali"><span class="dot purple"></span> ✅ Conferma Intraday</div>
+        <div class="pillar-chip" title="Filtro Regime VIX"><span class="dot amber"></span> ⚡ VIX / Market Regime</div>
       </div>
     </section>
 
@@ -320,39 +320,52 @@
               <div class="score-headline">Forte Probabilità di Chiusura Positiva Odierna</div>
               <p id="mRationaleSummary">Il titolo mostra una combinazione rara di catalizzatori istituzionali, breakout grafico e sentiment mediatico eccellente.</p>
               
-              <!-- 4 Barre dei Pilastri -->
+              <!-- 5 Barre dei Pilastri con Pesi Calibrati -->
               <div class="pillars-breakdown-grid">
                 <div class="pillar-progress-item">
                   <div class="pillar-label-row">
-                    <span>NLP News &amp; Web Sentiment</span>
-                    <strong id="mPillarNews">96/100</strong>
+                    <span>Breakout, RSI &amp; Volumi (30%)</span>
+                    <strong id="mPillarTech">--/100</strong>
                   </div>
-                  <div class="bar-track"><div class="bar-fill bg-emerald" id="mBarNews" style="width: 96%;"></div></div>
+                  <div class="bar-track"><div class="bar-fill bg-cyan" id="mBarTech" style="width: 85%;"></div></div>
                 </div>
 
                 <div class="pillar-progress-item">
                   <div class="pillar-label-row">
-                    <span>Momentum Tecnico (EMA/RSI)</span>
-                    <strong id="mPillarTech">91/100</strong>
+                    <span>News Sentiment NLP (25%)</span>
+                    <strong id="mPillarNews">--/100</strong>
                   </div>
-                  <div class="bar-track"><div class="bar-fill bg-cyan" id="mBarTech" style="width: 91%;"></div></div>
+                  <div class="bar-track"><div class="bar-fill bg-emerald" id="mBarNews" style="width: 85%;"></div></div>
                 </div>
 
                 <div class="pillar-progress-item">
                   <div class="pillar-label-row">
-                    <span>Flussi Volumi &amp; Dark Pools</span>
-                    <strong id="mPillarVolume">93/100</strong>
+                    <span>Flussi Istituzionali (20%)</span>
+                    <strong id="mPillarVolume">--/100</strong>
                   </div>
-                  <div class="bar-track"><div class="bar-fill bg-purple" id="mBarVolume" style="width: 93%;"></div></div>
+                  <div class="bar-track"><div class="bar-fill bg-purple" id="mBarVolume" style="width: 85%;"></div></div>
                 </div>
 
                 <div class="pillar-progress-item">
                   <div class="pillar-label-row">
-                    <span>Consensus Revisione Analisti</span>
-                    <strong id="mPillarAnalyst">95/100</strong>
+                    <span>Revisioni Analisti (15%)</span>
+                    <strong id="mPillarAnalyst">--/100</strong>
                   </div>
-                  <div class="bar-track"><div class="bar-fill bg-amber" id="mBarAnalyst" style="width: 95%;"></div></div>
+                  <div class="bar-track"><div class="bar-fill bg-amber" id="mBarAnalyst" style="width: 85%;"></div></div>
                 </div>
+
+                <div class="pillar-progress-item">
+                  <div class="pillar-label-row">
+                    <span>Contesto Mercato &amp; VIX (10%)</span>
+                    <strong id="mPillarMarket">--/100</strong>
+                  </div>
+                  <div class="bar-track"><div class="bar-fill bg-emerald" id="mBarMarket" style="width: 85%;"></div></div>
+                </div>
+              </div>
+
+              <!-- 3 Controlli di Rischio Istituzionali -->
+              <div class="risk-controls-box" style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 8px;" id="mControlsContainer">
+                <!-- Generato da JS: Rischio Binario, Forza Relativa, Conferma Intraday -->
               </div>
             </div>
           </div>

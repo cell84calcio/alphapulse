@@ -2080,10 +2080,13 @@ const elements = {
   mPillarTech: document.getElementById('mPillarTech'),
   mPillarVolume: document.getElementById('mPillarVolume'),
   mPillarAnalyst: document.getElementById('mPillarAnalyst'),
+  mPillarMarket: document.getElementById('mPillarMarket'),
   mBarNews: document.getElementById('mBarNews'),
   mBarTech: document.getElementById('mBarTech'),
   mBarVolume: document.getElementById('mBarVolume'),
   mBarAnalyst: document.getElementById('mBarAnalyst'),
+  mBarMarket: document.getElementById('mBarMarket'),
+  mControlsContainer: document.getElementById('mControlsContainer'),
   mStopLoss: document.getElementById('mStopLoss'),
   mRiskReward: document.getElementById('mRiskReward'),
   mRsi: document.getElementById('mRsi'),
@@ -2356,11 +2359,11 @@ function renderGrid(stocks) {
             </div>
           </div>
 
-          <!-- Indicatori Chiave Reali -->
+          <!-- Indicatori Chiave Reali & Controlli -->
           <div class="card-signals-row">
             <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Spike Vol. <strong>${stock.volumeSpike}</strong></span>
             <span class="signal-pill"><i class="fa-solid fa-gauge-high"></i> RSI <strong>${stock.rsi}</strong></span>
-            <span class="signal-pill"><i class="fa-solid fa-scale-balanced"></i> R/R <strong>${stock.riskReward}</strong></span>
+            ${stock.controls && stock.controls[1] ? `<span class="signal-pill" style="color:var(--color-cyan); border-color:rgba(6,182,212,0.3);"><i class="fa-solid fa-bolt"></i> ${stock.controls[1]}</span>` : ''}
           </div>
 
           <!-- Catalizzatore del Giorno / Notizie Reali -->
@@ -2462,18 +2465,37 @@ function openStockDetail(stockId) {
   elements.mScore.textContent = `${stock.score}%`;
   elements.mRationaleSummary.textContent = stock.summary;
 
-  // Pilastri
-  elements.mPillarNews.textContent = `${stock.pillars.news}/100`;
-  elements.mBarNews.style.width = `${stock.pillars.news}%`;
+  // 5 Pilastri con Pesi Calibrati
+  const p = stock.pillars || {};
+  const techScore = p.breakout !== undefined ? p.breakout : (p.tech || 80);
+  elements.mPillarTech.textContent = `${techScore}/100`;
+  elements.mBarTech.style.width = `${techScore}%`;
 
-  elements.mPillarTech.textContent = `${stock.pillars.tech}/100`;
-  elements.mBarTech.style.width = `${stock.pillars.tech}%`;
+  elements.mPillarNews.textContent = `${p.news || 80}/100`;
+  elements.mBarNews.style.width = `${p.news || 80}%`;
 
-  elements.mPillarVolume.textContent = `${stock.pillars.volume}/100`;
-  elements.mBarVolume.style.width = `${stock.pillars.volume}%`;
+  elements.mPillarVolume.textContent = `${p.volume || 80}/100`;
+  elements.mBarVolume.style.width = `${p.volume || 80}%`;
 
-  elements.mPillarAnalyst.textContent = `${stock.pillars.analyst}/100`;
-  elements.mBarAnalyst.style.width = `${stock.pillars.analyst}%`;
+  elements.mPillarAnalyst.textContent = `${p.analyst || 80}/100`;
+  elements.mBarAnalyst.style.width = `${p.analyst || 80}%`;
+
+  if (elements.mPillarMarket) {
+    const mScore = p.market || 82;
+    elements.mPillarMarket.textContent = `${mScore}/100`;
+    elements.mBarMarket.style.width = `${mScore}%`;
+  }
+
+  // 3 Controlli di Rischio Istituzionali
+  if (elements.mControlsContainer) {
+    let ctrlHtml = '';
+    if (stock.controls && stock.controls.length > 0) {
+      stock.controls.forEach(c => {
+        ctrlHtml += `<span class="signal-pill high-signal" style="font-size:0.75rem; padding:4px 10px;">${c}</span>`;
+      });
+    }
+    elements.mControlsContainer.innerHTML = ctrlHtml;
+  }
 
   // Metriche
   elements.mStopLoss.textContent = `${stock.currency}${stock.stopLoss.toFixed(2)} (-${calculateUpside(stock.stopLoss, stock.currentPrice)}%)`;
