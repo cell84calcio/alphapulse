@@ -25,7 +25,83 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20261103-v8">
+  <style>
+    /* Critical CSS: Floating Pill Dock Bar sempre in primo piano */
+    .bottom-nav-bar {
+      position: fixed !important;
+      left: 50% !important;
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+      transform: translateX(-50%) !important;
+      z-index: 980 !important;
+      width: max-content;
+      max-width: calc(100vw - 20px);
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(11, 17, 30, 0.90);
+      backdrop-filter: blur(22px) saturate(180%);
+      -webkit-backdrop-filter: blur(22px) saturate(180%);
+      border: 1px solid rgba(16, 185, 129, 0.38);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 25px rgba(16, 185, 129, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    }
+    .bottom-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .bottom-nav-item {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #94a3b8;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .bottom-nav-item.active {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #04130d;
+      box-shadow: 0 4px 16px rgba(16, 185, 129, 0.45);
+    }
+    .bnav-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #cbd5e1;
+      line-height: 1;
+    }
+    .bottom-nav-item.active .bnav-badge {
+      background: rgba(4, 19, 13, 0.25);
+      color: #04130d;
+    }
+    @media (max-width: 520px) {
+      .bottom-nav-bar {
+        bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+        padding: 5px;
+        width: calc(100vw - 20px);
+        max-width: 420px;
+      }
+      .bottom-nav-inner { width: 100%; gap: 4px; }
+      .bottom-nav-item { flex: 1; padding: 9px 8px; gap: 5px; font-size: 0.76rem; }
+      .bnav-badge { font-size: 0.64rem; padding: 2px 5px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -599,20 +675,20 @@
 
   </div>
 
-  <!-- Barra di Navigazione Fissa in Basso (EuroStoxx 50 / S&P 500 / Riepilogo) -->
+  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 50 / S&P 500 / Riepilogo) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
-      <button class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
+      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 50</span>
         <span class="bnav-badge">10</span>
       </button>
-      <button class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
+      <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
         <span class="bnav-icon">🇺🇸</span>
         <span class="bnav-label">S&amp;P 500</span>
         <span class="bnav-badge">10</span>
       </button>
-      <button class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
+      <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
         <span class="bnav-badge">20</span>
@@ -621,6 +697,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js"></script>
+  <script src="app.js?v=20261103-v8"></script>
 </body>
 </html>
