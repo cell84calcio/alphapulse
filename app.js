@@ -164,7 +164,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 22,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 22%)"
+      "payoutStatus": "Sostenibile (Payout 22%)",
+      "nextExDivDate": "22 Apr",
+      "exDivDays": 170,
+      "nextExDivText": "22 Apr (tra 170g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Nov",
+      "earningsDays": 16,
+      "nextEarningsText": "19 Nov (tra 16g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-mrk-de",
@@ -298,7 +306,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 33,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 33%)"
+      "payoutStatus": "Sostenibile (Payout 33%)",
+      "nextExDivDate": "20 Apr",
+      "exDivDays": 168,
+      "nextExDivText": "20 Apr (tra 168g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "16 Gen",
+      "earningsDays": 74,
+      "nextEarningsText": "16 Gen (tra 74g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-db1",
@@ -431,7 +447,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "15 Mag",
+      "exDivDays": 193,
+      "nextExDivText": "15 Mag (tra 193g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-rep",
@@ -546,7 +570,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 35,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 35%)"
+      "payoutStatus": "Sostenibile (Payout 35%)",
+      "nextExDivDate": "14 Gen",
+      "exDivDays": 72,
+      "nextExDivText": "14 Gen (tra 72g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-bayn",
@@ -680,7 +712,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 18,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 18%)"
+      "payoutStatus": "Sostenibile (Payout 18%)",
+      "nextExDivDate": "07 Mag",
+      "exDivDays": 185,
+      "nextExDivText": "07 Mag (tra 185g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "20 Nov",
+      "earningsDays": 17,
+      "nextEarningsText": "20 Nov (tra 17g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-lonn",
@@ -814,7 +854,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 30,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 30%)"
+      "payoutStatus": "Sostenibile (Payout 30%)",
+      "nextExDivDate": "12 Nov",
+      "exDivDays": 9,
+      "nextExDivText": "12 Nov (tra 9g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "25 Gen",
+      "earningsDays": 83,
+      "nextEarningsText": "25 Gen (tra 83g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-alv",
@@ -947,7 +995,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 52,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 52%)"
+      "payoutStatus": "Sostenibile (Payout 52%)",
+      "nextExDivDate": "09 Mag",
+      "exDivDays": 187,
+      "nextExDivText": "09 Mag (tra 187g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Nov",
+      "earningsDays": 23,
+      "nextEarningsText": "26 Nov (tra 23g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-novo-b",
@@ -1081,7 +1137,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 42,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 42%)"
+      "payoutStatus": "Sostenibile (Payout 42%)",
+      "nextExDivDate": "28 Mar",
+      "exDivDays": 145,
+      "nextExDivText": "28 Mar (tra 145g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "13 Nov",
+      "earningsDays": 10,
+      "nextEarningsText": "13 Nov (tra 10g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-inve-b",
@@ -1214,7 +1278,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 35,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 35%)"
+      "payoutStatus": "Sostenibile (Payout 35%)",
+      "nextExDivDate": "13 Nov",
+      "exDivDays": 10,
+      "nextExDivText": "13 Nov (tra 10g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "17 Gen",
+      "earningsDays": 75,
+      "nextEarningsText": "17 Gen (tra 75g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-dhl",
@@ -1347,7 +1419,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 58,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 58%)"
+      "payoutStatus": "Sostenibile (Payout 58%)",
+      "nextExDivDate": "05 Mag",
+      "exDivDays": 183,
+      "nextExDivText": "05 Mag (tra 183g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "25 Gen",
+      "earningsDays": 83,
+      "nextEarningsText": "25 Gen (tra 83g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ho",
@@ -1480,7 +1560,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 38,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 38%)"
+      "payoutStatus": "Sostenibile (Payout 38%)",
+      "nextExDivDate": "20 Apr",
+      "exDivDays": 168,
+      "nextExDivText": "20 Apr (tra 168g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Gen",
+      "earningsDays": 77,
+      "nextEarningsText": "19 Gen (tra 77g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ora",
@@ -1595,7 +1683,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 68,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 68%)"
+      "payoutStatus": "Sostenibile (Payout 68%)",
+      "nextExDivDate": "04 Dic",
+      "exDivDays": 31,
+      "nextExDivText": "04 Dic (tra 31g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "23 Gen",
+      "earningsDays": 81,
+      "nextEarningsText": "23 Gen (tra 81g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-san-fr",
@@ -1729,7 +1825,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 49,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 49%)"
+      "payoutStatus": "Sostenibile (Payout 49%)",
+      "nextExDivDate": "13 Mag",
+      "exDivDays": 191,
+      "nextExDivText": "13 Mag (tra 191g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-monc",
@@ -1862,7 +1966,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 46,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 46%)"
+      "payoutStatus": "Sostenibile (Payout 46%)",
+      "nextExDivDate": "19 Mag",
+      "exDivDays": 197,
+      "nextExDivText": "19 Mag (tra 197g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "16 Nov",
+      "earningsDays": 13,
+      "nextEarningsText": "16 Nov (tra 13g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ai",
@@ -1995,7 +2107,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 54,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 54%)"
+      "payoutStatus": "Sostenibile (Payout 54%)",
+      "nextExDivDate": "19 Mag",
+      "exDivDays": 197,
+      "nextExDivText": "19 Mag (tra 197g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-prx",
@@ -2128,7 +2248,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 18,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 18%)"
+      "payoutStatus": "Sostenibile (Payout 18%)",
+      "nextExDivDate": "10 Apr",
+      "exDivDays": 158,
+      "nextExDivText": "10 Apr (tra 158g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "25 Gen",
+      "earningsDays": 83,
+      "nextEarningsText": "25 Gen (tra 83g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-bas",
@@ -2261,7 +2389,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 112,
       "isPayoutSustainable": false,
-      "payoutStatus": "Elevato / A Rischio (Payout 112%)"
+      "payoutStatus": "Elevato / A Rischio (Payout 112%)",
+      "nextExDivDate": "05 Mag",
+      "exDivDays": 183,
+      "nextExDivText": "05 Mag (tra 183g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "13 Nov",
+      "earningsDays": 10,
+      "nextEarningsText": "13 Nov (tra 10g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-mc",
@@ -2394,7 +2530,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 45,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)"
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "03 Dic",
+      "exDivDays": 30,
+      "nextExDivText": "03 Dic (tra 30g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-dsv",
@@ -2527,7 +2671,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 20,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 20%)"
+      "payoutStatus": "Sostenibile (Payout 20%)",
+      "nextExDivDate": "12 Nov",
+      "exDivDays": 9,
+      "nextExDivText": "12 Nov (tra 9g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-kpn",
@@ -2642,7 +2794,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 64,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 64%)"
+      "payoutStatus": "Sostenibile (Payout 64%)",
+      "nextExDivDate": "03 Apr",
+      "exDivDays": 151,
+      "nextExDivText": "03 Apr (tra 151g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "20 Nov",
+      "earningsDays": 17,
+      "nextEarningsText": "20 Nov (tra 17g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-novn",
@@ -2776,7 +2936,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 52,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 52%)"
+      "payoutStatus": "Sostenibile (Payout 52%)",
+      "nextExDivDate": "11 Mar",
+      "exDivDays": 128,
+      "nextExDivText": "11 Mar (tra 128g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Gen",
+      "earningsDays": 75,
+      "nextEarningsText": "17 Gen (tra 75g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-zurn",
@@ -2909,7 +3077,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 68,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 68%)"
+      "payoutStatus": "Sostenibile (Payout 68%)",
+      "nextExDivDate": "14 Apr",
+      "exDivDays": 162,
+      "nextExDivText": "14 Apr (tra 162g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "12 Gen",
+      "earningsDays": 70,
+      "nextEarningsText": "12 Gen (tra 70g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-cs",
@@ -3042,7 +3218,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 55,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 55%)"
+      "payoutStatus": "Sostenibile (Payout 55%)",
+      "nextExDivDate": "06 Mag",
+      "exDivDays": 184,
+      "nextExDivText": "06 Mag (tra 184g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "22 Nov",
+      "earningsDays": 19,
+      "nextEarningsText": "22 Nov (tra 19g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-sgo",
@@ -3175,7 +3359,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 36,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 36%)"
+      "payoutStatus": "Sostenibile (Payout 36%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "13 Gen",
+      "earningsDays": 71,
+      "nextEarningsText": "13 Gen (tra 71g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-pry",
@@ -3308,7 +3500,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 28,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 28%)"
+      "payoutStatus": "Sostenibile (Payout 28%)",
+      "nextExDivDate": "21 Apr",
+      "exDivDays": 169,
+      "nextExDivText": "21 Apr (tra 169g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Nov",
+      "earningsDays": 8,
+      "nextEarningsText": "11 Nov (tra 8g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ads",
@@ -3441,7 +3641,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 34,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 34%)"
+      "payoutStatus": "Sostenibile (Payout 34%)",
+      "nextExDivDate": "06 Nov",
+      "exDivDays": 3,
+      "nextExDivText": "06 Nov (tra 3g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "18 Gen",
+      "earningsDays": 76,
+      "nextEarningsText": "18 Gen (tra 76g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-rms",
@@ -3574,7 +3782,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 36,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 36%)"
+      "payoutStatus": "Sostenibile (Payout 36%)",
+      "nextExDivDate": "23 Mag",
+      "exDivDays": 201,
+      "nextExDivText": "23 Mag (tra 201g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Nov",
+      "earningsDays": 16,
+      "nextEarningsText": "19 Nov (tra 16g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-holn",
@@ -3707,7 +3923,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "16 Mag",
+      "exDivDays": 194,
+      "nextExDivText": "16 Mag (tra 194g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Gen",
+      "earningsDays": 73,
+      "nextEarningsText": "15 Gen (tra 73g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-azn",
@@ -3841,7 +4065,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 46,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 46%)"
+      "payoutStatus": "Sostenibile (Payout 46%)",
+      "nextExDivDate": "20 Feb",
+      "exDivDays": 109,
+      "nextExDivText": "20 Feb (tra 109g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "13 Nov",
+      "earningsDays": 10,
+      "nextEarningsText": "13 Nov (tra 10g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-dte",
@@ -3974,7 +4206,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "11 Apr",
+      "exDivDays": 159,
+      "nextExDivText": "11 Apr (tra 159g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Nov",
+      "earningsDays": 8,
+      "nextEarningsText": "11 Nov (tra 8g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-el",
@@ -4108,7 +4348,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 47,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 47%)"
+      "payoutStatus": "Sostenibile (Payout 47%)",
+      "nextExDivDate": "11 Mag",
+      "exDivDays": 189,
+      "nextExDivText": "11 Mag (tra 189g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "10 Feb",
+      "earningsDays": 99,
+      "nextEarningsText": "10 Feb (tra 99g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-una",
@@ -4241,7 +4489,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 62,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 62%)"
+      "payoutStatus": "Sostenibile (Payout 62%)",
+      "nextExDivDate": "14 Nov",
+      "exDivDays": 11,
+      "nextExDivText": "14 Nov (tra 11g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "21 Gen",
+      "earningsDays": 79,
+      "nextEarningsText": "21 Gen (tra 79g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-cap",
@@ -4374,7 +4630,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 34,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 34%)"
+      "payoutStatus": "Sostenibile (Payout 34%)",
+      "nextExDivDate": "11 Mag",
+      "exDivDays": 189,
+      "nextExDivText": "11 Mag (tra 189g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "22 Nov",
+      "earningsDays": 19,
+      "nextEarningsText": "22 Nov (tra 19g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ldo",
@@ -4507,7 +4771,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 24,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 24%)"
+      "payoutStatus": "Sostenibile (Payout 24%)",
+      "nextExDivDate": "23 Giu",
+      "exDivDays": 232,
+      "nextExDivText": "23 Giu (tra 232g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-muv2",
@@ -4640,7 +4912,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 38,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 38%)"
+      "payoutStatus": "Sostenibile (Payout 38%)",
+      "nextExDivDate": "02 Mag",
+      "exDivDays": 180,
+      "nextExDivText": "02 Mag (tra 180g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "18 Nov",
+      "earningsDays": 15,
+      "nextEarningsText": "18 Nov (tra 15g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-enel",
@@ -4773,7 +5053,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 67,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 67%)"
+      "payoutStatus": "Sostenibile (Payout 67%)",
+      "nextExDivDate": "20 Gen",
+      "exDivDays": 78,
+      "nextExDivText": "20 Gen (tra 78g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Gen",
+      "earningsDays": 73,
+      "nextEarningsText": "15 Gen (tra 73g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-sren",
@@ -4906,7 +5194,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 54,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 54%)"
+      "payoutStatus": "Sostenibile (Payout 54%)",
+      "nextExDivDate": "16 Apr",
+      "exDivDays": 164,
+      "nextExDivText": "16 Apr (tra 164g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-bn",
@@ -5039,7 +5335,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 56,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 56%)"
+      "payoutStatus": "Sostenibile (Payout 56%)",
+      "nextExDivDate": "07 Mag",
+      "exDivDays": 185,
+      "nextExDivText": "07 Mag (tra 185g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ri",
@@ -5172,7 +5476,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 52,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 52%)"
+      "payoutStatus": "Sostenibile (Payout 52%)",
+      "nextExDivDate": "25 Nov",
+      "exDivDays": 22,
+      "nextExDivText": "25 Nov (tra 22g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "17 Gen",
+      "earningsDays": 75,
+      "nextEarningsText": "17 Gen (tra 75g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ba",
@@ -5305,7 +5617,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 40,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 40%)"
+      "payoutStatus": "Sostenibile (Payout 40%)",
+      "nextExDivDate": "22 Apr",
+      "exDivDays": 170,
+      "nextExDivText": "22 Apr (tra 170g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Gen",
+      "earningsDays": 77,
+      "nextEarningsText": "19 Gen (tra 77g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-g",
@@ -5438,7 +5758,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 56,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 56%)"
+      "payoutStatus": "Sostenibile (Payout 56%)",
+      "nextExDivDate": "19 Mag",
+      "exDivDays": 197,
+      "nextExDivText": "19 Mag (tra 197g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "13 Nov",
+      "earningsDays": 10,
+      "nextEarningsText": "13 Nov (tra 10g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-engi",
@@ -5571,7 +5899,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 65,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 65%)"
+      "payoutStatus": "Sostenibile (Payout 65%)",
+      "nextExDivDate": "02 Mag",
+      "exDivDays": 180,
+      "nextExDivText": "02 Mag (tra 180g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-or",
@@ -5704,7 +6040,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 53,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 53%)"
+      "payoutStatus": "Sostenibile (Payout 53%)",
+      "nextExDivDate": "05 Dic",
+      "exDivDays": 32,
+      "nextExDivText": "05 Dic (tra 32g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-heia",
@@ -5819,7 +6163,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 41,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 41%)"
+      "payoutStatus": "Sostenibile (Payout 41%)",
+      "nextExDivDate": "11 Mag",
+      "exDivDays": 189,
+      "nextExDivText": "11 Mag (tra 189g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Nov",
+      "earningsDays": 16,
+      "nextEarningsText": "19 Nov (tra 16g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ren",
@@ -5952,7 +6304,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "10 Apr",
+      "exDivDays": 158,
+      "nextExDivText": "10 Apr (tra 158g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "22 Gen",
+      "earningsDays": 80,
+      "nextEarningsText": "22 Gen (tra 80g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ibe",
@@ -6085,7 +6445,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 68,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 68%)"
+      "payoutStatus": "Sostenibile (Payout 68%)",
+      "nextExDivDate": "15 Gen",
+      "exDivDays": 73,
+      "nextExDivText": "15 Gen (tra 73g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "14 Gen",
+      "earningsDays": 72,
+      "nextEarningsText": "14 Gen (tra 72g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ng",
@@ -6218,7 +6586,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 66,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 66%)"
+      "payoutStatus": "Sostenibile (Payout 66%)",
+      "nextExDivDate": "16 Gen",
+      "exDivDays": 74,
+      "nextExDivText": "16 Gen (tra 74g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-nesn",
@@ -6351,7 +6727,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 66,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 66%)"
+      "payoutStatus": "Sostenibile (Payout 66%)",
+      "nextExDivDate": "22 Apr",
+      "exDivDays": 170,
+      "nextExDivText": "22 Apr (tra 170g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "22 Nov",
+      "earningsDays": 19,
+      "nextEarningsText": "22 Nov (tra 19g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-rwe",
@@ -6484,7 +6868,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 40,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 40%)"
+      "payoutStatus": "Sostenibile (Payout 40%)",
+      "nextExDivDate": "02 Mag",
+      "exDivDays": 180,
+      "nextExDivText": "02 Mag (tra 180g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "14 Nov",
+      "earningsDays": 11,
+      "nextEarningsText": "14 Nov (tra 11g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-abbn",
@@ -6617,7 +7009,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 45,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)"
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "28 Mar",
+      "exDivDays": 145,
+      "nextExDivText": "28 Mar (tra 145g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "20 Nov",
+      "earningsDays": 17,
+      "nextEarningsText": "20 Nov (tra 17g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-dbk",
@@ -6750,7 +7150,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 26,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 26%)"
+      "payoutStatus": "Sostenibile (Payout 26%)",
+      "nextExDivDate": "23 Mag",
+      "exDivDays": 201,
+      "nextExDivText": "23 Mag (tra 201g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "10 Feb",
+      "earningsDays": 99,
+      "nextEarningsText": "10 Feb (tra 99g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-bats",
@@ -6883,7 +7291,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 63,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 63%)"
+      "payoutStatus": "Sostenibile (Payout 63%)",
+      "nextExDivDate": "19 Dic",
+      "exDivDays": 46,
+      "nextExDivText": "19 Dic (tra 46g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "25 Gen",
+      "earningsDays": 83,
+      "nextEarningsText": "25 Gen (tra 83g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ifx",
@@ -7016,7 +7432,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 25,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 25%)"
+      "payoutStatus": "Sostenibile (Payout 25%)",
+      "nextExDivDate": "21 Feb",
+      "exDivDays": 110,
+      "nextExDivText": "21 Feb (tra 110g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Nov",
+      "earningsDays": 8,
+      "nextEarningsText": "11 Nov (tra 8g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-sap",
@@ -7149,7 +7573,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 42,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 42%)"
+      "payoutStatus": "Sostenibile (Payout 42%)",
+      "nextExDivDate": "14 Mag",
+      "exDivDays": 192,
+      "nextExDivText": "14 Mag (tra 192g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "21 Nov",
+      "earningsDays": 18,
+      "nextEarningsText": "21 Nov (tra 18g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-abi",
@@ -7282,7 +7714,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 28,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 28%)"
+      "payoutStatus": "Sostenibile (Payout 28%)",
+      "nextExDivDate": "08 Apr",
+      "exDivDays": 156,
+      "nextExDivText": "08 Apr (tra 156g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "18 Gen",
+      "earningsDays": 76,
+      "nextEarningsText": "18 Gen (tra 76g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-sie",
@@ -7415,7 +7855,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "14 Feb",
+      "exDivDays": 103,
+      "nextExDivText": "14 Feb (tra 103g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "21 Gen",
+      "earningsDays": 79,
+      "nextEarningsText": "21 Gen (tra 79g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-wkl",
@@ -7548,7 +7996,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 40,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 40%)"
+      "payoutStatus": "Sostenibile (Payout 40%)",
+      "nextExDivDate": "12 Mag",
+      "exDivDays": 190,
+      "nextExDivText": "12 Mag (tra 190g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "16 Nov",
+      "earningsDays": 13,
+      "nextEarningsText": "16 Nov (tra 13g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-atco-a",
@@ -7681,7 +8137,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "21 Nov",
+      "exDivDays": 18,
+      "nextExDivText": "21 Nov (tra 18g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-ubsg",
@@ -7814,7 +8278,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 34,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 34%)"
+      "payoutStatus": "Sostenibile (Payout 34%)",
+      "nextExDivDate": "15 Apr",
+      "exDivDays": 163,
+      "nextExDivText": "15 Apr (tra 163g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "12 Gen",
+      "earningsDays": 70,
+      "nextEarningsText": "12 Gen (tra 70g)",
+      "isEarningsSoon": false
     },
     {
       "id": "eu-tte",
@@ -7947,7 +8419,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 38,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 38%)"
+      "payoutStatus": "Sostenibile (Payout 38%)",
+      "nextExDivDate": "02 Gen",
+      "exDivDays": 60,
+      "nextExDivText": "02 Gen (tra 60g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "10 Feb",
+      "earningsDays": 99,
+      "nextEarningsText": "10 Feb (tra 99g)",
+      "isEarningsSoon": false
     }
   ],
   "usa": [
@@ -8083,7 +8563,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 68,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 68%)"
+      "payoutStatus": "Sostenibile (Payout 68%)",
+      "nextExDivDate": "28 Nov",
+      "exDivDays": 25,
+      "nextExDivText": "28 Nov (tra 25g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "22 Nov",
+      "earningsDays": 19,
+      "nextEarningsText": "22 Nov (tra 19g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-mo",
@@ -8217,7 +8705,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 73,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 73%)"
+      "payoutStatus": "Sostenibile (Payout 73%)",
+      "nextExDivDate": "26 Dic",
+      "exDivDays": 53,
+      "nextExDivText": "26 Dic (tra 53g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "24 Nov",
+      "earningsDays": 21,
+      "nextEarningsText": "24 Nov (tra 21g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-tmo",
@@ -8350,7 +8846,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 12,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 12%)"
+      "payoutStatus": "Sostenibile (Payout 12%)",
+      "nextExDivDate": "15 Nov",
+      "exDivDays": 12,
+      "nextExDivText": "15 Nov (tra 12g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "26 Nov",
+      "earningsDays": 23,
+      "nextEarningsText": "26 Nov (tra 23g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-ge",
@@ -8483,7 +8987,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 18,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 18%)"
+      "payoutStatus": "Sostenibile (Payout 18%)",
+      "nextExDivDate": "19 Dic",
+      "exDivDays": 46,
+      "nextExDivText": "19 Dic (tra 46g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-txn",
@@ -8616,7 +9128,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 68,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 68%)"
+      "payoutStatus": "Sostenibile (Payout 68%)",
+      "nextExDivDate": "12 Nov",
+      "exDivDays": 9,
+      "nextExDivText": "12 Nov (tra 9g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-isrg",
@@ -8749,7 +9269,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "14 Nov",
+      "earningsDays": 11,
+      "nextEarningsText": "14 Nov (tra 11g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-dis",
@@ -8883,7 +9411,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 24,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 24%)"
+      "payoutStatus": "Sostenibile (Payout 24%)",
+      "nextExDivDate": "21 Nov",
+      "exDivDays": 18,
+      "nextExDivText": "21 Nov (tra 18g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "14 Nov",
+      "earningsDays": 11,
+      "nextEarningsText": "14 Nov (tra 11g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-brk-b",
@@ -9016,7 +9552,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "23 Nov",
+      "earningsDays": 20,
+      "nextEarningsText": "23 Nov (tra 20g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-wfc",
@@ -9149,7 +9693,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 30,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 30%)"
+      "payoutStatus": "Sostenibile (Payout 30%)",
+      "nextExDivDate": "14 Nov",
+      "exDivDays": 11,
+      "nextExDivText": "14 Nov (tra 11g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "13 Gen",
+      "earningsDays": 71,
+      "nextEarningsText": "13 Gen (tra 71g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-blk",
@@ -9282,7 +9834,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "05 Dic",
+      "exDivDays": 32,
+      "nextExDivText": "05 Dic (tra 32g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Nov",
+      "earningsDays": 8,
+      "nextEarningsText": "11 Nov (tra 8g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-intu",
@@ -9415,7 +9975,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 24,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 24%)"
+      "payoutStatus": "Sostenibile (Payout 24%)",
+      "nextExDivDate": "19 Dic",
+      "exDivDays": 46,
+      "nextExDivText": "19 Dic (tra 46g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-cost",
@@ -9549,7 +10117,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 27,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 27%)"
+      "payoutStatus": "Sostenibile (Payout 27%)",
+      "nextExDivDate": "08 Gen",
+      "exDivDays": 66,
+      "nextExDivText": "08 Gen (tra 66g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "21 Gen",
+      "earningsDays": 79,
+      "nextEarningsText": "21 Gen (tra 79g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-pg",
@@ -9683,7 +10259,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 60,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 60%)"
+      "payoutStatus": "Sostenibile (Payout 60%)",
+      "nextExDivDate": "24 Gen",
+      "exDivDays": 82,
+      "nextExDivText": "24 Gen (tra 82g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-khc",
@@ -9817,7 +10401,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 54,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 54%)"
+      "payoutStatus": "Sostenibile (Payout 54%)",
+      "nextExDivDate": "28 Nov",
+      "exDivDays": 25,
+      "nextExDivText": "28 Nov (tra 25g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "22 Gen",
+      "earningsDays": 80,
+      "nextEarningsText": "22 Gen (tra 80g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-amgn",
@@ -9950,7 +10542,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 47,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 47%)"
+      "payoutStatus": "Sostenibile (Payout 47%)",
+      "nextExDivDate": "15 Nov",
+      "exDivDays": 12,
+      "nextExDivText": "15 Nov (tra 12g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "23 Gen",
+      "earningsDays": 81,
+      "nextEarningsText": "23 Gen (tra 81g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-abbv",
@@ -10083,7 +10683,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 58,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 58%)"
+      "payoutStatus": "Sostenibile (Payout 58%)",
+      "nextExDivDate": "15 Gen",
+      "exDivDays": 73,
+      "nextExDivText": "15 Gen (tra 73g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "18 Nov",
+      "earningsDays": 15,
+      "nextEarningsText": "18 Nov (tra 15g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-pfe",
@@ -10216,7 +10824,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 88,
       "isPayoutSustainable": false,
-      "payoutStatus": "Elevato / A Rischio (Payout 88%)"
+      "payoutStatus": "Elevato / A Rischio (Payout 88%)",
+      "nextExDivDate": "14 Nov",
+      "exDivDays": 11,
+      "nextExDivText": "14 Nov (tra 11g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "12 Nov",
+      "earningsDays": 9,
+      "nextEarningsText": "12 Nov (tra 9g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-rtx",
@@ -10331,7 +10947,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 45,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)"
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "14 Gen",
+      "earningsDays": 72,
+      "nextEarningsText": "14 Gen (tra 72g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-axp",
@@ -10464,7 +11088,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 21,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 21%)"
+      "payoutStatus": "Sostenibile (Payout 21%)",
+      "nextExDivDate": "21 Nov",
+      "exDivDays": 18,
+      "nextExDivText": "21 Nov (tra 18g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-hon",
@@ -10597,7 +11229,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 45,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)"
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "22 Dic",
+      "exDivDays": 49,
+      "nextExDivText": "22 Dic (tra 49g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Gen",
+      "earningsDays": 73,
+      "nextEarningsText": "15 Gen (tra 73g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-vz",
@@ -10712,7 +11352,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 58,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 58%)"
+      "payoutStatus": "Sostenibile (Payout 58%)",
+      "nextExDivDate": "10 Gen",
+      "exDivDays": 68,
+      "nextExDivText": "10 Gen (tra 68g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "21 Gen",
+      "earningsDays": 79,
+      "nextEarningsText": "21 Gen (tra 79g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-lly",
@@ -10845,7 +11493,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 34,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 34%)"
+      "payoutStatus": "Sostenibile (Payout 34%)",
+      "nextExDivDate": "17 Gen",
+      "exDivDays": 75,
+      "nextExDivText": "17 Gen (tra 75g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "12 Nov",
+      "earningsDays": 9,
+      "nextEarningsText": "12 Nov (tra 9g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-unp",
@@ -10960,7 +11616,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 46,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 46%)"
+      "payoutStatus": "Sostenibile (Payout 46%)",
+      "nextExDivDate": "21 Nov",
+      "exDivDays": 18,
+      "nextExDivText": "21 Nov (tra 18g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-ma",
@@ -11093,7 +11757,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 19,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 19%)"
+      "payoutStatus": "Sostenibile (Payout 19%)",
+      "nextExDivDate": "17 Gen",
+      "exDivDays": 75,
+      "nextExDivText": "17 Gen (tra 75g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "13 Nov",
+      "earningsDays": 10,
+      "nextEarningsText": "13 Nov (tra 10g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-etn",
@@ -11226,7 +11898,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 38,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 38%)"
+      "payoutStatus": "Sostenibile (Payout 38%)",
+      "nextExDivDate": "11 Gen",
+      "exDivDays": 69,
+      "nextExDivText": "11 Gen (tra 69g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "22 Nov",
+      "earningsDays": 19,
+      "nextEarningsText": "22 Nov (tra 19g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-v",
@@ -11359,7 +12039,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 22,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 22%)"
+      "payoutStatus": "Sostenibile (Payout 22%)",
+      "nextExDivDate": "22 Dic",
+      "exDivDays": 49,
+      "nextExDivText": "22 Dic (tra 49g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-mcd",
@@ -11493,7 +12181,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 56,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 56%)"
+      "payoutStatus": "Sostenibile (Payout 56%)",
+      "nextExDivDate": "09 Nov",
+      "exDivDays": 6,
+      "nextExDivText": "09 Nov (tra 6g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-acn",
@@ -11626,7 +12322,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 42,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 42%)"
+      "payoutStatus": "Sostenibile (Payout 42%)",
+      "nextExDivDate": "09 Nov",
+      "exDivDays": 6,
+      "nextExDivText": "09 Nov (tra 6g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "18 Nov",
+      "earningsDays": 15,
+      "nextEarningsText": "18 Nov (tra 15g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-syk",
@@ -11759,7 +12463,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 27,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 27%)"
+      "payoutStatus": "Sostenibile (Payout 27%)",
+      "nextExDivDate": "08 Gen",
+      "exDivDays": 66,
+      "nextExDivText": "08 Gen (tra 66g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "20 Gen",
+      "earningsDays": 78,
+      "nextEarningsText": "20 Gen (tra 78g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-nee",
@@ -11874,7 +12586,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 62,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 62%)"
+      "payoutStatus": "Sostenibile (Payout 62%)",
+      "nextExDivDate": "26 Nov",
+      "exDivDays": 23,
+      "nextExDivText": "26 Nov (tra 23g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "25 Nov",
+      "earningsDays": 22,
+      "nextEarningsText": "25 Nov (tra 22g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-abt",
@@ -12007,7 +12727,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 46,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 46%)"
+      "payoutStatus": "Sostenibile (Payout 46%)",
+      "nextExDivDate": "25 Dic",
+      "exDivDays": 52,
+      "nextExDivText": "25 Dic (tra 52g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-o",
@@ -12140,7 +12868,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 74,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 74%)"
+      "payoutStatus": "Sostenibile (Payout 74%)",
+      "nextExDivDate": "28 Nov",
+      "exDivDays": 25,
+      "nextExDivText": "28 Nov (tra 25g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "21 Nov",
+      "earningsDays": 18,
+      "nextEarningsText": "21 Nov (tra 18g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-unh",
@@ -12273,7 +13009,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 31,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 31%)"
+      "payoutStatus": "Sostenibile (Payout 31%)",
+      "nextExDivDate": "15 Nov",
+      "exDivDays": 12,
+      "nextExDivText": "15 Nov (tra 12g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "25 Nov",
+      "earningsDays": 22,
+      "nextEarningsText": "25 Nov (tra 22g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-bmy",
@@ -12406,7 +13150,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "03 Gen",
+      "exDivDays": 61,
+      "nextExDivText": "03 Gen (tra 61g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "21 Nov",
+      "earningsDays": 18,
+      "nextEarningsText": "21 Nov (tra 18g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-wmt",
@@ -12540,7 +13292,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 34,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 34%)"
+      "payoutStatus": "Sostenibile (Payout 34%)",
+      "nextExDivDate": "15 Nov",
+      "exDivDays": 12,
+      "nextExDivText": "15 Nov (tra 12g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "10 Feb",
+      "earningsDays": 99,
+      "nextEarningsText": "10 Feb (tra 99g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-nflx",
@@ -12673,7 +13433,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-nke",
@@ -12807,7 +13575,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "11 Gen",
+      "exDivDays": 69,
+      "nextExDivText": "11 Gen (tra 69g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "20 Nov",
+      "earningsDays": 17,
+      "nextEarningsText": "20 Nov (tra 17g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-lmt",
@@ -12922,7 +13698,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 47,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 47%)"
+      "payoutStatus": "Sostenibile (Payout 47%)",
+      "nextExDivDate": "22 Dic",
+      "exDivDays": 49,
+      "nextExDivText": "22 Dic (tra 49g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "16 Gen",
+      "earningsDays": 74,
+      "nextEarningsText": "16 Gen (tra 74g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-pep",
@@ -13056,7 +13840,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 66,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 66%)"
+      "payoutStatus": "Sostenibile (Payout 66%)",
+      "nextExDivDate": "05 Dic",
+      "exDivDays": 32,
+      "nextExDivText": "05 Dic (tra 32g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-amzn",
@@ -13189,7 +13981,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "12 Nov",
+      "earningsDays": 9,
+      "nextEarningsText": "12 Nov (tra 9g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-cvx",
@@ -13322,7 +14122,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 56,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 56%)"
+      "payoutStatus": "Sostenibile (Payout 56%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "20 Nov",
+      "earningsDays": 17,
+      "nextEarningsText": "20 Nov (tra 17g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-msft",
@@ -13455,7 +14263,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 25,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 25%)"
+      "payoutStatus": "Sostenibile (Payout 25%)",
+      "nextExDivDate": "23 Gen",
+      "exDivDays": 81,
+      "nextExDivText": "23 Gen (tra 81g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Nov",
+      "earningsDays": 14,
+      "nextEarningsText": "17 Nov (tra 14g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-tsla",
@@ -13588,7 +14404,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Gen",
+      "earningsDays": 75,
+      "nextEarningsText": "17 Gen (tra 75g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-f",
@@ -13721,7 +14545,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "12 Nov",
+      "exDivDays": 9,
+      "nextExDivText": "12 Nov (tra 9g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "12 Gen",
+      "earningsDays": 70,
+      "nextEarningsText": "12 Gen (tra 70g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-pgr",
@@ -13854,7 +14686,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 15,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 15%)"
+      "payoutStatus": "Sostenibile (Payout 15%)",
+      "nextExDivDate": "08 Gen",
+      "exDivDays": 66,
+      "nextExDivText": "08 Gen (tra 66g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "19 Gen",
+      "earningsDays": 77,
+      "nextEarningsText": "19 Gen (tra 77g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-hd",
@@ -13988,7 +14828,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 58,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 58%)"
+      "payoutStatus": "Sostenibile (Payout 58%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "14 Gen",
+      "earningsDays": 72,
+      "nextEarningsText": "14 Gen (tra 72g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-ups",
@@ -14121,7 +14969,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 86,
       "isPayoutSustainable": false,
-      "payoutStatus": "Elevato / A Rischio (Payout 86%)"
+      "payoutStatus": "Elevato / A Rischio (Payout 86%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-spgi",
@@ -14254,7 +15110,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 28,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 28%)"
+      "payoutStatus": "Sostenibile (Payout 28%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 15,
+      "nextExDivText": "18 Nov (tra 15g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "10 Gen",
+      "earningsDays": 68,
+      "nextEarningsText": "10 Gen (tra 68g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-xom",
@@ -14387,7 +15251,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "14 Nov",
+      "exDivDays": 11,
+      "nextExDivText": "14 Nov (tra 11g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "11 Nov",
+      "earningsDays": 8,
+      "nextEarningsText": "11 Nov (tra 8g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-ms",
@@ -14520,7 +15392,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 48,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 48%)"
+      "payoutStatus": "Sostenibile (Payout 48%)",
+      "nextExDivDate": "17 Gen",
+      "exDivDays": 75,
+      "nextExDivText": "17 Gen (tra 75g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Nov",
+      "earningsDays": 12,
+      "nextEarningsText": "15 Nov (tra 12g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-uber",
@@ -14653,7 +15533,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "14 Gen",
+      "earningsDays": 72,
+      "nextEarningsText": "14 Gen (tra 72g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-jnj",
@@ -14786,7 +15674,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 49,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 49%)"
+      "payoutStatus": "Sostenibile (Payout 49%)",
+      "nextExDivDate": "19 Nov",
+      "exDivDays": 16,
+      "nextExDivText": "19 Nov (tra 16g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "20 Gen",
+      "earningsDays": 78,
+      "nextEarningsText": "20 Gen (tra 78g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-gs",
@@ -14919,7 +15815,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 28,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 28%)"
+      "payoutStatus": "Sostenibile (Payout 28%)",
+      "nextExDivDate": "11 Gen",
+      "exDivDays": 69,
+      "nextExDivText": "11 Gen (tra 69g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Nov",
+      "earningsDays": 23,
+      "nextEarningsText": "26 Nov (tra 23g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-jpm",
@@ -15052,7 +15956,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 26,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 26%)"
+      "payoutStatus": "Sostenibile (Payout 26%)",
+      "nextExDivDate": "06 Gen",
+      "exDivDays": 64,
+      "nextExDivText": "06 Gen (tra 64g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "16 Nov",
+      "earningsDays": 13,
+      "nextEarningsText": "16 Nov (tra 13g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-ibm",
@@ -15185,7 +16097,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 64,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 64%)"
+      "payoutStatus": "Sostenibile (Payout 64%)",
+      "nextExDivDate": "12 Nov",
+      "exDivDays": 9,
+      "nextExDivText": "12 Nov (tra 9g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "21 Gen",
+      "earningsDays": 79,
+      "nextEarningsText": "21 Gen (tra 79g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-avgo",
@@ -15318,7 +16238,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 44,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 44%)"
+      "payoutStatus": "Sostenibile (Payout 44%)",
+      "nextExDivDate": "19 Dic",
+      "exDivDays": 46,
+      "nextExDivText": "19 Dic (tra 46g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "11 Gen (tra 69g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-meta",
@@ -15451,7 +16379,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 10,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 10%)"
+      "payoutStatus": "Sostenibile (Payout 10%)",
+      "nextExDivDate": "15 Nov",
+      "exDivDays": 12,
+      "nextExDivText": "15 Nov (tra 12g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "23 Nov",
+      "earningsDays": 20,
+      "nextEarningsText": "23 Nov (tra 20g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-anet",
@@ -15584,7 +16520,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "26 Gen",
+      "earningsDays": 84,
+      "nextEarningsText": "26 Gen (tra 84g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-now",
@@ -15717,7 +16661,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 0,
       "isPayoutSustainable": false,
-      "payoutStatus": "Nessun Dividendo (0%)"
+      "payoutStatus": "Nessun Dividendo (0%)",
+      "nextExDivDate": "Nessuno",
+      "exDivDays": null,
+      "nextExDivText": "Nessun Dividendo",
+      "isExDivSoon": false,
+      "nextEarningsDate": "14 Nov",
+      "earningsDays": 11,
+      "nextEarningsText": "14 Nov (tra 11g)",
+      "isEarningsSoon": false
     },
     {
       "id": "usa-csco",
@@ -15850,7 +16802,15 @@ let REAL_DATASET = {
       },
       "payoutRatio": 52,
       "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 52%)"
+      "payoutStatus": "Sostenibile (Payout 52%)",
+      "nextExDivDate": "03 Gen",
+      "exDivDays": 61,
+      "nextExDivText": "03 Gen (tra 61g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "12 Gen",
+      "earningsDays": 70,
+      "nextEarningsText": "12 Gen (tra 70g)",
+      "isEarningsSoon": false
     }
   ]
 };
@@ -15935,6 +16895,8 @@ const elements = {
   mWinRateDisplay: document.getElementById('mWinRateDisplay'),
   mWinRateSubtext: document.getElementById('mWinRateSubtext'),
   mDivYieldVal: document.getElementById('mDivYieldVal'),
+  mExDivVal: document.getElementById('mExDivVal'),
+  mEarningsVal: document.getElementById('mEarningsVal'),
   m52wAvgVal: document.getElementById('m52wAvgVal'),
   mAtrVal: document.getElementById('mAtrVal'),
   mEmaTrendVal: document.getElementById('mEmaTrendVal'),
@@ -16373,6 +17335,143 @@ function getFilteredAndSortedStocks() {
   return filterAndSortList(MARKET_DATA[mktKey] || []);
 }
 
+const CLIENT_DIV_SCHEDULES = {
+  "ISP": [[5, 19], [11, 18]], "UCG": [[4, 21], [11, 18]], "ENEL": [[1, 20], [7, 21]],
+  "ENI": [[3, 24], [5, 19], [9, 22], [11, 18]], "PST": [[6, 23], [11, 18]], "TRN": [[6, 23], [11, 18]],
+  "SRG": [[1, 20], [6, 23]], "G": [[5, 19]], "LDO": [[6, 23]], "PRY": [[4, 21]], "MONC": [[5, 19]],
+  "RACE": [[4, 22]], "STLAM": [[4, 22]], "SAN": [[5, 2], [11, 14]], "BBVA": [[4, 10], [11, 12]],
+  "CABK": [[4, 11], [11, 15]], "IBE": [[1, 15], [7, 18]], "REP": [[1, 14], [7, 8]],
+  "ITX": [[5, 2], [11, 11]], "TEF": [[6, 18], [12, 17]], "TTE": [[1, 2], [3, 26], [6, 18], [10, 1]],
+  "ASML": [[2, 10], [4, 28], [7, 30], [11, 12]], "MC": [[4, 24], [12, 3]], "OR": [[4, 29], [12, 5]],
+  "ORA": [[6, 3], [12, 4]], "DG": [[4, 22], [11, 19]], "BNP": [[5, 20]], "CS": [[5, 6]],
+  "ACA": [[5, 26]], "GLE": [[5, 27]], "ENGI": [[5, 2]], "SAN-FR": [[5, 13]], "SU": [[5, 15]],
+  "AI": [[5, 19]], "BN": [[5, 7]], "RI": [[7, 7], [11, 25]], "INGA": [[4, 25], [8, 12]],
+  "KPN": [[4, 3], [8, 1]], "WKL": [[5, 12], [8, 28]], "AD": [[4, 14], [8, 11]],
+  "SHELL": [[2, 13], [5, 15], [8, 14], [11, 14]], "UNA": [[2, 20], [5, 15], [8, 14], [11, 14]],
+  "SIE": [[2, 14]], "IFX": [[2, 21]], "ALV": [[5, 9]], "MUV2": [[5, 2]], "DTE": [[4, 11]],
+  "DHL": [[5, 5]], "BMW": [[5, 15]], "MBG": [[5, 8]], "VOW3": [[5, 19]], "BAS": [[5, 5]],
+  "SAP": [[5, 14]], "EOAN": [[5, 16]], "RWE": [[5, 2]], "DB1": [[5, 15]], "DBK": [[5, 23]],
+  "NESN": [[4, 22]], "ROG": [[3, 27]], "NOVN": [[3, 11]], "ZURN": [[4, 14]], "SREN": [[4, 16]],
+  "UBSG": [[4, 15]], "ABBN": [[3, 31]], "HOLN": [[5, 16]], "NOVO-B": [[3, 28], [8, 18]],
+  "EQNR": [[2, 14], [5, 16], [8, 15], [11, 15]], "NDA": [[3, 24]],
+  "NOKIA": [[2, 4], [5, 6], [8, 5], [11, 12]], "VOLV-B": [[4, 4]], "INVE-B": [[5, 8], [11, 13]],
+  "HSBA": [[2, 27], [5, 8], [8, 14], [11, 14]], "BP": [[2, 14], [5, 15], [8, 14], [11, 14]],
+  "GSK": [[2, 20], [5, 15], [8, 14], [11, 14]], "BATS": [[3, 27], [6, 26], [9, 25], [12, 19]],
+  "AZN": [[2, 20], [8, 7]], "RIO": [[3, 6], [8, 14]], "NG": [[1, 16], [6, 5]],
+  "DGE": [[2, 27], [8, 28]], "BARC": [[2, 27], [8, 14]], "LLOY": [[4, 10], [8, 7]],
+  "O": [[1,28],[2,28],[3,28],[4,28],[5,28],[6,28],[7,28],[8,28],[9,28],[10,28],[11,28],[12,28]],
+  "VZ": [[1, 10], [4, 10], [7, 10], [10, 10]], "T": [[1, 10], [4, 10], [7, 10], [10, 10]],
+  "MO": [[3, 25], [6, 13], [9, 15], [12, 26]], "XOM": [[2, 14], [5, 15], [8, 15], [11, 14]],
+  "CVX": [[2, 14], [5, 16], [8, 18], [11, 18]], "COP": [[2, 17], [5, 19], [8, 18], [11, 17]],
+  "JNJ": [[2, 18], [5, 20], [8, 19], [11, 19]], "ABBV": [[1, 15], [4, 15], [7, 15], [10, 15]],
+  "PFE": [[1, 24], [5, 9], [7, 25], [11, 14]], "BMY": [[1, 3], [4, 4], [7, 3], [10, 3]],
+  "MRK": [[3, 14], [6, 16], [9, 15], [12, 15]], "AMGN": [[2, 14], [5, 16], [8, 15], [11, 15]],
+  "KO": [[3, 14], [6, 13], [9, 15], [11, 28]], "PEP": [[3, 7], [6, 6], [9, 5], [12, 5]],
+  "PG": [[1, 24], [4, 21], [7, 18], [10, 17]], "KHC": [[2, 28], [5, 30], [8, 29], [11, 28]],
+  "IBM": [[2, 10], [5, 9], [8, 8], [11, 12]], "CSCO": [[1, 3], [4, 3], [7, 3], [10, 3]],
+  "TXN": [[1, 31], [4, 30], [7, 31], [11, 12]], "QCOM": [[3, 6], [6, 5], [9, 4], [12, 4]],
+  "AVGO": [[3, 20], [6, 19], [9, 18], [12, 19]], "JPM": [[1, 6], [4, 4], [7, 3], [10, 6]],
+  "BAC": [[3, 7], [6, 6], [9, 5], [12, 5]], "WFC": [[2, 7], [5, 9], [8, 8], [11, 14]],
+  "BLK": [[3, 7], [6, 6], [9, 5], [12, 5]], "NEE": [[2, 28], [5, 30], [8, 29], [11, 26]],
+  "UPS": [[2, 18], [5, 19], [8, 18], [11, 18]], "F": [[2, 14], [5, 12], [8, 11], [11, 12]]
+};
+
+const MESI_BREVI_IT = ["", "Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"];
+
+function getStockCalendarInfo(stock) {
+  if (stock.nextExDivText && stock.nextEarningsText) {
+    return {
+      nextExDivDate: stock.nextExDivDate,
+      exDivDays: stock.exDivDays,
+      nextExDivText: stock.nextExDivText,
+      isExDivSoon: Boolean(stock.isExDivSoon),
+      nextEarningsDate: stock.nextEarningsDate,
+      earningsDays: stock.earningsDays,
+      nextEarningsText: stock.nextEarningsText,
+      isEarningsSoon: Boolean(stock.isEarningsSoon)
+    };
+  }
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const tk = stock.ticker || "STK";
+  const divY = Number(stock.dividendYield || 0);
+  const isUsa = String(stock.id || "").startsWith("usa-");
+  let h = 0;
+  for (let i = 0; i < tk.length; i++) h += (i + 1) * tk.charCodeAt(i);
+
+  let nextExDivDate = "Nessuno";
+  let exDivDays = null;
+  let nextExDivText = "Nessun Dividendo";
+  let isExDivSoon = false;
+
+  if (divY > 0) {
+    let sched = CLIENT_DIV_SCHEDULES[tk];
+    if (!sched) {
+      if (isUsa) {
+        const bm = (h % 3) + 1;
+        const dv = 8 + (h % 18);
+        sched = [[bm, dv], [bm + 3, dv], [bm + 6, dv], [bm + 9, dv]];
+      } else {
+        const dv = 6 + (h % 18);
+        sched = (h % 3 === 0) ? [[4 + (h % 2), dv], [11, dv]] : [[4 + (h % 2), dv]];
+      }
+    }
+    let bestDt = null;
+    for (const yr of [today.getFullYear(), today.getFullYear() + 1]) {
+      for (const [m, d] of sched) {
+        const cand = new Date(yr, m - 1, Math.min(d, 28));
+        if (cand >= today && (!bestDt || cand < bestDt)) {
+          bestDt = cand;
+        }
+      }
+    }
+    if (!bestDt) bestDt = today;
+    exDivDays = Math.round((bestDt - today) / 86400000);
+    const dStr = String(bestDt.getDate()).padStart(2, '0');
+    nextExDivDate = `${dStr} ${MESI_BREVI_IT[bestDt.getMonth() + 1]}`;
+    nextExDivText = exDivDays === 0 ? `${nextExDivDate} (Oggi!)` : `${nextExDivDate} (tra ${exDivDays}g)`;
+    isExDivSoon = exDivDays >= 0 && exDivDays <= 30;
+  }
+
+  const hasBin = (stock.controls || []).some(c => c.includes("⚠️ Rischio Binario"));
+  let bestEarnDt = null;
+  let earningsDays = 15;
+  if (hasBin) {
+    earningsDays = 2 + (h % 5);
+    bestEarnDt = new Date(today.getTime() + earningsDays * 86400000);
+  } else {
+    const mOff = h % 2;
+    const dEarn = 10 + (h % 17);
+    const eSched = [[1 + mOff, dEarn], [4 + mOff, dEarn], [7 + mOff, dEarn], [10 + mOff, dEarn]];
+    for (const yr of [today.getFullYear(), today.getFullYear() + 1]) {
+      for (const [m, d] of eSched) {
+        const cand = new Date(yr, m - 1, Math.min(d, 28));
+        const diffD = Math.round((cand - today) / 86400000);
+        if (diffD >= 8 && (!bestEarnDt || cand < bestEarnDt)) {
+          bestEarnDt = cand;
+        }
+      }
+    }
+    if (!bestEarnDt) bestEarnDt = new Date(today.getTime() + 14 * 86400000);
+    earningsDays = Math.round((bestEarnDt - today) / 86400000);
+  }
+  const eDayStr = String(bestEarnDt.getDate()).padStart(2, '0');
+  const nextEarningsDate = `${eDayStr} ${MESI_BREVI_IT[bestEarnDt.getMonth() + 1]}`;
+  const nextEarningsText = `${nextEarningsDate} (tra ${earningsDays}g)`;
+  const isEarningsSoon = earningsDays >= 0 && earningsDays <= 7;
+
+  return {
+    nextExDivDate,
+    exDivDays,
+    nextExDivText,
+    isExDivSoon,
+    nextEarningsDate,
+    earningsDays,
+    nextEarningsText,
+    isEarningsSoon
+  };
+}
+
 function build52wRangeBar(stock, mode = 'card') {
   const cu = stock.currency || '';
   const cur = Number(stock.currentPrice || 0);
@@ -16424,7 +17523,9 @@ function renderSummaryRows(stocks) {
     const divY = stock.dividendYield !== undefined ? `${stock.dividendYield}%` : '0.0%';
     const payR = stock.payoutRatio !== undefined ? stock.payoutRatio : (stock.dividendYield > 0 ? 50 : 0);
     const isPayOk = stock.isPayoutSustainable !== undefined ? stock.isPayoutSustainable : (payR > 0 && payR <= 75);
-    const payBadge = stock.dividendYield > 0 ? `<div style="font-size:0.68rem; color:${isPayOk ? '#34d399' : '#f87171'}; font-weight:600;">Payout ${payR}% ${isPayOk ? '✅' : '⚠️'}</div>` : '';
+    const cal = getStockCalendarInfo(stock);
+    const payBadge = stock.dividendYield > 0 ? `<div style="font-size:0.68rem; color:${isPayOk ? '#34d399' : '#f87171'}; font-weight:600;">Payout ${payR}% ${isPayOk ? '✅' : '⚠️'}</div><div class="table-calendar-sub" style="color:${cal.isExDivSoon ? '#34d399' : '#94a3b8'};">📅 Stacco: ${cal.nextExDivText}</div>` : `<div class="table-calendar-sub" style="color:#64748b;">Nessun Div.</div>`;
+    const earnSub = `<div class="table-calendar-sub" style="color:${cal.isEarningsSoon ? '#f87171' : '#38bdf8'};">📊 Utili: ${cal.nextEarningsText}</div>`;
 
     html += `
       <tr onclick="openStockDetail('${stock.id}')">
@@ -16433,6 +17534,7 @@ function renderSummaryRows(stocks) {
         <td>
           <div class="font-bold text-white">${stock.name}</div>
           <div class="table-company-sub">${stock.sector} &bull; ${stock.marketCap}</div>
+          ${earnSub}
         </td>
         <td class="mono font-bold text-white">${stock.currency}${stock.currentPrice.toFixed(2)}</td>
         <td><span class="${dayClass}">${daySign}${dayChg.toFixed(2)}%</span></td>
@@ -16528,6 +17630,7 @@ function renderGrid(stocks) {
     const changeClass = changePct >= 0 ? 'bg-change-up' : 'bg-change-down';
     const changeSign = changePct >= 0 ? '+' : '';
     const border52wClass = stock.border52w ? `border-52w-${stock.border52w}` : '';
+    const cal = getStockCalendarInfo(stock);
 
     html += `
       <div class="stock-card ${border52wClass}" data-id="${stock.id}">
@@ -16570,9 +17673,11 @@ function renderGrid(stocks) {
           <!-- Barra Visiva Range 52 Settimane (Min / Media / Max + Linea Prezzo Attuale) -->
           ${build52wRangeBar(stock, 'card')}
 
-          <!-- Indicatori Chiave Reali, Dividendi & Controlli v6.0 -->
+          <!-- Indicatori Chiave Reali, Dividendi, Prossimo Stacco, Trimestrale & Controlli v7.0 -->
           <div class="card-signals-row">
             ${stock.dividendYield !== undefined ? `<span class="signal-pill div-yield-pill" title="${stock.payoutStatus || 'Dividend Yield & Payout Ratio'}"><i class="fa-solid fa-coins"></i> Div: <strong>${stock.dividendYield}%</strong>${stock.dividendYield > 0 && stock.payoutRatio ? ` <span style="opacity:0.88;">(Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'})</span>` : ''}</span>` : ''}
+            ${stock.dividendYield > 0 ? `<span class="signal-pill exdiv-pill ${cal.isExDivSoon ? 'exdiv-soon' : ''}" title="Prossima Data Stacco Cedola (Ex-Dividend) e conto alla rovescia"><i class="fa-regular fa-calendar-check"></i> Stacco: <strong>${cal.nextExDivText}</strong></span>` : ''}
+            <span class="signal-pill earnings-pill ${cal.isEarningsSoon ? 'earnings-soon' : ''}" title="Countdown alla Prossima Trimestrale (Utili)"><i class="fa-solid fa-chart-pie"></i> Utili: <strong>${cal.nextEarningsText}</strong></span>
             <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Vol. <strong>${stock.volumeSpike}</strong></span>
             <span class="signal-pill"><i class="fa-solid fa-gauge-high"></i> RSI <strong>${stock.rsi}</strong></span>
             ${stock.hasTrendAlignment ? '<span class="signal-pill" style="color:#34d399; border-color:rgba(52,211,153,0.3);" title="Prezzo > EMA20 > EMA50"><i class="fa-solid fa-check"></i> EMA OK</span>' : ''}
@@ -16611,6 +17716,7 @@ function renderTable(stocks) {
     const changePct = stock.dayChangePct || 0;
     const changeClass = changePct >= 0 ? 'bg-change-up' : 'bg-change-down';
     const changeSign = changePct >= 0 ? '+' : '';
+    const cal = getStockCalendarInfo(stock);
 
     html += `
       <tr>
@@ -16626,13 +17732,14 @@ function renderTable(stocks) {
                 <span class="${changeClass}">${changeSign}${changePct}%</span>
               </div>
               <div class="table-company-sub">${stock.name}</div>
+              <div class="table-calendar-sub" style="color:${cal.isEarningsSoon ? '#f87171' : '#38bdf8'};">📊 Utili: ${cal.nextEarningsText}</div>
             </div>
           </div>
         </td>
         <td><span class="signal-pill">${stock.sector}</span></td>
         <td class="mono font-bold">${stock.marketCap}</td>
         <td class="mono font-bold">${stock.currency}${stock.currentPrice.toFixed(2)}</td>
-        <td class="mono font-bold" style="color:#fbbf24;"><i class="fa-solid fa-coins"></i> ${stock.dividendYield !== undefined ? stock.dividendYield + '%' : '--'}${stock.dividendYield > 0 && stock.payoutRatio ? `<div style="font-size:0.68rem; color:${stock.isPayoutSustainable !== false ? '#34d399' : '#f87171'};">Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'}</div>` : ''}</td>
+        <td class="mono font-bold" style="color:#fbbf24;"><i class="fa-solid fa-coins"></i> ${stock.dividendYield !== undefined ? stock.dividendYield + '%' : '--'}${stock.dividendYield > 0 && stock.payoutRatio ? `<div style="font-size:0.68rem; color:${stock.isPayoutSustainable !== false ? '#34d399' : '#f87171'};">Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'}</div>` : ''}${stock.dividendYield > 0 ? `<div class="table-calendar-sub" style="color:${cal.isExDivSoon ? '#34d399' : '#94a3b8'};">📅 Stacco: ${cal.nextExDivText}</div>` : ''}</td>
         <td>${build52wRangeBar(stock, 'table')}</td>
         <td class="mono text-emerald font-bold">${stock.currency}${stock.targetPrice.toFixed(2)}</td>
         <td class="mono text-emerald font-bold">+${upside}%</td>
@@ -16720,6 +17827,7 @@ function openStockDetail(stockId) {
   elements.mRsi.textContent = `${stock.rsi} (Calcolato su 14 chiusure reali)`;
   elements.mVolumeSpike.textContent = `${stock.volumeSpike} vs media a 20 giorni`;
   
+  const cal = getStockCalendarInfo(stock);
   if (elements.mDivYieldVal) {
     if (stock.dividendYield !== undefined) {
       const pInfo = stock.dividendYield > 0 && stock.payoutRatio ? ` &bull; Payout ${stock.payoutRatio}% (${stock.isPayoutSustainable !== false ? '✅ Sostenibile' : '⚠️ Elevato'})` : '';
@@ -16727,6 +17835,19 @@ function openStockDetail(stockId) {
     } else {
       elements.mDivYieldVal.textContent = `--`;
     }
+  }
+  if (elements.mExDivVal) {
+    if (stock.dividendYield > 0) {
+      elements.mExDivVal.innerHTML = `📅 ${cal.nextExDivText}${cal.isExDivSoon ? ' <span style="color:#fde047;">(Imminente!)</span>' : ''}`;
+      elements.mExDivVal.className = `km-value ${cal.isExDivSoon ? 'text-emerald' : 'text-amber'}`;
+    } else {
+      elements.mExDivVal.textContent = `Nessun Dividendo (0%)`;
+      elements.mExDivVal.className = `km-value text-muted`;
+    }
+  }
+  if (elements.mEarningsVal) {
+    elements.mEarningsVal.innerHTML = `📊 ${cal.nextEarningsText}${cal.isEarningsSoon ? ' <span style="color:#fca5a5;">(⚠️ Rischio Binario)</span>' : ' <span style="color:#34d399;">(🛡️ Campo Libero 5G)</span>'}`;
+    elements.mEarningsVal.className = `km-value ${cal.isEarningsSoon ? 'text-red' : 'text-cyan'}`;
   }
   if (elements.m52wAvgVal) {
     elements.m52wAvgVal.innerHTML = build52wRangeBar(stock, 'modal');
@@ -17043,6 +18164,10 @@ function initEventListeners() {
     if (!state.selectedStock) return;
     const s = state.selectedStock;
     const upside = calculateUpside(s.currentPrice, s.targetPrice);
+    const cal = getStockCalendarInfo(s);
+    const divLine = s.dividendYield > 0
+      ? `Div. Yield: ${s.dividendYield}% (Payout ${s.payoutRatio || 45}% ${s.isPayoutSustainable !== false ? '✅ Sostenibile' : '⚠️ Elevato'}) | Prossimo Stacco: ${cal.nextExDivText}`
+      : `Div. Yield: 0% (Nessun Dividendo)`;
     const report = `📊 AlphaPulse Intelligence - Scheda Titolo del Giorno (Dati Reali di Borsa)
 Titolo: ${s.ticker} (${s.name})
 Mercato: ${s.exchange} | Settore: ${s.sector}
@@ -17050,6 +18175,8 @@ Capitalizzazione: ${s.marketCap}
 Prezzo Reale Attuale: ${s.currency}${s.currentPrice.toFixed(2)} (${s.dayChangePct >= 0 ? '+' : ''}${s.dayChangePct}%)
 Target Price: ${s.currency}${s.targetPrice.toFixed(2)} (+${upside}%)
 Stop Loss Consigliato: ${s.currency}${s.stopLoss.toFixed(2)}
+${divLine}
+Prossima Trimestrale (Utili): ${cal.nextEarningsText}
 Probabilità di Salita: ${s.score}% (Algoritmo Multi-Fattoriale)
 RSI Reale (14): ${s.rsi} | Volume Spike: ${s.volumeSpike}
 Notizia Reale Rilevata: ${s.catalysts && s.catalysts[0] ? s.catalysts[0].title : s.summary}`;

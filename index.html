@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261103-v12">
+  <link rel="stylesheet" href="style.css?v=20261103-v13">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -166,6 +166,41 @@
       .bottom-nav-inner { width: 100%; gap: 4px; }
       .bottom-nav-item { flex: 1; padding: 9px 8px; gap: 5px; font-size: 0.76rem; }
       .bnav-badge { font-size: 0.64rem; padding: 2px 5px; }
+    }
+    .exdiv-pill {
+      border-color: rgba(16, 185, 129, 0.38) !important;
+      color: #6ee7b7 !important;
+      background: rgba(16, 185, 129, 0.10) !important;
+      font-weight: 600;
+    }
+    .exdiv-pill strong { color: #a7f3d0 !important; }
+    .exdiv-pill.exdiv-soon {
+      border-color: rgba(16, 185, 129, 0.75) !important;
+      color: #34d399 !important;
+      background: rgba(16, 185, 129, 0.20) !important;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+    }
+    .exdiv-pill.exdiv-soon strong { color: #ecfdf5 !important; }
+    .earnings-pill {
+      border-color: rgba(56, 189, 248, 0.35) !important;
+      color: #7dd3fc !important;
+      background: rgba(56, 189, 248, 0.10) !important;
+      font-weight: 600;
+    }
+    .earnings-pill strong { color: #e0f2fe !important; }
+    .earnings-pill.earnings-soon {
+      border-color: rgba(248, 113, 113, 0.65) !important;
+      color: #fca5a5 !important;
+      background: rgba(239, 68, 68, 0.18) !important;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 0.25);
+    }
+    .earnings-pill.earnings-soon strong { color: #fef2f2 !important; }
+    .table-calendar-sub {
+      font-size: 0.67rem;
+      font-weight: 600;
+      margin-top: 2px;
+      line-height: 1.25;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -618,11 +653,19 @@
             </div>
           </div>
 
-          <!-- Metriche e Livelli Operativi Dinamici (ATR, EMA, Stop Loss, R/R, Dividendo, Media 52W) -->
+          <!-- Metriche e Livelli Operativi Dinamici (ATR, EMA, Stop Loss, R/R, Dividendo, Stacco, Trimestrale, Media 52W) -->
           <div class="key-metrics-grid">
             <div class="key-metric-item">
               <span class="km-label">Dividend Yield Annuale</span>
               <span class="km-value text-amber" id="mDivYieldVal">--%</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Prossimo Stacco Dividendo (Ex-Div)</span>
+              <span class="km-value text-emerald" id="mExDivVal">--</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Countdown Prossima Trimestrale</span>
+              <span class="km-value text-cyan" id="mEarningsVal">--</span>
             </div>
             <div class="key-metric-item">
               <span class="km-label">Media 52 Settimane &amp; Posizione</span>
@@ -750,6 +793,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261103-v12"></script>
+  <script src="app.js?v=20261103-v13"></script>
 </body>
 </html>

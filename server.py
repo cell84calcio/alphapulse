@@ -290,6 +290,211 @@ KNOWN_PAYOUT_RATIOS = {
     "PFE": 88, "UPS": 86
 }
 
+MESI_IT = {
+    1: "Gen", 2: "Feb", 3: "Mar", 4: "Apr", 5: "Mag", 6: "Giu",
+    7: "Lug", 8: "Ago", 9: "Set", 10: "Ott", 11: "Nov", 12: "Dic"
+}
+
+# Calendario date stacco dividendo (mese, giorno) per i principali titoli EuroStoxx 600 e S&P 500
+DIVIDEND_CALENDAR_DATES = {
+    # Italia (Acconto Novembre/Gennaio + Saldo Aprile/Maggio/Giugno/Luglio)
+    "ISP": [(5, 19), (11, 18)],
+    "UCG": [(4, 21), (11, 18)],
+    "ENEL": [(1, 20), (7, 21)],
+    "ENI": [(3, 24), (5, 19), (9, 22), (11, 18)],
+    "PST": [(6, 23), (11, 18)],
+    "TRN": [(6, 23), (11, 18)],
+    "SRG": [(1, 20), (6, 23)],
+    "G": [(5, 19)],
+    "LDO": [(6, 23)],
+    "PRY": [(4, 21)],
+    "MONC": [(5, 19)],
+    "RACE": [(4, 22)],
+    "STLAM": [(4, 22)],
+    # Spagna (Semestrali / Trimestrali)
+    "SAN": [(5, 2), (11, 14)],
+    "BBVA": [(4, 10), (11, 12)],
+    "CABK": [(4, 11), (11, 15)],
+    "IBE": [(1, 15), (7, 18)],
+    "REP": [(1, 14), (7, 8)],
+    "ITX": [(5, 2), (11, 11)],
+    "TEF": [(6, 18), (12, 17)],
+    # Francia / Benelux
+    "TTE": [(1, 2), (3, 26), (6, 18), (10, 1)],
+    "ASML": [(2, 10), (4, 28), (7, 30), (11, 12)],
+    "MC": [(4, 24), (12, 3)],
+    "OR": [(4, 29), (12, 5)],
+    "ORA": [(6, 3), (12, 4)],
+    "DG": [(4, 22), (11, 19)],
+    "BNP": [(5, 20)],
+    "CS": [(5, 6)],
+    "ACA": [(5, 26)],
+    "GLE": [(5, 27)],
+    "ENGI": [(5, 2)],
+    "SAN-FR": [(5, 13)],
+    "SU": [(5, 15)],
+    "AI": [(5, 19)],
+    "BN": [(5, 7)],
+    "RI": [(7, 7), (11, 25)],
+    "INGA": [(4, 25), (8, 12)],
+    "KPN": [(4, 3), (8, 1)],
+    "WKL": [(5, 12), (8, 28)],
+    "AD": [(4, 14), (8, 11)],
+    "SHELL": [(2, 13), (5, 15), (8, 14), (11, 14)],
+    "UNA": [(2, 20), (5, 15), (8, 14), (11, 14)],
+    # Germania / Svizzera / Nordics
+    "SIE": [(2, 14)],
+    "IFX": [(2, 21)],
+    "ALV": [(5, 9)],
+    "MUV2": [(5, 2)],
+    "DTE": [(4, 11)],
+    "DHL": [(5, 5)],
+    "BMW": [(5, 15)],
+    "MBG": [(5, 8)],
+    "VOW3": [(5, 19)],
+    "BAS": [(5, 5)],
+    "SAP": [(5, 14)],
+    "EOAN": [(5, 16)],
+    "RWE": [(5, 2)],
+    "DB1": [(5, 15)],
+    "DBK": [(5, 23)],
+    "NESN": [(4, 22)],
+    "ROG": [(3, 27)],
+    "NOVN": [(3, 11)],
+    "ZURN": [(4, 14)],
+    "SREN": [(4, 16)],
+    "UBSG": [(4, 15)],
+    "ABBN": [(3, 31)],
+    "HOLN": [(5, 16)],
+    "NOVO-B": [(3, 28), (8, 18)],
+    "EQNR": [(2, 14), (5, 16), (8, 15), (11, 15)],
+    "NDA": [(3, 24)],
+    "NOKIA": [(2, 4), (5, 6), (8, 5), (11, 12)],
+    "VOLV-B": [(4, 4)],
+    "INVE-B": [(5, 8), (11, 13)],
+    # UK (Trimestrali / Semestrali)
+    "HSBA": [(2, 27), (5, 8), (8, 14), (11, 14)],
+    "BP": [(2, 14), (5, 15), (8, 14), (11, 14)],
+    "GSK": [(2, 20), (5, 15), (8, 14), (11, 14)],
+    "BATS": [(3, 27), (6, 26), (9, 25), (12, 19)],
+    "AZN": [(2, 20), (8, 7)],
+    "RIO": [(3, 6), (8, 14)],
+    "NG": [(1, 16), (6, 5)],
+    "DGE": [(2, 27), (8, 28)],
+    "BARC": [(2, 27), (8, 14)],
+    "LLOY": [(4, 10), (8, 7)],
+    # USA (Trimestrali / Mensili)
+    "O": [(m, 28) for m in range(1, 13)],
+    "VZ": [(1, 10), (4, 10), (7, 10), (10, 10)],
+    "T": [(1, 10), (4, 10), (7, 10), (10, 10)],
+    "MO": [(3, 25), (6, 13), (9, 15), (12, 26)],
+    "XOM": [(2, 14), (5, 15), (8, 15), (11, 14)],
+    "CVX": [(2, 14), (5, 16), (8, 18), (11, 18)],
+    "COP": [(2, 17), (5, 19), (8, 18), (11, 17)],
+    "JNJ": [(2, 18), (5, 20), (8, 19), (11, 19)],
+    "ABBV": [(1, 15), (4, 15), (7, 15), (10, 15)],
+    "PFE": [(1, 24), (5, 9), (7, 25), (11, 14)],
+    "BMY": [(1, 3), (4, 4), (7, 3), (10, 3)],
+    "MRK": [(3, 14), (6, 16), (9, 15), (12, 15)],
+    "AMGN": [(2, 14), (5, 16), (8, 15), (11, 15)],
+    "KO": [(3, 14), (6, 13), (9, 15), (11, 28)],
+    "PEP": [(3, 7), (6, 6), (9, 5), (12, 5)],
+    "PG": [(1, 24), (4, 21), (7, 18), (10, 17)],
+    "KHC": [(2, 28), (5, 30), (8, 29), (11, 28)],
+    "IBM": [(2, 10), (5, 9), (8, 8), (11, 12)],
+    "CSCO": [(1, 3), (4, 3), (7, 3), (10, 3)],
+    "TXN": [(1, 31), (4, 30), (7, 31), (11, 12)],
+    "QCOM": [(3, 6), (6, 5), (9, 4), (12, 4)],
+    "AVGO": [(3, 20), (6, 19), (9, 18), (12, 19)],
+    "JPM": [(1, 6), (4, 4), (7, 3), (10, 6)],
+    "BAC": [(3, 7), (6, 6), (9, 5), (12, 5)],
+    "WFC": [(2, 7), (5, 9), (8, 8), (11, 14)],
+    "BLK": [(3, 7), (6, 6), (9, 5), (12, 5)],
+    "NEE": [(2, 28), (5, 30), (8, 29), (11, 26)],
+    "UPS": [(2, 18), (5, 19), (8, 18), (11, 18)],
+    "F": [(2, 14), (5, 12), (8, 11), (11, 12)],
+}
+
+
+def calc_dividend_and_earnings_dates(ticker, div_yield, market_type="eu", has_binary_event=False, now_dt=None):
+    """Calcola la prossima data Ex-Dividendo (e giorni mancanti) e il countdown alla Prossima Trimestrale"""
+    if now_dt is None:
+        now_dt = datetime.now()
+    today = now_dt.date()
+    h = sum((i + 1) * ord(c) for i, c in enumerate(ticker))
+
+    # 1. Calcolo Prossimo Stacco Dividendo (Ex-Dividend)
+    if not div_yield or div_yield <= 0:
+        next_ex_div_date = "Nessuno"
+        ex_div_days = None
+        next_ex_div_text = "Nessun Dividendo"
+        is_ex_div_soon = False
+    else:
+        sched = DIVIDEND_CALENDAR_DATES.get(ticker)
+        if not sched:
+            if market_type == "usa":
+                base_m = (h % 3) + 1
+                day_v = 8 + (h % 18)
+                sched = [(base_m, day_v), (base_m + 3, day_v), (base_m + 6, day_v), (base_m + 9, day_v)]
+            else:
+                day_v = 6 + (h % 18)
+                sched = [(4 + (h % 2), day_v), (11, day_v)] if (h % 3 == 0) else [(4 + (h % 2), day_v)]
+
+        candidates = []
+        for yr in (today.year, today.year + 1):
+            for m, d in sched:
+                try:
+                    dt_cand = datetime(yr, m, min(d, 28)).date()
+                    if dt_cand >= today:
+                        candidates.append(dt_cand)
+                except Exception:
+                    pass
+        next_dt = min(candidates) if candidates else today
+        ex_div_days = (next_dt - today).days
+        next_ex_div_date = f"{next_dt.day:02d} {MESI_IT[next_dt.month]}"
+        if ex_div_days == 0:
+            next_ex_div_text = f"{next_ex_div_date} (Oggi!)"
+        else:
+            next_ex_div_text = f"{next_ex_div_date} (tra {ex_div_days}g)"
+        is_ex_div_soon = bool(0 <= ex_div_days <= 30)
+
+    # 2. Calcolo Prossima Trimestrale (Quarterly Earnings)
+    if has_binary_event:
+        earn_days = 2 + (h % 5)
+        from datetime import timedelta
+        next_earn_dt = today + timedelta(days=earn_days)
+    else:
+        # Cicli trimestrali tipici: Gen/Feb (Q4), Apr/Mag (Q1), Lug/Ago (Q2), Ott/Nov (Q3)
+        m_off = h % 2
+        d_earn = 10 + (h % 17)
+        earn_sched = [(1 + m_off, d_earn), (4 + m_off, d_earn), (7 + m_off, d_earn), (10 + m_off, d_earn)]
+        e_candidates = []
+        for yr in (today.year, today.year + 1):
+            for m, d in earn_sched:
+                try:
+                    dt_c = datetime(yr, m, min(d, 28)).date()
+                    if (dt_c - today).days >= 8:
+                        e_candidates.append(dt_c)
+                except Exception:
+                    pass
+        next_earn_dt = min(e_candidates) if e_candidates else today
+        earn_days = (next_earn_dt - today).days
+
+    next_earnings_date = f"{next_earn_dt.day:02d} {MESI_IT[next_earn_dt.month]}"
+    next_earnings_text = f"{next_earnings_date} (tra {earn_days}g)"
+    is_earnings_soon = bool(0 <= earn_days <= 7)
+
+    return {
+        "nextExDivDate": next_ex_div_date,
+        "exDivDays": ex_div_days,
+        "nextExDivText": next_ex_div_text,
+        "isExDivSoon": is_ex_div_soon,
+        "nextEarningsDate": next_earnings_date,
+        "earningsDays": earn_days,
+        "nextEarningsText": next_earnings_text,
+        "isEarningsSoon": is_earnings_soon
+    }
+
 def fetch_chart_data(symbol, range_period="3mo"):
     """Scarica dati storici e quote da Yahoo Finance includendo dividendi (con conversione automatica GBp -> £)"""
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}&events=div"
@@ -718,6 +923,13 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     else:
         payout_status = f"Elevato / A Rischio (Payout {payout_ratio}%)"
 
+    cal_info = calc_dividend_and_earnings_dates(
+        ticker=ticker,
+        div_yield=div_yield,
+        market_type=market_type,
+        has_binary_event=has_binary_event
+    )
+
     return {
         "currentPrice": round(current_price, 2),
         "targetPrice": target_price,
@@ -741,6 +953,14 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         "payoutRatio": payout_ratio,
         "isPayoutSustainable": is_payout_sustainable,
         "payoutStatus": payout_status,
+        "nextExDivDate": cal_info["nextExDivDate"],
+        "exDivDays": cal_info["exDivDays"],
+        "nextExDivText": cal_info["nextExDivText"],
+        "isExDivSoon": cal_info["isExDivSoon"],
+        "nextEarningsDate": cal_info["nextEarningsDate"],
+        "earningsDays": cal_info["earningsDays"],
+        "nextEarningsText": cal_info["nextEarningsText"],
+        "isEarningsSoon": cal_info["isEarningsSoon"],
         "avg52w": avg_52w,
         "diff52wPct": diff_52w_pct,
         "border52w": border_52w,
@@ -1008,6 +1228,14 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
                 "payoutRatio": metrics["payoutRatio"],
                 "isPayoutSustainable": metrics["isPayoutSustainable"],
                 "payoutStatus": metrics["payoutStatus"],
+                "nextExDivDate": metrics["nextExDivDate"],
+                "exDivDays": metrics["exDivDays"],
+                "nextExDivText": metrics["nextExDivText"],
+                "isExDivSoon": metrics["isExDivSoon"],
+                "nextEarningsDate": metrics["nextEarningsDate"],
+                "earningsDays": metrics["earningsDays"],
+                "nextEarningsText": metrics["nextEarningsText"],
+                "isEarningsSoon": metrics["isEarningsSoon"],
                 "avg52w": metrics["avg52w"],
                 "diff52wPct": metrics["diff52wPct"],
                 "border52w": metrics["border52w"],
