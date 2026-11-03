@@ -736,6 +736,123 @@ body {
   box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 18px rgba(16, 185, 129, 0.15);
 }
 
+/* ==========================================================================
+   CORNICI BASATE SU MEDIA 52 SETTIMANE (Richiesta Utente)
+   - Verde: Prezzo sotto media 52w (> 10% sconto)
+   - Arancione: Prezzo nel range del +/-10% rispetto media 52w
+   - Rossa: Prezzo sopra media 52w (> 10% esteso)
+   ========================================================================== */
+.stock-card.border-52w-green {
+  border: 2px solid #10b981 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.25), var(--shadow-card) !important;
+}
+.stock-card.border-52w-green::before {
+  background: #10b981 !important;
+}
+.stock-card.border-52w-green:hover {
+  border-color: #10b981 !important;
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 24px rgba(16, 185, 129, 0.45) !important;
+}
+
+.stock-card.border-52w-orange {
+  border: 2px solid #f59e0b !important;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.25), var(--shadow-card) !important;
+}
+.stock-card.border-52w-orange::before {
+  background: #f59e0b !important;
+}
+.stock-card.border-52w-orange:hover {
+  border-color: #f59e0b !important;
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 24px rgba(245, 158, 11, 0.45) !important;
+}
+
+.stock-card.border-52w-red {
+  border: 2px solid #ef4444 !important;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.25), var(--shadow-card) !important;
+}
+.stock-card.border-52w-red::before {
+  background: #ef4444 !important;
+}
+.stock-card.border-52w-red:hover {
+  border-color: #ef4444 !important;
+  box-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 24px rgba(239, 68, 68, 0.45) !important;
+}
+
+/* Badge e Pillole 52W e Dividend Yield */
+.div-yield-pill {
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  color: #fbbf24 !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  font-weight: 600;
+}
+.div-yield-pill strong {
+  color: #fef08a !important;
+}
+
+.badge-52w-green {
+  border-color: rgba(16, 185, 129, 0.45) !important;
+  color: #34d399 !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+}
+.badge-52w-orange {
+  border-color: rgba(245, 158, 11, 0.45) !important;
+  color: #fbbf24 !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+}
+.badge-52w-red {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  color: #f87171 !important;
+  background: rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Barra Legenda Cornici 52W */
+.legend-52w-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  flex-wrap: wrap;
+}
+.legend-52w-title {
+  color: var(--text-secondary);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.72rem;
+}
+.legend-52w-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+.legend-box {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  display: inline-block;
+}
+.legend-box.green {
+  border: 2px solid #10b981;
+  background: rgba(16, 185, 129, 0.2);
+}
+.legend-box.orange {
+  border: 2px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.2);
+}
+.legend-box.red {
+  border: 2px solid #ef4444;
+  background: rgba(239, 68, 68, 0.2);
+}
+
 /* Card Header */
 .card-header-row {
   display: flex;

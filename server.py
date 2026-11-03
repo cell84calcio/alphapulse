@@ -105,9 +105,21 @@ BINARY_RISK_KEYWORDS = [
     "trial results today", "regulatory decision"
 ]
 
+# Dividend Yield annualizzati di riferimento
+KNOWN_DIVIDEND_YIELDS = {
+    # Europa
+    "ENEL": 6.8, "TTE": 5.4, "ENI": 6.2, "ISP": 7.4, "SAN": 4.5, "BBVA": 5.2, "BNP": 5.8, "UCG": 6.1,
+    "IBE": 4.6, "ALV": 5.3, "SAN-FR": 4.2, "DTE": 3.4, "OR": 1.6, "MC": 2.1, "RMS": 0.9, "RACE": 0.8,
+    "SU": 1.6, "AIR": 1.3, "SIE": 2.6, "SAP": 1.1, "ASML": 0.9, "NOVO-B": 1.4, "LDO": 0.7, "RHM": 0.8,
+    # USA
+    "XOM": 3.3, "JPM": 2.2, "GS": 1.4, "V": 0.8, "WMT": 1.3, "COST": 0.6, "LLY": 0.6, "AAPL": 0.5,
+    "MSFT": 0.7, "AVGO": 1.2, "QCOM": 2.1, "CAT": 1.4, "CRM": 0.6, "ORCL": 1.4, "UBER": 0.0, "TSLA": 0.0,
+    "NVDA": 0.25, "PLTR": 0.0, "AMZN": 0.0, "META": 0.35, "GOOGL": 0.3, "AMD": 0.0, "NFLX": 0.0, "TSM": 1.2
+}
+
 def fetch_chart_data(symbol, range_period="3mo"):
-    """Scarica 3 mesi di dati per calcolare EMA 20, EMA 50 e ATR 14"""
-    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}"
+    """Scarica dati storici e quote da Yahoo Finance includendo dividendi"""
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}&events=div"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
     with urllib.request.urlopen(req, timeout=6) as resp:
         data = json.loads(resp.read().decode("utf-8"))
@@ -211,7 +223,7 @@ def fetch_real_news(ticker, name):
         })
     return news_items
 
-def compute_institutional_model(chart_result, news_list, market_regime, market_type="eu", sector_lead_bonus=0):
+def compute_institutional_model(chart_result, news_list, market_regime, market_type="eu", sector_lead_bonus=0, ticker=""):
     """
     Calcola il punteggio istituzionale v6.0:
     - Pesi utente (30% Breakout, 25% News, 20% Flussi, 15% Analisti, 10% Mercato)
@@ -219,6 +231,8 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     - Filtro Trend Strutturale Multi-Timeframe (Price > EMA20 > EMA50)
     - Bonus Rotazione Settoriale
     - Rischio Binario, Forza Relativa (Alpha), Conferma Intraday
+    - Dividend Yield Annualizzato (%)
+    - Posizionamento vs Media 52 Settimane con Colorazione Cornice (Verde / Arancione / Rossa)
     """
     meta = chart_result.get("meta", {})
     quotes = chart_result.get("indicators", {}).get("quote", [{}])[0]
@@ -236,6 +250,28 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     day_change_pct = meta.get("regularMarketChangePercent") or (((current_price - prev_close) / prev_close) * 100)
     high_52 = meta.get("fiftyTwoWeekHigh", current_price * 1.15)
     low_52 = meta.get("fiftyTwoWeekLow", current_price * 0.85)
+
+    # Calcolo Media a 52 Settimane & Posizionamento Prezzo
+    avg_52w = round((high_52 + low_52) / 2.0, 2)
+    diff_52w_pct = round(((current_price - avg_52w) / avg_52w) * 100.0, 1)
+
+    # Regola colore cornice richiesta dall'utente:
+    # 1. Sotto la media 52w (< -10%) -> Cornice Verde (Sconto / Valore)
+    # 2. Nel range del +10% o -10% rispetto alla media 52w -> Cornice Arancione (Nel range)
+    # 3. Sopra la media 52w (> +10%) -> Cornice Rossa (Esteso / Sopra la media)
+    if diff_52w_pct < -10.0:
+        border_52w = "green"
+        status_52w = f"Sotto Media 52W ({diff_52w_pct}%)"
+    elif diff_52w_pct > 10.0:
+        border_52w = "red"
+        status_52w = f"Sopra Media 52W (+{diff_52w_pct}%)"
+    else:
+        border_52w = "orange"
+        sign = "+" if diff_52w_pct > 0 else ""
+        status_52w = f"Nel Range ±10% ({sign}{diff_52w_pct}%)"
+
+    # Dividend Yield annuale (%)
+    div_yield = KNOWN_DIVIDEND_YIELDS.get(ticker, 0.0)
 
     # 1. Calcolo reale EMA 20 e EMA 50
     ema20 = calc_ema(closes, 20)
@@ -419,6 +455,13 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         "rsi": rsi,
         "volumeSpike": f"{vol_spike}x",
         "riskReward": risk_reward,
+        "dividendYield": div_yield,
+        "avg52w": avg_52w,
+        "diff52wPct": diff_52w_pct,
+        "border52w": border_52w,
+        "status52w": status_52w,
+        "high52": round(high_52, 2),
+        "low52": round(low_52, 2),
         "controls": control_notes,
         "pillars": {
             "breakout": pillar_breakout,
@@ -570,7 +613,7 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         try:
             sec_bonus = 3 if item["sector"] == top_sector else 0
             news = fetch_real_news(ticker, name)
-            metrics = compute_institutional_model(chart, news, market_regime, market_type, sector_lead_bonus=sec_bonus)
+            metrics = compute_institutional_model(chart, news, market_regime, market_type, sector_lead_bonus=sec_bonus, ticker=ticker)
             if not metrics:
                 continue
 
@@ -586,6 +629,7 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
             ctrl_text = " &bull; ".join(metrics["controls"][:2])
             summary = (
                 f"Quotazione reale {item['currency']}{price} ({metrics['dayChangePct']:+}%). "
+                f"Div. Yield: {metrics['dividendYield']}%. Media 52W: {item['currency']}{metrics['avg52w']} ({metrics['status52w']}). "
                 f"ATR 14: {item['currency']}{metrics['atr14']} ({metrics['atrPct']}% vol). "
                 f"Controlli attivi: {ctrl_text}."
             )
@@ -604,6 +648,13 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
                 "targetPct": metrics["targetPct"],
                 "stopLoss": metrics["stopLoss"],
                 "stopPct": metrics["stopPct"],
+                "dividendYield": metrics["dividendYield"],
+                "avg52w": metrics["avg52w"],
+                "diff52wPct": metrics["diff52wPct"],
+                "border52w": metrics["border52w"],
+                "status52w": metrics["status52w"],
+                "high52": metrics["high52"],
+                "low52": metrics["low52"],
                 "atr14": metrics["atr14"],
                 "atrPct": metrics["atrPct"],
                 "ema20": metrics["ema20"],
@@ -625,7 +676,8 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
             })
 
             trend_icon = "🟢 EMA OK" if metrics["hasTrendAlignment"] else "🔴 No EMA"
-            print(f"  + {ticker:<6} | Prezzo: {item['currency']}{price:>7.2f} | Score: {metrics['score']}% | {trend_icon} | ATR: {metrics['atrPct']}%")
+            b_icon = "🟢" if metrics["border52w"] == "green" else ("🟠" if metrics["border52w"] == "orange" else "🔴")
+            print(f"  + {ticker:<6} | Prezzo: {item['currency']}{price:>7.2f} | Div: {metrics['dividendYield']:>4.1f}% | 52W: {b_icon} {metrics['status52w']} | Score: {metrics['score']}% | {trend_icon}")
             time.sleep(0.1)
 
         except Exception as e:

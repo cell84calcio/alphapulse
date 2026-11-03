@@ -217,11 +217,19 @@
       </div>
     </header>
 
-    <!-- Banner Metodologia del Modello Quantitativo v5.0 -->
+    <!-- Banner Metodologia del Modello Quantitativo v6.0 -->
     <section class="methodology-banner">
       <div class="methodology-info">
-        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v5.0 &bull; Pesi Calibrati &amp; 3 Controlli di Rischio</div>
+        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v6.0 &bull; Pesi Calibrati, Dividend Yield &amp; Indicatori 52W</div>
         <p>I 10 titoli sono selezionati su oltre <strong>50 large cap (&gt; 10 Mld)</strong> con i 5 pesi ponderati: <strong>Breakout &amp; RSI (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
+        
+        <!-- Legenda Cornici Basate su Media 52 Settimane -->
+        <div class="legend-52w-bar">
+          <span class="legend-52w-title"><i class="fa-solid fa-arrows-split-up-and-left text-cyan"></i> Posizione vs Media 52W:</span>
+          <span class="legend-52w-item"><span class="legend-box green"></span> <strong>Cornice Verde:</strong> Sotto Media 52W (&gt; 10% Sconto)</span>
+          <span class="legend-52w-item"><span class="legend-box orange"></span> <strong>Cornice Arancione:</strong> Nel Range ±10% Media</span>
+          <span class="legend-52w-item"><span class="legend-box red"></span> <strong>Cornice Rossa:</strong> Sopra Media 52W (&gt; 10% Esteso)</span>
+        </div>
       </div>
       <div class="methodology-pillars">
         <div class="pillar-chip" title="Esclusione scommesse binarie"><span class="dot green"></span> 🛡️ No Rischio Binario</div>
@@ -261,6 +269,8 @@
               <th>Settore</th>
               <th>Cap. di Mercato</th>
               <th>Prezzo Attuale</th>
+              <th>Div. Yield</th>
+              <th>Posizione 52W</th>
               <th>Target Price</th>
               <th>Upside (%)</th>
               <th>Probabilità Rialzo</th>
@@ -387,8 +397,16 @@
             </div>
           </div>
 
-          <!-- Metriche e Livelli Operativi Dinamici (ATR, EMA, Stop Loss, R/R) -->
+          <!-- Metriche e Livelli Operativi Dinamici (ATR, EMA, Stop Loss, R/R, Dividendo, Media 52W) -->
           <div class="key-metrics-grid">
+            <div class="key-metric-item">
+              <span class="km-label">Dividend Yield Annuale</span>
+              <span class="km-value text-amber" id="mDivYieldVal">--%</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Media 52 Settimane &amp; Posizione</span>
+              <span class="km-value" id="m52wAvgVal">--</span>
+            </div>
             <div class="key-metric-item">
               <span class="km-label">Stop Loss Dinamico (ATR)</span>
               <span class="km-value text-red" id="mStopLoss">$132.80 (-4.1%)</span>
