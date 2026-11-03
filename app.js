@@ -2834,9 +2834,181 @@ function updateWatchlistUI() {
 // 5. CARICAMENTO DATI REALI DA SERVER O FILE
 // ==========================================================================
 
+const YAHOO_SYMBOL_MAP = {
+  "SAP": "SAP.DE", "SIE": "SIE.DE", "ALV": "ALV.DE", "DTE": "DTE.DE", "MUV2": "MUV2.DE",
+  "AIR": "AIR.PA", "BAYN": "BAYN.DE", "BAS": "BAS.DE", "IFX": "IFX.DE", "MBG": "MBG.DE",
+  "BMW": "BMW.DE", "VW": "VOW3.DE", "DHL": "DHL.DE", "ADS": "ADS.DE", "DB1": "DB1.DE",
+  "RWE": "RWE.DE", "DBK": "DBK.DE", "MC": "MC.PA", "OR": "OR.PA", "RMS": "RMS.PA",
+  "TTE": "TTE.PA", "SAN-FR": "SAN.PA", "SU": "SU.PA", "AI": "AI.PA", "BNP": "BNP.PA",
+  "CS": "CS.PA", "EL": "EL.PA", "SAF": "SAF.PA", "DG": "DG.PA", "ACA": "ACA.PA",
+  "BN": "BN.PA", "SGO": "SGO.PA", "CAP": "CAP.PA", "ORA": "ORA.PA", "KER": "KER.PA",
+  "ENGI": "ENGI.PA", "STLA": "STLAM.MI", "RI": "RI.PA", "ASML": "ASML.AS", "PRX": "PRX.AS",
+  "INGA": "INGA.AS", "AD": "AD.AS", "ADYEN": "ADYEN.AS", "WOL": "WKL.AS", "UCG": "UCG.MI",
+  "ISP": "ISP.MI", "ENEL": "ENEL.MI", "ENI": "ENI.MI", "RACE": "RACE.MI", "G": "G.MI",
+  "ITX": "ITX.MC", "IBE": "IBE.MC", "SAN": "SAN.MC", "BBVA": "BBVA.MC", "ABI": "ABI.BR",
+  "NDA": "NDA-FI.HE", "NOKIA": "NOKIA.HE", "BRK.B": "BRK-B"
+};
+
+async function fetchYahooQuoteViaProxy(yahooSym) {
+  const targetUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(yahooSym)}?interval=1d&range=5d`;
+  const proxies = [
+    `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`,
+    `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`
+  ];
+  for (const url of proxies) {
+    try {
+      const controller = new AbortController();
+      const tid = setTimeout(() => controller.abort(), 3200);
+      const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
+      clearTimeout(tid);
+      if (!res.ok) continue;
+      const json = await res.json();
+      const result = json && json.chart && json.chart.result && json.chart.result[0];
+      if (!result) continue;
+      const quote = result.indicators && result.indicators.quote && result.indicators.quote[0];
+      const closes = (quote && quote.close ? quote.close : []).filter(v => v !== null && v !== undefined);
+      if (closes.length >= 2) {
+        const curPrice = closes[closes.length - 1];
+        const prevClose = closes[closes.length - 2];
+        const firstClose = closes[0];
+        const dayChangePct = parseFloat((((curPrice - prevClose) / prevClose) * 100).toFixed(2));
+        const roc5d = parseFloat((((curPrice - firstClose) / firstClose) * 100).toFixed(2));
+        return { curPrice: parseFloat(curPrice.toFixed(2)), dayChangePct, roc5d, closes: closes.map(c => parseFloat(c.toFixed(2))) };
+      }
+    } catch (_) {
+      // Prova il proxy successivo
+    }
+  }
+  return null;
+}
+
+async function refreshLiveQuotesClientSide(data) {
+  if (!data || !data.eu || !data.usa) return data;
+  const allItems = [
+    ...data.eu.map(item => ({ item, market: 'eu' })),
+    ...data.usa.map(item => ({ item, market: 'usa' }))
+  ];
+
+  await Promise.allSettled(allItems.map(async ({ item }) => {
+    const ySym = YAHOO_SYMBOL_MAP[item.ticker] || item.ticker;
+    const live = await fetchYahooQuoteViaProxy(ySym);
+    if (live && live.curPrice > 0) {
+      const ratio = live.curPrice / (item.currentPrice || live.curPrice);
+      item.currentPrice = live.curPrice;
+      item.dayChangePct = live.dayChangePct;
+      item.roc5d = live.roc5d;
+      if (item.targetPct && item.stopPct) {
+        item.targetPrice = parseFloat((live.curPrice * (1 + item.targetPct / 100)).toFixed(2));
+        item.stopLoss = parseFloat((live.curPrice * (1 - item.stopPct / 100)).toFixed(2));
+      } else {
+        item.targetPrice = parseFloat((item.targetPrice * ratio).toFixed(2));
+        item.stopLoss = parseFloat((item.stopLoss * ratio).toFixed(2));
+      }
+      if (item.avg52w && item.avg52w > 0) {
+        const diff52 = parseFloat((((live.curPrice - item.avg52w) / item.avg52w) * 100).toFixed(1));
+        item.diff52wPct = diff52;
+        if (diff52 < -10.0) {
+          item.border52w = 'green';
+          item.status52w = `Sotto Media 52W (${diff52}%)`;
+        } else if (diff52 <= 10.0) {
+          item.border52w = 'orange';
+          item.status52w = `Nel Range ±10% (${diff52 >= 0 ? '+' : ''}${diff52}%)`;
+        } else {
+          item.border52w = 'red';
+          item.status52w = `Sopra Media 52W (+${diff52}%)`;
+        }
+      }
+      if (item.chartData && item.chartData['5D'] && live.closes.length >= 2) {
+        item.chartData['5D'].values = live.closes.slice(-5);
+      }
+    }
+  }));
+
+  const now = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  data.lastUpdated = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())} CET`;
+  return data;
+}
+
+async function triggerFullMarketRefresh(source = 'button') {
+  if (state.isRefreshing) return;
+  state.isRefreshing = true;
+
+  const ptrBar = document.getElementById('pullToRefreshBar');
+  const ptrIcon = document.getElementById('ptrIcon');
+  const ptrText = document.getElementById('ptrText');
+
+  if (ptrBar && ptrIcon && ptrText) {
+    ptrBar.classList.remove('pulling', 'ready');
+    ptrBar.classList.add('refreshing');
+    ptrIcon.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
+    ptrText.textContent = `Aggiornamento Live Europa (EuroStoxx 50) & USA (S&P 500) in corso...`;
+  }
+
+  if (elements.refreshBtn) {
+    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Scansione EU &amp; USA...`;
+    elements.refreshBtn.disabled = true;
+  }
+
+  let updated = false;
+
+  try {
+    const res = await fetch('/api/refresh', { cache: 'no-store' });
+    if (res.ok) {
+      const data = await res.json();
+      if (data && data.eu && data.usa) {
+        applyRealMarketData(data);
+        updated = true;
+      }
+    }
+  } catch (_) {
+    // Fallback su market_data.json + quote live client-side per EU e USA
+  }
+
+  if (!updated) {
+    try {
+      let baseData = REAL_DATASET;
+      try {
+        const fRes = await fetch('market_data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (fRes.ok) {
+          baseData = await fRes.json();
+        }
+      } catch (_) {}
+      const liveData = await refreshLiveQuotesClientSide(baseData);
+      applyRealMarketData(liveData);
+      updated = true;
+    } catch (e) {
+      renderStocks();
+    }
+  }
+
+  if (ptrBar && ptrIcon && ptrText) {
+    ptrIcon.innerHTML = `<i class="fa-solid fa-check text-emerald"></i>`;
+    ptrText.textContent = `Dati Europa (EuroStoxx 50) & USA (S&P 500) Aggiornati!`;
+  }
+  if (elements.refreshBtn) {
+    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> EU &amp; USA Aggiornati!`;
+  }
+
+  setTimeout(() => {
+    if (ptrBar && ptrIcon && ptrText) {
+      ptrBar.classList.remove('refreshing', 'ready', 'pulling');
+      ptrBar.style.height = '0px';
+      ptrBar.style.opacity = '0';
+      ptrIcon.innerHTML = `<i class="fa-solid fa-arrow-down"></i>`;
+      ptrText.textContent = `Trascina in basso per aggiornare Europa (EuroStoxx 50) & USA (S&P 500)`;
+    }
+    if (elements.refreshBtn) {
+      elements.refreshBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Aggiorna Dati`;
+      elements.refreshBtn.disabled = false;
+    }
+    state.isRefreshing = false;
+  }, 1400);
+}
+
 async function loadLiveData() {
   try {
-    const res = await fetch('/api/market-data');
+    const res = await fetch('/api/market-data', { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
       applyRealMarketData(data);
@@ -2848,7 +3020,7 @@ async function loadLiveData() {
     }
   } catch (e) {
     try {
-      const fRes = await fetch('market_data.json?t=' + Date.now());
+      const fRes = await fetch('market_data.json?t=' + Date.now(), { cache: 'no-store' });
       if (fRes.ok) {
         const data = await fRes.json();
         applyRealMarketData(data);
@@ -3355,34 +3527,9 @@ function initEventListeners() {
     renderStocks();
   });
 
-  // Aggiorna Dati: Chiama il server live se attivo o ricarica i dati reali
-  elements.refreshBtn.addEventListener('click', async () => {
-    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Scansione Reale Yahoo &amp; News...`;
-    elements.refreshBtn.disabled = true;
-
-    try {
-      const res = await fetch('/api/refresh');
-      if (res.ok) {
-        const data = await res.json();
-        applyRealMarketData(data);
-        elements.refreshBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> Dati Live Aggiornati!`;
-      } else {
-        const fRes = await fetch('market_data.json?t=' + Date.now());
-        if (fRes.ok) {
-          const data = await fRes.json();
-          applyRealMarketData(data);
-          elements.refreshBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> Aggiornato!`;
-        }
-      }
-    } catch (e) {
-      elements.refreshBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> Aggiornato!`;
-      renderStocks();
-    }
-
-    setTimeout(() => {
-      elements.refreshBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Aggiorna Dati`;
-      elements.refreshBtn.disabled = false;
-    }, 1800);
+  // Aggiorna Dati: Chiama il server live se attivo o ricarica i dati reali per Europa & USA
+  elements.refreshBtn.addEventListener('click', () => {
+    triggerFullMarketRefresh('button');
   });
 
   elements.modalCloseBtn.addEventListener('click', closeModal);
@@ -3594,7 +3741,126 @@ function initSecurityLock() {
 }
 
 // ==========================================================================
-// 11. INIZIALIZZAZIONE ALL'AVVIO
+// 11. PULL-TO-REFRESH (TRASCINA VERSO IL BASSO PER AGGIORNARE EUROPA & USA)
+// ==========================================================================
+
+function initPullToRefresh() {
+  const ptrBar = document.getElementById('pullToRefreshBar');
+  const ptrIcon = document.getElementById('ptrIcon');
+  const ptrText = document.getElementById('ptrText');
+  if (!ptrBar || !ptrIcon || !ptrText) return;
+
+  let startY = 0;
+  let startX = 0;
+  let currentPull = 0;
+  let isDragging = false;
+  const PULL_THRESHOLD = 58;
+
+  function canStartPull(target) {
+    if (state.isRefreshing) return false;
+    if (window.scrollY > 5) return false;
+    if (SECURITY.lockOverlay && !SECURITY.lockOverlay.classList.contains('unlocked')) return false;
+    if (elements.stockModal && !elements.stockModal.classList.contains('hidden')) return false;
+    if (elements.watchlistDrawer && !elements.watchlistDrawer.classList.contains('hidden')) return false;
+    if (target && target.closest && target.closest('input, select, button, textarea, .modal-dialog, .watchlist-drawer')) return false;
+    return true;
+  }
+
+  function onDragMove(deltaY, deltaX, e) {
+    if (deltaY <= 10 || Math.abs(deltaX) > Math.abs(deltaY) * 0.9) {
+      if (currentPull > 0) {
+        currentPull = 0;
+        ptrBar.style.height = '0px';
+        ptrBar.style.opacity = '0';
+        ptrBar.classList.remove('ready', 'pulling');
+      }
+      return;
+    }
+
+    if (e && e.cancelable && window.scrollY <= 0) {
+      e.preventDefault();
+    }
+
+    currentPull = Math.min(84, Math.pow(deltaY - 10, 0.82) * 2.1);
+    ptrBar.classList.add('pulling');
+    ptrBar.style.height = `${currentPull}px`;
+    ptrBar.style.opacity = `${Math.min(1, currentPull / 42)}`;
+
+    if (currentPull >= PULL_THRESHOLD) {
+      ptrBar.classList.add('ready');
+      ptrText.textContent = 'Rilascia per aggiornare Europa (EuroStoxx 50) & USA (S&P 500)';
+    } else {
+      ptrBar.classList.remove('ready');
+      ptrText.textContent = 'Trascina in basso per aggiornare Europa (EuroStoxx 50) & USA (S&P 500)';
+    }
+  }
+
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    ptrBar.classList.remove('pulling');
+
+    if (currentPull >= PULL_THRESHOLD) {
+      currentPull = 0;
+      triggerFullMarketRefresh('pull');
+    } else {
+      currentPull = 0;
+      ptrBar.classList.remove('ready');
+      ptrBar.style.height = '0px';
+      ptrBar.style.opacity = '0';
+    }
+  }
+
+  // Supporto Touch (iPhone / iPad / Android)
+  window.addEventListener('touchstart', (e) => {
+    if (!e.touches || e.touches.length !== 1) return;
+    if (!canStartPull(e.target)) return;
+    startY = e.touches[0].clientY;
+    startX = e.touches[0].clientX;
+    currentPull = 0;
+    isDragging = true;
+  }, { passive: true });
+
+  window.addEventListener('touchmove', (e) => {
+    if (!isDragging || !e.touches || e.touches.length !== 1) return;
+    if (window.scrollY > 5) {
+      isDragging = false;
+      return;
+    }
+    const deltaY = e.touches[0].clientY - startY;
+    const deltaX = e.touches[0].clientX - startX;
+    onDragMove(deltaY, deltaX, e);
+  }, { passive: false });
+
+  window.addEventListener('touchend', onDragEnd, { passive: true });
+  window.addEventListener('touchcancel', onDragEnd, { passive: true });
+
+  // Supporto Trascinamento Mouse dall'alto su Desktop/Mac
+  window.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return;
+    if (!canStartPull(e.target)) return;
+    startY = e.clientY;
+    startX = e.clientX;
+    currentPull = 0;
+    isDragging = true;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    if (window.scrollY > 5) {
+      isDragging = false;
+      return;
+    }
+    const deltaY = e.clientY - startY;
+    const deltaX = e.clientX - startX;
+    onDragMove(deltaY, deltaX, e);
+  });
+
+  window.addEventListener('mouseup', onDragEnd);
+}
+
+// ==========================================================================
+// 12. INIZIALIZZAZIONE ALL'AVVIO
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -3602,6 +3868,7 @@ document.addEventListener('DOMContentLoaded', () => {
   formatDateDisplay();
   updateWatchlistUI();
   initEventListeners();
+  initPullToRefresh();
   renderStocks();
   loadLiveData();
 });
