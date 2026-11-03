@@ -2,8 +2,10 @@ name: Aggiornamento Automatico Dati Borsa
 
 on:
   schedule:
-    # Esegue da lunedì a venerdì alle 07:30 UTC (08:30 CET italiane, prima dell'apertura delle borse)
+    # 1. Aggiornamento Mattutino: 07:30 UTC (08:30 CET italiane - Prima dell'apertura borse EU)
     - cron: '30 7 * * 1-5'
+    # 2. Aggiornamento Pomeridiano: 14:00 UTC (15:00 CET italiane - Prima dell'apertura Wall Street)
+    - cron: '0 14 * * 1-5'
   workflow_dispatch: # Permette anche di avviarlo manualmente con un pulsante su GitHub
 
 jobs:
@@ -30,4 +32,4 @@ jobs:
           git config --global user.name "AlphaPulse Bot"
           git config --global user.email "bot@alphapulse.local"
           git add market_data.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d')" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d %H:%M')" && git push)
