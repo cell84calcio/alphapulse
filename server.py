@@ -326,8 +326,11 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         return None
         
     current_price = meta.get("regularMarketPrice") or closes[-1]
-    prev_close = meta.get("chartPreviousClose") or closes[-2]
-    day_change_pct = meta.get("regularMarketChangePercent") or (((current_price - prev_close) / prev_close) * 100)
+    prev_close = closes[-2] if len(closes) >= 2 else (meta.get("previousClose") or current_price)
+    if meta.get("regularMarketChangePercent") is not None:
+        day_change_pct = float(meta.get("regularMarketChangePercent"))
+    else:
+        day_change_pct = ((current_price - prev_close) / (prev_close + 1e-9)) * 100
     high_52 = meta.get("fiftyTwoWeekHigh", current_price * 1.15)
     low_52 = meta.get("fiftyTwoWeekLow", current_price * 0.85)
 
@@ -535,8 +538,12 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
 
     # CONTROLLO 3: Conferma Intraday & Close Location Value (CLV)
     if pos_score >= 2 and day_change_pct < -0.8 and (vol_spike < 0.9 or clv < 0.35):
-        weighted_score -= 6.0
+        weighted_score -= 7.5
         control_notes.append("❌ Fakeout: Notizia non confermata dai prezzi")
+    elif day_change_pct < -0.35:
+        pen = round(min(8.5, abs(day_change_pct) * 3.8), 1)
+        weighted_score -= pen
+        control_notes.append(f"⚠️ Debolezza Intraday Oggi ({day_change_pct:+.2f}%, -{pen} pts)")
     elif day_change_pct > 0 and (vol_spike >= 1.0 or clv >= 0.65):
         weighted_score += 2.5
         control_notes.append(f"✅ Conferma Prezzi/CLV (Chiusura al {int(clv*100)}% del range)")
@@ -792,8 +799,11 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
                     continue
 
                 cur_price = meta.get("regularMarketPrice") or closes_q[-1]
-                prev_close = meta.get("chartPreviousClose") or (closes_q[-2] if len(closes_q) >= 2 else cur_price)
-                chg_1d = meta.get("regularMarketChangePercent") or (((cur_price - prev_close) / (prev_close + 1e-9)) * 100)
+                prev_close = closes_q[-2] if len(closes_q) >= 2 else (meta.get("previousClose") or cur_price)
+                if meta.get("regularMarketChangePercent") is not None:
+                    chg_1d = float(meta.get("regularMarketChangePercent"))
+                else:
+                    chg_1d = ((cur_price - prev_close) / (prev_close + 1e-9)) * 100
                 chg_5d = ((cur_price - closes_q[-5]) / (closes_q[-5] + 1e-9)) * 100 if len(closes_q) >= 5 else chg_1d
                 comp_sec_chg = chg_5d * 0.6 + chg_1d * 0.4
 
