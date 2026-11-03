@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261103-v10">
+  <link rel="stylesheet" href="style.css?v=20261103-v11">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -227,7 +227,7 @@
   <div class="pull-to-refresh-bar" id="pullToRefreshBar" aria-live="polite">
     <div class="ptr-inner">
       <span class="ptr-icon" id="ptrIcon"><i class="fa-solid fa-arrow-down"></i></span>
-      <span class="ptr-text" id="ptrText">Trascina in basso per aggiornare Europa (EuroStoxx 50) &amp; USA (S&amp;P 500)</span>
+      <span class="ptr-text" id="ptrText">Trascina in basso per aggiornare Europa (EuroStoxx 600) &amp; USA (S&amp;P 500)</span>
     </div>
   </div>
 
@@ -366,8 +366,8 @@
     <!-- Banner Metodologia del Modello Quantitativo v7.0 -->
     <section class="methodology-banner">
       <div class="methodology-info">
-        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v7.0 &bull; Panieri Ufficiali EuroStoxx 50 &amp; S&amp;P 500</div>
-        <p>I 10 titoli sono selezionati scansionando i panieri <strong>EuroStoxx 50 (Europa)</strong> e <strong>S&amp;P 500 (USA &gt; 10 Mld)</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
+        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v7.0 &bull; Panieri Ufficiali EuroStoxx 600 &amp; S&amp;P 500</div>
+        <p>I 10 titoli sono selezionati scansionando i panieri <strong>EuroStoxx 600 (Europa &gt; 10 Mld)</strong> e <strong>S&amp;P 500 (USA &gt; 10 Mld)</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
         
         <!-- Legenda Cornici Basate su Media 52 Settimane -->
         <div class="legend-52w-bar">
@@ -379,7 +379,7 @@
       </div>
       <div class="methodology-pillars">
         <div class="pillar-chip" title="Esclusione scommesse binarie"><span class="dot green"></span> 🛡️ No Rischio Binario</div>
-        <div class="pillar-chip" title="Alpha vs S&P500 / EuroStoxx50"><span class="dot cyan"></span> 📈 Forza Relativa vs Indice</div>
+        <div class="pillar-chip" title="Alpha vs S&P500 / EuroStoxx600"><span class="dot cyan"></span> 📈 Forza Relativa vs Indice</div>
         <div class="pillar-chip" title="Verifica Prezzi + Volumi reali"><span class="dot purple"></span> ✅ Conferma Intraday</div>
         <div class="pillar-chip" title="Filtro Regime VIX"><span class="dot amber"></span> ⚡ VIX / Market Regime</div>
       </div>
@@ -391,8 +391,8 @@
       <!-- Intestazione View Corrente -->
       <div class="view-header-bar">
         <div>
-          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 50 (Europa) &bull; Top 10 Consigli a 5 Giorni</h2>
-          <p class="view-description" id="currentMarketDesc">Selezione dei 10 migliori componenti dell'indice EuroStoxx 50 (&gt; €10 Mld) secondo il modello quantitativo v7.0.</p>
+          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Top 10 Consigli a 5 Giorni</h2>
+          <p class="view-description" id="currentMarketDesc">Selezione dei 10 migliori componenti dell'indice EuroStoxx 600 (&gt; €10 Mld) secondo il modello quantitativo v7.0.</p>
         </div>
         <div class="view-actions">
           <span class="stocks-count-badge"><span id="visibleStocksCount">10</span> Titoli Analizzati</span>
@@ -430,16 +430,16 @@
         </table>
       </div>
 
-      <!-- Seconda Pagina: Riepilogo Doppia Tabella Live (EuroStoxx 50 + S&P 500) -->
+      <!-- Seconda Pagina: Riepilogo Doppia Tabella Live (EuroStoxx 600 + S&P 500) -->
       <div class="summary-tables-page hidden" id="summaryTablesPage">
-        <!-- Tabella 1: EuroStoxx 50 -->
+        <!-- Tabella 1: EuroStoxx 600 -->
         <div class="summary-market-block">
           <div class="summary-block-header">
             <div class="summary-block-title">
               <span class="flag-icon">🇪🇺</span>
               <div>
-                <h3>Top 10 EuroStoxx 50 (Europa) &bull; Orizzonte 5 Giorni</h3>
-                <p>Paniere ufficiale EuroStoxx 50 (&gt; €10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
+                <h3>Top 10 EuroStoxx 600 (Europa) &bull; Orizzonte 5 Giorni</h3>
+                <p>Paniere ufficiale EuroStoxx 600 (&gt; €10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
             <span class="badge model-tag" id="summaryBadgeEU">10 Titoli Live</span>
@@ -728,12 +728,12 @@
 
   </div>
 
-  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 50 / S&P 500 / Riepilogo) -->
+  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / S&P 500 / Riepilogo) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
       <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
         <span class="bnav-icon">🇪🇺</span>
-        <span class="bnav-label">EuroStoxx 50</span>
+        <span class="bnav-label">EuroStoxx 600</span>
         <span class="bnav-badge">10</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
@@ -750,6 +750,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261103-v10"></script>
+  <script src="app.js?v=20261103-v11"></script>
 </body>
 </html>

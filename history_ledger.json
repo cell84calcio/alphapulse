@@ -84,8 +84,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.6,
-        "currentPrice": 397.36
+        "resultPct": -1.33,
+        "currentPrice": 398.44
       },
       {
         "ticker": "V",
@@ -97,8 +97,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.92,
-        "currentPrice": 421.59
+        "resultPct": -0.78,
+        "currentPrice": 422.19
       },
       {
         "ticker": "COST",
@@ -110,8 +110,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.77,
-        "currentPrice": 1022.12
+        "resultPct": -1.52,
+        "currentPrice": 1024.75
       },
       {
         "ticker": "WMT",
@@ -123,8 +123,8 @@
         "score": 91,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -2.19,
-        "currentPrice": 124.89
+        "resultPct": -2.18,
+        "currentPrice": 124.91
       },
       {
         "ticker": "XOM",
@@ -136,8 +136,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.76,
-        "currentPrice": 178.3
+        "resultPct": -1.07,
+        "currentPrice": 177.75
       }
     ]
   }

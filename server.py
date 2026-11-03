@@ -33,8 +33,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "market_data.json")
 LEDGER_FILE = os.path.join(BASE_DIR, "history_ledger.json")
 
-# Paniere Ufficiale EUROSTOXX 50 (50 Componenti Eurozona > €10 Mld)
+# Paniere Ufficiale EuroStoxx 600 / STOXX Europe 600 (Principali Componenti Europei > €10 Mld: Eurozona + Svizzera + UK + Nordics)
 EU_SYMBOLS = [
+    # Eurozona Core (Germania, Francia, Italia, Olanda, Spagna, Belgio, Finlandia)
     {"ticker": "ASML", "sym": "ASML.AS", "name": "ASML Holding", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 0.39, "capUnit": "Mld", "div": 0.9},
     {"ticker": "SAP", "sym": "SAP.DE", "name": "SAP SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Tecnologia", "shares": 1.23, "capUnit": "Mld", "div": 1.1},
     {"ticker": "MC", "sym": "MC.PA", "name": "LVMH Moët Hennessy", "exchange": "Euronext Parigi", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.50, "capUnit": "Mld", "div": 2.1},
@@ -84,7 +85,66 @@ EU_SYMBOLS = [
     {"ticker": "KER", "sym": "KER.PA", "name": "Kering S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.12, "capUnit": "Mld", "div": 4.5},
     {"ticker": "RI", "sym": "RI.PA", "name": "Pernod Ricard", "exchange": "Euronext Parigi", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.25, "capUnit": "Mld", "div": 3.8},
     {"ticker": "BAYN", "sym": "BAYN.DE", "name": "Bayer AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Healthcare", "shares": 0.98, "capUnit": "Mld", "div": 0.5},
-    {"ticker": "ADYEN", "sym": "ADYEN.AS", "name": "Adyen N.V.", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 0.031, "capUnit": "Mld", "div": 0.0}
+    {"ticker": "ADYEN", "sym": "ADYEN.AS", "name": "Adyen N.V.", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 0.031, "capUnit": "Mld", "div": 0.0},
+    # Ulteriori Big Cap Eurozona dello STOXX Europe 600 (Italia, Germania, Francia, Spagna, Olanda)
+    {"ticker": "G", "sym": "G.MI", "name": "Assicurazioni Generali", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.56, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "LDO", "sym": "LDO.MI", "name": "Leonardo SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.578, "capUnit": "Mld", "div": 1.2},
+    {"ticker": "PST", "sym": "PST.MI", "name": "Poste Italiane SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.30, "capUnit": "Mld", "div": 6.2},
+    {"ticker": "PRY", "sym": "PRY.MI", "name": "Prysmian SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.29, "capUnit": "Mld", "div": 1.3},
+    {"ticker": "MONC", "sym": "MONC.MI", "name": "Moncler SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.27, "capUnit": "Mld", "div": 2.1},
+    {"ticker": "SRG", "sym": "SRG.MI", "name": "Snam SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.36, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "TRN", "sym": "TRN.MI", "name": "Terna SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 2.01, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "RHM", "sym": "RHM.DE", "name": "Rheinmetall AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 0.044, "capUnit": "Mld", "div": 1.1},
+    {"ticker": "DBK", "sym": "DBK.DE", "name": "Deutsche Bank AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Finanza", "shares": 1.95, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "EOAN", "sym": "EOAN.DE", "name": "E.ON SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 2.61, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "RWE", "sym": "RWE.DE", "name": "RWE AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 0.74, "capUnit": "Mld", "div": 3.3},
+    {"ticker": "MRK-DE", "sym": "MRK.DE", "name": "Merck KGaA", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Healthcare", "shares": 0.435, "capUnit": "Mld", "div": 1.5},
+    {"ticker": "HO", "sym": "HO.PA", "name": "Thales S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Industria & Energia", "shares": 0.21, "capUnit": "Mld", "div": 2.2},
+    {"ticker": "ORA", "sym": "ORA.PA", "name": "Orange S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Tecnologia", "shares": 2.66, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "ENGI", "sym": "ENGI.PA", "name": "Engie S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Industria & Energia", "shares": 2.43, "capUnit": "Mld", "div": 7.8},
+    {"ticker": "CAP", "sym": "CAP.PA", "name": "Capgemini SE", "exchange": "Euronext Parigi", "currency": "€", "sector": "Tecnologia", "shares": 0.17, "capUnit": "Mld", "div": 1.9},
+    {"ticker": "ACA", "sym": "ACA.PA", "name": "Crédit Agricole S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 3.02, "capUnit": "Mld", "div": 7.1},
+    {"ticker": "GLE", "sym": "GLE.PA", "name": "Société Générale", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 0.80, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "ASM", "sym": "ASM.AS", "name": "ASM International", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 0.049, "capUnit": "Mld", "div": 0.5},
+    {"ticker": "HEIA", "sym": "HEIA.AS", "name": "Heineken N.V.", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.57, "capUnit": "Mld", "div": 2.3},
+    {"ticker": "KPN", "sym": "KPN.AS", "name": "Koninklijke KPN", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 3.92, "capUnit": "Mld", "div": 4.6},
+    {"ticker": "CABK", "sym": "CABK.MC", "name": "CaixaBank S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Finanza", "shares": 7.25, "capUnit": "Mld", "div": 6.9},
+    {"ticker": "TEF", "sym": "TEF.MC", "name": "Telefónica S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Tecnologia", "shares": 5.67, "capUnit": "Mld", "div": 7.1},
+    {"ticker": "REP", "sym": "REP.MC", "name": "Repsol S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Industria & Energia", "shares": 1.18, "capUnit": "Mld", "div": 7.4},
+    # Regno Unito & Multinazionali Anglo-Olandesi (STOXX Europe 600)
+    {"ticker": "SHELL", "sym": "SHELL.AS", "name": "Shell plc", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Industria & Energia", "shares": 6.25, "capUnit": "Mld", "div": 4.1},
+    {"ticker": "UNA", "sym": "UNA.AS", "name": "Unilever plc", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Lusso & Consumi", "shares": 2.48, "capUnit": "Mld", "div": 3.3},
+    {"ticker": "REN", "sym": "REN.AS", "name": "RELX plc", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Tecnologia", "shares": 1.87, "capUnit": "Mld", "div": 1.6},
+    {"ticker": "AZN", "sym": "AZN.L", "name": "AstraZeneca plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Healthcare", "shares": 1.55, "capUnit": "Mld", "div": 2.2},
+    {"ticker": "HSBA", "sym": "HSBA.L", "name": "HSBC Holdings plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Finanza", "shares": 18.1, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "BP", "sym": "BP.L", "name": "BP p.l.c.", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Industria & Energia", "shares": 16.2, "capUnit": "Mld", "div": 5.7},
+    {"ticker": "GSK", "sym": "GSK.L", "name": "GSK plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Healthcare", "shares": 4.14, "capUnit": "Mld", "div": 4.1},
+    {"ticker": "RIO", "sym": "RIO.L", "name": "Rio Tinto plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Industria & Energia", "shares": 1.62, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "DGE", "sym": "DGE.L", "name": "Diageo plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Lusso & Consumi", "shares": 2.22, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "BATS", "sym": "BATS.L", "name": "British American Tobacco", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Lusso & Consumi", "shares": 2.21, "capUnit": "Mld", "div": 8.2},
+    {"ticker": "BA", "sym": "BA.L", "name": "BAE Systems plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Industria & Energia", "shares": 3.01, "capUnit": "Mld", "div": 2.4},
+    {"ticker": "NG", "sym": "NG.L", "name": "National Grid plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Industria & Energia", "shares": 4.88, "capUnit": "Mld", "div": 5.4},
+    {"ticker": "BARC", "sym": "BARC.L", "name": "Barclays plc", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Finanza", "shares": 14.5, "capUnit": "Mld", "div": 3.6},
+    {"ticker": "LLOY", "sym": "LLOY.L", "name": "Lloyds Banking Group", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Finanza", "shares": 61.5, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "RR", "sym": "RR.L", "name": "Rolls-Royce Holdings", "exchange": "London Stock Exchange", "currency": "£", "toEur": 1.18, "sector": "Industria & Energia", "shares": 8.50, "capUnit": "Mld", "div": 0.8},
+    # Svizzera (SIX Swiss Exchange - STOXX Europe 600)
+    {"ticker": "NESN", "sym": "NESN.SW", "name": "Nestlé S.A.", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Lusso & Consumi", "shares": 2.62, "capUnit": "Mld", "div": 3.8},
+    {"ticker": "ROG", "sym": "ROG.SW", "name": "Roche Holding AG", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Healthcare", "shares": 0.80, "capUnit": "Mld", "div": 3.6},
+    {"ticker": "NOVN", "sym": "NOVN.SW", "name": "Novartis AG", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Healthcare", "shares": 2.04, "capUnit": "Mld", "div": 3.5},
+    {"ticker": "UBSG", "sym": "UBSG.SW", "name": "UBS Group AG", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Finanza", "shares": 3.22, "capUnit": "Mld", "div": 2.6},
+    {"ticker": "ABBN", "sym": "ABBN.SW", "name": "ABB Ltd", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Industria & Energia", "shares": 1.85, "capUnit": "Mld", "div": 1.8},
+    {"ticker": "ZURN", "sym": "ZURN.SW", "name": "Zurich Insurance Group", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Finanza", "shares": 0.146, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "CFR", "sym": "CFR.SW", "name": "Richemont S.A.", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Lusso & Consumi", "shares": 0.58, "capUnit": "Mld", "div": 2.1},
+    {"ticker": "SREN", "sym": "SREN.SW", "name": "Swiss Re AG", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Finanza", "shares": 0.29, "capUnit": "Mld", "div": 5.6},
+    {"ticker": "HOLN", "sym": "HOLN.SW", "name": "Holcim Ltd", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Industria & Energia", "shares": 0.56, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "LONN", "sym": "LONN.SW", "name": "Lonza Group AG", "exchange": "SIX Swiss Exchange", "currency": "CHF ", "toEur": 1.06, "sector": "Healthcare", "shares": 0.072, "capUnit": "Mld", "div": 0.8},
+    # Nordics (Danimarca, Svezia, Norvegia - STOXX Europe 600)
+    {"ticker": "NOVO-B", "sym": "NOVO-B.CO", "name": "Novo Nordisk A/S", "exchange": "Nasdaq Copenhagen", "currency": "DKK ", "toEur": 0.134, "sector": "Healthcare", "shares": 4.46, "capUnit": "Mld", "div": 1.4},
+    {"ticker": "DSV", "sym": "DSV.CO", "name": "DSV A/S", "exchange": "Nasdaq Copenhagen", "currency": "DKK ", "toEur": 0.134, "sector": "Industria & Energia", "shares": 0.21, "capUnit": "Mld", "div": 0.6},
+    {"ticker": "ATCO-A", "sym": "ATCO-A.ST", "name": "Atlas Copco AB", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Industria & Energia", "shares": 4.89, "capUnit": "Mld", "div": 1.6},
+    {"ticker": "VOLV-B", "sym": "VOLV-B.ST", "name": "AB Volvo", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Industria & Energia", "shares": 2.03, "capUnit": "Mld", "div": 5.8},
+    {"ticker": "INVE-B", "sym": "INVE-B.ST", "name": "Investor AB", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Finanza", "shares": 3.06, "capUnit": "Mld", "div": 1.7},
+    {"ticker": "EQNR", "sym": "EQNR.OL", "name": "Equinor ASA", "exchange": "Oslo Børs", "currency": "NOK ", "toEur": 0.085, "sector": "Industria & Energia", "shares": 2.75, "capUnit": "Mld", "div": 5.9}
 ]
 
 # Paniere Ufficiale S&P 500 (Principali Componenti S&P 500 > $10 Mld su tutti i settori)
@@ -197,14 +257,27 @@ BINARY_RISK_KEYWORDS = [
 KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + USA_SYMBOLS)}
 
 def fetch_chart_data(symbol, range_period="3mo"):
-    """Scarica dati storici e quote da Yahoo Finance includendo dividendi"""
+    """Scarica dati storici e quote da Yahoo Finance includendo dividendi (con conversione automatica GBp -> £)"""
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}&events=div"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
     with urllib.request.urlopen(req, timeout=6) as resp:
         data = json.loads(resp.read().decode("utf-8"))
         res = data.get("chart", {}).get("result", [])
         if res:
-            return res[0]
+            chart = res[0]
+            meta = chart.get("meta", {})
+            if meta.get("currency") == "GBp":
+                meta["currency"] = "GBP"
+                for k in ("regularMarketPrice", "previousClose", "chartPreviousClose", "fiftyTwoWeekHigh", "fiftyTwoWeekLow"):
+                    if meta.get(k) is not None:
+                        meta[k] = round(float(meta[k]) / 100.0, 4)
+                quotes = chart.get("indicators", {}).get("quote", [{}])
+                if quotes:
+                    q0 = quotes[0]
+                    for arr_k in ("close", "open", "high", "low"):
+                        if arr_k in q0 and isinstance(q0[arr_k], list):
+                            q0[arr_k] = [round(v / 100.0, 4) if v is not None else None for v in q0[arr_k]]
+            return chart
     return None
 
 def calc_ema(series, period):
@@ -257,7 +330,7 @@ def fetch_market_regime():
         pass
 
     try:
-        c_st = fetch_chart_data("^STOXX50E", "5d")
+        c_st = fetch_chart_data("^STOXX", "5d") or fetch_chart_data("^STOXX50E", "5d")
         if c_st:
             meta_st = c_st.get("meta", {})
             closes_st = [c for c in c_st.get("indicators", {}).get("quote", [{}])[0].get("close", []) if c is not None]
@@ -778,8 +851,8 @@ def update_ledger_track_record(top_picks, market_type="eu", live_prices=None):
     }
 
 def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
-    """Scansiona in parallelo l'intero paniere (EuroStoxx 50 / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
-    index_label = "EUROSTOXX 50" if market_type == "eu" else "S&P 500"
+    """Scansiona in parallelo l'intero paniere (EuroStoxx 600 / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
+    index_label = "EUROSTOXX 600" if market_type == "eu" else "S&P 500"
     print(f"\n[AlphaPulse Engine v7.0] Scansione paniere {index_label}: {len(symbols_list)} titoli in parallelo...")
 
     # Passaggio 1: Download parallelo dei grafici a 3 mesi per calcolare il rendimento settoriale (60% 5G + 40% 1G)
@@ -794,7 +867,7 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         except Exception:
             return (item, None)
 
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=14) as executor:
         futures = [executor.submit(_fetch_item_chart, item) for item in symbols_list]
         for fut in as_completed(futures):
             item, chart = fut.result()
@@ -928,7 +1001,7 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         b_icon = "🟢" if s["border52w"] == "green" else ("🟠" if s["border52w"] == "orange" else "🔴")
         print(f"  + {s['ticker']:<6} | Prezzo: {s['currency']}{s['currentPrice']:>7.2f} | 5G: {s['roc5d']:>+6.2f}% | Div: {s['dividendYield']:>4.1f}% | 52W: {b_icon} {s['status52w']:<25} | Score: {s['score']}% ({s['rawScore']}) | {trend_icon}")
 
-    top_pool = analyzed[:40]
+    top_pool = analyzed[:60]
     print(f"[OK] Selezionati i migliori 10 titoli (pool esteso: {len(top_pool)}) per {index_label} su {len(analyzed)} titoli (>10 Mld) analizzati.")
     return top_pool, live_prices_map
 
