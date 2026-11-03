@@ -2827,8 +2827,8 @@ Notizia Reale Rilevata: ${s.catalysts && s.catalysts[0] ? s.catalysts[0].title :
 // ==========================================================================
 
 const SECURITY = {
-  // Hash SHA-256 del PIN '8484'
-  MASTER_HASH: "2fdf08aa44660dd8332131f0cc46ab9df025304ac750724d63964fa32d1d2db4",
+  // Hash SHA-256 del PIN '0204'
+  MASTER_HASH: "6249017f9372350bfc9cf3456c324bbb3661e1bb5a7a10d61912fd1be650d52f",
   enteredPin: "",
   lockOverlay: document.getElementById("lockScreen"),
   lockCard: document.querySelector(".lock-card"),
@@ -2859,11 +2859,11 @@ async function verifyEnteredPin() {
   if (SECURITY.enteredPin.length === 0) return;
   const hash = await sha256(SECURITY.enteredPin);
   
-  if (hash === SECURITY.MASTER_HASH || SECURITY.enteredPin === "8484") {
+  if (hash === SECURITY.MASTER_HASH || SECURITY.enteredPin === "0204") {
     // PIN Corretto!
     if (SECURITY.errorBox) SECURITY.errorBox.classList.add("hidden");
     if (SECURITY.rememberCheck && SECURITY.rememberCheck.checked) {
-      localStorage.setItem("alphapulse_auth", "granted");
+      localStorage.setItem("alphapulse_auth_hash", SECURITY.MASTER_HASH);
     }
     SECURITY.lockOverlay.classList.add("unlocked");
     SECURITY.enteredPin = "";
@@ -2885,9 +2885,9 @@ async function verifyEnteredPin() {
 }
 
 function initSecurityLock() {
-  // Verifica se l'utente è già autenticato sul dispositivo
-  const isAuth = localStorage.getItem("alphapulse_auth");
-  if (isAuth === "granted") {
+  // Verifica se l'utente è già autenticato sul dispositivo con il PIN corrente
+  const savedHash = localStorage.getItem("alphapulse_auth_hash");
+  if (savedHash === SECURITY.MASTER_HASH) {
     SECURITY.lockOverlay.classList.add("unlocked");
   }
 
@@ -2944,6 +2944,7 @@ function initSecurityLock() {
   if (SECURITY.btnManualLock) {
     SECURITY.btnManualLock.addEventListener("click", () => {
       localStorage.removeItem("alphapulse_auth");
+      localStorage.removeItem("alphapulse_auth_hash");
       SECURITY.enteredPin = "";
       updatePinDots();
       if (SECURITY.errorBox) SECURITY.errorBox.classList.add("hidden");
