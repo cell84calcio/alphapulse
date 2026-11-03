@@ -13,8 +13,8 @@
         "score": 89,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.63,
-        "currentPrice": 22.07
+        "resultPct": -0.59,
+        "currentPrice": 22.08
       },
       {
         "ticker": "TTE",
@@ -26,8 +26,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.92,
-        "currentPrice": 82.64
+        "resultPct": -0.84,
+        "currentPrice": 82.71
       },
       {
         "ticker": "SAN-FR",
@@ -39,8 +39,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.15,
-        "currentPrice": 81.4
+        "resultPct": -0.66,
+        "currentPrice": 80.98
       },
       {
         "ticker": "ENI",
@@ -52,8 +52,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.38,
-        "currentPrice": 26.0
+        "resultPct": -1.23,
+        "currentPrice": 26.04
       },
       {
         "ticker": "OR",
@@ -65,8 +65,8 @@
         "score": 85,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.05,
-        "currentPrice": 433.1
+        "resultPct": -0.14,
+        "currentPrice": 432.7
       }
     ]
   },
@@ -84,8 +84,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.6,
-        "currentPrice": 401.4
+        "resultPct": -1.6,
+        "currentPrice": 397.36
       },
       {
         "ticker": "V",
@@ -97,8 +97,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.25,
-        "currentPrice": 420.19
+        "resultPct": -0.92,
+        "currentPrice": 421.59
       },
       {
         "ticker": "COST",
@@ -110,8 +110,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.76,
-        "currentPrice": 1022.28
+        "resultPct": -1.77,
+        "currentPrice": 1022.12
       },
       {
         "ticker": "WMT",
@@ -123,8 +123,8 @@
         "score": 91,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.92,
-        "currentPrice": 125.24
+        "resultPct": -2.19,
+        "currentPrice": 124.89
       },
       {
         "ticker": "XOM",
@@ -136,8 +136,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.58,
-        "currentPrice": 178.63
+        "resultPct": -0.76,
+        "currentPrice": 178.3
       }
     ]
   }

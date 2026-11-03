@@ -25,9 +25,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261103-v9">
+  <link rel="stylesheet" href="style.css?v=20261103-v10">
   <style>
-    /* Critical CSS: Floating Pill Dock Bar + Responsive Mobile Market Carousel */
+    /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
       position: fixed !important;
       left: 50% !important;
@@ -90,91 +90,70 @@
       background: rgba(4, 19, 13, 0.25);
       color: #04130d;
     }
-    .market-carousel-shell {
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-    }
-    .view-switch-wrapper {
+    .pills-control-group {
       display: flex;
-      align-items: stretch;
-      gap: 8px;
+      flex-direction: column;
+      gap: 10px;
       width: 100%;
-      max-width: 100%;
-      min-width: 0;
-      box-sizing: border-box;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
     }
-    .view-switch-wrapper::-webkit-scrollbar {
-      display: none;
-    }
-    .view-tab {
-      flex: 1 1 0;
-      min-width: 225px;
-      scroll-snap-align: center;
-      display: flex;
+    .market-carousel-dots,
+    .quick-filter-pills {
+      display: flex !important;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      box-sizing: border-box;
+      flex-wrap: wrap;
+      gap: 8px;
     }
-    .view-tab .tab-text {
-      flex: 1;
-      min-width: 0;
-      text-align: left;
-    }
-    .view-tab .tab-title,
-    .view-tab .tab-subtitle {
+    .m-carousel-dot,
+    .quick-filter-pill {
+      appearance: none;
+      -webkit-appearance: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(15, 23, 42, 0.82);
+      color: #cbd5e1;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
-    .market-carousel-dots {
-      display: none;
+    .m-carousel-dot:hover,
+    .quick-filter-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+    .m-carousel-dot.active {
+      background: rgba(16, 185, 129, 0.22);
+      border-color: #ffffff;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.35), inset 0 0 0 1px rgba(16, 185, 129, 0.6);
+      color: #ffffff;
+    }
+    .quick-filter-pill.active {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.28), rgba(16, 185, 129, 0.25));
+      border-color: #34d399;
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.38);
     }
     @media (max-width: 768px) {
-      .view-switch-wrapper {
-        padding: 8px !important;
-        gap: 10px !important;
-      }
-      .view-tab {
-        flex: 0 0 86% !important;
-        max-width: 310px;
-        min-width: 245px;
-        padding: 12px 15px !important;
-        border-radius: 12px !important;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .market-carousel-dots {
-        display: flex;
-        align-items: center;
+      .market-carousel-dots,
+      .quick-filter-pills {
         justify-content: center;
-        gap: 8px;
-        margin-top: 8px;
       }
       .m-carousel-dot {
-        appearance: none;
-        -webkit-appearance: none;
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        background: rgba(15, 23, 42, 0.75);
-        color: #94a3b8;
-        font-size: 0.72rem;
-        font-weight: 700;
-        padding: 4px 10px;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: all 0.2s ease;
+        flex: 1 1 auto;
+        font-size: 0.78rem;
+        padding: 8px 12px;
       }
-      .m-carousel-dot.active {
-        background: rgba(16, 185, 129, 0.22);
-        border-color: rgba(16, 185, 129, 0.65);
-        color: #ffffff;
-        box-shadow: 0 0 12px rgba(16, 185, 129, 0.25);
+      .quick-filter-pill {
+        flex: 1 1 auto;
+        font-size: 0.74rem;
+        padding: 7px 11px;
       }
     }
     @media (max-width: 520px) {
@@ -329,43 +308,21 @@
         </div>
       </div>
 
-      <!-- Controlli Principali: Carosello Responsive Mercati EU vs USA vs Riepilogo -->
+      <!-- Controlli Principali: 3 Pulsanti Mercato + 3 Pulsanti Filtro Rapido -->
       <div class="controls-toolbar">
-        <div class="market-carousel-shell">
-          <div class="view-switch-wrapper" id="marketCarouselTrack">
-            <button type="button" class="view-tab active" data-market="eu" id="tabEU">
-              <span class="flag-icon">🇪🇺</span>
-              <div class="tab-text">
-                <span class="tab-title">EuroStoxx 50 (Europa)</span>
-                <span class="tab-subtitle">Top 10 Titoli EuroStoxx 50 &gt; €10B</span>
-              </div>
-              <span class="tab-counter">10</span>
-            </button>
-
-            <button type="button" class="view-tab" data-market="usa" id="tabUSA">
-              <span class="flag-icon">🇺🇸</span>
-              <div class="tab-text">
-                <span class="tab-title">S&amp;P 500 (USA)</span>
-                <span class="tab-subtitle">Top 10 Titoli S&amp;P 500 &gt; $10B</span>
-              </div>
-              <span class="tab-counter">10</span>
-            </button>
-
-            <button type="button" class="view-tab" data-market="summary" id="tabSummary">
-              <span class="flag-icon">📊</span>
-              <div class="tab-text">
-                <span class="tab-title">Riepilogo (EU + USA)</span>
-                <span class="tab-subtitle">Le 2 Tabelle Top 10 Live</span>
-              </div>
-              <span class="tab-counter">20</span>
-            </button>
+        <div class="pills-control-group">
+          <!-- 3 Pulsanti Selezione Mercato -->
+          <div class="market-carousel-dots" id="marketCarouselDots">
+            <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
+            <button type="button" class="m-carousel-dot" data-market="usa" id="tabUSA">🇺🇸 USA</button>
+            <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
 
-          <!-- Indicatori Carosello Mobile (Scorri o Tocca) -->
-          <div class="market-carousel-dots" id="marketCarouselDots">
-            <button type="button" class="m-carousel-dot active" data-market="eu">🇪🇺 Europa</button>
-            <button type="button" class="m-carousel-dot" data-market="usa">🇺🇸 USA</button>
-            <button type="button" class="m-carousel-dot" data-market="summary">📊 Riepilogo</button>
+          <!-- 3 Pulsanti Filtro Quantitativo Rapido -->
+          <div class="quick-filter-pills" id="quickFilterPills">
+            <button type="button" class="quick-filter-pill" data-qfilter="div4" id="qfDiv4" title="Filtra le azioni con Dividend Yield > 4%">💰 Div. Yield &gt; 4%</button>
+            <button type="button" class="quick-filter-pill" data-qfilter="under52w" id="qfUnder52w" title="Filtra le azioni con Prezzo Attuale < Media 52 Settimane">📉 Prezzo &lt; Media 52W</button>
+            <button type="button" class="quick-filter-pill" data-qfilter="combo" id="qfCombo" title="Filtra le azioni con Div. Yield > 4% E Prezzo < Media 52 Settimane">💎 Div &gt; 4% &amp; Prezzo &lt; 52W</button>
           </div>
         </div>
 
@@ -793,6 +750,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261103-v9"></script>
+  <script src="app.js?v=20261103-v10"></script>
 </body>
 </html>

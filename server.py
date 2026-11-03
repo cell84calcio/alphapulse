@@ -164,7 +164,16 @@ USA_SYMBOLS = [
     {"ticker": "ETN", "sym": "ETN", "name": "Eaton Corporation", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.40, "capUnit": "Mld", "div": 1.1},
     {"ticker": "LMT", "sym": "LMT", "name": "Lockheed Martin", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.24, "capUnit": "Mld", "div": 2.3},
     {"ticker": "COP", "sym": "COP", "name": "ConocoPhillips", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.16, "capUnit": "Mld", "div": 2.9},
-    {"ticker": "NEE", "sym": "NEE", "name": "NextEra Energy", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.05, "capUnit": "Mld", "div": 2.6}
+    {"ticker": "NEE", "sym": "NEE", "name": "NextEra Energy", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.05, "capUnit": "Mld", "div": 2.6},
+    # Blue-Chip S&P 500 High-Dividend (> 4%)
+    {"ticker": "VZ", "sym": "VZ", "name": "Verizon Communications", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Tecnologia", "shares": 4.21, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "T", "sym": "T", "name": "AT&T Inc.", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Tecnologia", "shares": 7.17, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "BMY", "sym": "BMY", "name": "Bristol-Myers Squibb", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Healthcare", "shares": 2.03, "capUnit": "Mld", "div": 4.6},
+    {"ticker": "UPS", "sym": "UPS", "name": "United Parcel Service", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.85, "capUnit": "Mld", "div": 4.9},
+    {"ticker": "MO", "sym": "MO", "name": "Altria Group Inc.", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.70, "capUnit": "Mld", "div": 7.3},
+    {"ticker": "O", "sym": "O", "name": "Realty Income Corp.", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Finanza", "shares": 0.87, "capUnit": "Mld", "div": 5.5},
+    {"ticker": "KHC", "sym": "KHC", "name": "Kraft Heinz Company", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.21, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "F", "sym": "F", "name": "Ford Motor Company", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.97, "capUnit": "Mld", "div": 5.4}
 ]
 
 BULLISH_KEYWORDS = [
@@ -919,21 +928,21 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         b_icon = "🟢" if s["border52w"] == "green" else ("🟠" if s["border52w"] == "orange" else "🔴")
         print(f"  + {s['ticker']:<6} | Prezzo: {s['currency']}{s['currentPrice']:>7.2f} | 5G: {s['roc5d']:>+6.2f}% | Div: {s['dividendYield']:>4.1f}% | 52W: {b_icon} {s['status52w']:<25} | Score: {s['score']}% ({s['rawScore']}) | {trend_icon}")
 
-    top_10 = analyzed[:10]
-    print(f"[OK] Selezionati i migliori 10 titoli per {index_label} su {len(analyzed)} titoli (>10 Mld) analizzati.")
-    return top_10, live_prices_map
+    top_pool = analyzed[:40]
+    print(f"[OK] Selezionati i migliori 10 titoli (pool esteso: {len(top_pool)}) per {index_label} su {len(analyzed)} titoli (>10 Mld) analizzati.")
+    return top_pool, live_prices_map
 
 def update_entire_market_dataset():
     """Aggiorna il dataset completo v7.0 con indicatori 5G, CLV, MACD, ATR, Cornici 52W e Win Rate Reale"""
     regime = fetch_market_regime()
     print(f"\n[Regime di Mercato] VIX: {regime['vix']} | EuroStoxx 1G/5G: {regime['stoxx50Change']}% / {regime.get('stoxx50Change5d', 0)}% | S&P 500 1G/5G: {regime['sp500Change']}% / {regime.get('sp500Change5d', 0)}% | Stato: {regime['marketSentiment']}")
 
-    eu_top10, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu")
-    usa_top10, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa")
+    eu_pool, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu")
+    usa_pool, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa")
 
-    # Aggiorna il registro delle performance storiche con verifica prezzi reali
-    eu_tracker = update_ledger_track_record(eu_top10, "eu", eu_prices)
-    usa_tracker = update_ledger_track_record(usa_top10, "usa", usa_prices)
+    # Aggiorna il registro delle performance storiche con verifica prezzi reali sui Top 10
+    eu_tracker = update_ledger_track_record(eu_pool[:10], "eu", eu_prices)
+    usa_tracker = update_ledger_track_record(usa_pool[:10], "usa", usa_prices)
 
     dataset = {
         "lastUpdated": datetime.now().strftime("%Y-%m-%d %H:%M:%S CET"),
@@ -952,8 +961,8 @@ def update_entire_market_dataset():
             "analyst": 15,
             "market": 10
         },
-        "eu": eu_top10,
-        "usa": usa_top10
+        "eu": eu_pool,
+        "usa": usa_pool
     }
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
