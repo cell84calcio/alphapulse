@@ -3533,40 +3533,135 @@ function closeModal() {
 // 9. EVENT LISTENERS E CONTROLLI INTERFACCIA
 // ==========================================================================
 
-function initEventListeners() {
-  elements.tabEU.addEventListener('click', () => {
-    if (state.currentMarket === 'eu') return;
-    state.currentMarket = 'eu';
-    elements.tabEU.classList.add('active');
-    elements.tabUSA.classList.remove('active');
-    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
+const MARKET_VIEWS_ORDER = ['eu', 'usa', 'summary'];
+let isProgrammaticCarouselScroll = false;
+
+function setActiveMarketView(marketKey, options = {}) {
+  const { skipScroll = false } = options;
+  if (!MARKET_VIEWS_ORDER.includes(marketKey)) return;
+
+  const changed = state.currentMarket !== marketKey;
+  state.currentMarket = marketKey;
+
+  if (elements.tabEU) elements.tabEU.classList.toggle('active', marketKey === 'eu');
+  if (elements.tabUSA) elements.tabUSA.classList.toggle('active', marketKey === 'usa');
+  if (elements.tabSummary) elements.tabSummary.classList.toggle('active', marketKey === 'summary');
+
+  document.querySelectorAll('.carousel-dot-pill').forEach(pill => {
+    pill.classList.toggle('active', pill.getAttribute('data-market') === marketKey);
+  });
+
+  if (marketKey === 'eu') {
     elements.currentMarketTitle.innerHTML = `EuroStoxx 50 (Europa) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice EuroStoxx 50 (> €10 Mld) secondo il modello quantitativo v7.0.`;
-    renderStocks();
-  });
-
-  elements.tabUSA.addEventListener('click', () => {
-    if (state.currentMarket === 'usa') return;
-    state.currentMarket = 'usa';
-    elements.tabUSA.classList.add('active');
-    elements.tabEU.classList.remove('active');
-    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
+  } else if (marketKey === 'usa') {
     elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice S&P 500 (> $10 Mld) secondo il modello quantitativo v7.0.`;
+  } else if (marketKey === 'summary') {
+    elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; Top 10 EuroStoxx 50 + Top 10 S&amp;P 500`;
+    elements.currentMarketDesc.textContent = `Vista tabellare doppia sincronizzata in tempo reale (Europa + USA). Si aggiorna automaticamente con Pull-to-Refresh e pulsante Aggiorna Dati.`;
+  }
+
+  if (!skipScroll) {
+    const track = document.getElementById('marketCarouselTrack');
+    const targetBtn = marketKey === 'eu' ? elements.tabEU : (marketKey === 'usa' ? elements.tabUSA : elements.tabSummary);
+    if (track && targetBtn && track.scrollWidth > track.clientWidth + 8) {
+      isProgrammaticCarouselScroll = true;
+      const targetLeft = targetBtn.offsetLeft - track.offsetLeft - (track.clientWidth - targetBtn.clientWidth) / 2;
+      track.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+      setTimeout(() => { isProgrammaticCarouselScroll = false; }, 380);
+    }
+  }
+
+  if (changed) {
     renderStocks();
+  }
+}
+
+function initEventListeners() {
+  elements.tabEU.addEventListener('click', () => setActiveMarketView('eu'));
+  elements.tabUSA.addEventListener('click', () => setActiveMarketView('usa'));
+  if (elements.tabSummary) {
+    elements.tabSummary.addEventListener('click', () => setActiveMarketView('summary'));
+  }
+
+  // Indicatori rapidi Carosello (1/3 Europa • 2/3 USA • 3/3 Riepilogo)
+  document.querySelectorAll('.carousel-dot-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      const mkt = pill.getAttribute('data-market');
+      if (mkt) setActiveMarketView(mkt);
+    });
   });
 
-  if (elements.tabSummary) {
-    elements.tabSummary.addEventListener('click', () => {
-      if (state.currentMarket === 'summary') return;
-      state.currentMarket = 'summary';
-      elements.tabSummary.classList.add('active');
-      elements.tabEU.classList.remove('active');
-      elements.tabUSA.classList.remove('active');
-      elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; Top 10 EuroStoxx 50 + Top 10 S&amp;P 500`;
-      elements.currentMarketDesc.textContent = `Vista tabellare doppia sincronizzata in tempo reale (Europa + USA). Si aggiorna automaticamente con Pull-to-Refresh e pulsante Aggiorna Dati.`;
-      renderStocks();
+  // Frecce Carosello Precedente / Successiva
+  const prevBtn = document.getElementById('carouselPrevBtn');
+  const nextBtn = document.getElementById('carouselNextBtn');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const idx = MARKET_VIEWS_ORDER.indexOf(state.currentMarket);
+      const prevIdx = (idx - 1 + MARKET_VIEWS_ORDER.length) % MARKET_VIEWS_ORDER.length;
+      setActiveMarketView(MARKET_VIEWS_ORDER[prevIdx]);
     });
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const idx = MARKET_VIEWS_ORDER.indexOf(state.currentMarket);
+      const nextIdx = (idx + 1) % MARKET_VIEWS_ORDER.length;
+      setActiveMarketView(MARKET_VIEWS_ORDER[nextIdx]);
+    });
+  }
+
+  // Sincronizzazione automatica allo scorrimento touch del carosello su iPhone
+  const carouselTrack = document.getElementById('marketCarouselTrack');
+  if (carouselTrack) {
+    let scrollTimer = null;
+    carouselTrack.addEventListener('scroll', () => {
+      if (isProgrammaticCarouselScroll) return;
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => {
+        if (carouselTrack.scrollWidth <= carouselTrack.clientWidth + 8) return;
+        const center = carouselTrack.scrollLeft + carouselTrack.clientWidth / 2;
+        const tabs = [elements.tabEU, elements.tabUSA, elements.tabSummary].filter(Boolean);
+        let closestMarket = state.currentMarket;
+        let minDist = Infinity;
+        tabs.forEach(t => {
+          const tabCenter = (t.offsetLeft - carouselTrack.offsetLeft) + t.clientWidth / 2;
+          const dist = Math.abs(center - tabCenter);
+          if (dist < minDist) {
+            minDist = dist;
+            closestMarket = t.getAttribute('data-market');
+          }
+        });
+        if (closestMarket && closestMarket !== state.currentMarket) {
+          setActiveMarketView(closestMarket, { skipScroll: true });
+        }
+      }, 90);
+    }, { passive: true });
+  }
+
+  // Swipe orizzontale sulle schede titoli (su iPhone) per cambiare sezione
+  if (elements.stocksGrid) {
+    let touchStartX = 0;
+    let touchStartY = 0;
+    elements.stocksGrid.addEventListener('touchstart', (e) => {
+      if (!e.touches || e.touches.length !== 1) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    elements.stocksGrid.addEventListener('touchend', (e) => {
+      if (!e.changedTouches || e.changedTouches.length !== 1) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 75 && Math.abs(dx) > Math.abs(dy) * 1.8) {
+        const idx = MARKET_VIEWS_ORDER.indexOf(state.currentMarket);
+        if (dx < 0 && idx < MARKET_VIEWS_ORDER.length - 1) {
+          setActiveMarketView(MARKET_VIEWS_ORDER[idx + 1]);
+        } else if (dx > 0 && idx > 0) {
+          setActiveMarketView(MARKET_VIEWS_ORDER[idx - 1]);
+        }
+      }
+    }, { passive: true });
   }
 
   elements.searchInput.addEventListener('input', (e) => {

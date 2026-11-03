@@ -166,35 +166,60 @@
         </div>
       </div>
 
-      <!-- Controlli Principali: Switcher View Mercati EU vs USA -->
+      <!-- Controlli Principali: Carosello Switcher Mercati EU / USA / Riepilogo -->
       <div class="controls-toolbar">
-        <div class="view-switch-wrapper">
-          <button class="view-tab active" data-market="eu" id="tabEU">
-            <span class="flag-icon">🇪🇺</span>
-            <div class="tab-text">
-              <span class="tab-title">EuroStoxx 50 (Europa)</span>
-              <span class="tab-subtitle">Top 10 Titoli EuroStoxx 50 &gt; €10B</span>
-            </div>
-            <span class="tab-counter">10</span>
-          </button>
+        <div class="market-carousel-container">
+          <div class="carousel-nav-header">
+            <button class="carousel-arrow-btn" id="carouselPrevBtn" title="Sezione Precedente" aria-label="Sezione Precedente">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
 
-          <button class="view-tab" data-market="usa" id="tabUSA">
-            <span class="flag-icon">🇺🇸</span>
-            <div class="tab-text">
-              <span class="tab-title">S&amp;P 500 (USA)</span>
-              <span class="tab-subtitle">Top 10 Titoli S&amp;P 500 &gt; $10B</span>
-            </div>
-            <span class="tab-counter">10</span>
-          </button>
+            <div class="view-switch-wrapper" id="marketCarouselTrack">
+              <button class="view-tab active" data-market="eu" id="tabEU">
+                <span class="flag-icon">🇪🇺</span>
+                <div class="tab-text">
+                  <span class="tab-title">EuroStoxx 50 (Europa)</span>
+                  <span class="tab-subtitle">Top 10 Titoli EuroStoxx 50 &gt; €10B</span>
+                </div>
+                <span class="tab-counter">10</span>
+              </button>
 
-          <button class="view-tab" data-market="summary" id="tabSummary">
-            <span class="flag-icon">📊</span>
-            <div class="tab-text">
-              <span class="tab-title">Riepilogo (EU + USA)</span>
-              <span class="tab-subtitle">Le 2 Tabelle Top 10 Live</span>
+              <button class="view-tab" data-market="usa" id="tabUSA">
+                <span class="flag-icon">🇺🇸</span>
+                <div class="tab-text">
+                  <span class="tab-title">S&amp;P 500 (USA)</span>
+                  <span class="tab-subtitle">Top 10 Titoli S&amp;P 500 &gt; $10B</span>
+                </div>
+                <span class="tab-counter">10</span>
+              </button>
+
+              <button class="view-tab" data-market="summary" id="tabSummary">
+                <span class="flag-icon">📊</span>
+                <div class="tab-text">
+                  <span class="tab-title">Riepilogo (EU + USA)</span>
+                  <span class="tab-subtitle">Le 2 Tabelle Top 10 Live</span>
+                </div>
+                <span class="tab-counter">20</span>
+              </button>
             </div>
-            <span class="tab-counter">20</span>
-          </button>
+
+            <button class="carousel-arrow-btn" id="carouselNextBtn" title="Sezione Successiva" aria-label="Sezione Successiva">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <!-- Indicatori Carosello & Selezione Rapida (1/3 • 2/3 • 3/3) -->
+          <div class="carousel-dots-bar" id="carouselDotsBar">
+            <button class="carousel-dot-pill active" data-market="eu">
+              <span class="dot-indicator"></span> 🇪🇺 Europa
+            </button>
+            <button class="carousel-dot-pill" data-market="usa">
+              <span class="dot-indicator"></span> 🇺🇸 USA
+            </button>
+            <button class="carousel-dot-pill" data-market="summary">
+              <span class="dot-indicator"></span> 📊 Riepilogo
+            </button>
+          </div>
         </div>
 
         <!-- Strumenti di Filtro, Ricerca e Layout -->
