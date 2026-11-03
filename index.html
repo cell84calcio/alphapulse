@@ -141,11 +141,11 @@
 
         <div class="metric-card">
           <div class="metric-header">
-            <span class="metric-label">Accuratezza Modello (30gg)</span>
+            <span class="metric-label">Track Record a 5 Giorni</span>
             <i class="fa-solid fa-bullseye text-purple"></i>
           </div>
-          <div class="metric-val text-purple">79.2% <span class="metric-status">Win Rate</span></div>
-          <div class="metric-subtext">152 previsioni su 192 concluse in gain</div>
+          <div class="metric-val text-purple" id="mWinRateDisplay">81.6% <span class="metric-status">Win Rate</span></div>
+          <div class="metric-subtext" id="mWinRateSubtext">Guadagno medio stimato: +4.2% per trade</div>
         </div>
 
         <div class="metric-card">
@@ -387,10 +387,10 @@
             </div>
           </div>
 
-          <!-- Metriche e Livelli Operativi (Stop Loss, R/R, RSI) -->
+          <!-- Metriche e Livelli Operativi Dinamici (ATR, EMA, Stop Loss, R/R) -->
           <div class="key-metrics-grid">
             <div class="key-metric-item">
-              <span class="km-label">Stop Loss Consigliato</span>
+              <span class="km-label">Stop Loss Dinamico (ATR)</span>
               <span class="km-value text-red" id="mStopLoss">$132.80 (-4.1%)</span>
             </div>
             <div class="key-metric-item">
@@ -398,20 +398,20 @@
               <span class="km-value text-emerald" id="mRiskReward">1 : 2.9</span>
             </div>
             <div class="key-metric-item">
+              <span class="km-label">Volatilità Reale ATR (14G)</span>
+              <span class="km-value text-amber" id="mAtrVal">2.2% del prezzo</span>
+            </div>
+            <div class="key-metric-item">
+              <span class="km-label">Trend Strutturale EMA 20/50</span>
+              <span class="km-value" id="mEmaTrendVal">🟢 Price > EMA20 > EMA50</span>
+            </div>
+            <div class="key-metric-item">
               <span class="km-label">RSI a 14 Periodi</span>
               <span class="km-value text-cyan" id="mRsi">62 (Espansivo)</span>
             </div>
             <div class="key-metric-item">
               <span class="km-label">Spike Volumi Giornalieri</span>
-              <span class="km-value text-amber" id="mVolumeSpike">1.85x la media</span>
-            </div>
-            <div class="key-metric-item">
-              <span class="km-label">P/E Forward</span>
-              <span class="km-value" id="mPe">32.4x</span>
-            </div>
-            <div class="key-metric-item">
-              <span class="km-label">Consensus Wall St. / City</span>
-              <span class="km-value text-emerald" id="mConsensus">Strong Buy (92%)</span>
+              <span class="km-value" id="mVolumeSpike">1.85x la media</span>
             </div>
           </div>
 

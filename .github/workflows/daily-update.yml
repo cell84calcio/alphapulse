@@ -31,5 +31,5 @@ jobs:
         run: |
           git config --global user.name "AlphaPulse Bot"
           git config --global user.email "bot@alphapulse.local"
-          git add market_data.json
+          git add market_data.json history_ledger.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d %H:%M')" && git push)

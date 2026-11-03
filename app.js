@@ -2087,6 +2087,10 @@ const elements = {
   mBarAnalyst: document.getElementById('mBarAnalyst'),
   mBarMarket: document.getElementById('mBarMarket'),
   mControlsContainer: document.getElementById('mControlsContainer'),
+  mWinRateDisplay: document.getElementById('mWinRateDisplay'),
+  mWinRateSubtext: document.getElementById('mWinRateSubtext'),
+  mAtrVal: document.getElementById('mAtrVal'),
+  mEmaTrendVal: document.getElementById('mEmaTrendVal'),
   mStopLoss: document.getElementById('mStopLoss'),
   mRiskReward: document.getElementById('mRiskReward'),
   mRsi: document.getElementById('mRsi'),
@@ -2235,6 +2239,12 @@ function applyRealMarketData(data) {
       eu: data.eu,
       usa: data.usa
     };
+    if (data.performanceTrackRecord && elements.mWinRateDisplay) {
+      elements.mWinRateDisplay.innerHTML = `${data.performanceTrackRecord.winRate} <span class="metric-status">Win Rate 5G</span>`;
+      if (elements.mWinRateSubtext) {
+        elements.mWinRateSubtext.innerHTML = `Gain medio: <strong>${data.performanceTrackRecord.avgGain}</strong> &bull; Segnali monitorati: ${data.performanceTrackRecord.totalSignals}`;
+      }
+    }
     formatDateDisplay();
     renderStocks();
     updateWatchlistUI();
@@ -2359,10 +2369,12 @@ function renderGrid(stocks) {
             </div>
           </div>
 
-          <!-- Indicatori Chiave Reali & Controlli -->
+          <!-- Indicatori Chiave Reali & Controlli v6.0 -->
           <div class="card-signals-row">
-            <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Spike Vol. <strong>${stock.volumeSpike}</strong></span>
+            <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Vol. <strong>${stock.volumeSpike}</strong></span>
             <span class="signal-pill"><i class="fa-solid fa-gauge-high"></i> RSI <strong>${stock.rsi}</strong></span>
+            ${stock.hasTrendAlignment ? '<span class="signal-pill" style="color:#34d399; border-color:rgba(52,211,153,0.3);" title="Prezzo > EMA20 > EMA50"><i class="fa-solid fa-check"></i> EMA OK</span>' : ''}
+            ${stock.atrPct ? `<span class="signal-pill" title="Volatilità media giornaliera ATR"><i class="fa-solid fa-wave-square"></i> ATR <strong>${stock.atrPct}%</strong></span>` : ''}
             ${stock.controls && stock.controls[1] ? `<span class="signal-pill" style="color:var(--color-cyan); border-color:rgba(6,182,212,0.3);"><i class="fa-solid fa-bolt"></i> ${stock.controls[1]}</span>` : ''}
           </div>
 
@@ -2497,13 +2509,20 @@ function openStockDetail(stockId) {
     elements.mControlsContainer.innerHTML = ctrlHtml;
   }
 
-  // Metriche
-  elements.mStopLoss.textContent = `${stock.currency}${stock.stopLoss.toFixed(2)} (-${calculateUpside(stock.stopLoss, stock.currentPrice)}%)`;
+  // Metriche Avanzate v6.0 (ATR, EMA, Stop Dinamico)
+  const stopPctStr = stock.stopPct ? `${stock.stopPct}%` : `${calculateUpside(stock.stopLoss, stock.currentPrice)}%`;
+  elements.mStopLoss.textContent = `${stock.currency}${stock.stopLoss.toFixed(2)} (-${stopPctStr} basato su ATR)`;
   elements.mRiskReward.textContent = stock.riskReward;
   elements.mRsi.textContent = `${stock.rsi} (Calcolato su 14 chiusure reali)`;
   elements.mVolumeSpike.textContent = `${stock.volumeSpike} vs media a 20 giorni`;
-  elements.mPe.textContent = stock.pe;
-  elements.mConsensus.textContent = stock.consensus;
+  
+  if (elements.mAtrVal) {
+    elements.mAtrVal.textContent = stock.atr14 ? `${stock.currency}${stock.atr14} (${stock.atrPct}% osc. media)` : `--`;
+  }
+  if (elements.mEmaTrendVal) {
+    elements.mEmaTrendVal.textContent = stock.hasTrendAlignment ? `🟢 Prezzo > EMA20 > EMA50 (Trend OK)` : `🔴 Sotto EMA50 (Trend Debole)`;
+    elements.mEmaTrendVal.className = `km-value ` + (stock.hasTrendAlignment ? `text-emerald` : `text-red`);
+  }
 
   // Lista Notizie Catalizzatori
   let newsHtml = '';
