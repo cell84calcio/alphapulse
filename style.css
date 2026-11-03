@@ -2229,4 +2229,150 @@ html, body {
   border: 1px solid rgba(239, 68, 68, 0.35);
 }
 
+/* ==========================================================================
+   BARRA VISIVA RANGE 52 SETTIMANE (MIN / MEDIA / MAX + LINEA PREZZO ORA)
+   ========================================================================== */
+.range-52w-widget {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: rgba(8, 12, 20, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 11px;
+  margin-bottom: 12px;
+}
+
+.range-52w-widget.color-green {
+  border-color: rgba(16, 185, 129, 0.28);
+}
+
+.range-52w-widget.color-orange {
+  border-color: rgba(245, 158, 11, 0.28);
+}
+
+.range-52w-widget.color-red {
+  border-color: rgba(239, 68, 68, 0.28);
+}
+
+.range-52w-widget.mode-table {
+  min-width: 195px;
+  max-width: 230px;
+  padding: 6px 9px;
+  margin-bottom: 0;
+  gap: 4px;
+}
+
+.range-52w-widget.mode-modal {
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+.range-52w-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.74rem;
+  line-height: 1.2;
+}
+
+.r52-status {
+  color: var(--text-white);
+  font-family: var(--font-mono);
+}
+
+.r52-diff {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.range-52w-bar-wrap {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(16, 185, 129, 0.45) 0%,
+    rgba(16, 185, 129, 0.35) 36%,
+    rgba(245, 158, 11, 0.42) 50%,
+    rgba(239, 68, 68, 0.35) 64%,
+    rgba(239, 68, 68, 0.5) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 4px 0 3px;
+}
+
+/* Tacca tratteggiata centrale della Media 52W (50%) */
+.range-52w-midline {
+  position: absolute;
+  left: 50%;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* Linea verticale + indicatore luminoso dove si trova il Prezzo Ora */
+.range-52w-current-line {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  width: 3px;
+  border-radius: 3px;
+  background: #ffffff;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+.range-52w-current-line.green {
+  background: #34d399;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.95);
+}
+
+.range-52w-current-line.orange {
+  background: #fbbf24;
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.95);
+}
+
+.range-52w-current-line.red {
+  background: #f87171;
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.95);
+}
+
+.range-52w-pin {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: inherit;
+  border: 1.5px solid #080c14;
+  transform: translateX(-50%);
+}
+
+.range-52w-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.69rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.range-52w-labels strong {
+  color: var(--text-main);
+}
+
+.r52-mid-label {
+  color: var(--text-muted);
+  font-size: 0.66rem;
+}
+
+
 

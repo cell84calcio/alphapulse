@@ -3044,6 +3044,42 @@ function getFilteredAndSortedStocks() {
   return filterAndSortList(MARKET_DATA[mktKey] || []);
 }
 
+function build52wRangeBar(stock, mode = 'card') {
+  const cu = stock.currency || '';
+  const cur = Number(stock.currentPrice || 0);
+  const low52 = Number(stock.low52 || cur * 0.85);
+  const high52 = Number(stock.high52 || cur * 1.15);
+  const avg52 = Number(stock.avg52w || ((low52 + high52) / 2));
+  const diffPct = Number(stock.diff52wPct !== undefined ? stock.diff52wPct : (((cur - avg52) / (avg52 || 1)) * 100).toFixed(1));
+  const diffSign = diffPct >= 0 ? '+' : '';
+  const b52 = stock.border52w || 'orange';
+  const dot52 = b52 === 'green' ? '🟢' : (b52 === 'red' ? '🔴' : '🟠');
+
+  const span = Math.max(0.01, high52 - low52);
+  const rawPos = ((cur - low52) / span) * 100;
+  const posPct = Math.max(3, Math.min(97, rawPos)).toFixed(1);
+
+  return `
+    <div class="range-52w-widget mode-${mode} color-${b52}" title="Range 52 Settimane: Min ${cu}${low52.toFixed(2)} | Media ${cu}${avg52.toFixed(2)} | Max ${cu}${high52.toFixed(2)} | Ora ${cu}${cur.toFixed(2)} (${diffSign}${diffPct}% vs Media)">
+      <div class="range-52w-header">
+        <span class="r52-status">${dot52} Ora: <strong>${cu}${cur.toFixed(2)}</strong></span>
+        <span class="r52-diff">${diffSign}${diffPct}% vs Media</span>
+      </div>
+      <div class="range-52w-bar-wrap">
+        <div class="range-52w-midline" title="Media 52W: ${cu}${avg52.toFixed(2)}"></div>
+        <div class="range-52w-current-line ${b52}" style="left: ${posPct}%;">
+          <span class="range-52w-pin"></span>
+        </div>
+      </div>
+      <div class="range-52w-labels">
+        <span>Min <strong>${cu}${low52.toFixed(2)}</strong></span>
+        <span class="r52-mid-label">Med ${cu}${avg52.toFixed(2)}</span>
+        <span>Max <strong>${cu}${high52.toFixed(2)}</strong></span>
+      </div>
+    </div>
+  `;
+}
+
 function renderSummaryRows(stocks) {
   let html = '';
   stocks.forEach((stock, index) => {
@@ -3056,13 +3092,10 @@ function renderSummaryRows(stocks) {
     const rocSign = roc5 >= 0 ? '+' : '';
     const rocClass = roc5 >= 0 ? 'text-emerald' : 'text-red';
     const rawSc = stock.rawScore !== undefined ? stock.rawScore : stock.score;
-    const b52 = stock.border52w || 'orange';
-    const dot52 = b52 === 'green' ? '🟢' : (b52 === 'red' ? '🔴' : '🟠');
-    const status52 = stock.status52w || 'Nel Range ±10%';
     const divY = stock.dividendYield !== undefined ? `${stock.dividendYield}%` : '0.0%';
 
     html += `
-      <tr onclick="openModal('${stock.id}')">
+      <tr onclick="openStockDetail('${stock.id}')">
         <td class="mono font-bold text-muted">${index + 1}</td>
         <td><span class="table-ticker-name">${stock.ticker}</span></td>
         <td>
@@ -3077,7 +3110,7 @@ function renderSummaryRows(stocks) {
         <td>
           <div class="table-prob-badge">${stock.score}% <span style="opacity:0.75;font-weight:500;">(${rawSc})</span></div>
         </td>
-        <td><span class="summary-52w-pill ${b52}">${dot52} ${status52}</span></td>
+        <td>${build52wRangeBar(stock, 'table')}</td>
         <td class="mono font-bold text-cyan">${divY}</td>
       </tr>
     `;
@@ -3202,10 +3235,12 @@ function renderGrid(stocks) {
             </div>
           </div>
 
+          <!-- Barra Visiva Range 52 Settimane (Min / Media / Max + Linea Prezzo Attuale) -->
+          ${build52wRangeBar(stock, 'card')}
+
           <!-- Indicatori Chiave Reali, Dividendi & Controlli v6.0 -->
           <div class="card-signals-row">
             ${stock.dividendYield !== undefined ? `<span class="signal-pill div-yield-pill" title="Dividend Yield Annuale Stimato"><i class="fa-solid fa-coins"></i> Div: <strong>${stock.dividendYield}%</strong></span>` : ''}
-            ${stock.status52w ? `<span class="signal-pill badge-52w-${stock.border52w || 'orange'}" title="Posizione rispetto alla Media 52W (${stock.currency}${stock.avg52w || '--'})"><i class="fa-solid fa-arrows-split-up-and-left"></i> <strong>${stock.status52w}</strong></span>` : ''}
             <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Vol. <strong>${stock.volumeSpike}</strong></span>
             <span class="signal-pill"><i class="fa-solid fa-gauge-high"></i> RSI <strong>${stock.rsi}</strong></span>
             ${stock.hasTrendAlignment ? '<span class="signal-pill" style="color:#34d399; border-color:rgba(52,211,153,0.3);" title="Prezzo > EMA20 > EMA50"><i class="fa-solid fa-check"></i> EMA OK</span>' : ''}
@@ -3266,7 +3301,7 @@ function renderTable(stocks) {
         <td class="mono font-bold">${stock.marketCap}</td>
         <td class="mono font-bold">${stock.currency}${stock.currentPrice.toFixed(2)}</td>
         <td class="mono font-bold" style="color:#fbbf24;"><i class="fa-solid fa-coins"></i> ${stock.dividendYield !== undefined ? stock.dividendYield + '%' : '--'}</td>
-        <td><span class="signal-pill badge-52w-${stock.border52w || 'orange'}" style="white-space: nowrap;"><i class="fa-solid fa-arrows-split-up-and-left"></i> ${stock.status52w || '--'}</span></td>
+        <td>${build52wRangeBar(stock, 'table')}</td>
         <td class="mono text-emerald font-bold">${stock.currency}${stock.targetPrice.toFixed(2)}</td>
         <td class="mono text-emerald font-bold">+${upside}%</td>
         <td>
@@ -3357,9 +3392,7 @@ function openStockDetail(stockId) {
     elements.mDivYieldVal.textContent = stock.dividendYield !== undefined ? `${stock.dividendYield}% annuo` : `--`;
   }
   if (elements.m52wAvgVal) {
-    const bColor = stock.border52w === 'green' ? '#34d399' : (stock.border52w === 'red' ? '#f87171' : '#fbbf24');
-    const bDot = stock.border52w === 'green' ? '🟢' : (stock.border52w === 'red' ? '🔴' : '🟠');
-    elements.m52wAvgVal.innerHTML = `${bDot} <span style="color:${bColor}; font-weight:700;">${stock.currency}${stock.avg52w || '--'}</span> <span style="font-size:0.75rem; color:var(--text-secondary);">(${stock.status52w || ''})</span>`;
+    elements.m52wAvgVal.innerHTML = build52wRangeBar(stock, 'modal');
   }
   if (elements.mAtrVal) {
     elements.mAtrVal.textContent = stock.atr14 ? `${stock.currency}${stock.atr14} (${stock.atrPct}% osc. media)` : `--`;
