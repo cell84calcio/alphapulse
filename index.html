@@ -599,6 +599,27 @@
 
   </div>
 
+  <!-- Barra di Navigazione Fissa in Basso (EuroStoxx 50 / S&P 500 / Riepilogo) -->
+  <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
+    <div class="bottom-nav-inner">
+      <button class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
+        <span class="bnav-icon">🇪🇺</span>
+        <span class="bnav-label">EuroStoxx 50</span>
+        <span class="bnav-badge">10</span>
+      </button>
+      <button class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
+        <span class="bnav-icon">🇺🇸</span>
+        <span class="bnav-label">S&amp;P 500</span>
+        <span class="bnav-badge">10</span>
+      </button>
+      <button class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
+        <span class="bnav-icon">📊</span>
+        <span class="bnav-label">Riepilogo</span>
+        <span class="bnav-badge">20</span>
+      </button>
+    </div>
+  </nav>
+
   <!-- Script Applicativo Principale -->
   <script src="app.js"></script>
 </body>

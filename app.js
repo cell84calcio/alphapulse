@@ -3533,41 +3533,62 @@ function closeModal() {
 // 9. EVENT LISTENERS E CONTROLLI INTERFACCIA
 // ==========================================================================
 
-function initEventListeners() {
-  elements.tabEU.addEventListener('click', () => {
-    if (state.currentMarket === 'eu') return;
-    state.currentMarket = 'eu';
-    elements.tabEU.classList.add('active');
-    elements.tabUSA.classList.remove('active');
-    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
+function switchMarketSection(market, scrollIfNeeded = false) {
+  if (state.currentMarket === market) {
+    if (scrollIfNeeded) {
+      const mainEl = document.querySelector('.main-content');
+      if (mainEl) mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    return;
+  }
+
+  state.currentMarket = market;
+
+  // Sincronizza tab in alto
+  if (elements.tabEU) elements.tabEU.classList.toggle('active', market === 'eu');
+  if (elements.tabUSA) elements.tabUSA.classList.toggle('active', market === 'usa');
+  if (elements.tabSummary) elements.tabSummary.classList.toggle('active', market === 'summary');
+
+  // Sincronizza barra fissa in basso
+  const bEU = document.getElementById('bottomTabEU');
+  const bUSA = document.getElementById('bottomTabUSA');
+  const bSum = document.getElementById('bottomTabSummary');
+  if (bEU) bEU.classList.toggle('active', market === 'eu');
+  if (bUSA) bUSA.classList.toggle('active', market === 'usa');
+  if (bSum) bSum.classList.toggle('active', market === 'summary');
+
+  if (market === 'eu') {
     elements.currentMarketTitle.innerHTML = `EuroStoxx 50 (Europa) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice EuroStoxx 50 (> €10 Mld) secondo il modello quantitativo v7.0.`;
-    renderStocks();
-  });
-
-  elements.tabUSA.addEventListener('click', () => {
-    if (state.currentMarket === 'usa') return;
-    state.currentMarket = 'usa';
-    elements.tabUSA.classList.add('active');
-    elements.tabEU.classList.remove('active');
-    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
+  } else if (market === 'usa') {
     elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice S&P 500 (> $10 Mld) secondo il modello quantitativo v7.0.`;
-    renderStocks();
-  });
-
-  if (elements.tabSummary) {
-    elements.tabSummary.addEventListener('click', () => {
-      if (state.currentMarket === 'summary') return;
-      state.currentMarket = 'summary';
-      elements.tabSummary.classList.add('active');
-      elements.tabEU.classList.remove('active');
-      elements.tabUSA.classList.remove('active');
-      elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; Top 10 EuroStoxx 50 + Top 10 S&amp;P 500`;
-      elements.currentMarketDesc.textContent = `Vista tabellare doppia sincronizzata in tempo reale (Europa + USA). Si aggiorna automaticamente con Pull-to-Refresh e pulsante Aggiorna Dati.`;
-      renderStocks();
-    });
+  } else {
+    elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; Top 10 EuroStoxx 50 + Top 10 S&amp;P 500`;
+    elements.currentMarketDesc.textContent = `Vista tabellare doppia sincronizzata in tempo reale (Europa + USA). Si aggiorna automaticamente con Pull-to-Refresh e pulsante Aggiorna Dati.`;
   }
+
+  renderStocks();
+
+  if (scrollIfNeeded && window.scrollY > 320) {
+    const mainEl = document.querySelector('.main-content');
+    if (mainEl) mainEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+function initEventListeners() {
+  elements.tabEU.addEventListener('click', () => switchMarketSection('eu', false));
+  elements.tabUSA.addEventListener('click', () => switchMarketSection('usa', false));
+  if (elements.tabSummary) {
+    elements.tabSummary.addEventListener('click', () => switchMarketSection('summary', false));
+  }
+
+  const bEU = document.getElementById('bottomTabEU');
+  const bUSA = document.getElementById('bottomTabUSA');
+  const bSum = document.getElementById('bottomTabSummary');
+  if (bEU) bEU.addEventListener('click', () => switchMarketSection('eu', true));
+  if (bUSA) bUSA.addEventListener('click', () => switchMarketSection('usa', true));
+  if (bSum) bSum.addEventListener('click', () => switchMarketSection('summary', true));
 
   elements.searchInput.addEventListener('input', (e) => {
     state.searchQuery = e.target.value;
