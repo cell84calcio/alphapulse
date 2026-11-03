@@ -152,7 +152,10 @@
             342.8
           ]
         }
-      }
+      },
+      "payoutRatio": 22,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 22%)"
     },
     {
       "id": "eu-mrk-de",
@@ -283,7 +286,10 @@
             135.7
           ]
         }
-      }
+      },
+      "payoutRatio": 33,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 33%)"
     },
     {
       "id": "eu-db1",
@@ -413,7 +419,10 @@
             292.6
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-rep",
@@ -525,7 +534,10 @@
             30.09
           ]
         }
-      }
+      },
+      "payoutRatio": 35,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 35%)"
     },
     {
       "id": "eu-bayn",
@@ -656,7 +668,10 @@
             42.59
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "eu-lonn",
@@ -787,7 +802,10 @@
             563.4
           ]
         }
-      }
+      },
+      "payoutRatio": 30,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 30%)"
     },
     {
       "id": "eu-alv",
@@ -917,7 +935,10 @@
             413.4
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-novo-b",
@@ -1048,7 +1069,10 @@
             249.9
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "eu-inve-b",
@@ -1178,7 +1202,10 @@
             406.55
           ]
         }
-      }
+      },
+      "payoutRatio": 35,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 35%)"
     },
     {
       "id": "eu-dhl",
@@ -1308,7 +1335,10 @@
             54.94
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "eu-ho",
@@ -1438,7 +1468,10 @@
             215.7
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "eu-ora",
@@ -1550,7 +1583,10 @@
             14.23
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-san-fr",
@@ -1681,7 +1717,10 @@
             70.93
           ]
         }
-      }
+      },
+      "payoutRatio": 49,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 49%)"
     },
     {
       "id": "eu-monc",
@@ -1811,7 +1850,10 @@
             43.01
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "eu-ai",
@@ -1941,7 +1983,10 @@
             167.94
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "eu-prx",
@@ -2071,7 +2116,10 @@
             34.85
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "eu-bas",
@@ -2201,7 +2249,10 @@
             51.77
           ]
         }
-      }
+      },
+      "payoutRatio": 112,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 112%)"
     },
     {
       "id": "eu-mc",
@@ -2331,7 +2382,10 @@
             380.9
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "eu-dsv",
@@ -2461,7 +2515,10 @@
             1153.0
           ]
         }
-      }
+      },
+      "payoutRatio": 20,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 20%)"
     },
     {
       "id": "eu-kpn",
@@ -2573,7 +2630,10 @@
             3.95
           ]
         }
-      }
+      },
+      "payoutRatio": 64,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 64%)"
     },
     {
       "id": "eu-novn",
@@ -2704,7 +2764,10 @@
             117.72
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-zurn",
@@ -2834,7 +2897,10 @@
             572.8
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-cs",
@@ -2964,7 +3030,10 @@
             41.42
           ]
         }
-      }
+      },
+      "payoutRatio": 55,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 55%)"
     },
     {
       "id": "eu-sgo",
@@ -3094,7 +3163,10 @@
             64.76
           ]
         }
-      }
+      },
+      "payoutRatio": 36,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 36%)"
     },
     {
       "id": "eu-pry",
@@ -3224,7 +3296,10 @@
             122.3
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "eu-ads",
@@ -3354,7 +3429,10 @@
             146.5
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-rms",
@@ -3484,7 +3562,10 @@
             1262.5
           ]
         }
-      }
+      },
+      "payoutRatio": 36,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 36%)"
     },
     {
       "id": "eu-holn",
@@ -3614,7 +3695,10 @@
             62.84
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-azn",
@@ -3745,7 +3829,10 @@
             119.98
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "eu-dte",
@@ -3875,7 +3962,10 @@
             26.83
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-el",
@@ -4006,7 +4096,10 @@
             143.0
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "eu-una",
@@ -4136,7 +4229,10 @@
             54.62
           ]
         }
-      }
+      },
+      "payoutRatio": 62,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 62%)"
     },
     {
       "id": "eu-cap",
@@ -4266,7 +4362,10 @@
             110.85
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-ldo",
@@ -4396,7 +4495,10 @@
             45.8
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "eu-muv2",
@@ -4526,7 +4628,10 @@
             519.0
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "eu-enel",
@@ -4656,7 +4761,10 @@
             8.76
           ]
         }
-      }
+      },
+      "payoutRatio": 67,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 67%)"
     },
     {
       "id": "eu-sren",
@@ -4786,7 +4894,10 @@
             142.3
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "eu-bn",
@@ -4916,7 +5027,10 @@
             59.28
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "eu-ri",
@@ -5046,7 +5160,10 @@
             61.1
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-ba",
@@ -5176,7 +5293,10 @@
             18.6
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-g",
@@ -5306,7 +5426,10 @@
             41.02
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "eu-engi",
@@ -5436,7 +5559,10 @@
             22.71
           ]
         }
-      }
+      },
+      "payoutRatio": 65,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 65%)"
     },
     {
       "id": "eu-or",
@@ -5566,7 +5692,10 @@
             374.05
           ]
         }
-      }
+      },
+      "payoutRatio": 53,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 53%)"
     },
     {
       "id": "eu-heia",
@@ -5678,7 +5807,10 @@
             70.78
           ]
         }
-      }
+      },
+      "payoutRatio": 41,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 41%)"
     },
     {
       "id": "eu-ren",
@@ -5808,7 +5940,10 @@
             30.66
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-ibe",
@@ -5938,7 +6073,10 @@
             21.11
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-ng",
@@ -6068,7 +6206,10 @@
             11.47
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "eu-nesn",
@@ -6198,7 +6339,10 @@
             76.0
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "eu-rwe",
@@ -6328,7 +6472,10 @@
             57.24
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-abbn",
@@ -6458,7 +6605,10 @@
             78.8
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "eu-dbk",
@@ -6588,7 +6738,10 @@
             29.66
           ]
         }
-      }
+      },
+      "payoutRatio": 26,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 26%)"
     },
     {
       "id": "eu-bats",
@@ -6718,7 +6871,10 @@
             41.94
           ]
         }
-      }
+      },
+      "payoutRatio": 63,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 63%)"
     },
     {
       "id": "eu-ifx",
@@ -6848,7 +7004,10 @@
             58.9
           ]
         }
-      }
+      },
+      "payoutRatio": 25,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 25%)"
     },
     {
       "id": "eu-sap",
@@ -6978,7 +7137,10 @@
             184.62
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "eu-abi",
@@ -7108,7 +7270,10 @@
             68.44
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "eu-sie",
@@ -7238,7 +7403,10 @@
             264.25
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-wkl",
@@ -7368,7 +7536,10 @@
             71.78
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-atco-a",
@@ -7498,7 +7669,10 @@
             205.7
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-ubsg",
@@ -7628,7 +7802,10 @@
             38.83
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-tte",
@@ -7758,7 +7935,10 @@
             77.58
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     }
   ],
   "usa": [
@@ -7891,7 +8071,10 @@
             88.05
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "usa-mo",
@@ -8022,7 +8205,10 @@
             71.68
           ]
         }
-      }
+      },
+      "payoutRatio": 73,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 73%)"
     },
     {
       "id": "usa-tmo",
@@ -8152,7 +8338,10 @@
             658.02
           ]
         }
-      }
+      },
+      "payoutRatio": 12,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 12%)"
     },
     {
       "id": "usa-ge",
@@ -8282,7 +8471,10 @@
             308.2
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "usa-txn",
@@ -8412,7 +8604,10 @@
             283.74
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "usa-isrg",
@@ -8542,7 +8737,10 @@
             423.96
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-dis",
@@ -8673,7 +8871,10 @@
             108.05
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "usa-brk-b",
@@ -8803,7 +9004,10 @@
             515.62
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-wfc",
@@ -8933,7 +9137,10 @@
             83.55
           ]
         }
-      }
+      },
+      "payoutRatio": 30,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 30%)"
     },
     {
       "id": "usa-blk",
@@ -9063,7 +9270,10 @@
             1082.39
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-intu",
@@ -9193,7 +9403,10 @@
             302.75
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "usa-cost",
@@ -9324,7 +9537,10 @@
             946.92
           ]
         }
-      }
+      },
+      "payoutRatio": 27,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 27%)"
     },
     {
       "id": "usa-pg",
@@ -9455,7 +9671,10 @@
             151.23
           ]
         }
-      }
+      },
+      "payoutRatio": 60,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 60%)"
     },
     {
       "id": "usa-khc",
@@ -9586,7 +9805,10 @@
             22.27
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "usa-amgn",
@@ -9716,7 +9938,10 @@
             414.87
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "usa-abbv",
@@ -9846,7 +10071,10 @@
             276.47
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-pfe",
@@ -9976,7 +10204,10 @@
             28.28
           ]
         }
-      }
+      },
+      "payoutRatio": 88,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 88%)"
     },
     {
       "id": "usa-rtx",
@@ -10088,7 +10319,10 @@
             185.97
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "usa-axp",
@@ -10218,7 +10452,10 @@
             308.17
           ]
         }
-      }
+      },
+      "payoutRatio": 21,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 21%)"
     },
     {
       "id": "usa-hon",
@@ -10348,7 +10585,10 @@
             207.73
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "usa-vz",
@@ -10460,7 +10700,10 @@
             41.65
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-lly",
@@ -10590,7 +10833,10 @@
             1179.27
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "usa-unp",
@@ -10702,7 +10948,10 @@
             278.34
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "usa-ma",
@@ -10832,7 +11081,10 @@
             589.14
           ]
         }
-      }
+      },
+      "payoutRatio": 19,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 19%)"
     },
     {
       "id": "usa-etn",
@@ -10962,7 +11214,10 @@
             429.65
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "usa-v",
@@ -11092,7 +11347,10 @@
             385.45
           ]
         }
-      }
+      },
+      "payoutRatio": 22,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 22%)"
     },
     {
       "id": "usa-mcd",
@@ -11223,7 +11481,10 @@
             235.23
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "usa-acn",
@@ -11353,7 +11614,10 @@
             209.06
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "usa-syk",
@@ -11483,7 +11747,10 @@
             277.33
           ]
         }
-      }
+      },
+      "payoutRatio": 27,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 27%)"
     },
     {
       "id": "usa-nee",
@@ -11595,7 +11862,10 @@
             77.38
           ]
         }
-      }
+      },
+      "payoutRatio": 62,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 62%)"
     },
     {
       "id": "usa-abt",
@@ -11725,7 +11995,10 @@
             99.6
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "usa-o",
@@ -11855,7 +12128,10 @@
             54.18
           ]
         }
-      }
+      },
+      "payoutRatio": 74,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 74%)"
     },
     {
       "id": "usa-unh",
@@ -11985,7 +12261,10 @@
             379.3
           ]
         }
-      }
+      },
+      "payoutRatio": 31,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 31%)"
     },
     {
       "id": "usa-bmy",
@@ -12115,7 +12394,10 @@
             59.12
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-wmt",
@@ -12246,7 +12528,10 @@
             111.35
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "usa-nflx",
@@ -12376,7 +12661,10 @@
             70.3
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-nke",
@@ -12507,7 +12795,10 @@
             34.71
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-lmt",
@@ -12619,7 +12910,10 @@
             509.59
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "usa-pep",
@@ -12750,7 +13044,10 @@
             125.97
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "usa-amzn",
@@ -12880,7 +13177,10 @@
             262.43
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-cvx",
@@ -13010,7 +13310,10 @@
             211.98
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "usa-msft",
@@ -13140,7 +13443,10 @@
             535.07
           ]
         }
-      }
+      },
+      "payoutRatio": 25,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 25%)"
     },
     {
       "id": "usa-tsla",
@@ -13270,7 +13576,10 @@
             382.7
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-f",
@@ -13400,7 +13709,10 @@
             12.17
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-pgr",
@@ -13530,7 +13842,10 @@
             217.43
           ]
         }
-      }
+      },
+      "payoutRatio": 15,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 15%)"
     },
     {
       "id": "usa-hd",
@@ -13661,7 +13976,10 @@
             290.74
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-ups",
@@ -13791,7 +14109,10 @@
             94.57
           ]
         }
-      }
+      },
+      "payoutRatio": 86,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 86%)"
     },
     {
       "id": "usa-spgi",
@@ -13921,7 +14242,10 @@
             407.82
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "usa-xom",
@@ -14051,7 +14375,10 @@
             168.94
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-ms",
@@ -14181,7 +14508,10 @@
             190.02
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-uber",
@@ -14311,7 +14641,10 @@
             71.51
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-jnj",
@@ -14441,7 +14774,10 @@
             261.44
           ]
         }
-      }
+      },
+      "payoutRatio": 49,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 49%)"
     },
     {
       "id": "usa-gs",
@@ -14571,7 +14907,10 @@
             895.32
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "usa-jpm",
@@ -14701,7 +15040,10 @@
             332.99
           ]
         }
-      }
+      },
+      "payoutRatio": 26,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 26%)"
     },
     {
       "id": "usa-ibm",
@@ -14831,7 +15173,10 @@
             227.13
           ]
         }
-      }
+      },
+      "payoutRatio": 64,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 64%)"
     },
     {
       "id": "usa-avgo",
@@ -14961,7 +15306,10 @@
             361.54
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-meta",
@@ -15091,7 +15439,10 @@
             718.67
           ]
         }
-      }
+      },
+      "payoutRatio": 10,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 10%)"
     },
     {
       "id": "usa-anet",
@@ -15221,7 +15572,10 @@
             216.74
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-now",
@@ -15351,7 +15705,10 @@
             140.86
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-csco",
@@ -15481,7 +15838,10 @@
             118.39
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     }
   ]
 }

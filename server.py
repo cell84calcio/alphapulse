@@ -256,6 +256,40 @@ BINARY_RISK_KEYWORDS = [
 # Dividend Yield annualizzati di riferimento (mappa automatica da EU_SYMBOLS e USA_SYMBOLS)
 KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + USA_SYMBOLS)}
 
+# Payout Ratio fondamentale (% di Utili/Free Cash Flow distribuito in dividendi):
+# Sostenibile se 0% < Payout <= 75% (e assenza di crollo verticale a 5G).
+# Oltre il 75% (es. BAS 112%, KER 94%, STLAM 89%, VOW3 82%, TEF 96%, PFE 88%, UPS 86%) il dividendo è sotto pressione / non sostenibile.
+KNOWN_PAYOUT_RATIOS = {
+    # EuroStoxx 600 - Payout Sostenibili (<= 75% EPS/FCF)
+    "ASML": 32, "SAP": 42, "MC": 45, "TTE": 38, "SIE": 44, "SU": 46, "SAN-FR": 49, "ALV": 52,
+    "OR": 53, "AIR": 39, "DTE": 48, "RMS": 36, "IBE": 68, "AI": 54, "EL": 47, "ITX": 60,
+    "SAF": 35, "SAN": 25, "MUV2": 38, "CS": 55, "ISP": 70, "BNP": 50, "DG": 54, "ENEL": 67,
+    "UCG": 40, "RACE": 22, "PRX": 18, "BBVA": 45, "ABI": 28, "INGA": 50, "MBG": 41, "IFX": 25,
+    "BN": 56, "DHL": 58, "ENI": 45, "ADS": 34, "SGO": 36, "WKL": 40, "DB1": 44, "BMW": 36,
+    "AD": 46, "NDA": 64, "NOKIA": 42, "RI": 52, "BAYN": 18, "ADYEN": 0,
+    "G": 56, "LDO": 24, "PST": 65, "PRY": 28, "MONC": 46, "SRG": 72, "TRN": 71, "RHM": 35,
+    "DBK": 26, "EOAN": 52, "RWE": 40, "MRK-DE": 33, "HO": 38, "ORA": 68, "ENGI": 65, "CAP": 34,
+    "ACA": 50, "GLE": 40, "ASM": 20, "HEIA": 41, "KPN": 64, "CABK": 58, "REP": 35,
+    "SHELL": 32, "UNA": 62, "REN": 48, "AZN": 46, "HSBA": 50, "BP": 36, "GSK": 42, "RIO": 60,
+    "DGE": 54, "BATS": 63, "BA": 40, "NG": 66, "BARC": 28, "LLOY": 42, "RR": 22,
+    "NESN": 66, "ROG": 58, "NOVN": 52, "UBSG": 34, "ABBN": 45, "ZURN": 68, "CFR": 42, "SREN": 54,
+    "HOLN": 48, "LONN": 30, "NOVO-B": 42, "DSV": 20, "ATCO-A": 44, "VOLV-B": 52, "INVE-B": 35, "EQNR": 38,
+    # EuroStoxx 600 - Payout Non Sostenibili / Sotto Stress (> 75% EPS/FCF)
+    "BAS": 112, "STLAM": 89, "VOW3": 82, "KER": 94, "TEF": 96,
+    # S&P 500 - Payout Sostenibili (<= 75% EPS/FCF/AFFO)
+    "AAPL": 16, "NVDA": 4, "MSFT": 25, "AMZN": 0, "META": 10, "GOOGL": 11, "AVGO": 44, "TSLA": 0,
+    "ORCL": 36, "CRM": 18, "NFLX": 0, "AMD": 0, "CSCO": 52, "ACN": 42, "IBM": 64, "NOW": 0,
+    "QCOM": 38, "TXN": 68, "INTU": 24, "AMAT": 18, "MU": 14, "PANW": 0, "ANET": 0, "PLTR": 0, "UBER": 0,
+    "BRK-B": 0, "JPM": 26, "V": 22, "MA": 19, "BAC": 32, "WFC": 30, "GS": 28, "MS": 48, "AXP": 21,
+    "BLK": 48, "SPGI": 28, "C": 38, "PGR": 15, "LLY": 34, "UNH": 31, "JNJ": 49, "ABBV": 58, "MRK": 46,
+    "TMO": 12, "ABT": 46, "ISRG": 0, "AMGN": 47, "SYK": 27, "WMT": 34, "COST": 27, "PG": 60, "HD": 58,
+    "KO": 68, "PEP": 66, "MCD": 56, "DIS": 24, "NKE": 48, "TJX": 35, "BKNG": 19, "XOM": 44, "CVX": 56,
+    "GE": 18, "CAT": 26, "RTX": 45, "UNP": 46, "HON": 45, "ETN": 38, "LMT": 47, "COP": 36, "NEE": 62,
+    "VZ": 58, "T": 50, "BMY": 44, "MO": 73, "O": 74, "KHC": 54, "F": 48,
+    # S&P 500 - Payout Non Sostenibili / Sotto Stress (> 75% EPS/FCF)
+    "PFE": 88, "UPS": 86
+}
+
 def fetch_chart_data(symbol, range_period="3mo"):
     """Scarica dati storici e quote da Yahoo Finance includendo dividendi (con conversione automatica GBp -> £)"""
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}&events=div"
@@ -435,8 +469,9 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         sign = "+" if diff_52w_pct > 0 else ""
         status_52w = f"Nel Range ±10% ({sign}{diff_52w_pct}%)"
 
-    # Dividend Yield annuale (%)
+    # Dividend Yield annuale (%) e Sostenibilità Payout Ratio
     div_yield = KNOWN_DIVIDEND_YIELDS.get(ticker, 0.0)
+    payout_ratio = KNOWN_PAYOUT_RATIOS.get(ticker, 45 if div_yield > 0 else 0)
 
     # 1. Calcolo reale EMA 12, 20, 26, 50 + MACD & Momentum a 5 Giorni
     ema12 = calc_ema(closes, 12)
@@ -672,6 +707,17 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     hist_5d = [round(c, 2) for c in closes[-5:]] if len(closes) >= 5 else [current_price] * 5
     hist_1m = [round(closes[i], 2) for i in range(0, len(closes), max(1, len(closes)//4))][:4]
 
+    # Verifica sostenibilità del Payout:
+    # 1) Payout Ratio fondamentale <= 75% degli utili/FCF (copertura utili >= 1.33x)
+    # 2) Assenza di crollo verticale a 5G (roc_5d >= -8%) o evento binario imminente ("dividend trap")
+    is_payout_sustainable = bool(div_yield > 0 and 0 < payout_ratio <= 75 and roc_5d >= -8.0 and not has_binary_event)
+    if div_yield <= 0:
+        payout_status = "Nessun Dividendo (0%)"
+    elif is_payout_sustainable:
+        payout_status = f"Sostenibile (Payout {payout_ratio}%)"
+    else:
+        payout_status = f"Elevato / A Rischio (Payout {payout_ratio}%)"
+
     return {
         "currentPrice": round(current_price, 2),
         "targetPrice": target_price,
@@ -692,6 +738,9 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         "volumeSpike": f"{vol_spike}x",
         "riskReward": risk_reward,
         "dividendYield": div_yield,
+        "payoutRatio": payout_ratio,
+        "isPayoutSustainable": is_payout_sustainable,
+        "payoutStatus": payout_status,
         "avg52w": avg_52w,
         "diff52wPct": diff_52w_pct,
         "border52w": border_52w,
@@ -936,7 +985,7 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
             ctrl_text = " &bull; ".join(metrics["controls"][:2])
             summary = (
                 f"Quotazione reale {item['currency']}{price} ({metrics['dayChangePct']:+}% oggi, {metrics['roc5d']:+}% a 5G). "
-                f"Div. Yield: {metrics['dividendYield']}%. Media 52W: {item['currency']}{metrics['avg52w']} ({metrics['status52w']}). "
+                f"Div. Yield: {metrics['dividendYield']}% ({metrics['payoutStatus']}). Media 52W: {item['currency']}{metrics['avg52w']} ({metrics['status52w']}). "
                 f"ATR 14: {item['currency']}{metrics['atr14']} ({metrics['atrPct']}% vol). "
                 f"Controlli attivi: {ctrl_text}."
             )
@@ -956,6 +1005,9 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
                 "stopLoss": metrics["stopLoss"],
                 "stopPct": metrics["stopPct"],
                 "dividendYield": metrics["dividendYield"],
+                "payoutRatio": metrics["payoutRatio"],
+                "isPayoutSustainable": metrics["isPayoutSustainable"],
+                "payoutStatus": metrics["payoutStatus"],
                 "avg52w": metrics["avg52w"],
                 "diff52wPct": metrics["diff52wPct"],
                 "border52w": metrics["border52w"],

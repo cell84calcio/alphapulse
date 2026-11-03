@@ -161,7 +161,10 @@ let REAL_DATASET = {
             342.8
           ]
         }
-      }
+      },
+      "payoutRatio": 22,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 22%)"
     },
     {
       "id": "eu-mrk-de",
@@ -292,7 +295,10 @@ let REAL_DATASET = {
             135.7
           ]
         }
-      }
+      },
+      "payoutRatio": 33,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 33%)"
     },
     {
       "id": "eu-db1",
@@ -422,7 +428,10 @@ let REAL_DATASET = {
             292.6
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-rep",
@@ -534,7 +543,10 @@ let REAL_DATASET = {
             30.09
           ]
         }
-      }
+      },
+      "payoutRatio": 35,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 35%)"
     },
     {
       "id": "eu-bayn",
@@ -665,7 +677,10 @@ let REAL_DATASET = {
             42.59
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "eu-lonn",
@@ -796,7 +811,10 @@ let REAL_DATASET = {
             563.4
           ]
         }
-      }
+      },
+      "payoutRatio": 30,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 30%)"
     },
     {
       "id": "eu-alv",
@@ -926,7 +944,10 @@ let REAL_DATASET = {
             413.4
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-novo-b",
@@ -1057,7 +1078,10 @@ let REAL_DATASET = {
             249.9
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "eu-inve-b",
@@ -1187,7 +1211,10 @@ let REAL_DATASET = {
             406.55
           ]
         }
-      }
+      },
+      "payoutRatio": 35,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 35%)"
     },
     {
       "id": "eu-dhl",
@@ -1317,7 +1344,10 @@ let REAL_DATASET = {
             54.94
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "eu-ho",
@@ -1447,7 +1477,10 @@ let REAL_DATASET = {
             215.7
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "eu-ora",
@@ -1559,7 +1592,10 @@ let REAL_DATASET = {
             14.23
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-san-fr",
@@ -1690,7 +1726,10 @@ let REAL_DATASET = {
             70.93
           ]
         }
-      }
+      },
+      "payoutRatio": 49,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 49%)"
     },
     {
       "id": "eu-monc",
@@ -1820,7 +1859,10 @@ let REAL_DATASET = {
             43.01
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "eu-ai",
@@ -1950,7 +1992,10 @@ let REAL_DATASET = {
             167.94
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "eu-prx",
@@ -2080,7 +2125,10 @@ let REAL_DATASET = {
             34.85
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "eu-bas",
@@ -2210,7 +2258,10 @@ let REAL_DATASET = {
             51.77
           ]
         }
-      }
+      },
+      "payoutRatio": 112,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 112%)"
     },
     {
       "id": "eu-mc",
@@ -2340,7 +2391,10 @@ let REAL_DATASET = {
             380.9
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "eu-dsv",
@@ -2470,7 +2524,10 @@ let REAL_DATASET = {
             1153.0
           ]
         }
-      }
+      },
+      "payoutRatio": 20,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 20%)"
     },
     {
       "id": "eu-kpn",
@@ -2582,7 +2639,10 @@ let REAL_DATASET = {
             3.95
           ]
         }
-      }
+      },
+      "payoutRatio": 64,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 64%)"
     },
     {
       "id": "eu-novn",
@@ -2713,7 +2773,10 @@ let REAL_DATASET = {
             117.72
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-zurn",
@@ -2843,7 +2906,10 @@ let REAL_DATASET = {
             572.8
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-cs",
@@ -2973,7 +3039,10 @@ let REAL_DATASET = {
             41.42
           ]
         }
-      }
+      },
+      "payoutRatio": 55,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 55%)"
     },
     {
       "id": "eu-sgo",
@@ -3103,7 +3172,10 @@ let REAL_DATASET = {
             64.76
           ]
         }
-      }
+      },
+      "payoutRatio": 36,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 36%)"
     },
     {
       "id": "eu-pry",
@@ -3233,7 +3305,10 @@ let REAL_DATASET = {
             122.3
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "eu-ads",
@@ -3363,7 +3438,10 @@ let REAL_DATASET = {
             146.5
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-rms",
@@ -3493,7 +3571,10 @@ let REAL_DATASET = {
             1262.5
           ]
         }
-      }
+      },
+      "payoutRatio": 36,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 36%)"
     },
     {
       "id": "eu-holn",
@@ -3623,7 +3704,10 @@ let REAL_DATASET = {
             62.84
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-azn",
@@ -3754,7 +3838,10 @@ let REAL_DATASET = {
             119.98
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "eu-dte",
@@ -3884,7 +3971,10 @@ let REAL_DATASET = {
             26.83
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-el",
@@ -4015,7 +4105,10 @@ let REAL_DATASET = {
             143.0
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "eu-una",
@@ -4145,7 +4238,10 @@ let REAL_DATASET = {
             54.62
           ]
         }
-      }
+      },
+      "payoutRatio": 62,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 62%)"
     },
     {
       "id": "eu-cap",
@@ -4275,7 +4371,10 @@ let REAL_DATASET = {
             110.85
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-ldo",
@@ -4405,7 +4504,10 @@ let REAL_DATASET = {
             45.8
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "eu-muv2",
@@ -4535,7 +4637,10 @@ let REAL_DATASET = {
             519.0
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "eu-enel",
@@ -4665,7 +4770,10 @@ let REAL_DATASET = {
             8.76
           ]
         }
-      }
+      },
+      "payoutRatio": 67,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 67%)"
     },
     {
       "id": "eu-sren",
@@ -4795,7 +4903,10 @@ let REAL_DATASET = {
             142.3
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "eu-bn",
@@ -4925,7 +5036,10 @@ let REAL_DATASET = {
             59.28
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "eu-ri",
@@ -5055,7 +5169,10 @@ let REAL_DATASET = {
             61.1
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     },
     {
       "id": "eu-ba",
@@ -5185,7 +5302,10 @@ let REAL_DATASET = {
             18.6
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-g",
@@ -5315,7 +5435,10 @@ let REAL_DATASET = {
             41.02
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "eu-engi",
@@ -5445,7 +5568,10 @@ let REAL_DATASET = {
             22.71
           ]
         }
-      }
+      },
+      "payoutRatio": 65,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 65%)"
     },
     {
       "id": "eu-or",
@@ -5575,7 +5701,10 @@ let REAL_DATASET = {
             374.05
           ]
         }
-      }
+      },
+      "payoutRatio": 53,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 53%)"
     },
     {
       "id": "eu-heia",
@@ -5687,7 +5816,10 @@ let REAL_DATASET = {
             70.78
           ]
         }
-      }
+      },
+      "payoutRatio": 41,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 41%)"
     },
     {
       "id": "eu-ren",
@@ -5817,7 +5949,10 @@ let REAL_DATASET = {
             30.66
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "eu-ibe",
@@ -5947,7 +6082,10 @@ let REAL_DATASET = {
             21.11
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "eu-ng",
@@ -6077,7 +6215,10 @@ let REAL_DATASET = {
             11.47
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "eu-nesn",
@@ -6207,7 +6348,10 @@ let REAL_DATASET = {
             76.0
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "eu-rwe",
@@ -6337,7 +6481,10 @@ let REAL_DATASET = {
             57.24
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-abbn",
@@ -6467,7 +6614,10 @@ let REAL_DATASET = {
             78.8
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "eu-dbk",
@@ -6597,7 +6747,10 @@ let REAL_DATASET = {
             29.66
           ]
         }
-      }
+      },
+      "payoutRatio": 26,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 26%)"
     },
     {
       "id": "eu-bats",
@@ -6727,7 +6880,10 @@ let REAL_DATASET = {
             41.94
           ]
         }
-      }
+      },
+      "payoutRatio": 63,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 63%)"
     },
     {
       "id": "eu-ifx",
@@ -6857,7 +7013,10 @@ let REAL_DATASET = {
             58.9
           ]
         }
-      }
+      },
+      "payoutRatio": 25,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 25%)"
     },
     {
       "id": "eu-sap",
@@ -6987,7 +7146,10 @@ let REAL_DATASET = {
             184.62
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "eu-abi",
@@ -7117,7 +7279,10 @@ let REAL_DATASET = {
             68.44
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "eu-sie",
@@ -7247,7 +7412,10 @@ let REAL_DATASET = {
             264.25
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-wkl",
@@ -7377,7 +7545,10 @@ let REAL_DATASET = {
             71.78
           ]
         }
-      }
+      },
+      "payoutRatio": 40,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 40%)"
     },
     {
       "id": "eu-atco-a",
@@ -7507,7 +7678,10 @@ let REAL_DATASET = {
             205.7
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "eu-ubsg",
@@ -7637,7 +7811,10 @@ let REAL_DATASET = {
             38.83
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "eu-tte",
@@ -7767,7 +7944,10 @@ let REAL_DATASET = {
             77.58
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     }
   ],
   "usa": [
@@ -7900,7 +8080,10 @@ let REAL_DATASET = {
             88.05
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "usa-mo",
@@ -8031,7 +8214,10 @@ let REAL_DATASET = {
             71.68
           ]
         }
-      }
+      },
+      "payoutRatio": 73,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 73%)"
     },
     {
       "id": "usa-tmo",
@@ -8161,7 +8347,10 @@ let REAL_DATASET = {
             658.02
           ]
         }
-      }
+      },
+      "payoutRatio": 12,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 12%)"
     },
     {
       "id": "usa-ge",
@@ -8291,7 +8480,10 @@ let REAL_DATASET = {
             308.2
           ]
         }
-      }
+      },
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)"
     },
     {
       "id": "usa-txn",
@@ -8421,7 +8613,10 @@ let REAL_DATASET = {
             283.74
           ]
         }
-      }
+      },
+      "payoutRatio": 68,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 68%)"
     },
     {
       "id": "usa-isrg",
@@ -8551,7 +8746,10 @@ let REAL_DATASET = {
             423.96
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-dis",
@@ -8682,7 +8880,10 @@ let REAL_DATASET = {
             108.05
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "usa-brk-b",
@@ -8812,7 +9013,10 @@ let REAL_DATASET = {
             515.62
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-wfc",
@@ -8942,7 +9146,10 @@ let REAL_DATASET = {
             83.55
           ]
         }
-      }
+      },
+      "payoutRatio": 30,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 30%)"
     },
     {
       "id": "usa-blk",
@@ -9072,7 +9279,10 @@ let REAL_DATASET = {
             1082.39
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-intu",
@@ -9202,7 +9412,10 @@ let REAL_DATASET = {
             302.75
           ]
         }
-      }
+      },
+      "payoutRatio": 24,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 24%)"
     },
     {
       "id": "usa-cost",
@@ -9333,7 +9546,10 @@ let REAL_DATASET = {
             946.92
           ]
         }
-      }
+      },
+      "payoutRatio": 27,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 27%)"
     },
     {
       "id": "usa-pg",
@@ -9464,7 +9680,10 @@ let REAL_DATASET = {
             151.23
           ]
         }
-      }
+      },
+      "payoutRatio": 60,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 60%)"
     },
     {
       "id": "usa-khc",
@@ -9595,7 +9814,10 @@ let REAL_DATASET = {
             22.27
           ]
         }
-      }
+      },
+      "payoutRatio": 54,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 54%)"
     },
     {
       "id": "usa-amgn",
@@ -9725,7 +9947,10 @@ let REAL_DATASET = {
             414.87
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "usa-abbv",
@@ -9855,7 +10080,10 @@ let REAL_DATASET = {
             276.47
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-pfe",
@@ -9985,7 +10213,10 @@ let REAL_DATASET = {
             28.28
           ]
         }
-      }
+      },
+      "payoutRatio": 88,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 88%)"
     },
     {
       "id": "usa-rtx",
@@ -10097,7 +10328,10 @@ let REAL_DATASET = {
             185.97
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "usa-axp",
@@ -10227,7 +10461,10 @@ let REAL_DATASET = {
             308.17
           ]
         }
-      }
+      },
+      "payoutRatio": 21,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 21%)"
     },
     {
       "id": "usa-hon",
@@ -10357,7 +10594,10 @@ let REAL_DATASET = {
             207.73
           ]
         }
-      }
+      },
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)"
     },
     {
       "id": "usa-vz",
@@ -10469,7 +10709,10 @@ let REAL_DATASET = {
             41.65
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-lly",
@@ -10599,7 +10842,10 @@ let REAL_DATASET = {
             1179.27
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "usa-unp",
@@ -10711,7 +10957,10 @@ let REAL_DATASET = {
             278.34
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "usa-ma",
@@ -10841,7 +11090,10 @@ let REAL_DATASET = {
             589.14
           ]
         }
-      }
+      },
+      "payoutRatio": 19,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 19%)"
     },
     {
       "id": "usa-etn",
@@ -10971,7 +11223,10 @@ let REAL_DATASET = {
             429.65
           ]
         }
-      }
+      },
+      "payoutRatio": 38,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 38%)"
     },
     {
       "id": "usa-v",
@@ -11101,7 +11356,10 @@ let REAL_DATASET = {
             385.45
           ]
         }
-      }
+      },
+      "payoutRatio": 22,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 22%)"
     },
     {
       "id": "usa-mcd",
@@ -11232,7 +11490,10 @@ let REAL_DATASET = {
             235.23
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "usa-acn",
@@ -11362,7 +11623,10 @@ let REAL_DATASET = {
             209.06
           ]
         }
-      }
+      },
+      "payoutRatio": 42,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 42%)"
     },
     {
       "id": "usa-syk",
@@ -11492,7 +11756,10 @@ let REAL_DATASET = {
             277.33
           ]
         }
-      }
+      },
+      "payoutRatio": 27,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 27%)"
     },
     {
       "id": "usa-nee",
@@ -11604,7 +11871,10 @@ let REAL_DATASET = {
             77.38
           ]
         }
-      }
+      },
+      "payoutRatio": 62,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 62%)"
     },
     {
       "id": "usa-abt",
@@ -11734,7 +12004,10 @@ let REAL_DATASET = {
             99.6
           ]
         }
-      }
+      },
+      "payoutRatio": 46,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 46%)"
     },
     {
       "id": "usa-o",
@@ -11864,7 +12137,10 @@ let REAL_DATASET = {
             54.18
           ]
         }
-      }
+      },
+      "payoutRatio": 74,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 74%)"
     },
     {
       "id": "usa-unh",
@@ -11994,7 +12270,10 @@ let REAL_DATASET = {
             379.3
           ]
         }
-      }
+      },
+      "payoutRatio": 31,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 31%)"
     },
     {
       "id": "usa-bmy",
@@ -12124,7 +12403,10 @@ let REAL_DATASET = {
             59.12
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-wmt",
@@ -12255,7 +12537,10 @@ let REAL_DATASET = {
             111.35
           ]
         }
-      }
+      },
+      "payoutRatio": 34,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 34%)"
     },
     {
       "id": "usa-nflx",
@@ -12385,7 +12670,10 @@ let REAL_DATASET = {
             70.3
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-nke",
@@ -12516,7 +12804,10 @@ let REAL_DATASET = {
             34.71
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-lmt",
@@ -12628,7 +12919,10 @@ let REAL_DATASET = {
             509.59
           ]
         }
-      }
+      },
+      "payoutRatio": 47,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 47%)"
     },
     {
       "id": "usa-pep",
@@ -12759,7 +13053,10 @@ let REAL_DATASET = {
             125.97
           ]
         }
-      }
+      },
+      "payoutRatio": 66,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 66%)"
     },
     {
       "id": "usa-amzn",
@@ -12889,7 +13186,10 @@ let REAL_DATASET = {
             262.43
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-cvx",
@@ -13019,7 +13319,10 @@ let REAL_DATASET = {
             211.98
           ]
         }
-      }
+      },
+      "payoutRatio": 56,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 56%)"
     },
     {
       "id": "usa-msft",
@@ -13149,7 +13452,10 @@ let REAL_DATASET = {
             535.07
           ]
         }
-      }
+      },
+      "payoutRatio": 25,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 25%)"
     },
     {
       "id": "usa-tsla",
@@ -13279,7 +13585,10 @@ let REAL_DATASET = {
             382.7
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-f",
@@ -13409,7 +13718,10 @@ let REAL_DATASET = {
             12.17
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-pgr",
@@ -13539,7 +13851,10 @@ let REAL_DATASET = {
             217.43
           ]
         }
-      }
+      },
+      "payoutRatio": 15,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 15%)"
     },
     {
       "id": "usa-hd",
@@ -13670,7 +13985,10 @@ let REAL_DATASET = {
             290.74
           ]
         }
-      }
+      },
+      "payoutRatio": 58,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 58%)"
     },
     {
       "id": "usa-ups",
@@ -13800,7 +14118,10 @@ let REAL_DATASET = {
             94.57
           ]
         }
-      }
+      },
+      "payoutRatio": 86,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 86%)"
     },
     {
       "id": "usa-spgi",
@@ -13930,7 +14251,10 @@ let REAL_DATASET = {
             407.82
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "usa-xom",
@@ -14060,7 +14384,10 @@ let REAL_DATASET = {
             168.94
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-ms",
@@ -14190,7 +14517,10 @@ let REAL_DATASET = {
             190.02
           ]
         }
-      }
+      },
+      "payoutRatio": 48,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 48%)"
     },
     {
       "id": "usa-uber",
@@ -14320,7 +14650,10 @@ let REAL_DATASET = {
             71.51
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-jnj",
@@ -14450,7 +14783,10 @@ let REAL_DATASET = {
             261.44
           ]
         }
-      }
+      },
+      "payoutRatio": 49,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 49%)"
     },
     {
       "id": "usa-gs",
@@ -14580,7 +14916,10 @@ let REAL_DATASET = {
             895.32
           ]
         }
-      }
+      },
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)"
     },
     {
       "id": "usa-jpm",
@@ -14710,7 +15049,10 @@ let REAL_DATASET = {
             332.99
           ]
         }
-      }
+      },
+      "payoutRatio": 26,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 26%)"
     },
     {
       "id": "usa-ibm",
@@ -14840,7 +15182,10 @@ let REAL_DATASET = {
             227.13
           ]
         }
-      }
+      },
+      "payoutRatio": 64,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 64%)"
     },
     {
       "id": "usa-avgo",
@@ -14970,7 +15315,10 @@ let REAL_DATASET = {
             361.54
           ]
         }
-      }
+      },
+      "payoutRatio": 44,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 44%)"
     },
     {
       "id": "usa-meta",
@@ -15100,7 +15448,10 @@ let REAL_DATASET = {
             718.67
           ]
         }
-      }
+      },
+      "payoutRatio": 10,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 10%)"
     },
     {
       "id": "usa-anet",
@@ -15230,7 +15581,10 @@ let REAL_DATASET = {
             216.74
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-now",
@@ -15360,7 +15714,10 @@ let REAL_DATASET = {
             140.86
           ]
         }
-      }
+      },
+      "payoutRatio": 0,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Nessun Dividendo (0%)"
     },
     {
       "id": "usa-csco",
@@ -15490,7 +15847,10 @@ let REAL_DATASET = {
             118.39
           ]
         }
-      }
+      },
+      "payoutRatio": 52,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 52%)"
     }
   ]
 };
@@ -15960,17 +16320,21 @@ function filterAndSortList(rawList) {
       return false;
     }
     const divY = Number(stock.dividendYield || 0);
+    const payout = Number(stock.payoutRatio !== undefined ? stock.payoutRatio : (divY > 0 ? 50 : 0));
+    const isSustainable = stock.isPayoutSustainable !== undefined
+      ? Boolean(stock.isPayoutSustainable)
+      : (divY > 0 && payout > 0 && payout <= 75 && Number(stock.roc5d || 0) >= -8.0);
     const curP = Number(stock.currentPrice || 0);
     const avg52 = Number(stock.avg52w || curP);
     const isUnder52w = (curP < avg52) || (Number(stock.diff52wPct || 0) < 0);
 
-    if (state.quickFilter === 'div4' && !(divY > 4.0)) {
+    if (state.quickFilter === 'div4' && !(divY > 4.0 && isSustainable)) {
       return false;
     }
     if (state.quickFilter === 'under52w' && !isUnder52w) {
       return false;
     }
-    if (state.quickFilter === 'combo' && !(divY > 4.0 && isUnder52w)) {
+    if (state.quickFilter === 'combo' && !(divY > 4.0 && isSustainable && isUnder52w)) {
       return false;
     }
 
@@ -16058,6 +16422,9 @@ function renderSummaryRows(stocks) {
     const rocClass = roc5 >= 0 ? 'text-emerald' : 'text-red';
     const rawSc = stock.rawScore !== undefined ? stock.rawScore : stock.score;
     const divY = stock.dividendYield !== undefined ? `${stock.dividendYield}%` : '0.0%';
+    const payR = stock.payoutRatio !== undefined ? stock.payoutRatio : (stock.dividendYield > 0 ? 50 : 0);
+    const isPayOk = stock.isPayoutSustainable !== undefined ? stock.isPayoutSustainable : (payR > 0 && payR <= 75);
+    const payBadge = stock.dividendYield > 0 ? `<div style="font-size:0.68rem; color:${isPayOk ? '#34d399' : '#f87171'}; font-weight:600;">Payout ${payR}% ${isPayOk ? '✅' : '⚠️'}</div>` : '';
 
     html += `
       <tr onclick="openStockDetail('${stock.id}')">
@@ -16076,7 +16443,7 @@ function renderSummaryRows(stocks) {
           <div class="table-prob-badge">${stock.score}% <span style="opacity:0.75;font-weight:500;">(${rawSc})</span></div>
         </td>
         <td>${build52wRangeBar(stock, 'table')}</td>
-        <td class="mono font-bold text-cyan">${divY}</td>
+        <td class="mono font-bold text-cyan">${divY}${payBadge}</td>
       </tr>
     `;
   });
@@ -16205,7 +16572,7 @@ function renderGrid(stocks) {
 
           <!-- Indicatori Chiave Reali, Dividendi & Controlli v6.0 -->
           <div class="card-signals-row">
-            ${stock.dividendYield !== undefined ? `<span class="signal-pill div-yield-pill" title="Dividend Yield Annuale Stimato"><i class="fa-solid fa-coins"></i> Div: <strong>${stock.dividendYield}%</strong></span>` : ''}
+            ${stock.dividendYield !== undefined ? `<span class="signal-pill div-yield-pill" title="${stock.payoutStatus || 'Dividend Yield & Payout Ratio'}"><i class="fa-solid fa-coins"></i> Div: <strong>${stock.dividendYield}%</strong>${stock.dividendYield > 0 && stock.payoutRatio ? ` <span style="opacity:0.88;">(Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'})</span>` : ''}</span>` : ''}
             <span class="signal-pill high-signal"><i class="fa-solid fa-arrow-trend-up"></i> Vol. <strong>${stock.volumeSpike}</strong></span>
             <span class="signal-pill"><i class="fa-solid fa-gauge-high"></i> RSI <strong>${stock.rsi}</strong></span>
             ${stock.hasTrendAlignment ? '<span class="signal-pill" style="color:#34d399; border-color:rgba(52,211,153,0.3);" title="Prezzo > EMA20 > EMA50"><i class="fa-solid fa-check"></i> EMA OK</span>' : ''}
@@ -16265,7 +16632,7 @@ function renderTable(stocks) {
         <td><span class="signal-pill">${stock.sector}</span></td>
         <td class="mono font-bold">${stock.marketCap}</td>
         <td class="mono font-bold">${stock.currency}${stock.currentPrice.toFixed(2)}</td>
-        <td class="mono font-bold" style="color:#fbbf24;"><i class="fa-solid fa-coins"></i> ${stock.dividendYield !== undefined ? stock.dividendYield + '%' : '--'}</td>
+        <td class="mono font-bold" style="color:#fbbf24;"><i class="fa-solid fa-coins"></i> ${stock.dividendYield !== undefined ? stock.dividendYield + '%' : '--'}${stock.dividendYield > 0 && stock.payoutRatio ? `<div style="font-size:0.68rem; color:${stock.isPayoutSustainable !== false ? '#34d399' : '#f87171'};">Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'}</div>` : ''}</td>
         <td>${build52wRangeBar(stock, 'table')}</td>
         <td class="mono text-emerald font-bold">${stock.currency}${stock.targetPrice.toFixed(2)}</td>
         <td class="mono text-emerald font-bold">+${upside}%</td>
@@ -16354,7 +16721,12 @@ function openStockDetail(stockId) {
   elements.mVolumeSpike.textContent = `${stock.volumeSpike} vs media a 20 giorni`;
   
   if (elements.mDivYieldVal) {
-    elements.mDivYieldVal.textContent = stock.dividendYield !== undefined ? `${stock.dividendYield}% annuo` : `--`;
+    if (stock.dividendYield !== undefined) {
+      const pInfo = stock.dividendYield > 0 && stock.payoutRatio ? ` &bull; Payout ${stock.payoutRatio}% (${stock.isPayoutSustainable !== false ? '✅ Sostenibile' : '⚠️ Elevato'})` : '';
+      elements.mDivYieldVal.innerHTML = `${stock.dividendYield}% annuo${pInfo}`;
+    } else {
+      elements.mDivYieldVal.textContent = `--`;
+    }
   }
   if (elements.m52wAvgVal) {
     elements.m52wAvgVal.innerHTML = build52wRangeBar(stock, 'modal');
