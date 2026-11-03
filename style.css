@@ -2143,3 +2143,90 @@ html, body {
   transform: rotate(180deg);
 }
 
+/* ==========================================================================
+   PAGINA RIEPILOGO DOPPIA TABELLA (EUROSTOXX 50 + S&P 500)
+   ========================================================================== */
+.summary-tables-page {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.summary-market-block {
+  background: rgba(15, 23, 42, 0.45);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+.summary-block-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.summary-block-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.summary-block-title .flag-icon {
+  font-size: 1.65rem;
+}
+
+.summary-block-title h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-white);
+  margin: 0;
+}
+
+.summary-block-title p {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin: 2px 0 0;
+}
+
+.summary-compact-table tbody tr {
+  cursor: pointer;
+}
+
+.summary-compact-table tbody tr:hover {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.summary-52w-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.summary-52w-pill.green {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.summary-52w-pill.orange {
+  background: rgba(245, 158, 11, 0.14);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.summary-52w-pill.red {
+  background: rgba(239, 68, 68, 0.14);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+

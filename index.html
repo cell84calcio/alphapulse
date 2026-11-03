@@ -186,6 +186,15 @@
             </div>
             <span class="tab-counter">10</span>
           </button>
+
+          <button class="view-tab" data-market="summary" id="tabSummary">
+            <span class="flag-icon">📊</span>
+            <div class="tab-text">
+              <span class="tab-title">Riepilogo (EU + USA)</span>
+              <span class="tab-subtitle">Le 2 Tabelle Top 10 Live</span>
+            </div>
+            <span class="tab-counter">20</span>
+          </button>
         </div>
 
         <!-- Strumenti di Filtro, Ricerca e Layout -->
@@ -290,6 +299,81 @@
             <!-- Generato Dinamicamente via JavaScript -->
           </tbody>
         </table>
+      </div>
+
+      <!-- Seconda Pagina: Riepilogo Doppia Tabella Live (EuroStoxx 50 + S&P 500) -->
+      <div class="summary-tables-page hidden" id="summaryTablesPage">
+        <!-- Tabella 1: EuroStoxx 50 -->
+        <div class="summary-market-block">
+          <div class="summary-block-header">
+            <div class="summary-block-title">
+              <span class="flag-icon">🇪🇺</span>
+              <div>
+                <h3>Top 10 EuroStoxx 50 (Europa) &bull; Orizzonte 5 Giorni</h3>
+                <p>Paniere ufficiale EuroStoxx 50 (&gt; €10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
+              </div>
+            </div>
+            <span class="badge model-tag" id="summaryBadgeEU">10 Titoli Live</span>
+          </div>
+          <div class="stocks-table-wrapper">
+            <table class="stocks-table summary-compact-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Ticker</th>
+                  <th>Azienda</th>
+                  <th>Prezzo Live</th>
+                  <th>Oggi (1G)</th>
+                  <th>5 Giorni</th>
+                  <th>Target 5G</th>
+                  <th>Stop Loss</th>
+                  <th>Score</th>
+                  <th>Indicatore Visivo 52W</th>
+                  <th>Div. Yield</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTableBodyEU">
+                <!-- Generato Dinamicamente via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabella 2: S&P 500 -->
+        <div class="summary-market-block">
+          <div class="summary-block-header">
+            <div class="summary-block-title">
+              <span class="flag-icon">🇺🇸</span>
+              <div>
+                <h3>Top 10 S&amp;P 500 (USA) &bull; Orizzonte 5 Giorni</h3>
+                <p>Paniere ufficiale S&amp;P 500 (&gt; $10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
+              </div>
+            </div>
+            <span class="badge model-tag" id="summaryBadgeUSA">10 Titoli Live</span>
+          </div>
+          <div class="stocks-table-wrapper">
+            <table class="stocks-table summary-compact-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Ticker</th>
+                  <th>Azienda</th>
+                  <th>Prezzo Live</th>
+                  <th>Oggi (1G)</th>
+                  <th>5 Giorni</th>
+                  <th>Target 5G</th>
+                  <th>Stop Loss</th>
+                  <th>Score</th>
+                  <th>Indicatore Visivo 52W</th>
+                  <th>Div. Yield</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTableBodyUSA">
+                <!-- Generato Dinamicamente via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
 
       <!-- Stato Nessun Risultato Ricerca -->

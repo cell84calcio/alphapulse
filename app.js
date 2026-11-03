@@ -2586,6 +2586,7 @@ const state = {
 const elements = {
   tabEU: document.getElementById('tabEU'),
   tabUSA: document.getElementById('tabUSA'),
+  tabSummary: document.getElementById('tabSummary'),
   currentMarketTitle: document.getElementById('currentMarketTitle'),
   currentMarketDesc: document.getElementById('currentMarketDesc'),
   visibleStocksCount: document.getElementById('visibleStocksCount'),
@@ -2597,6 +2598,11 @@ const elements = {
   stocksGrid: document.getElementById('stocksGrid'),
   stocksTableContainer: document.getElementById('stocksTableContainer'),
   stocksTableBody: document.getElementById('stocksTableBody'),
+  summaryTablesPage: document.getElementById('summaryTablesPage'),
+  summaryTableBodyEU: document.getElementById('summaryTableBodyEU'),
+  summaryTableBodyUSA: document.getElementById('summaryTableBodyUSA'),
+  summaryBadgeEU: document.getElementById('summaryBadgeEU'),
+  summaryBadgeUSA: document.getElementById('summaryBadgeUSA'),
   noResultsBox: document.getElementById('noResultsBox'),
   resetFiltersBtn: document.getElementById('resetFiltersBtn'),
   refreshBtn: document.getElementById('refreshBtn'),
@@ -2996,9 +3002,8 @@ function applyRealMarketData(data) {
 // 6. FILTRAGGIO E ORDINAMENTO
 // ==========================================================================
 
-function getFilteredAndSortedStocks() {
-  const currentList = MARKET_DATA[state.currentMarket] || [];
-  
+function filterAndSortList(rawList) {
+  const currentList = rawList || [];
   const query = state.searchQuery.toLowerCase().trim();
   let filtered = currentList.filter(stock => {
     if (state.sectorFilter !== 'all' && stock.sector !== state.sectorFilter) {
@@ -3018,7 +3023,7 @@ function getFilteredAndSortedStocks() {
 
   filtered.sort((a, b) => {
     if (state.sortBy === 'score') {
-      return b.score - a.score;
+      return (b.rawScore || b.score) - (a.rawScore || a.score);
     } else if (state.sortBy === 'upside') {
       const upA = (a.targetPrice - a.currentPrice) / a.currentPrice;
       const upB = (b.targetPrice - b.currentPrice) / b.currentPrice;
@@ -3034,11 +3039,97 @@ function getFilteredAndSortedStocks() {
   return filtered;
 }
 
+function getFilteredAndSortedStocks() {
+  const mktKey = (state.currentMarket === 'usa') ? 'usa' : 'eu';
+  return filterAndSortList(MARKET_DATA[mktKey] || []);
+}
+
+function renderSummaryRows(stocks) {
+  let html = '';
+  stocks.forEach((stock, index) => {
+    const upside = calculateUpside(stock.currentPrice, stock.targetPrice);
+    const stopPct = stock.stopPct || (((stock.currentPrice - stock.stopLoss) / stock.currentPrice) * 100).toFixed(1);
+    const dayChg = Number(stock.dayChangePct || 0);
+    const daySign = dayChg >= 0 ? '+' : '';
+    const dayClass = dayChg >= 0 ? 'bg-change-up' : 'bg-change-down';
+    const roc5 = Number(stock.roc5d !== undefined ? stock.roc5d : dayChg);
+    const rocSign = roc5 >= 0 ? '+' : '';
+    const rocClass = roc5 >= 0 ? 'text-emerald' : 'text-red';
+    const rawSc = stock.rawScore !== undefined ? stock.rawScore : stock.score;
+    const b52 = stock.border52w || 'orange';
+    const dot52 = b52 === 'green' ? '🟢' : (b52 === 'red' ? '🔴' : '🟠');
+    const status52 = stock.status52w || 'Nel Range ±10%';
+    const divY = stock.dividendYield !== undefined ? `${stock.dividendYield}%` : '0.0%';
+
+    html += `
+      <tr onclick="openModal('${stock.id}')">
+        <td class="mono font-bold text-muted">${index + 1}</td>
+        <td><span class="table-ticker-name">${stock.ticker}</span></td>
+        <td>
+          <div class="font-bold text-white">${stock.name}</div>
+          <div class="table-company-sub">${stock.sector} &bull; ${stock.marketCap}</div>
+        </td>
+        <td class="mono font-bold text-white">${stock.currency}${stock.currentPrice.toFixed(2)}</td>
+        <td><span class="${dayClass}">${daySign}${dayChg.toFixed(2)}%</span></td>
+        <td class="mono font-bold ${rocClass}">${rocSign}${roc5.toFixed(2)}%</td>
+        <td class="mono font-bold text-emerald">${stock.currency}${stock.targetPrice.toFixed(2)} <span style="font-size:0.75rem;">(+${upside}%)</span></td>
+        <td class="mono text-red">${stock.currency}${stock.stopLoss.toFixed(2)} <span style="font-size:0.75rem;">(-${stopPct}%)</span></td>
+        <td>
+          <div class="table-prob-badge">${stock.score}% <span style="opacity:0.75;font-weight:500;">(${rawSc})</span></div>
+        </td>
+        <td><span class="summary-52w-pill ${b52}">${dot52} ${status52}</span></td>
+        <td class="mono font-bold text-cyan">${divY}</td>
+      </tr>
+    `;
+  });
+  return html;
+}
+
+function renderSummaryPage() {
+  const euList = filterAndSortList(MARKET_DATA.eu || []);
+  const usaList = filterAndSortList(MARKET_DATA.usa || []);
+
+  if (elements.summaryTableBodyEU) {
+    elements.summaryTableBodyEU.innerHTML = renderSummaryRows(euList);
+  }
+  if (elements.summaryTableBodyUSA) {
+    elements.summaryTableBodyUSA.innerHTML = renderSummaryRows(usaList);
+  }
+  if (elements.summaryBadgeEU) {
+    elements.summaryBadgeEU.textContent = `${euList.length} Titoli Live`;
+  }
+  if (elements.summaryBadgeUSA) {
+    elements.summaryBadgeUSA.textContent = `${usaList.length} Titoli Live`;
+  }
+  return euList.length + usaList.length;
+}
+
 // ==========================================================================
 // 7. RENDERING SCHEDE E TABELLA
 // ==========================================================================
 
 function renderStocks() {
+  // Aggiorna sempre anche le 2 tabelle della pagina Riepilogo
+  const summaryTotal = renderSummaryPage();
+
+  if (state.currentMarket === 'summary') {
+    elements.visibleStocksCount.textContent = summaryTotal;
+    elements.stocksGrid.classList.add('hidden');
+    elements.stocksTableContainer.classList.add('hidden');
+    if (summaryTotal === 0) {
+      if (elements.summaryTablesPage) elements.summaryTablesPage.classList.add('hidden');
+      elements.noResultsBox.classList.remove('hidden');
+    } else {
+      elements.noResultsBox.classList.add('hidden');
+      if (elements.summaryTablesPage) elements.summaryTablesPage.classList.remove('hidden');
+    }
+    return;
+  }
+
+  if (elements.summaryTablesPage) {
+    elements.summaryTablesPage.classList.add('hidden');
+  }
+
   const stocks = getFilteredAndSortedStocks();
   elements.visibleStocksCount.textContent = stocks.length;
 
@@ -3415,6 +3506,7 @@ function initEventListeners() {
     state.currentMarket = 'eu';
     elements.tabEU.classList.add('active');
     elements.tabUSA.classList.remove('active');
+    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
     elements.currentMarketTitle.innerHTML = `EuroStoxx 50 (Europa) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice EuroStoxx 50 (> €10 Mld) secondo il modello quantitativo v7.0.`;
     renderStocks();
@@ -3425,10 +3517,24 @@ function initEventListeners() {
     state.currentMarket = 'usa';
     elements.tabUSA.classList.add('active');
     elements.tabEU.classList.remove('active');
+    if (elements.tabSummary) elements.tabSummary.classList.remove('active');
     elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 10 Consigli a 5 Giorni`;
     elements.currentMarketDesc.textContent = `Selezione dei 10 migliori componenti dell'indice S&P 500 (> $10 Mld) secondo il modello quantitativo v7.0.`;
     renderStocks();
   });
+
+  if (elements.tabSummary) {
+    elements.tabSummary.addEventListener('click', () => {
+      if (state.currentMarket === 'summary') return;
+      state.currentMarket = 'summary';
+      elements.tabSummary.classList.add('active');
+      elements.tabEU.classList.remove('active');
+      elements.tabUSA.classList.remove('active');
+      elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; Top 10 EuroStoxx 50 + Top 10 S&amp;P 500`;
+      elements.currentMarketDesc.textContent = `Vista tabellare doppia sincronizzata in tempo reale (Europa + USA). Si aggiorna automaticamente con Pull-to-Refresh e pulsante Aggiorna Dati.`;
+      renderStocks();
+    });
+  }
 
   elements.searchInput.addEventListener('input', (e) => {
     state.searchQuery = e.target.value;
