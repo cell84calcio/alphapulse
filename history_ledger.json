@@ -26,8 +26,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.3,
-        "currentPrice": 83.66
+        "resultPct": 0.12,
+        "currentPrice": 83.51
       },
       {
         "ticker": "SAN-FR",
@@ -39,8 +39,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.02,
-        "currentPrice": 81.54
+        "resultPct": 0.18,
+        "currentPrice": 81.67
       },
       {
         "ticker": "ENI",
@@ -52,8 +52,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.09,
-        "currentPrice": 26.39
+        "resultPct": -0.23,
+        "currentPrice": 26.3
       },
       {
         "ticker": "OR",
@@ -65,8 +65,8 @@
         "score": 85,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.31,
-        "currentPrice": 434.65
+        "resultPct": 0.24,
+        "currentPrice": 434.35
       }
     ]
   },
