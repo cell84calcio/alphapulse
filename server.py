@@ -417,34 +417,19 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
         inst_score -= 8.0
     pillar_institutional = int(max(45, min(97, round(inst_score))))
 
-    # PILASTRO 4: Revisioni Analisti, Valore 52W & Dividendo (15%)
-    # Armonizzato con le cornici a 52 settimane (evita di premiare titoli iper-estesi a rischio storno a 5G)
-    if border_52w == "orange":
-        # Nel range ±10% della media 52W: equilibrio ideale con spazio di salita a 5 giorni
-        val_score = 84.0 + (4.0 if (has_trend_alignment or macd_accelerating) else -2.0)
-    elif border_52w == "green":
-        # Sotto la media 52W (>10% sconto): premiato se mostra segnali di inversione rialzista (Mean Reversion)
-        if day_change_pct > 0 or macd_accelerating or clv >= 0.60:
-            val_score = 87.0 + (3.0 if day_change_pct > 0.5 else 0.0)
-        else:
-            val_score = 66.0
-    else:
-        # Cornice Rossa (>10% sopra media 52W): buono se in trend sano, penalizzato se troppo tirato (>18% e RSI alto)
-        if diff_52w_pct <= 18.0 and has_trend_alignment:
-            val_score = 83.0
-        elif rsi > 68:
-            val_score = 68.0
-        else:
-            val_score = 75.0
-    val_score += min(5.0, div_yield * 0.8)
-    pillar_analysts = int(max(48, min(96, round(val_score))))
+    # PILASTRO 4: Revisioni Analisti & Trend Istituzionale (15%)
+    # NOTA: La cornice a 52W (Verde/Arancione/Rossa) è puramente visiva per l'utente e NON entra nel calcolo del punteggio
+    roc_20d = ((current_price - closes[-20]) / closes[-20]) * 100 if len(closes) >= 20 else roc_5d
+    ema50_dist_pct = ((current_price - ema50) / (ema50 + 1e-9)) * 100
+    analyst_up_kw = sum(1 for n in news_list for kw in ["upgrade", "buy", "outperform", "raise", "target", "bullish", "strong"] if kw in n["title"].lower())
+    analyst_dn_kw = sum(1 for n in news_list for kw in ["downgrade", "sell", "underperform", "cut", "bearish"] if kw in n["title"].lower())
+    analyst_raw = 76.0 + min(10.0, max(-10.0, ema50_dist_pct * 1.1)) + min(6.0, max(-6.0, roc_20d * 0.5)) + (analyst_up_kw * 3.5) - (analyst_dn_kw * 5.0)
+    pillar_analysts = int(max(48, min(96, round(analyst_raw))))
 
-    # PILASTRO 5: Contesto Mercato, VIX & Resilienza (10%)
+    # PILASTRO 5: Contesto Mercato & Volatilità (10%)
     bench_1d = market_regime["stoxx50Change"] if market_type == "eu" else market_regime["sp500Change"]
     bench_5d = market_regime.get("stoxx50Change5d", bench_1d) if market_type == "eu" else market_regime.get("sp500Change5d", bench_1d)
     mkt_score = market_regime["vixScore"] + (bench_1d * 2.5) + (bench_5d * 1.2)
-    if market_regime["vix"] > 20.0 and div_yield >= 3.0:
-        mkt_score += 4.0  # Bonus difensivo per alto dividendo in fasi di VIX elevato
     pillar_market = int(max(45, min(96, round(mkt_score))))
 
     # Punteggio Ponderato Base (Pesi Utente: 30 / 25 / 20 / 15 / 10)
@@ -829,8 +814,8 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         except Exception as e:
             pass
 
-    # Ordina per rawScore (senza ex-aequo artificiali) e a parità preferisce il titolo meno esteso sulla media 52W
-    analyzed.sort(key=lambda s: (s.get("rawScore", s["score"]), -s.get("diff52wPct", 0.0)), reverse=True)
+    # Ordina esclusivamente per punteggio quantitativo (rawScore e a parità momentum 5G)
+    analyzed.sort(key=lambda s: (s.get("rawScore", s["score"]), s.get("roc5d", 0.0)), reverse=True)
     top_10 = analyzed[:10]
     print(f"[OK] Selezionati i migliori 10 titoli per {market_type.upper()} su {len(analyzed)} analizzati.")
     return top_10, live_prices_map
