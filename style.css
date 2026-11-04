@@ -422,6 +422,12 @@ body {
   box-shadow: 0 0 16px rgba(139, 92, 246, 0.55);
 }
 
+.quick-filter-pill[data-qfilter="drop1pct"].active {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.40), rgba(220, 38, 38, 0.45));
+  border-color: #f87171;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.55);
+}
+
 .filter-actions-wrapper {
   display: flex;
   align-items: center;

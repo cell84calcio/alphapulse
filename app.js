@@ -32668,6 +32668,7 @@ const state = {
   currentMarket: 'eu', // 'eu' o 'it' o 'usa' o 'summary'
   isModelV7Active: false, // DEFAULT FALSE: Primi 20 per capitalizzazione senza modello!
   isCap10BActive: false,  // DEFAULT FALSE: Senza filtro capitalizzazione
+  isDrop1PctActive: false, // DEFAULT FALSE: Filtro Prezzo < -1% (Quotazione in ribasso)
   dividendPriceFilter: 'all', // 'all' | 'div4' | 'under52w' | 'combo'
   searchQuery: '',
   sectorFilter: 'all',
@@ -33140,6 +33141,14 @@ function filterAndSortList(rawList) {
     if (state.isCap10BActive) {
       const cap = Number(stock.marketCapRaw || 0);
       if (cap < 10.0) {
+        return false;
+      }
+    }
+
+    // Filtro Prezzo < -1% (Quotazione in ribasso > 1%) (se attivo)
+    if (state.isDrop1PctActive) {
+      const dayChg = Number(stock.dayChangePct !== undefined ? stock.dayChangePct : 0);
+      if (dayChg >= -1.0) {
         return false;
       }
     }
@@ -33883,31 +33892,34 @@ function centerActiveCarouselTab(market) {
 function updateMarketHeaderInfo() {
   const isV7 = state.isModelV7Active;
   const isCap10 = state.isCap10BActive;
+  const isDrop1 = state.isDrop1PctActive;
   const capNote = isCap10 ? ' (> €/$10 Mld)' : '';
+  const dropNote = isDrop1 ? ' (Prezzo < -1%)' : '';
+  const extraNote = `${capNote}${dropNote}`;
 
   if (state.currentMarket === 'eu') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 20 Modello Quantitativo v7.0${capNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti dell'indice EuroStoxx 600${capNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 20 Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti dell'indice EuroStoxx 600${extraNote} secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 20 per Capitalizzazione${capNote}`;
-      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione dell'indice EuroStoxx 600${capNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 20 per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione dell'indice EuroStoxx 600${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else if (state.currentMarket === 'it') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Top 20 Modello Quantitativo v7.0${capNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti del paniere FTSE MIB di Piazza Affari${capNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Top 20 Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti del paniere FTSE MIB di Piazza Affari${extraNote} secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Top 20 per Capitalizzazione${capNote}`;
-      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione del FTSE MIB di Borsa Italiana${capNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Top 20 per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione del FTSE MIB di Borsa Italiana${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else if (state.currentMarket === 'usa') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 20 Modello Quantitativo v7.0${capNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti dell'indice S&P 500${capNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 20 Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Selezione dei 20 migliori componenti dell'indice S&P 500${extraNote} secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 20 per Capitalizzazione${capNote}`;
-      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione dell'indice S&P 500${capNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 20 per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `I primi 20 titoli per capitalizzazione dell'indice S&P 500${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else {
     elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; EuroStoxx 600 + FTSE MIB + S&amp;P 500`;
@@ -33918,12 +33930,14 @@ function updateMarketHeaderInfo() {
 function updateFilterPillsUI() {
   const pModel = document.getElementById('qfModelV7');
   const pCap = document.getElementById('qfCap10B');
+  const pDrop1 = document.getElementById('qfDrop1pct');
   const pDiv4 = document.getElementById('qfDiv4');
   const pUnder52 = document.getElementById('qfUnder52w');
   const pCombo = document.getElementById('qfCombo');
 
   if (pModel) pModel.classList.toggle('active', Boolean(state.isModelV7Active));
   if (pCap) pCap.classList.toggle('active', Boolean(state.isCap10BActive));
+  if (pDrop1) pDrop1.classList.toggle('active', Boolean(state.isDrop1PctActive));
   if (pDiv4) pDiv4.classList.toggle('active', state.dividendPriceFilter === 'div4');
   if (pUnder52) pUnder52.classList.toggle('active', state.dividendPriceFilter === 'under52w');
   if (pCombo) pCombo.classList.toggle('active', state.dividendPriceFilter === 'combo');
@@ -34002,6 +34016,8 @@ function initEventListeners() {
         if (elements.sortBy) elements.sortBy.value = state.sortBy;
       } else if (qf === 'cap10b') {
         state.isCap10BActive = !state.isCap10BActive;
+      } else if (qf === 'drop1pct') {
+        state.isDrop1PctActive = !state.isDrop1PctActive;
       } else if (qf === 'div4' || qf === 'under52w' || qf === 'combo') {
         state.dividendPriceFilter = (state.dividendPriceFilter === qf) ? 'all' : qf;
       }
@@ -34059,6 +34075,7 @@ function initEventListeners() {
     state.sortBy = 'cap';
     state.isModelV7Active = false;
     state.isCap10BActive = false;
+    state.isDrop1PctActive = false;
     state.dividendPriceFilter = 'all';
     elements.searchInput.value = '';
     elements.sectorFilter.value = 'all';

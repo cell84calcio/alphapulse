@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v16">
+  <link rel="stylesheet" href="style.css?v=20261104-v17">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -149,6 +149,11 @@
       background: linear-gradient(135deg, rgba(139, 92, 246, 0.40), rgba(124, 58, 237, 0.45));
       border-color: #a78bfa;
       box-shadow: 0 0 16px rgba(139, 92, 246, 0.55);
+    }
+    .quick-filter-pill[data-qfilter="drop1pct"].active {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.40), rgba(220, 38, 38, 0.45));
+      border-color: #f87171;
+      box-shadow: 0 0 16px rgba(239, 68, 68, 0.55);
     }
     @media (max-width: 768px) {
       .market-carousel-dots,
@@ -364,10 +369,11 @@
             <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
 
-          <!-- 5 Pulsanti Filtro e Ordinamento Rapido -->
+          <!-- 6 Pulsanti Filtro e Ordinamento Rapido -->
           <div class="quick-filter-pills" id="quickFilterPills">
             <button type="button" class="quick-filter-pill" data-qfilter="model_v7" id="qfModelV7" title="Attiva il Modello Quantitativo Istituzionale v7.0 (Top 20 per Probabilità di Salita calcolata su 5 pilastri e controlli di rischio)">🧠 Modello Quant v7</button>
             <button type="button" class="quick-filter-pill" data-qfilter="cap10b" id="qfCap10B" title="Filtra solo le azioni con Capitalizzazione > 10 Miliardi (€/$ 10 Mrd)">🏢 Cap &gt; 10 Mrd</button>
+            <button type="button" class="quick-filter-pill" data-qfilter="drop1pct" id="qfDrop1pct" title="Filtra le azioni che in questo momento stanno perdendo più del -1% (Quotazione Odierna < -1.0%) per cogliere flessioni e ribassi">🔻 Prezzo &lt; -1%</button>
             <button type="button" class="quick-filter-pill" data-qfilter="div4" id="qfDiv4" title="Filtra le azioni con Dividend Yield > 4% e Payout Ratio Sostenibile (≤ 75% EPS/FCF)">💰 Div &gt; 4% (Payout OK)</button>
             <button type="button" class="quick-filter-pill" data-qfilter="under52w" id="qfUnder52w" title="Filtra le azioni con Prezzo Attuale < Media 52 Settimane">📉 Prezzo &lt; Media 52W</button>
             <button type="button" class="quick-filter-pill" data-qfilter="combo" id="qfCombo" title="Filtra le azioni con Div. Yield > 4%, Payout Sostenibile (≤ 75%) E Prezzo < Media 52 Settimane">💎 Div &gt; 4% OK &amp; &lt; 52W</button>
@@ -847,6 +853,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v16"></script>
+  <script src="app.js?v=20261104-v17"></script>
 </body>
 </html>
