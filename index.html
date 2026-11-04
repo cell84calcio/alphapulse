@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v14">
+  <link rel="stylesheet" href="style.css?v=20261104-v15">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -414,7 +414,7 @@
     <section class="methodology-banner">
       <div class="methodology-info">
         <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v7.0 &bull; Panieri Ufficiali EuroStoxx 600 &amp; S&amp;P 500</div>
-        <p>I 10 titoli sono selezionati scansionando i panieri <strong>EuroStoxx 600 (Europa &gt; 10 Mld)</strong> e <strong>S&amp;P 500 (USA &gt; 10 Mld)</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
+        <p>I titoli sono selezionati scansionando i panieri <strong>EuroStoxx 600</strong> e <strong>S&amp;P 500</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
         
         <!-- Legenda Cornici Basate su Media 52 Settimane -->
         <div class="legend-52w-bar">
@@ -438,11 +438,11 @@
       <!-- Intestazione View Corrente -->
       <div class="view-header-bar">
         <div>
-          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Top 10 Consigli a 5 Giorni</h2>
-          <p class="view-description" id="currentMarketDesc">Selezione dei 10 migliori componenti dell'indice EuroStoxx 600 (&gt; €10 Mld) secondo il modello quantitativo v7.0.</p>
+          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Top 20 per Capitalizzazione</h2>
+          <p class="view-description" id="currentMarketDesc">I primi 20 titoli per capitalizzazione dell'indice EuroStoxx 600 (senza filtri e senza modello applicato).</p>
         </div>
         <div class="view-actions">
-          <span class="stocks-count-badge"><span id="visibleStocksCount">10</span> Titoli Analizzati</span>
+          <span class="stocks-count-badge"><span id="visibleStocksCount">20</span> Titoli</span>
           <button class="btn-secondary" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Aggiorna Dati</button>
         </div>
       </div>
@@ -485,11 +485,11 @@
             <div class="summary-block-title">
               <span class="flag-icon">🇪🇺</span>
               <div>
-                <h3>Top 10 EuroStoxx 600 (Europa) &bull; Orizzonte 5 Giorni</h3>
-                <p>Paniere ufficiale EuroStoxx 600 (&gt; €10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
+                <h3>Top 20 EuroStoxx 600 (Europa)</h3>
+                <p>Paniere ufficiale EuroStoxx 600 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeEU">10 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeEU">20 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -521,11 +521,11 @@
             <div class="summary-block-title">
               <span class="flag-icon">🇺🇸</span>
               <div>
-                <h3>Top 10 S&amp;P 500 (USA) &bull; Orizzonte 5 Giorni</h3>
-                <p>Paniere ufficiale S&amp;P 500 (&gt; $10 Mld) &bull; Clicca su una riga per aprire l'analisi completa</p>
+                <h3>Top 20 S&amp;P 500 (USA)</h3>
+                <p>Paniere ufficiale S&amp;P 500 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeUSA">10 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeUSA">20 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -805,6 +805,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v14"></script>
+  <script src="app.js?v=20261104-v15"></script>
 </body>
 </html>
