@@ -2529,25 +2529,25 @@ html, body {
   .bottom-nav-bar {
     bottom: calc(14px + env(safe-area-inset-bottom, 0px));
     padding: 5px;
-    width: calc(100vw - 20px);
-    max-width: 420px;
+    width: calc(100vw - 16px);
+    max-width: 480px;
   }
   .bottom-nav-inner {
     width: 100%;
-    gap: 4px;
+    gap: 3px;
   }
   .bottom-nav-item {
     flex: 1;
-    padding: 9px 8px;
-    gap: 5px;
-    font-size: 0.76rem;
+    padding: 8px 5px;
+    gap: 4px;
+    font-size: 0.72rem;
   }
   .bnav-icon {
-    font-size: 0.95rem;
+    font-size: 0.90rem;
   }
   .bnav-badge {
-    font-size: 0.64rem;
-    padding: 2px 5px;
+    font-size: 0.60rem;
+    padding: 2px 4px;
   }
 }
 

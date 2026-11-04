@@ -153,6 +153,50 @@ EU_SYMBOLS = [
     {"ticker": "HER", "sym": "HER.MI", "name": "Hera SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.49, "capUnit": "Mld", "div": 4.2}
 ]
 
+# Paniere Ufficiale FTSE MIB (I 40 Componenti Principali di Borsa Italiana / Piazza Affari)
+IT_SYMBOLS = [
+    {"ticker": "ENEL", "sym": "ENEL.MI", "name": "Enel SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 10.16, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "ISP", "sym": "ISP.MI", "name": "Intesa Sanpaolo", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 18.28, "capUnit": "Mld", "div": 7.4},
+    {"ticker": "UCG", "sym": "UCG.MI", "name": "UniCredit SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.63, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "RACE", "sym": "RACE.MI", "name": "Ferrari N.V.", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.18, "capUnit": "Mld", "div": 0.8},
+    {"ticker": "ENI", "sym": "ENI.MI", "name": "Eni SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.28, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "G", "sym": "G.MI", "name": "Assicurazioni Generali", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.56, "capUnit": "Mld", "div": 5.2},
+    {"ticker": "STLAM", "sym": "STLAM.MI", "name": "Stellantis N.V.", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 2.95, "capUnit": "Mld", "div": 7.9},
+    {"ticker": "PST", "sym": "PST.MI", "name": "Poste Italiane SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.30, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "TRN", "sym": "TRN.MI", "name": "Terna SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 2.01, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "SRG", "sym": "SRG.MI", "name": "Snam SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.36, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "PRY", "sym": "PRY.MI", "name": "Prysmian SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.29, "capUnit": "Mld", "div": 1.3},
+    {"ticker": "LDO", "sym": "LDO.MI", "name": "Leonardo SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.578, "capUnit": "Mld", "div": 1.3},
+    {"ticker": "MONC", "sym": "MONC.MI", "name": "Moncler SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.27, "capUnit": "Mld", "div": 2.1},
+    {"ticker": "STMMI", "sym": "STMMI.MI", "name": "STMicroelectronics", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 0.91, "capUnit": "Mld", "div": 1.1},
+    {"ticker": "TEN", "sym": "TEN.MI", "name": "Tenaris S.A.", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.18, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "BAMI", "sym": "BAMI.MI", "name": "Banco BPM", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.515, "capUnit": "Mld", "div": 8.2},
+    {"ticker": "BPE", "sym": "BPE.MI", "name": "BPER Banca", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.415, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "BMPS", "sym": "BMPS.MI", "name": "Banca Monte dei Paschi", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.26, "capUnit": "Mld", "div": 7.0},
+    {"ticker": "MB", "sym": "MB.MI", "name": "Mediobanca", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.836, "capUnit": "Mld", "div": 6.6},
+    {"ticker": "FBK", "sym": "FBK.MI", "name": "FinecoBank", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.612, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "BPSO", "sym": "BPSO.MI", "name": "Banca Popolare di Sondrio", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.453, "capUnit": "Mld", "div": 7.5},
+    {"ticker": "MED", "sym": "MED.MI", "name": "Banca Mediolanum", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.743, "capUnit": "Mld", "div": 6.9},
+    {"ticker": "AZM", "sym": "AZM.MI", "name": "Azimut Holding", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.143, "capUnit": "Mld", "div": 5.9},
+    {"ticker": "UNI", "sym": "UNI.MI", "name": "Unipol Assicurazioni", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.717, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "CPR", "sym": "CPR.MI", "name": "Campari Group", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 1.22, "capUnit": "Mld", "div": 1.2},
+    {"ticker": "REC", "sym": "REC.MI", "name": "Recordati", "exchange": "Borsa Italiana", "currency": "€", "sector": "Healthcare", "shares": 0.209, "capUnit": "Mld", "div": 2.4},
+    {"ticker": "AMP", "sym": "AMP.MI", "name": "Amplifon SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Healthcare", "shares": 0.226, "capUnit": "Mld", "div": 1.2},
+    {"ticker": "DIA", "sym": "DIA.MI", "name": "DiaSorin SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Healthcare", "shares": 0.0559, "capUnit": "Mld", "div": 1.3},
+    {"ticker": "INW", "sym": "INW.MI", "name": "Infrastrutture Wireless (Inwit)", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 0.96, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "NEXI", "sym": "NEXI.MI", "name": "Nexi SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 1.28, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "TIT", "sym": "TIT.MI", "name": "Telecom Italia (TIM)", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 21.3, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "A2A", "sym": "A2A.MI", "name": "A2A SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.13, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "HER", "sym": "HER.MI", "name": "Hera SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.49, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "ERG", "sym": "ERG.MI", "name": "Erg SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.150, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "SPM", "sym": "SPM.MI", "name": "Saipem SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.995, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "IVG", "sym": "IVG.MI", "name": "Iveco Group", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.271, "capUnit": "Mld", "div": 3.6},
+    {"ticker": "PIRC", "sym": "PIRC.MI", "name": "Pirelli & C", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 1.00, "capUnit": "Mld", "div": 4.4},
+    {"ticker": "BZU", "sym": "BZU.MI", "name": "Buzzi SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.192, "capUnit": "Mld", "div": 2.3},
+    {"ticker": "BC", "sym": "BC.MI", "name": "Brunello Cucinelli", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.068, "capUnit": "Mld", "div": 1.1},
+    {"ticker": "IP", "sym": "IP.MI", "name": "Interpump Group", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.109, "capUnit": "Mld", "div": 1.1}
+]
+
 # Paniere Ufficiale S&P 500 (Principali Componenti S&P 500 > $10 Mld su tutti i settori)
 USA_SYMBOLS = [
     # Tecnologia, Semiconduttori & Comunicazione S&P 500
@@ -265,13 +309,18 @@ BINARY_RISK_KEYWORDS = [
     "trial results today", "regulatory decision"
 ]
 
-# Dividend Yield annualizzati di riferimento (mappa automatica da EU_SYMBOLS e USA_SYMBOLS)
-KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + USA_SYMBOLS)}
+# Dividend Yield annualizzati di riferimento (mappa automatica da EU_SYMBOLS, IT_SYMBOLS e USA_SYMBOLS)
+KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + IT_SYMBOLS + USA_SYMBOLS)}
 
 # Payout Ratio fondamentale (% di Utili/Free Cash Flow distribuito in dividendi):
 # Sostenibile se 0% < Payout <= 75% (e assenza di crollo verticale a 5G).
 # Oltre il 75% (es. BAS 112%, KER 94%, STLAM 89%, VOW3 82%, TEF 96%, PFE 88%, UPS 86%) il dividendo è sotto pressione / non sostenibile.
 KNOWN_PAYOUT_RATIOS = {
+    # FTSE MIB (Italia) - Payout Sostenibili (<= 75% EPS/FCF)
+    "STMMI": 25, "TEN": 36, "BAMI": 52, "BPE": 42, "BMPS": 48, "MB": 55, "FBK": 54,
+    "BPSO": 46, "MED": 64, "AZM": 60, "UNI": 50, "CPR": 32, "REC": 58, "DIA": 40,
+    "INW": 68, "A2A": 62, "ERG": 65, "IVG": 32, "PIRC": 48, "BZU": 25, "BC": 36, "IP": 28,
+    "TIT": 0, "SPM": 0,
     # EuroStoxx 600 - Payout Sostenibili (<= 75% EPS/FCF)
     "ASML": 32, "SAP": 42, "MC": 45, "TTE": 38, "SIE": 44, "SU": 46, "SAN-FR": 49, "ALV": 52,
     "OR": 53, "AIR": 39, "DTE": 48, "RMS": 36, "IBE": 68, "AI": 54, "EL": 47, "ITX": 60,
@@ -309,9 +358,9 @@ MESI_IT = {
     7: "Lug", 8: "Ago", 9: "Set", 10: "Ott", 11: "Nov", 12: "Dic"
 }
 
-# Calendario date stacco dividendo (mese, giorno) per i principali titoli EuroStoxx 600 e S&P 500
+# Calendario date stacco dividendo (mese, giorno) per i principali titoli EuroStoxx 600, FTSE MIB e S&P 500
 DIVIDEND_CALENDAR_DATES = {
-    # Italia (Acconto Novembre/Gennaio + Saldo Aprile/Maggio/Giugno/Luglio)
+    # Italia / FTSE MIB (Acconto Novembre/Gennaio + Saldo Aprile/Maggio/Giugno/Luglio)
     "ISP": [(5, 19), (11, 18)],
     "UCG": [(4, 21), (11, 18)],
     "ENEL": [(1, 20), (7, 21)],
@@ -325,6 +374,33 @@ DIVIDEND_CALENDAR_DATES = {
     "MONC": [(5, 19)],
     "RACE": [(4, 22)],
     "STLAM": [(4, 22)],
+    "STMMI": [(6, 23), (9, 22), (12, 15), (3, 23)],
+    "TEN": [(5, 19), (11, 24)],
+    "BAMI": [(4, 21)],
+    "BPE": [(5, 19)],
+    "BMPS": [(5, 19)],
+    "MB": [(5, 19), (11, 18)],
+    "FBK": [(5, 19)],
+    "BPSO": [(5, 19)],
+    "MED": [(5, 19), (11, 18)],
+    "AZM": [(5, 19)],
+    "UNI": [(5, 19)],
+    "CPR": [(4, 21)],
+    "REC": [(5, 19), (11, 18)],
+    "AMP": [(5, 19)],
+    "DIA": [(5, 19)],
+    "INW": [(5, 19)],
+    "NEXI": [],
+    "TIT": [],
+    "A2A": [(5, 19)],
+    "HER": [(6, 23)],
+    "ERG": [(5, 19)],
+    "SPM": [],
+    "IVG": [(4, 21)],
+    "PIRC": [(5, 19)],
+    "BZU": [(5, 19)],
+    "BC": [(5, 19)],
+    "IP": [(5, 19)],
     # Spagna (Semestrali / Trimestrali)
     "SAN": [(5, 2), (11, 14)],
     "BBVA": [(4, 10), (11, 12)],
@@ -836,8 +912,8 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     pillar_analysts = int(max(48, min(96, round(analyst_raw))))
 
     # PILASTRO 5: Contesto Mercato & Volatilità (10%)
-    bench_1d = market_regime["stoxx50Change"] if market_type == "eu" else market_regime["sp500Change"]
-    bench_5d = market_regime.get("stoxx50Change5d", bench_1d) if market_type == "eu" else market_regime.get("sp500Change5d", bench_1d)
+    bench_1d = market_regime["stoxx50Change"] if market_type in ("eu", "it") else market_regime["sp500Change"]
+    bench_5d = market_regime.get("stoxx50Change5d", bench_1d) if market_type in ("eu", "it") else market_regime.get("sp500Change5d", bench_1d)
     mkt_score = market_regime["vixScore"] + (bench_1d * 2.5) + (bench_5d * 1.2)
     pillar_market = int(max(45, min(96, round(mkt_score))))
 
@@ -1134,8 +1210,8 @@ def update_ledger_track_record(top_picks, market_type="eu", live_prices=None):
     }
 
 def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
-    """Scansiona in parallelo l'intero paniere (EuroStoxx 600 / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
-    index_label = "EUROSTOXX 600" if market_type == "eu" else "S&P 500"
+    """Scansiona in parallelo l'intero paniere (EuroStoxx 600 / FTSE MIB / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
+    index_label = "EUROSTOXX 600" if market_type == "eu" else ("FTSE MIB" if market_type == "it" else "S&P 500")
     print(f"\n[AlphaPulse Engine v7.0] Scansione paniere {index_label}: {len(symbols_list)} titoli in parallelo...")
 
     # Passaggio 1: Download parallelo dei grafici a 3 mesi per calcolare il rendimento settoriale (60% 5G + 40% 1G)
@@ -1301,10 +1377,12 @@ def update_entire_market_dataset():
     print(f"\n[Regime di Mercato] VIX: {regime['vix']} | EuroStoxx 1G/5G: {regime['stoxx50Change']}% / {regime.get('stoxx50Change5d', 0)}% | S&P 500 1G/5G: {regime['sp500Change']}% / {regime.get('sp500Change5d', 0)}% | Stato: {regime['marketSentiment']}")
 
     eu_pool, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu")
+    it_pool, it_prices = analyze_market_universe(IT_SYMBOLS, regime, "it")
     usa_pool, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa")
 
     # Aggiorna il registro delle performance storiche con verifica prezzi reali sui Top 10
     eu_tracker = update_ledger_track_record(eu_pool[:10], "eu", eu_prices)
+    it_tracker = update_ledger_track_record(it_pool[:10], "it", it_prices)
     usa_tracker = update_ledger_track_record(usa_pool[:10], "usa", usa_prices)
 
     dataset = {
@@ -1314,7 +1392,7 @@ def update_entire_market_dataset():
         "marketRegime": regime,
         "performanceTrackRecord": {
             "winRate": eu_tracker["winRate"],
-            "totalSignals": eu_tracker["totalSignalsTracked"] + usa_tracker["totalSignalsTracked"],
+            "totalSignals": eu_tracker["totalSignalsTracked"] + it_tracker["totalSignalsTracked"] + usa_tracker["totalSignalsTracked"],
             "avgGain": eu_tracker["avgGainPerTrade"]
         },
         "weights": {
@@ -1325,6 +1403,7 @@ def update_entire_market_dataset():
             "market": 10
         },
         "eu": eu_pool,
+        "it": it_pool,
         "usa": usa_pool
     }
 

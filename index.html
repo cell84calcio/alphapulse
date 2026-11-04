@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v15">
+  <link rel="stylesheet" href="style.css?v=20261104-v16">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -170,12 +170,12 @@
       .bottom-nav-bar {
         bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
         padding: 5px;
-        width: calc(100vw - 20px);
-        max-width: 420px;
+        width: calc(100vw - 16px);
+        max-width: 480px;
       }
-      .bottom-nav-inner { width: 100%; gap: 4px; }
-      .bottom-nav-item { flex: 1; padding: 9px 8px; gap: 5px; font-size: 0.76rem; }
-      .bnav-badge { font-size: 0.64rem; padding: 2px 5px; }
+      .bottom-nav-inner { width: 100%; gap: 3px; }
+      .bottom-nav-item { flex: 1; padding: 8px 5px; gap: 4px; font-size: 0.72rem; }
+      .bnav-badge { font-size: 0.60rem; padding: 2px 4px; }
     }
     .exdiv-pill {
       border-color: rgba(16, 185, 129, 0.38) !important;
@@ -272,7 +272,7 @@
   <div class="pull-to-refresh-bar" id="pullToRefreshBar" aria-live="polite">
     <div class="ptr-inner">
       <span class="ptr-icon" id="ptrIcon"><i class="fa-solid fa-arrow-down"></i></span>
-      <span class="ptr-text" id="ptrText">Trascina in basso per aggiornare Europa (EuroStoxx 600) &amp; USA (S&amp;P 500)</span>
+      <span class="ptr-text" id="ptrText">Trascina in basso per aggiornare Europa (EuroStoxx 600), Italia (FTSE MIB) &amp; USA (S&amp;P 500)</span>
     </div>
   </div>
 
@@ -356,9 +356,10 @@
       <!-- Controlli Principali: 3 Pulsanti Mercato + 3 Pulsanti Filtro Rapido -->
       <div class="controls-toolbar">
         <div class="pills-control-group">
-          <!-- 3 Pulsanti Selezione Mercato -->
+          <!-- 4 Pulsanti Selezione Mercato -->
           <div class="market-carousel-dots" id="marketCarouselDots">
             <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
+            <button type="button" class="m-carousel-dot" data-market="it" id="tabIT">🇮🇹 FTSE MIB</button>
             <button type="button" class="m-carousel-dot" data-market="usa" id="tabUSA">🇺🇸 USA</button>
             <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
@@ -413,8 +414,8 @@
     <!-- Banner Metodologia del Modello Quantitativo v7.0 -->
     <section class="methodology-banner">
       <div class="methodology-info">
-        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v7.0 &bull; Panieri Ufficiali EuroStoxx 600 &amp; S&amp;P 500</div>
-        <p>I titoli sono selezionati scansionando i panieri <strong>EuroStoxx 600</strong> e <strong>S&amp;P 500</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
+        <div class="badge model-tag"><i class="fa-solid fa-shield-halved"></i> Modello Istituzionale v7.0 &bull; Panieri Ufficiali EuroStoxx 600, FTSE MIB &amp; S&amp;P 500</div>
+        <p>I titoli sono selezionati scansionando i panieri <strong>EuroStoxx 600</strong>, <strong>FTSE MIB (Borsa Italiana)</strong> e <strong>S&amp;P 500</strong> con i 5 pesi ponderati: <strong>Breakout, RSI &amp; CLV (30%)</strong>, <strong>News Sentiment NLP (25%)</strong>, <strong>Flussi Istituzionali 5G (20%)</strong>, <strong>Revisioni Analisti (15%)</strong> e <strong>Contesto Mercato/VIX (10%)</strong>.</p>
         
         <!-- Legenda Cornici Basate su Media 52 Settimane -->
         <div class="legend-52w-bar">
@@ -477,7 +478,7 @@
         </table>
       </div>
 
-      <!-- Seconda Pagina: Riepilogo Doppia Tabella Live (EuroStoxx 600 + S&P 500) -->
+      <!-- Seconda Pagina: Riepilogo a Tre Tabelle Live (EuroStoxx 600 + FTSE MIB + S&P 500) -->
       <div class="summary-tables-page hidden" id="summaryTablesPage">
         <!-- Tabella 1: EuroStoxx 600 -->
         <div class="summary-market-block">
@@ -515,7 +516,43 @@
           </div>
         </div>
 
-        <!-- Tabella 2: S&P 500 -->
+        <!-- Tabella 2: FTSE MIB (Italia) -->
+        <div class="summary-market-block">
+          <div class="summary-block-header">
+            <div class="summary-block-title">
+              <span class="flag-icon">🇮🇹</span>
+              <div>
+                <h3>Top 20 FTSE MIB (Italia)</h3>
+                <p>Paniere ufficiale Borsa Italiana (Piazza Affari) &bull; Clicca su una riga per aprire l'analisi completa</p>
+              </div>
+            </div>
+            <span class="badge model-tag" id="summaryBadgeIT">20 Titoli Live</span>
+          </div>
+          <div class="stocks-table-wrapper">
+            <table class="stocks-table summary-compact-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Ticker</th>
+                  <th>Azienda</th>
+                  <th>Prezzo Live</th>
+                  <th>Oggi (1G)</th>
+                  <th>5 Giorni</th>
+                  <th>Target 5G</th>
+                  <th>Stop Loss</th>
+                  <th>Score</th>
+                  <th>Indicatore Visivo 52W</th>
+                  <th>Div. Yield</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTableBodyIT">
+                <!-- Generato Dinamicamente via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabella 3: S&P 500 -->
         <div class="summary-market-block">
           <div class="summary-block-header">
             <div class="summary-block-title">
@@ -783,12 +820,17 @@
 
   </div>
 
-  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / S&P 500 / Riepilogo) -->
+  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / FTSE MIB / S&P 500 / Riepilogo) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
       <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 600</span>
+        <span class="bnav-badge">20</span>
+      </button>
+      <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT">
+        <span class="bnav-icon">🇮🇹</span>
+        <span class="bnav-label">FTSE MIB</span>
         <span class="bnav-badge">20</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
@@ -799,12 +841,12 @@
       <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
-        <span class="bnav-badge">40</span>
+        <span class="bnav-badge">60</span>
       </button>
     </div>
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v15"></script>
+  <script src="app.js?v=20261104-v16"></script>
 </body>
 </html>
