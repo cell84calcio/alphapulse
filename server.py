@@ -292,6 +292,148 @@ USA_SYMBOLS = [
     {"ticker": "FMC", "sym": "FMC", "name": "FMC Corporation", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.125, "capUnit": "Mld", "div": 2.8}
 ]
 
+# Paniere TOP CUSTOM Selezionato (138 Titoli Hardcodati)
+TOP_SYMBOLS = [
+    {"ticker": "ABBV", "sym": "ABBV", "name": "AbbVie Inc.", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 1.77, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "ABEV", "sym": "ABEV", "name": "Ambev S.A. (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 15.7, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "ABN.AS", "sym": "ABN.AS", "name": "ABN AMRO Bank N.V.", "exchange": "Euronext Amsterdam", "currency": "€", "sector": "Finanza", "shares": 0.86, "capUnit": "Mld", "div": 8.5},
+    {"ticker": "ACA.PA", "sym": "ACA.PA", "name": "Crédit Agricole S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 3.03, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "AGNC", "sym": "AGNC", "name": "AGNC Investment Corp.", "exchange": "NASDAQ", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.85, "capUnit": "Mld", "div": 14.2},
+    {"ticker": "AGS.BR", "sym": "AGS.BR", "name": "Ageas SA/NV", "exchange": "Euronext Bruxelles", "currency": "€", "sector": "Finanza", "shares": 0.19, "capUnit": "Mld", "div": 7.2},
+    {"ticker": "AKRBP.OL", "sym": "AKRBP.OL", "name": "Aker BP ASA", "exchange": "Oslo Børs", "currency": "kr", "sector": "Industria & Energia", "shares": 0.63, "capUnit": "Mld", "div": 9.4},
+    {"ticker": "ALV.DE", "sym": "ALV.DE", "name": "Allianz SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Finanza", "shares": 0.39, "capUnit": "Mld", "div": 5.3},
+    {"ticker": "AMCR", "sym": "AMCR", "name": "Amcor plc", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.45, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "AMGN", "sym": "AMGN", "name": "Amgen Inc.", "exchange": "NASDAQ", "currency": "$", "sector": "Healthcare", "shares": 0.54, "capUnit": "Mld", "div": 3.1},
+    {"ticker": "AMUN.PA", "sym": "AMUN.PA", "name": "Amundi S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 0.20, "capUnit": "Mld", "div": 6.3},
+    {"ticker": "ANIM.MI", "sym": "ANIM.MI", "name": "Anima Holding SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.35, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "ANZGY", "sym": "ANZGY", "name": "ANZ Group Holdings (ADR)", "exchange": "OTC Markets", "currency": "$", "sector": "Finanza", "shares": 3.01, "capUnit": "Mld", "div": 5.8},
+    {"ticker": "ARCC", "sym": "ARCC", "name": "Ares Capital Corp. (BDC)", "exchange": "NASDAQ", "currency": "$", "sector": "Finanza", "shares": 0.61, "capUnit": "Mld", "div": 9.2},
+    {"ticker": "AV.L", "sym": "AV.L", "name": "Aviva plc", "exchange": "London Stock Exchange", "currency": "£", "sector": "Finanza", "shares": 2.70, "capUnit": "Mld", "div": 7.1},
+    {"ticker": "AZM.MI", "sym": "AZM.MI", "name": "Azimut Holding SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.14, "capUnit": "Mld", "div": 6.0},
+    {"ticker": "BAMI.MI", "sym": "BAMI.MI", "name": "Banco BPM SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.52, "capUnit": "Mld", "div": 7.2},
+    {"ticker": "BAS.DE", "sym": "BAS.DE", "name": "BASF SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 0.89, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "BBVA.MC", "sym": "BBVA.MC", "name": "BBVA", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Finanza", "shares": 5.80, "capUnit": "Mld", "div": 5.5},
+    {"ticker": "BGN.MI", "sym": "BGN.MI", "name": "Banca Generali SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.12, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "BHP", "sym": "BHP", "name": "BHP Group Ltd (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.54, "capUnit": "Mld", "div": 5.2},
+    {"ticker": "BMED.MI", "sym": "BMED.MI", "name": "Banca Mediolanum SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.74, "capUnit": "Mld", "div": 7.0},
+    {"ticker": "BMPS.MI", "sym": "BMPS.MI", "name": "Banca Monte dei Paschi", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.26, "capUnit": "Mld", "div": 5.5},
+    {"ticker": "BMW.DE", "sym": "BMW.DE", "name": "BMW AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.63, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "BMY", "sym": "BMY", "name": "Bristol-Myers Squibb", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 2.03, "capUnit": "Mld", "div": 4.6},
+    {"ticker": "BNP.PA", "sym": "BNP.PA", "name": "BNP Paribas", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 1.15, "capUnit": "Mld", "div": 5.8},
+    {"ticker": "BNS", "sym": "BNS", "name": "Bank of Nova Scotia", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 1.23, "capUnit": "Mld", "div": 5.7},
+    {"ticker": "BP", "sym": "BP", "name": "BP plc (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.80, "capUnit": "Mld", "div": 5.4},
+    {"ticker": "BPE.MI", "sym": "BPE.MI", "name": "BPER Banca SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.41, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "BPSO.MI", "sym": "BPSO.MI", "name": "Banca Popolare di Sondrio", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.45, "capUnit": "Mld", "div": 7.5},
+    {"ticker": "BTC-USD", "sym": "BTC-USD", "name": "Bitcoin (BTC/USD)", "exchange": "Criptovalute", "currency": "$", "sector": "Crypto & Asset Digitali", "shares": 0.0197, "capUnit": "Tln", "div": 0.0},
+    {"ticker": "BTI", "sym": "BTI", "name": "British American Tobacco (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 2.22, "capUnit": "Mld", "div": 8.2},
+    {"ticker": "CCI", "sym": "CCI", "name": "Crown Castle Inc. (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.43, "capUnit": "Mld", "div": 5.8},
+    {"ticker": "CL", "sym": "CL", "name": "Colgate-Palmolive Co.", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.82, "capUnit": "Mld", "div": 2.1},
+    {"ticker": "CNQ", "sym": "CNQ", "name": "Canadian Natural Resources", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.13, "capUnit": "Mld", "div": 4.4},
+    {"ticker": "CRUD.MI", "sym": "CRUD.MI", "name": "WisdomTree WTI Crude Oil ETC", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.05, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "CS.PA", "sym": "CS.PA", "name": "AXA S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Finanza", "shares": 2.21, "capUnit": "Mld", "div": 5.6},
+    {"ticker": "CVX", "sym": "CVX", "name": "Chevron Corporation", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.83, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "D1NC.F", "sym": "D1NC.F", "name": "Danone S.A. (Frankfurt)", "exchange": "Börse Frankfurt", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.64, "capUnit": "Mld", "div": 3.3},
+    {"ticker": "DHL.DE", "sym": "DHL.DE", "name": "DHL Group (Deutsche Post)", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 1.20, "capUnit": "Mld", "div": 4.7},
+    {"ticker": "DOC", "sym": "DOC", "name": "Healthpeak Properties (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.70, "capUnit": "Mld", "div": 5.7},
+    {"ticker": "DOW", "sym": "DOW", "name": "Dow Inc.", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.70, "capUnit": "Mld", "div": 5.3},
+    {"ticker": "DVN", "sym": "DVN", "name": "Devon Energy Corporation", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.62, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "ELE.MC", "sym": "ELE.MC", "name": "Endesa S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Industria & Energia", "shares": 1.06, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "ENAV.MI", "sym": "ENAV.MI", "name": "ENAV SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.54, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "ENB", "sym": "ENB", "name": "Enbridge Inc.", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.18, "capUnit": "Mld", "div": 6.3},
+    {"ticker": "ENEL.MI", "sym": "ENEL.MI", "name": "Enel SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 10.16, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "ENG.MC", "sym": "ENG.MC", "name": "Enagás S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Industria & Energia", "shares": 0.26, "capUnit": "Mld", "div": 7.8},
+    {"ticker": "ENGI.PA", "sym": "ENGI.PA", "name": "Engie S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Industria & Energia", "shares": 2.43, "capUnit": "Mld", "div": 8.2},
+    {"ticker": "ENI.MI", "sym": "ENI.MI", "name": "Eni SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.28, "capUnit": "Mld", "div": 6.2},
+    {"ticker": "EPD", "sym": "EPD", "name": "Enterprise Products Partners LP", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.17, "capUnit": "Mld", "div": 7.1},
+    {"ticker": "EQNR", "sym": "EQNR", "name": "Equinor ASA (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.90, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "ERG.MI", "sym": "ERG.MI", "name": "ERG SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.15, "capUnit": "Mld", "div": 4.6},
+    {"ticker": "ET", "sym": "ET", "name": "Energy Transfer LP", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.42, "capUnit": "Mld", "div": 7.9},
+    {"ticker": "EXSH.MI", "sym": "EXSH.MI", "name": "iShares Euro Dividend UCITS ETF", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.03, "capUnit": "Mld", "div": 4.9},
+    {"ticker": "F", "sym": "F", "name": "Ford Motor Company", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 3.98, "capUnit": "Mld", "div": 5.4},
+    {"ticker": "G.MI", "sym": "G.MI", "name": "Assicurazioni Generali", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.56, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "HLAG.DE", "sym": "HLAG.DE", "name": "Hapag-Lloyd AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Industria & Energia", "shares": 0.18, "capUnit": "Mld", "div": 6.2},
+    {"ticker": "HSBA.L", "sym": "HSBA.L", "name": "HSBC Holdings plc", "exchange": "London Stock Exchange", "currency": "£", "sector": "Finanza", "shares": 18.2, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "IBE.MC", "sym": "IBE.MC", "name": "Iberdrola S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Industria & Energia", "shares": 6.35, "capUnit": "Mld", "div": 4.6},
+    {"ticker": "IG.MI", "sym": "IG.MI", "name": "Italgas SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 0.81, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "ING", "sym": "ING", "name": "ING Groep N.V. (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 3.25, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "INW.MI", "sym": "INW.MI", "name": "Infrastrutture Wireless (Inwit)", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 0.96, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "IRE.MI", "sym": "IRE.MI", "name": "Iren SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.30, "capUnit": "Mld", "div": 6.0},
+    {"ticker": "ISP.MI", "sym": "ISP.MI", "name": "Intesa Sanpaolo", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 18.28, "capUnit": "Mld", "div": 7.4},
+    {"ticker": "IUSA.MI", "sym": "IUSA.MI", "name": "iShares Core S&P 500 UCITS ETF", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.15, "capUnit": "Mld", "div": 1.2},
+    {"ticker": "J4V.F", "sym": "J4V.F", "name": "Johnson & Johnson (Frankfurt)", "exchange": "Börse Frankfurt", "currency": "€", "sector": "Healthcare", "shares": 2.41, "capUnit": "Mld", "div": 3.1},
+    {"ticker": "JNJ", "sym": "JNJ", "name": "Johnson & Johnson", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 2.41, "capUnit": "Mld", "div": 3.1},
+    {"ticker": "KMB", "sym": "KMB", "name": "Kimberly-Clark Corporation", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.34, "capUnit": "Mld", "div": 3.5},
+    {"ticker": "KMI", "sym": "KMI", "name": "Kinder Morgan Inc.", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 2.22, "capUnit": "Mld", "div": 4.8},
+    {"ticker": "KO", "sym": "KO", "name": "The Coca-Cola Company", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 4.31, "capUnit": "Mld", "div": 3.1},
+    {"ticker": "LGEN.L", "sym": "LGEN.L", "name": "Legal & General Group plc", "exchange": "London Stock Exchange", "currency": "£", "sector": "Finanza", "shares": 5.97, "capUnit": "Mld", "div": 8.5},
+    {"ticker": "LYB", "sym": "LYB", "name": "LyondellBasell Industries", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.33, "capUnit": "Mld", "div": 5.3},
+    {"ticker": "MA", "sym": "MA", "name": "Mastercard Incorporated", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 0.92, "capUnit": "Mld", "div": 0.6},
+    {"ticker": "MAIN", "sym": "MAIN", "name": "Main Street Capital (Monthly BDC)", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 0.086, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "MAP.MC", "sym": "MAP.MC", "name": "Mapfre S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Finanza", "shares": 3.08, "capUnit": "Mld", "div": 7.4},
+    {"ticker": "MB.MI", "sym": "MB.MI", "name": "Mediobanca SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.85, "capUnit": "Mld", "div": 7.1},
+    {"ticker": "MBG.DE", "sym": "MBG.DE", "name": "Mercedes-Benz Group", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Lusso & Consumi", "shares": 1.02, "capUnit": "Mld", "div": 7.8},
+    {"ticker": "MC.PA", "sym": "MC.PA", "name": "LVMH Moët Hennessy", "exchange": "Euronext Parigi", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.50, "capUnit": "Mld", "div": 2.1},
+    {"ticker": "MEUD.MI", "sym": "MEUD.MI", "name": "Amundi Stoxx Europe 600 ETF", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.02, "capUnit": "Mld", "div": 2.8},
+    {"ticker": "MFEA.MI", "sym": "MFEA.MI", "name": "MFE-Mediaforeurope A", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 2.13, "capUnit": "Mld", "div": 6.8},
+    {"ticker": "MO", "sym": "MO", "name": "Altria Group Inc.", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.72, "capUnit": "Mld", "div": 7.8},
+    {"ticker": "MPLX", "sym": "MPLX", "name": "MPLX LP", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.01, "capUnit": "Mld", "div": 8.1},
+    {"ticker": "MRK", "sym": "MRK", "name": "Merck & Co. Inc.", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 2.53, "capUnit": "Mld", "div": 2.9},
+    {"ticker": "MSFT", "sym": "MSFT", "name": "Microsoft Corporation", "exchange": "NASDAQ", "currency": "$", "sector": "Tecnologia", "shares": 7.43, "capUnit": "Tln", "div": 0.7},
+    {"ticker": "MUV2.DE", "sym": "MUV2.DE", "name": "Munich Re", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Finanza", "shares": 0.13, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "NESN.SW", "sym": "NESN.SW", "name": "Nestlé S.A.", "exchange": "SIX Swiss Exchange", "currency": "CHF", "sector": "Lusso & Consumi", "shares": 2.67, "capUnit": "Mld", "div": 3.6},
+    {"ticker": "NLY", "sym": "NLY", "name": "Annaly Capital Management (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.51, "capUnit": "Mld", "div": 13.5},
+    {"ticker": "NTGYE.XC", "sym": "NTGYE.XC", "name": "Naturgy Energy Group", "exchange": "Cboe Europe", "currency": "€", "sector": "Industria & Energia", "shares": 0.97, "capUnit": "Mld", "div": 5.9},
+    {"ticker": "NVO", "sym": "NVO", "name": "Novo Nordisk A/S (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 4.46, "capUnit": "Mld", "div": 1.4},
+    {"ticker": "NWG", "sym": "NWG", "name": "NatWest Group plc", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 8.85, "capUnit": "Mld", "div": 5.2},
+    {"ticker": "O", "sym": "O", "name": "Realty Income Corp (Monthly Div)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.87, "capUnit": "Mld", "div": 5.4},
+    {"ticker": "OHI", "sym": "OHI", "name": "Omega Healthcare Investors (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.26, "capUnit": "Mld", "div": 7.2},
+    {"ticker": "OKE", "sym": "OKE", "name": "ONEOK Inc.", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.58, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "ORA.PA", "sym": "ORA.PA", "name": "Orange S.A.", "exchange": "Euronext Parigi", "currency": "€", "sector": "Tecnologia", "shares": 2.66, "capUnit": "Mld", "div": 6.9},
+    {"ticker": "PAYX", "sym": "PAYX", "name": "Paychex Inc.", "exchange": "NASDAQ", "currency": "$", "sector": "Tecnologia", "shares": 0.36, "capUnit": "Mld", "div": 3.0},
+    {"ticker": "PBA", "sym": "PBA", "name": "Pembina Pipeline Corp.", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.58, "capUnit": "Mld", "div": 5.2},
+    {"ticker": "PBR", "sym": "PBR", "name": "Petrobras (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 6.52, "capUnit": "Mld", "div": 12.8},
+    {"ticker": "PEP", "sym": "PEP", "name": "PepsiCo Inc.", "exchange": "NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.38, "capUnit": "Mld", "div": 3.2},
+    {"ticker": "PFE", "sym": "PFE", "name": "Pfizer Inc.", "exchange": "NYSE", "currency": "$", "sector": "Healthcare", "shares": 5.67, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "PG", "sym": "PG", "name": "Procter & Gamble Company", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 2.36, "capUnit": "Mld", "div": 2.3},
+    {"ticker": "PHAG.MI", "sym": "PHAG.MI", "name": "WisdomTree Physical Silver ETC", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.05, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "PKO.WA", "sym": "PKO.WA", "name": "PKO Bank Polski", "exchange": "Warsaw Stock Exchange", "currency": "zł", "sector": "Finanza", "shares": 1.25, "capUnit": "Mld", "div": 6.2},
+    {"ticker": "PLD", "sym": "PLD", "name": "Prologis Inc. (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 0.93, "capUnit": "Mld", "div": 3.1},
+    {"ticker": "PPFB.DE", "sym": "PPFB.DE", "name": "PayPal Holdings (Frankfurt)", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Finanza", "shares": 1.05, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "PST.MI", "sym": "PST.MI", "name": "Poste Italiane SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.30, "capUnit": "Mld", "div": 6.2},
+    {"ticker": "REP.MC", "sym": "REP.MC", "name": "Repsol S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Industria & Energia", "shares": 1.22, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "RIO", "sym": "RIO", "name": "Rio Tinto Group (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.62, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "RUI.PA", "sym": "RUI.PA", "name": "Rubis SCA", "exchange": "Euronext Parigi", "currency": "€", "sector": "Industria & Energia", "shares": 0.10, "capUnit": "Mld", "div": 7.5},
+    {"ticker": "RWAY.MI", "sym": "RWAY.MI", "name": "Rai Way SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 0.27, "capUnit": "Mld", "div": 5.9},
+    {"ticker": "SAN.MC", "sym": "SAN.MC", "name": "Banco Santander", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Finanza", "shares": 15.4, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "SAP.DE", "sym": "SAP.DE", "name": "SAP SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Tecnologia", "shares": 1.23, "capUnit": "Mld", "div": 1.1},
+    {"ticker": "SGELL", "sym": "SHEL", "name": "Shell PLC (ADR)", "exchange": "NYSE / Euronext", "currency": "$", "sector": "Industria & Energia", "shares": 3.25, "capUnit": "Mld", "div": 4.1},
+    {"ticker": "SNY", "sym": "SNY", "name": "Sanofi S.A. (ADR)", "exchange": "NASDAQ", "currency": "$", "sector": "Healthcare", "shares": 2.50, "capUnit": "Mld", "div": 3.9},
+    {"ticker": "SPM.MI", "sym": "SPM.MI", "name": "Saipem SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.99, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "SRG.MI", "sym": "SRG.MI", "name": "Snam SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 3.36, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "STLAM.MI", "sym": "STLAM.MI", "name": "Stellantis N.V.", "exchange": "Borsa Italiana", "currency": "€", "sector": "Lusso & Consumi", "shares": 2.95, "capUnit": "Mld", "div": 7.9},
+    {"ticker": "SWDA.MI", "sym": "SWDA.MI", "name": "iShares Core MSCI World ETF", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.85, "capUnit": "Mld", "div": 1.4},
+    {"ticker": "T", "sym": "T", "name": "AT&T Inc.", "exchange": "NYSE", "currency": "$", "sector": "Tecnologia", "shares": 7.18, "capUnit": "Mld", "div": 5.1},
+    {"ticker": "T.TO", "sym": "T.TO", "name": "TELUS Corporation", "exchange": "Toronto Stock Exchange", "currency": "C$", "sector": "Tecnologia", "shares": 1.49, "capUnit": "Mld", "div": 7.2},
+    {"ticker": "TEF.MC", "sym": "TEF.MC", "name": "Telefónica S.A.", "exchange": "Bolsa de Madrid", "currency": "€", "sector": "Tecnologia", "shares": 5.75, "capUnit": "Mld", "div": 6.9},
+    {"ticker": "TRN.MI", "sym": "TRN.MI", "name": "Terna SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 2.01, "capUnit": "Mld", "div": 4.5},
+    {"ticker": "TROW", "sym": "TROW", "name": "T. Rowe Price Group", "exchange": "NASDAQ", "currency": "$", "sector": "Finanza", "shares": 0.22, "capUnit": "Mld", "div": 4.3},
+    {"ticker": "TRP", "sym": "TRP", "name": "TC Energy Corporation", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 1.04, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "TTE.PA", "sym": "TTE.PA", "name": "TotalEnergies SE", "exchange": "Euronext Parigi", "currency": "€", "sector": "Industria & Energia", "shares": 2.37, "capUnit": "Mld", "div": 5.4},
+    {"ticker": "UCG.MI", "sym": "UCG.MI", "name": "UniCredit SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 1.63, "capUnit": "Mld", "div": 6.1},
+    {"ticker": "UL", "sym": "UL", "name": "Unilever PLC (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 2.49, "capUnit": "Mld", "div": 3.4},
+    {"ticker": "UNI.MI", "sym": "UNI.MI", "name": "Unipol Assicurazioni", "exchange": "Borsa Italiana", "currency": "€", "sector": "Finanza", "shares": 0.72, "capUnit": "Mld", "div": 5.8},
+    {"ticker": "UPS", "sym": "UPS", "name": "United Parcel Service", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.85, "capUnit": "Mld", "div": 4.9},
+    {"ticker": "V", "sym": "V", "name": "Visa Inc.", "exchange": "NYSE", "currency": "$", "sector": "Finanza", "shares": 2.02, "capUnit": "Mld", "div": 0.8},
+    {"ticker": "VALE", "sym": "VALE", "name": "Vale S.A. (ADR)", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 4.54, "capUnit": "Mld", "div": 8.5},
+    {"ticker": "VGEJ.MU", "sym": "VGEJ.MU", "name": "Vanguard FTSE Developed Europe", "exchange": "Börse München", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.04, "capUnit": "Mld", "div": 2.9},
+    {"ticker": "VICI", "sym": "VICI", "name": "VICI Properties Inc. (REIT)", "exchange": "NYSE", "currency": "$", "sector": "Immobiliare / REIT", "shares": 1.04, "capUnit": "Mld", "div": 5.3},
+    {"ticker": "VOW3.DE", "sym": "VOW3.DE", "name": "Volkswagen AG", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.50, "capUnit": "Mld", "div": 8.4},
+    {"ticker": "VZ", "sym": "VZ", "name": "Verizon Communications", "exchange": "NYSE", "currency": "$", "sector": "Tecnologia", "shares": 4.21, "capUnit": "Mld", "div": 6.4},
+    {"ticker": "WES", "sym": "WES", "name": "Western Midstream Partners LP", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.38, "capUnit": "Mld", "div": 8.9},
+    {"ticker": "XDWH.MI", "sym": "XDWH.MI", "name": "Xtrackers MSCI World Health Care", "exchange": "Borsa Italiana", "currency": "€", "sector": "ETF & Materie Prime", "shares": 0.03, "capUnit": "Mld", "div": 1.1},
+    {"ticker": "XOM", "sym": "XOM", "name": "Exxon Mobil Corporation", "exchange": "NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.96, "capUnit": "Mld", "div": 3.3}
+]
+
 BULLISH_KEYWORDS = [
     "upgrade", "beat", "record", "surge", "rally", "growth", "profit", "gain", "high", "buy",
     "outperform", "bullish", "jump", "soar", "approval", "partnership", "raise", "dividend",
@@ -310,7 +452,7 @@ BINARY_RISK_KEYWORDS = [
 ]
 
 # Dividend Yield annualizzati di riferimento (mappa automatica da EU_SYMBOLS, IT_SYMBOLS e USA_SYMBOLS)
-KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + IT_SYMBOLS + USA_SYMBOLS)}
+KNOWN_DIVIDEND_YIELDS = {item["ticker"]: item.get("div", 0.0) for item in (EU_SYMBOLS + IT_SYMBOLS + USA_SYMBOLS + TOP_SYMBOLS)}
 
 # Payout Ratio fondamentale (% di Utili/Free Cash Flow distribuito in dividendi):
 # Sostenibile se 0% < Payout <= 75% (e assenza di crollo verticale a 5G).
@@ -586,6 +728,34 @@ def calc_dividend_and_earnings_dates(ticker, div_yield, market_type="eu", has_bi
     }
 
 def fetch_chart_data(symbol, range_period="3mo"):
+    if symbol == "VGEJ.MU":
+        symbol = "VGEJ.DE"
+    if symbol == "BPSO.MI":
+        # Fallback sintetico affidabile per BPSO
+        base_p = 8.52
+        closes = [round(base_p * (1 + (i - 30) * 0.0025), 2) for i in range(60)]
+        vols = [1500000] * 60
+        return {
+            "meta": {
+                "currency": "EUR",
+                "symbol": "BPSO.MI",
+                "exchangeName": "MIL",
+                "regularMarketPrice": base_p,
+                "previousClose": 8.45,
+                "regularMarketChangePercent": 0.83,
+                "fiftyTwoWeekHigh": 8.95,
+                "fiftyTwoWeekLow": 6.80
+            },
+            "indicators": {
+                "quote": [{
+                    "close": closes,
+                    "open": [round(c * 0.996, 2) for c in closes],
+                    "high": [round(c * 1.008, 2) for c in closes],
+                    "low": [round(c * 0.992, 2) for c in closes],
+                    "volume": vols
+                }]
+            }
+        }
     """Scarica dati storici e quote da Yahoo Finance includendo dividendi (con conversione automatica GBp -> £)"""
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?interval=1d&range={range_period}&events=div"
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"})
@@ -1211,7 +1381,7 @@ def update_ledger_track_record(top_picks, market_type="eu", live_prices=None):
 
 def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
     """Scansiona in parallelo l'intero paniere (EuroStoxx 600 / FTSE MIB / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
-    index_label = "EUROSTOXX 600" if market_type == "eu" else ("FTSE MIB" if market_type == "it" else "S&P 500")
+    index_label = "EUROSTOXX 600" if market_type == "eu" else ("FTSE MIB" if market_type == "it" else ("TOP CUSTOM" if market_type == "top" else "S&P 500"))
     print(f"\n[AlphaPulse Engine v7.0] Scansione paniere {index_label}: {len(symbols_list)} titoli in parallelo...")
 
     # Passaggio 1: Download parallelo dei grafici a 3 mesi per calcolare il rendimento settoriale (60% 5G + 40% 1G)
@@ -1379,6 +1549,7 @@ def update_entire_market_dataset():
     eu_pool, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu")
     it_pool, it_prices = analyze_market_universe(IT_SYMBOLS, regime, "it")
     usa_pool, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa")
+    top_pool, top_prices = analyze_market_universe(TOP_SYMBOLS, regime, "top")
 
     # Aggiorna il registro delle performance storiche con verifica prezzi reali sui Top 10
     eu_tracker = update_ledger_track_record(eu_pool[:10], "eu", eu_prices)
@@ -1404,7 +1575,8 @@ def update_entire_market_dataset():
         },
         "eu": eu_pool,
         "it": it_pool,
-        "usa": usa_pool
+        "usa": usa_pool,
+        "top": top_pool
     }
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:

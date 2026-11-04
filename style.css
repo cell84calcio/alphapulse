@@ -2561,3 +2561,22 @@ html, body {
 
 
 
+
+/* 5 Tab Navigation Dock Polish */
+@media (max-width: 580px) {
+  .bottom-nav-inner {
+    gap: 3px !important;
+  }
+  .bottom-nav-item {
+    padding: 6px 4px !important;
+    font-size: 0.68rem !important;
+    gap: 2px !important;
+  }
+  .bnav-icon {
+    font-size: 0.85rem !important;
+  }
+  .bnav-badge {
+    font-size: 0.58rem !important;
+    padding: 1px 3px !important;
+  }
+}

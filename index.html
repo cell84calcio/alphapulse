@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v17">
+  <link rel="stylesheet" href="style.css?v=20261104-v18">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -366,6 +366,7 @@
             <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
             <button type="button" class="m-carousel-dot" data-market="it" id="tabIT">🇮🇹 FTSE MIB</button>
             <button type="button" class="m-carousel-dot" data-market="usa" id="tabUSA">🇺🇸 USA</button>
+            <button type="button" class="m-carousel-dot" data-market="top" id="tabTop">⭐ TOP</button>
             <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
 
@@ -588,6 +589,42 @@
                 </tr>
               </thead>
               <tbody id="summaryTableBodyUSA">
+                <!-- Generato Dinamicamente via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Card Tabellare 4: Portafoglio TOP Custom Selezionato -->
+        <div class="summary-table-card">
+          <div class="summary-section-header">
+            <div class="summary-header-left">
+              <span class="flag-icon">⭐</span>
+              <div>
+                <h3>Top 20 Portafoglio TOP Selezionati</h3>
+                <p>Paniere custom di 138 titoli monitorati (Dividendi, REIT, BDC, ETF &amp; Big Cap) &bull; Clicca su una riga per aprire l'analisi completa</p>
+              </div>
+            </div>
+            <span class="badge model-tag" id="summaryBadgeTOP">20 Titoli Live</span>
+          </div>
+          <div class="stocks-table-wrapper">
+            <table class="stocks-table summary-compact-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Ticker</th>
+                  <th>Azienda</th>
+                  <th>Prezzo Live</th>
+                  <th>Oggi (1G)</th>
+                  <th>5 Giorni</th>
+                  <th>Target 5G</th>
+                  <th>Stop Loss</th>
+                  <th>Score</th>
+                  <th>Indicatore Visivo 52W</th>
+                  <th>Div. Yield</th>
+                </tr>
+              </thead>
+              <tbody id="summaryTableBodyTOP">
                 <!-- Generato Dinamicamente via JavaScript -->
               </tbody>
             </table>
@@ -844,15 +881,20 @@
         <span class="bnav-label">S&amp;P 500</span>
         <span class="bnav-badge">20</span>
       </button>
+      <button type="button" class="bottom-nav-item" data-market="top" id="bottomTabTop">
+        <span class="bnav-icon">⭐</span>
+        <span class="bnav-label">TOP</span>
+        <span class="bnav-badge">20</span>
+      </button>
       <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
-        <span class="bnav-badge">60</span>
+        <span class="bnav-badge">80</span>
       </button>
     </div>
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v17"></script>
+  <script src="app.js?v=20261104-v18"></script>
 </body>
 </html>
