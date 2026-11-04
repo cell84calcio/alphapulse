@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v18">
+  <link rel="stylesheet" href="style.css?v=20261104-v19">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -171,16 +171,50 @@
         padding: 7px 11px;
       }
     }
-    @media (max-width: 520px) {
+    /* Schermi Cellulari (Mobile): mostra solo Icone e Badge, nasconde la scritta */
+    @media (max-width: 768px) {
       .bottom-nav-bar {
         bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
-        padding: 5px;
-        width: calc(100vw - 16px);
-        max-width: 480px;
+        padding: 5px 6px !important;
+        width: max-content !important;
+        max-width: calc(100vw - 20px) !important;
       }
-      .bottom-nav-inner { width: 100%; gap: 3px; }
-      .bottom-nav-item { flex: 1; padding: 8px 5px; gap: 4px; font-size: 0.72rem; }
-      .bnav-badge { font-size: 0.60rem; padding: 2px 4px; }
+      .bottom-nav-inner {
+        width: auto !important;
+        gap: 5px !important;
+      }
+      .bottom-nav-item {
+        flex: 0 0 auto !important;
+        padding: 8px 10px !important;
+        gap: 5px !important;
+      }
+      .bnav-label {
+        display: none !important;
+      }
+      .bnav-icon {
+        font-size: 1.15rem !important;
+        line-height: 1 !important;
+      }
+      .bnav-badge {
+        font-size: 0.65rem !important;
+        padding: 2px 5px !important;
+      }
+    }
+    @media (max-width: 400px) {
+      .bottom-nav-inner {
+        gap: 3px !important;
+      }
+      .bottom-nav-item {
+        padding: 7px 7px !important;
+        gap: 3px !important;
+      }
+      .bnav-icon {
+        font-size: 1.05rem !important;
+      }
+      .bnav-badge {
+        font-size: 0.60rem !important;
+        padding: 1px 4px !important;
+      }
     }
     .exdiv-pill {
       border-color: rgba(16, 185, 129, 0.38) !important;
@@ -863,30 +897,30 @@
 
   </div>
 
-  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / FTSE MIB / S&P 500 / Riepilogo) -->
+  <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / FTSE MIB / S&P 500 / TOP / Riepilogo) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
-      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU">
+      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 600</span>
         <span class="bnav-badge">20</span>
       </button>
-      <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT">
+      <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
         <span class="bnav-icon">🇮🇹</span>
         <span class="bnav-label">FTSE MIB</span>
         <span class="bnav-badge">20</span>
       </button>
-      <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA">
+      <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA" title="S&amp;P 500 (USA)">
         <span class="bnav-icon">🇺🇸</span>
         <span class="bnav-label">S&amp;P 500</span>
         <span class="bnav-badge">20</span>
       </button>
-      <button type="button" class="bottom-nav-item" data-market="top" id="bottomTabTop">
+      <button type="button" class="bottom-nav-item" data-market="top" id="bottomTabTop" title="TOP Selezionati (138 Titoli)">
         <span class="bnav-icon">⭐</span>
         <span class="bnav-label">TOP</span>
         <span class="bnav-badge">20</span>
       </button>
-      <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary">
+      <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary" title="Riepilogo Generale">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
         <span class="bnav-badge">80</span>
@@ -895,6 +929,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v18"></script>
+  <script src="app.js?v=20261104-v19"></script>
 </body>
 </html>
