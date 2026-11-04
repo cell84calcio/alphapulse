@@ -144,7 +144,13 @@ EU_SYMBOLS = [
     {"ticker": "ATCO-A", "sym": "ATCO-A.ST", "name": "Atlas Copco AB", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Industria & Energia", "shares": 4.89, "capUnit": "Mld", "div": 1.6},
     {"ticker": "VOLV-B", "sym": "VOLV-B.ST", "name": "AB Volvo", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Industria & Energia", "shares": 2.03, "capUnit": "Mld", "div": 5.8},
     {"ticker": "INVE-B", "sym": "INVE-B.ST", "name": "Investor AB", "exchange": "Nasdaq Stockholm", "currency": "SEK ", "toEur": 0.088, "sector": "Finanza", "shares": 3.06, "capUnit": "Mld", "div": 1.7},
-    {"ticker": "EQNR", "sym": "EQNR.OL", "name": "Equinor ASA", "exchange": "Oslo Børs", "currency": "NOK ", "toEur": 0.085, "sector": "Industria & Energia", "shares": 2.75, "capUnit": "Mld", "div": 5.9}
+    {"ticker": "EQNR", "sym": "EQNR.OL", "name": "Equinor ASA", "exchange": "Oslo Børs", "currency": "NOK ", "toEur": 0.085, "sector": "Industria & Energia", "shares": 2.75, "capUnit": "Mld", "div": 5.9},
+    # Componenti Mid-Cap EuroStoxx 600 (< €10 Mld)
+    {"ticker": "PUM", "sym": "PUM.DE", "name": "Puma SE", "exchange": "XETRA (Germania)", "currency": "€", "sector": "Lusso & Consumi", "shares": 0.15, "capUnit": "Mld", "div": 1.8},
+    {"ticker": "UBI", "sym": "UBI.PA", "name": "Ubisoft Entertainment", "exchange": "Euronext Parigi", "currency": "€", "sector": "Tecnologia", "shares": 0.13, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "NEXI", "sym": "NEXI.MI", "name": "Nexi SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Tecnologia", "shares": 1.28, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "AMP", "sym": "AMP.MI", "name": "Amplifon SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Healthcare", "shares": 0.226, "capUnit": "Mld", "div": 1.2},
+    {"ticker": "HER", "sym": "HER.MI", "name": "Hera SpA", "exchange": "Borsa Italiana", "currency": "€", "sector": "Industria & Energia", "shares": 1.49, "capUnit": "Mld", "div": 4.2}
 ]
 
 # Paniere Ufficiale S&P 500 (Principali Componenti S&P 500 > $10 Mld su tutti i settori)
@@ -233,7 +239,13 @@ USA_SYMBOLS = [
     {"ticker": "MO", "sym": "MO", "name": "Altria Group Inc.", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.70, "capUnit": "Mld", "div": 7.3},
     {"ticker": "O", "sym": "O", "name": "Realty Income Corp.", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Finanza", "shares": 0.87, "capUnit": "Mld", "div": 5.5},
     {"ticker": "KHC", "sym": "KHC", "name": "Kraft Heinz Company", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.21, "capUnit": "Mld", "div": 4.8},
-    {"ticker": "F", "sym": "F", "name": "Ford Motor Company", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.97, "capUnit": "Mld", "div": 5.4}
+    {"ticker": "F", "sym": "F", "name": "Ford Motor Company", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.97, "capUnit": "Mld", "div": 5.4},
+    # Componenti S&P 500 Mid-Cap (< $10 Mld)
+    {"ticker": "PARA", "sym": "PARA", "name": "Paramount Global", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Tecnologia", "shares": 0.68, "capUnit": "Mld", "div": 1.6},
+    {"ticker": "HAS", "sym": "HAS", "name": "Hasbro Inc.", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.14, "capUnit": "Mld", "div": 4.2},
+    {"ticker": "WHR", "sym": "WHR", "name": "Whirlpool Corporation", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.055, "capUnit": "Mld", "div": 6.5},
+    {"ticker": "AAL", "sym": "AAL", "name": "American Airlines Group", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Industria & Energia", "shares": 0.655, "capUnit": "Mld", "div": 0.0},
+    {"ticker": "FMC", "sym": "FMC", "name": "FMC Corporation", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 0.125, "capUnit": "Mld", "div": 2.8}
 ]
 
 BULLISH_KEYWORDS = [
@@ -274,6 +286,7 @@ KNOWN_PAYOUT_RATIOS = {
     "DGE": 54, "BATS": 63, "BA": 40, "NG": 66, "BARC": 28, "LLOY": 42, "RR": 22,
     "NESN": 66, "ROG": 58, "NOVN": 52, "UBSG": 34, "ABBN": 45, "ZURN": 68, "CFR": 42, "SREN": 54,
     "HOLN": 48, "LONN": 30, "NOVO-B": 42, "DSV": 20, "ATCO-A": 44, "VOLV-B": 52, "INVE-B": 35, "EQNR": 38,
+    "PUM": 38, "UBI": 0, "NEXI": 0, "AMP": 35, "HER": 62,
     # EuroStoxx 600 - Payout Non Sostenibili / Sotto Stress (> 75% EPS/FCF)
     "BAS": 112, "STLAM": 89, "VOW3": 82, "KER": 94, "TEF": 96,
     # S&P 500 - Payout Sostenibili (<= 75% EPS/FCF/AFFO)
@@ -286,6 +299,7 @@ KNOWN_PAYOUT_RATIOS = {
     "KO": 68, "PEP": 66, "MCD": 56, "DIS": 24, "NKE": 48, "TJX": 35, "BKNG": 19, "XOM": 44, "CVX": 56,
     "GE": 18, "CAT": 26, "RTX": 45, "UNP": 46, "HON": 45, "ETN": 38, "LMT": 47, "COP": 36, "NEE": 62,
     "VZ": 58, "T": 50, "BMY": 44, "MO": 73, "O": 74, "KHC": 54, "F": 48,
+    "PARA": 25, "HAS": 68, "WHR": 72, "AAL": 0, "FMC": 46,
     # S&P 500 - Payout Non Sostenibili / Sotto Stress (> 75% EPS/FCF)
     "PFE": 88, "UPS": 86
 }
@@ -1193,10 +1207,6 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
             shares_val = item["shares"] * item.get("toEur", 1.0)
             cap_mrd = round(price * shares_val, 1)
 
-            # Filtro Capitalizzazione > 10 Miliardi ($/€)
-            if cap_mrd < 10.0:
-                return None
-            
             if item["capUnit"] == "Tln" or cap_mrd >= 1000.0:
                 mcap_str = f"{item['currency']}{round(cap_mrd / 1000, 2)} Tln"
             else:
@@ -1281,8 +1291,8 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
         b_icon = "🟢" if s["border52w"] == "green" else ("🟠" if s["border52w"] == "orange" else "🔴")
         print(f"  + {s['ticker']:<6} | Prezzo: {s['currency']}{s['currentPrice']:>7.2f} | 5G: {s['roc5d']:>+6.2f}% | Div: {s['dividendYield']:>4.1f}% | 52W: {b_icon} {s['status52w']:<25} | Score: {s['score']}% ({s['rawScore']}) | {trend_icon}")
 
-    top_pool = analyzed[:60]
-    print(f"[OK] Selezionati i migliori 10 titoli (pool esteso: {len(top_pool)}) per {index_label} su {len(analyzed)} titoli (>10 Mld) analizzati.")
+    top_pool = analyzed
+    print(f"[OK] Universe pronto: {len(top_pool)} titoli per {index_label} analizzati.")
     return top_pool, live_prices_map
 
 def update_entire_market_dataset():

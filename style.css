@@ -410,6 +410,18 @@ body {
   box-shadow: 0 0 14px rgba(16, 185, 129, 0.38);
 }
 
+.quick-filter-pill[data-qfilter="model_v7"].active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.40), rgba(5, 150, 105, 0.45));
+  border-color: #10b981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.55);
+}
+
+.quick-filter-pill[data-qfilter="cap10b"].active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.40), rgba(124, 58, 237, 0.45));
+  border-color: #a78bfa;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.55);
+}
+
 .filter-actions-wrapper {
   display: flex;
   align-items: center;
