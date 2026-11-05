@@ -360,7 +360,27 @@ const multiOk = multiRes.every(s => s.sector === 'Finanza' && s.marketCapRaw >= 
 assert(multiOk && multiRes.length > 0, `Filtro Multiplo (Finanza + Cap > 10 Mld + Ordina per Nome): ${multiRes.length} titoli trovati`);
 
 // ---------------------------------------------------------------------------
-// 6. RIEPILOGO TEST
+// 6. TEST APERTURA MODALE DETTAGLI PER TUTTI I MERCATI (EU, IT, USA, TOP)
+// ---------------------------------------------------------------------------
+console.log('\n--- 6. VERIFICA APERTURA MODALE DETTAGLI & WATCHLIST (EU, IT, USA, TOP) ---');
+
+const allMarketStocks = [...(marketData.eu || []), ...(marketData.it || []), ...(marketData.usa || []), ...(marketData.top || [])];
+
+const sampleEU = allMarketStocks.find(s => s.id === 'eu-race');
+const sampleIT = allMarketStocks.find(s => s.id === 'it-isp');
+const sampleUSA = allMarketStocks.find(s => s.id === 'usa-aapl');
+const sampleTOP = allMarketStocks.find(s => s.id === 'top-ko' || (s.id && s.id.startsWith('top-')));
+
+assert(Boolean(sampleEU), 'Risoluzione scheda EU per modale (eu-race)');
+assert(Boolean(sampleIT), 'Risoluzione scheda IT per modale (it-isp)');
+assert(Boolean(sampleUSA), 'Risoluzione scheda USA per modale (usa-aapl)');
+assert(Boolean(sampleTOP), `Risoluzione scheda TOP per modale (${sampleTOP ? sampleTOP.id : 'none'} - ${sampleTOP ? sampleTOP.ticker : 'none'})`);
+
+const allTopResolvable = topList.every(t => allMarketStocks.some(s => s.id === t.id));
+assert(allTopResolvable, `Il 100% dei ${topList.length} titoli TOP è accessibile dal pulsante Analisi`);
+
+// ---------------------------------------------------------------------------
+// 7. RIEPILOGO TEST
 // ---------------------------------------------------------------------------
 console.log('\n======================================================');
 console.log(`  RISULTATO TEST: ${testsPassed} PASSATI | ${testsFailed} FALLITI`);

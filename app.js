@@ -81049,7 +81049,7 @@ function updateWatchlistUI() {
     return;
   }
 
-  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || [])];
+  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || []), ...(MARKET_DATA.top || [])];
   const savedStocks = allStocks.filter(s => state.watchlist.includes(s.id));
 
   let totalProb = 0;
@@ -81921,7 +81921,7 @@ function renderTable(stocks) {
 // ==========================================================================
 
 function openStockDetail(stockId) {
-  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || [])];
+  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || []), ...(MARKET_DATA.top || [])];
   const stock = allStocks.find(s => s.id === stockId);
   if (!stock) return;
 
