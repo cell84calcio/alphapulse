@@ -81089,7 +81089,7 @@ function updateWatchlistUI() {
     totalUpside += upside;
 
     html += `
-      <div class="ws-item-card">
+      <div class="ws-item-card" onclick="openStockDetail('${s.id}')" title="Clicca per aprire la scheda di analisi di ${s.ticker}">
         <div class="ws-item-info">
           <div>
             <div class="ws-item-ticker">${s.ticker}</div>
@@ -81101,7 +81101,7 @@ function updateWatchlistUI() {
             <div class="table-prob-badge" style="font-size: 0.75rem; padding: 2px 6px;">${s.score}% Prob.</div>
             <div class="text-emerald font-bold mono" style="font-size: 0.75rem; text-align: right; margin-top: 2px;">+${upside}%</div>
           </div>
-          <button class="ws-remove-btn" onclick="toggleWatchlist('${s.id}')" title="Rimuovi"><i class="fa-solid fa-trash-can"></i></button>
+          <button class="ws-remove-btn" onclick="event.stopPropagation(); toggleWatchlist('${s.id}')" title="Rimuovi dalla Watchlist"><i class="fa-solid fa-trash-can"></i></button>
         </div>
       </div>
     `;

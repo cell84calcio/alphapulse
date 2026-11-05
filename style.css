@@ -1253,7 +1253,7 @@ body {
   inset: 0;
   background: rgba(4, 7, 13, 0.85);
   backdrop-filter: blur(8px);
-  z-index: 1000;
+  z-index: 1200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1709,6 +1709,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ws-item-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(16, 185, 129, 0.4);
+  transform: translateY(-1px);
 }
 
 .ws-item-info {

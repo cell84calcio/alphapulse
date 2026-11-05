@@ -418,6 +418,33 @@ assert(isTestInWatchlist('it-enel') === true, 'Sincronizzazione stella attiva: E
 testWatchlist = [];
 assert(testWatchlist.length === 0, 'Pulsante Svuota Watchlist: reset completo a 0 titoli');
 
+// Verifica click su scheda Watchlist -> Apertura dettaglio titolo
+console.log('\n--- 7b. VERIFICA CLICK SCHEDA WATCHLIST -> APERTURA DETTAGLIO TITOLO ---');
+const appJsSource = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
+const styleCssSource = fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8');
+
+assert(
+  appJsSource.includes('class="ws-item-card" onclick="openStockDetail(\'${s.id}\')"'),
+  'Card watchlist cliccabile con handler openStockDetail(s.id)'
+);
+
+assert(
+  appJsSource.includes('event.stopPropagation(); toggleWatchlist'),
+  'Pulsante rimozione watchlist con event.stopPropagation() per evitare apertura indesiderata'
+);
+
+assert(
+  styleCssSource.includes('z-index: 1200;') && styleCssSource.includes('.modal-overlay'),
+  'Modal overlay ha z-index (1200) superiore al drawer watchlist (1050) per corretta sovrapposizione visiva'
+);
+
+// Verifica simulazione apertura dettaglio da id presenti nella watchlist (incluso mercato TOP)
+const testSampleIds = ['usa-aapl', 'it-enel', 'eu-sap', 'top-spm.mi'];
+testSampleIds.forEach(id => {
+  const stock = allStocks.find(s => s.id === id);
+  assert(!!stock, `Stock ${id} trovato in allStocks (risoluzione corretta per openStockDetail)`);
+});
+
 // ---------------------------------------------------------------------------
 // 8. RIEPILOGO TEST
 // ---------------------------------------------------------------------------
