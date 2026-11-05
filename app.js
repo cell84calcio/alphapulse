@@ -80891,7 +80891,7 @@ let MARKET_DATA = {
 // ==========================================================================
 
 const state = {
-  currentMarket: 'eu', // 'eu' o 'it' o 'usa' o 'summary'
+  currentMarket: 'it', // DEFAULT: 'it' (FTSE MIB Piazza Affari)
   isModelV7Active: false, // DEFAULT FALSE: Tutti i titoli per capitalizzazione senza modello!
   isCap10BActive: false,  // DEFAULT FALSE: Senza filtro capitalizzazione
   isDrop1PctActive: false, // DEFAULT FALSE: Filtro Prezzo < -1% (Quotazione in ribasso)

@@ -98,6 +98,26 @@ assert(
   'Pulsante Riepilogo (tabSummary) preservato nella barra carosello superiore'
 );
 
+// Verifica mercato di default: FTSE MIB (Italia)
+assert(
+  appJs.includes("currentMarket: 'it'"),
+  'app.js: mercato iniziale di default impostato su FTSE MIB (\'it\')'
+);
+assert(
+  indexHtml.includes('class="m-carousel-dot active" data-market="it" id="tabIT"') &&
+  !indexHtml.includes('class="m-carousel-dot active" data-market="eu" id="tabEU"'),
+  'index.html: tabIT ha classe active di default nel carosello superiore'
+);
+assert(
+  indexHtml.includes('class="bottom-nav-item active" data-market="it" id="bottomTabIT"') &&
+  !indexHtml.includes('class="bottom-nav-item active" data-market="eu" id="bottomTabEU"'),
+  'index.html: bottomTabIT ha classe active di default nella dock bar'
+);
+assert(
+  indexHtml.includes('id="currentMarketTitle">FTSE MIB (Italia)'),
+  'index.html: intestazione iniziale della pagina impostata su FTSE MIB (Italia)'
+);
+
 // ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)
 // ---------------------------------------------------------------------------

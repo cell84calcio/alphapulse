@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261105-v32">
+  <link rel="stylesheet" href="style.css?v=20261105-v33">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -424,8 +424,8 @@
         <div class="pills-control-group">
           <!-- 4 Pulsanti Selezione Mercato -->
           <div class="market-carousel-dots" id="marketCarouselDots">
-            <button type="button" class="m-carousel-dot" data-market="it" id="tabIT">🇮🇹 FTSE MIB</button>
-            <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
+            <button type="button" class="m-carousel-dot active" data-market="it" id="tabIT">🇮🇹 FTSE MIB</button>
+            <button type="button" class="m-carousel-dot" data-market="eu" id="tabEU">🇪🇺 Europa</button>
             <button type="button" class="m-carousel-dot" data-market="usa" id="tabUSA">🇺🇸 USA</button>
             <button type="button" class="m-carousel-dot" data-market="top" id="tabTop">⭐ TOP</button>
             <button type="button" class="m-carousel-dot" data-market="all" id="tabAll">🌐 ALL</button>
@@ -511,8 +511,8 @@
       <!-- Intestazione View Corrente -->
       <div class="view-header-bar">
         <div>
-          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Tutti i Titoli per Capitalizzazione</h2>
-          <p class="view-description" id="currentMarketDesc">Tutti i componenti monitorati dell'indice EuroStoxx 600 (senza filtri e senza modello applicato).</p>
+          <h2 class="view-title" id="currentMarketTitle">FTSE MIB (Italia) &bull; Tutti i Titoli per Capitalizzazione</h2>
+          <p class="view-description" id="currentMarketDesc">Tutti i titoli del FTSE MIB di Borsa Italiana (senza filtri e senza modello applicato).</p>
         </div>
         <div class="view-actions">
           <span class="stocks-count-badge"><span id="visibleStocksCount">188</span> Titoli</span>
@@ -936,12 +936,12 @@
   <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (FTSE MIB / EuroStoxx 600 / S&P 500 / TOP / ALL) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
-      <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
+      <button type="button" class="bottom-nav-item active" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
         <span class="bnav-icon">🇮🇹</span>
         <span class="bnav-label">FTSE MIB</span>
         <span class="bnav-badge">39</span>
       </button>
-      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
+      <button type="button" class="bottom-nav-item" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 600</span>
         <span class="bnav-badge">188</span>
@@ -965,6 +965,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261105-v32"></script>
+  <script src="app.js?v=20261105-v33"></script>
 </body>
 </html>
