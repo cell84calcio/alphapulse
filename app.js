@@ -51960,7 +51960,7 @@ let MARKET_DATA = {
 
 const state = {
   currentMarket: 'eu', // 'eu' o 'it' o 'usa' o 'summary'
-  isModelV7Active: false, // DEFAULT FALSE: Primi 20 per capitalizzazione senza modello!
+  isModelV7Active: false, // DEFAULT FALSE: Tutti i titoli per capitalizzazione senza modello!
   isCap10BActive: false,  // DEFAULT FALSE: Senza filtro capitalizzazione
   isDrop1PctActive: false, // DEFAULT FALSE: Filtro Prezzo < -1% (Quotazione in ribasso)
   dividendPriceFilter: 'all', // 'all' | 'div4' | 'under52w' | 'combo'
@@ -52499,7 +52499,7 @@ function filterAndSortList(rawList) {
     return (b.marketCapRaw || 0) - (a.marketCapRaw || 0);
   });
 
-  return filtered.slice(0, 50);
+  return filtered;
 }
 
 function getFilteredAndSortedStocks() {
@@ -53218,39 +53218,39 @@ function updateMarketHeaderInfo() {
 
   if (state.currentMarket === 'eu') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 50 Modello Quantitativo v7.0${extraNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 50 migliori componenti dell'indice EuroStoxx 600${extraNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati dell'indice EuroStoxx 600${extraNote} ordinati secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Top 50 per Capitalizzazione${extraNote}`;
-      elements.currentMarketDesc.textContent = `I primi 50 titoli per capitalizzazione dell'indice EuroStoxx 600${extraNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `EuroStoxx 600 (Europa) &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati dell'indice EuroStoxx 600${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else if (state.currentMarket === 'it') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Componenti Modello Quantitativo v7.0${extraNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei componenti del paniere FTSE MIB di Piazza Affari${extraNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli del paniere FTSE MIB di Piazza Affari${extraNote} ordinati secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Componenti per Capitalizzazione${extraNote}`;
-      elements.currentMarketDesc.textContent = `I componenti per capitalizzazione del FTSE MIB di Borsa Italiana${extraNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `FTSE MIB (Italia) &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli del FTSE MIB di Borsa Italiana${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else if (state.currentMarket === 'usa') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 50 Modello Quantitativo v7.0${extraNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 50 migliori componenti dell'indice S&P 500${extraNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati dell'indice S&P 500${extraNote} ordinati secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Top 50 per Capitalizzazione${extraNote}`;
-      elements.currentMarketDesc.textContent = `I primi 50 titoli per capitalizzazione dell'indice S&P 500${extraNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `S&P 500 (USA) &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati dell'indice S&P 500${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else if (state.currentMarket === 'top') {
     if (isV7) {
-      elements.currentMarketTitle.innerHTML = `⭐ TOP Selezionati &bull; Top 50 Modello Quantitativo v7.0${extraNote}`;
-      elements.currentMarketDesc.textContent = `Selezione dei 50 migliori titoli del portafoglio custom TOP (138 titoli monitorati)${extraNote} secondo il modello quantitativo v7.0.`;
+      elements.currentMarketTitle.innerHTML = `⭐ TOP Selezionati &bull; Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i 138 titoli del portafoglio custom TOP${extraNote} ordinati secondo il modello quantitativo v7.0.`;
     } else {
-      elements.currentMarketTitle.innerHTML = `⭐ TOP Selezionati &bull; Top 50 per Capitalizzazione${extraNote}`;
-      elements.currentMarketDesc.textContent = `I primi 50 titoli per capitalizzazione del portafoglio custom TOP (138 titoli monitorati)${extraNote} (senza filtri e senza modello applicato).`;
+      elements.currentMarketTitle.innerHTML = `⭐ TOP Selezionati &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i 138 titoli del portafoglio custom TOP monitorati${extraNote} (senza filtri e senza modello applicato).`;
     }
   } else {
     elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; EuroStoxx 600 + FTSE MIB + S&amp;P 500 + TOP`;
-    elements.currentMarketDesc.textContent = `Vista tabellare quadrupla sincronizzata in tempo reale (Europa, Italia, USA e TOP Selezionati, fino a 50 titoli ciascuno).`;
+    elements.currentMarketDesc.textContent = `Vista tabellare quadrupla sincronizzata in tempo reale con tutti i titoli monitorati.`;
   }
 }
 

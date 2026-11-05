@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261104-v20">
+  <link rel="stylesheet" href="style.css?v=20261105-v21">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -406,7 +406,7 @@
 
           <!-- 6 Pulsanti Filtro e Ordinamento Rapido -->
           <div class="quick-filter-pills" id="quickFilterPills">
-            <button type="button" class="quick-filter-pill" data-qfilter="model_v7" id="qfModelV7" title="Attiva il Modello Quantitativo Istituzionale v7.0 (Top 50 per Probabilità di Salita calcolata su 5 pilastri e controlli di rischio)">🧠 Modello Quant v7</button>
+            <button type="button" class="quick-filter-pill" data-qfilter="model_v7" id="qfModelV7" title="Attiva il Modello Quantitativo Istituzionale v7.0 (Ordina per Probabilità di Salita calcolata su 5 pilastri e controlli di rischio)">🧠 Modello Quant v7</button>
             <button type="button" class="quick-filter-pill" data-qfilter="cap10b" id="qfCap10B" title="Filtra solo le azioni con Capitalizzazione > 10 Miliardi (€/$ 10 Mrd)">🏢 Cap &gt; 10 Mrd</button>
             <button type="button" class="quick-filter-pill" data-qfilter="drop1pct" id="qfDrop1pct" title="Filtra le azioni che in questo momento stanno perdendo più del -1% (Quotazione Odierna < -1.0%) per cogliere flessioni e ribassi">🔻 Prezzo &lt; -1%</button>
             <button type="button" class="quick-filter-pill" data-qfilter="div4" id="qfDiv4" title="Filtra le azioni con Dividend Yield > 4% e Payout Ratio Sostenibile (≤ 75% EPS/FCF)">💰 Div &gt; 4% (Payout OK)</button>
@@ -480,11 +480,11 @@
       <!-- Intestazione View Corrente -->
       <div class="view-header-bar">
         <div>
-          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Top 50 per Capitalizzazione</h2>
-          <p class="view-description" id="currentMarketDesc">I primi 50 titoli per capitalizzazione dell'indice EuroStoxx 600 (senza filtri e senza modello applicato).</p>
+          <h2 class="view-title" id="currentMarketTitle">EuroStoxx 600 (Europa) &bull; Tutti i Titoli per Capitalizzazione</h2>
+          <p class="view-description" id="currentMarketDesc">Tutti i componenti monitorati dell'indice EuroStoxx 600 (senza filtri e senza modello applicato).</p>
         </div>
         <div class="view-actions">
-          <span class="stocks-count-badge"><span id="visibleStocksCount">50</span> Titoli</span>
+          <span class="stocks-count-badge"><span id="visibleStocksCount">109</span> Titoli</span>
           <button class="btn-secondary" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Aggiorna Dati</button>
         </div>
       </div>
@@ -527,11 +527,11 @@
             <div class="summary-block-title">
               <span class="flag-icon">🇪🇺</span>
               <div>
-                <h3>Top 50 EuroStoxx 600 (Europa)</h3>
+                <h3>EuroStoxx 600 (Europa)</h3>
                 <p>Paniere ufficiale EuroStoxx 600 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeEU">50 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeEU">109 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -563,7 +563,7 @@
             <div class="summary-block-title">
               <span class="flag-icon">🇮🇹</span>
               <div>
-                <h3>Componenti FTSE MIB (Italia)</h3>
+                <h3>FTSE MIB (Italia)</h3>
                 <p>Paniere ufficiale Borsa Italiana (Piazza Affari) &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
@@ -599,11 +599,11 @@
             <div class="summary-block-title">
               <span class="flag-icon">🇺🇸</span>
               <div>
-                <h3>Top 50 S&amp;P 500 (USA)</h3>
+                <h3>S&amp;P 500 (USA)</h3>
                 <p>Paniere ufficiale S&amp;P 500 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeUSA">50 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeUSA">84 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -635,11 +635,11 @@
             <div class="summary-header-left">
               <span class="flag-icon">⭐</span>
               <div>
-                <h3>Top 50 Portafoglio TOP Selezionati</h3>
+                <h3>Portafoglio TOP Selezionati</h3>
                 <p>Paniere custom di 138 titoli monitorati (Dividendi, REIT, BDC, ETF &amp; Big Cap) &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeTOP">50 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeTOP">138 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -903,7 +903,7 @@
       <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 600</span>
-        <span class="bnav-badge">50</span>
+        <span class="bnav-badge">109</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
         <span class="bnav-icon">🇮🇹</span>
@@ -913,22 +913,22 @@
       <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA" title="S&amp;P 500 (USA)">
         <span class="bnav-icon">🇺🇸</span>
         <span class="bnav-label">S&amp;P 500</span>
-        <span class="bnav-badge">50</span>
+        <span class="bnav-badge">84</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="top" id="bottomTabTop" title="TOP Selezionati (138 Titoli)">
         <span class="bnav-icon">⭐</span>
         <span class="bnav-label">TOP</span>
-        <span class="bnav-badge">50</span>
+        <span class="bnav-badge">138</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary" title="Riepilogo Generale">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
-        <span class="bnav-badge">188</span>
+        <span class="bnav-badge">369</span>
       </button>
     </div>
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261104-v20"></script>
+  <script src="app.js?v=20261105-v21"></script>
 </body>
 </html>
