@@ -52495,6 +52495,23 @@ function filterAndSortList(rawList) {
       return upB - upA;
     } else if (sortMode === 'rsi') {
       return (b.rsi || 0) - (a.rsi || 0);
+    } else if (sortMode === 'name') {
+      const nameA = (a.name || a.ticker || '').trim();
+      const nameB = (b.name || b.ticker || '').trim();
+      return nameA.localeCompare(nameB, 'it', { sensitivity: 'base' });
+    } else if (sortMode === 'divyield') {
+      return (Number(b.dividendYield) || 0) - (Number(a.dividendYield) || 0);
+    } else if (sortMode === 'exdiv') {
+      const calA = getStockCalendarInfo(a);
+      const calB = getStockCalendarInfo(b);
+      const hasDivA = Number(a.dividendYield) > 0 && calA && calA.exDivDays !== null && calA.exDivDays !== undefined;
+      const hasDivB = Number(b.dividendYield) > 0 && calB && calB.exDivDays !== null && calB.exDivDays !== undefined;
+      const daysA = hasDivA ? calA.exDivDays : 999999;
+      const daysB = hasDivB ? calB.exDivDays : 999999;
+      if (daysA !== daysB) {
+        return daysA - daysB;
+      }
+      return (Number(b.dividendYield) || 0) - (Number(a.dividendYield) || 0);
     }
     return (b.marketCapRaw || 0) - (a.marketCapRaw || 0);
   });
