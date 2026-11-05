@@ -81064,6 +81064,11 @@ function updateWatchlistUI() {
   elements.watchlistCount.textContent = count;
   elements.wsTotalStocks.textContent = count;
 
+  if (elements.addTopToWatchlistBtn) {
+    const topCount = (MARKET_DATA.top || []).length;
+    elements.addTopToWatchlistBtn.innerHTML = `<i class="fa-solid fa-star"></i> Aggiungi Titoli TOP (${topCount})`;
+  }
+
   if (count === 0) {
     elements.wsAvgProb.textContent = '--%';
     elements.wsAvgUpside.textContent = '--%';
@@ -82487,10 +82492,9 @@ Notizia Reale Rilevata: ${s.catalysts && s.catalysts[0] ? s.catalysts[0].title :
         renderSummaryTables();
       }
 
-      const origHtml = elements.addTopToWatchlistBtn.innerHTML;
       elements.addTopToWatchlistBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> ${addedCount > 0 ? addedCount + ' Aggiunti!' : 'Già Presenti!'}`;
       setTimeout(() => {
-        elements.addTopToWatchlistBtn.innerHTML = origHtml;
+        updateWatchlistUI();
       }, 2000);
     });
   }
