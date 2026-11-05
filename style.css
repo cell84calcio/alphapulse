@@ -2539,49 +2539,79 @@ html, body {
   color: #04130d;
 }
 
-/* Dock Bar Mobile: su schermi cellulare (<= 768px) mostra solo Icone e Badge, nasconde la scritta */
+/* Dock Bar Mobile: su schermi cellulare (<= 768px) compattato per iPhone e smartphone */
 @media (max-width: 768px) {
   .bottom-nav-bar {
-    bottom: calc(14px + env(safe-area-inset-bottom, 0px));
-    padding: 5px 6px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    padding: 4px;
     width: max-content;
-    max-width: calc(100vw - 20px);
+    max-width: calc(100vw - 16px);
   }
   .bottom-nav-inner {
     width: auto;
-    gap: 5px;
+    gap: 3px;
   }
   .bottom-nav-item {
     flex: 0 0 auto;
-    padding: 8px 10px;
-    gap: 5px;
+    padding: 6px 7px;
+    gap: 4px;
   }
   .bnav-label {
     display: none !important;
   }
   .bnav-icon {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
     line-height: 1;
   }
   .bnav-badge {
-    font-size: 0.65rem;
-    padding: 2px 5px;
+    font-size: 0.62rem;
+    padding: 2px 4px;
+    letter-spacing: -0.02em;
   }
 }
 
-@media (max-width: 400px) {
+/* Ottimizzazione iPhone compatti (<= 385px: iPhone SE, iPhone 12/13 mini, iPhone 8/X) */
+@media (max-width: 385px) {
+  .bottom-nav-bar {
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    padding: 3px;
+    max-width: calc(100vw - 12px);
+  }
   .bottom-nav-inner {
-    gap: 3px;
+    gap: 2px;
   }
   .bottom-nav-item {
-    padding: 7px 7px;
-    gap: 3px;
+    padding: 5px 5px;
+    gap: 2px;
   }
   .bnav-icon {
-    font-size: 1.05rem;
+    font-size: 0.96rem;
   }
   .bnav-badge {
-    font-size: 0.60rem;
-    padding: 1px 4px;
+    font-size: 0.58rem;
+    padding: 1px 3px;
+  }
+}
+
+/* Ottimizzazione iPhone ultra-compatti (<= 330px: iPhone SE 1st gen) */
+@media (max-width: 330px) {
+  .bottom-nav-bar {
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    padding: 2px;
+    max-width: calc(100vw - 8px);
+  }
+  .bottom-nav-inner {
+    gap: 1px;
+  }
+  .bottom-nav-item {
+    padding: 4px 4px;
+    gap: 2px;
+  }
+  .bnav-icon {
+    font-size: 0.88rem;
+  }
+  .bnav-badge {
+    font-size: 0.54rem;
+    padding: 1px 2px;
   }
 }

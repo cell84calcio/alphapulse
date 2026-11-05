@@ -474,6 +474,107 @@ testSampleIds.forEach(id => {
 });
 
 // ---------------------------------------------------------------------------
+// 7c. STRESS TEST RESPONSIVE & LAYOUT IPHONE DOCK BAR (VIEWPORT & OVERFLOW)
+// ---------------------------------------------------------------------------
+console.log('\n--- 7c. STRESS TEST RESPONSIVE & LAYOUT IPHONE DOCK BAR (VIEWPORT & OVERFLOW) ---');
+
+// 1. Verifica regole CSS critiche sia in style.css che in index.html
+assert(
+  styleCssSource.includes('max-width: 768px') && styleCssSource.includes('.bnav-label') && styleCssSource.includes('display: none !important'),
+  'style.css: .bnav-label nascosta in mobile (<= 768px) per compattare la barra'
+);
+assert(
+  indexHtml.includes('max-width: 768px') && indexHtml.includes('.bnav-label') && indexHtml.includes('display: none !important'),
+  'index.html (critical CSS): .bnav-label nascosta in mobile (<= 768px)'
+);
+assert(
+  styleCssSource.includes('max-width: 385px') && styleCssSource.includes('.bottom-nav-inner'),
+  'style.css: breakpoint dedicato per iPhone compatti (<= 385px)'
+);
+assert(
+  indexHtml.includes('max-width: 385px') && indexHtml.includes('.bottom-nav-inner'),
+  'index.html (critical CSS): breakpoint dedicato per iPhone compatti (<= 385px)'
+);
+
+// 2. Simulazione geometrica e dimensionale della dock bar su schermi iPhone e compatti
+const iPhoneProfiles = [
+  { model: 'iPhone 16/15/14 Pro Max', width: 430, minMargin: 20 },
+  { model: 'iPhone 16/15 Pro / 15 Standard', width: 393, minMargin: 20 },
+  { model: 'iPhone 14/13/12 / 12 Pro', width: 390, minMargin: 20 },
+  { model: 'iPhone SE 2nd/3rd Gen / 13 mini / 12 mini', width: 375, minMargin: 16 },
+  { model: 'Smartphone Android Compatto', width: 360, minMargin: 14 },
+  { model: 'iPhone SE 1st Gen / iPhone 5s', width: 320, minMargin: 10 }
+];
+
+// Badge simulati per i 5 mercati
+const dockMarkets = [
+  { name: 'IT', badgeDigits: 2 },   // 39
+  { name: 'EU', badgeDigits: 3 },   // 188
+  { name: 'USA', badgeDigits: 3 },  // 209
+  { name: 'TOP', badgeDigits: 3 },  // 138
+  { name: 'ALL', badgeDigits: 3 }   // 574
+];
+
+iPhoneProfiles.forEach(phone => {
+  // Parametri CSS in base alla larghezza dello schermo (simulazione rendering del motore del browser)
+  let barPaddingH, barBorder, innerGap, itemPaddingH, iconWidth, itemGap, badgeCharWidth, badgePaddingH;
+
+  if (phone.width <= 330) {
+    barPaddingH = 4; // 2px * 2
+    barBorder = 2;
+    innerGap = 1;
+    itemPaddingH = 8; // 4px * 2
+    iconWidth = 14;
+    itemGap = 2;
+    badgeCharWidth = 4.8;
+    badgePaddingH = 4; // 1px or 2px
+  } else if (phone.width <= 385) {
+    barPaddingH = 6; // 3px * 2
+    barBorder = 2;
+    innerGap = 2;
+    itemPaddingH = 10; // 5px * 2
+    iconWidth = 15.5;
+    itemGap = 2;
+    badgeCharWidth = 5.2;
+    badgePaddingH = 6; // 3px * 2
+  } else {
+    // 768px >= width > 385px
+    barPaddingH = 8; // 4px * 2
+    barBorder = 2;
+    innerGap = 3;
+    itemPaddingH = 14; // 7px * 2
+    iconWidth = 17;
+    itemGap = 3;
+    badgeCharWidth = 5.8;
+    badgePaddingH = 8; // 4px * 2
+  }
+
+  // Calcolo ampiezza di ciascuno dei 5 pulsanti
+  let totalItemsWidth = 0;
+  dockMarkets.forEach(m => {
+    const badgeWidth = (m.badgeDigits * badgeCharWidth) + badgePaddingH;
+    const itemWidth = iconWidth + itemGap + badgeWidth + itemPaddingH;
+    totalItemsWidth += itemWidth;
+  });
+
+  const totalInnerGaps = (dockMarkets.length - 1) * innerGap;
+  const totalDockBarWidth = Math.ceil(totalItemsWidth + totalInnerGaps + barPaddingH + barBorder);
+  const remainingSpace = phone.width - totalDockBarWidth;
+
+  const fitsInScreen = totalDockBarWidth < phone.width;
+  const hasSafeMargin = remainingSpace >= phone.minMargin;
+
+  assert(
+    fitsInScreen,
+    `Stress test ${phone.model} (${phone.width}px): Dock bar (${totalDockBarWidth}px) entra dentro lo schermo (spazio residuo: ${remainingSpace}px)`
+  );
+  assert(
+    hasSafeMargin,
+    `Stress test ${phone.model} (${phone.width}px): Margine laterale sicuro garantito (${remainingSpace}px >= ${phone.minMargin}px)`
+  );
+});
+
+// ---------------------------------------------------------------------------
 // 8. RIEPILOGO TEST
 // ---------------------------------------------------------------------------
 console.log('\n======================================================');
