@@ -368,7 +368,7 @@
         "stopLoss": 366.63,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -381,7 +381,7 @@
         "stopLoss": 72.22,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -394,7 +394,7 @@
         "stopLoss": 3949.83,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -407,7 +407,7 @@
         "stopLoss": 58.37,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -420,7 +420,7 @@
         "stopLoss": 429.16,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       }
     ]
@@ -439,7 +439,7 @@
         "stopLoss": 366.63,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -452,7 +452,7 @@
         "stopLoss": 83.37,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -465,8 +465,8 @@
         "stopLoss": 9.42,
         "score": 96,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
-        "resultPct": 0.0
+        "status": "In Monitoraggio (5G rim.)",
+        "resultPct": -0.01
       },
       {
         "ticker": "NEXI",
@@ -478,8 +478,8 @@
         "stopLoss": 4.46,
         "score": 96,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
-        "resultPct": 0.0
+        "status": "In Monitoraggio (5G rim.)",
+        "resultPct": 0.09
       },
       {
         "ticker": "MONC",
@@ -491,7 +491,7 @@
         "stopLoss": 44.63,
         "score": 95,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       }
     ]
@@ -510,7 +510,7 @@
         "stopLoss": 92.51,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -523,7 +523,7 @@
         "stopLoss": 64.54,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -536,7 +536,7 @@
         "stopLoss": 69.89,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -549,7 +549,7 @@
         "stopLoss": 160.97,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       },
       {
@@ -562,7 +562,7 @@
         "stopLoss": 114.89,
         "score": 97,
         "startDate": "2026-11-05",
-        "status": "In Monitoraggio (5G)",
+        "status": "In Monitoraggio (5G rim.)",
         "resultPct": 0.0
       }
     ]

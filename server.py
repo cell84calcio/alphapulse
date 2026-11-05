@@ -366,7 +366,7 @@ USA_SYMBOLS = [
     {"ticker": "KHC", "sym": "KHC", "name": "Kraft Heinz Company", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 1.21, "capUnit": "Mld", "div": 4.8},
     {"ticker": "F", "sym": "F", "name": "Ford Motor Company", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Industria & Energia", "shares": 3.97, "capUnit": "Mld", "div": 5.4},
     # Componenti S&P 500 Mid-Cap (< $10 Mld)
-    {"ticker": "PARA", "sym": "PARA", "name": "Paramount Global", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Tecnologia", "shares": 0.68, "capUnit": "Mld", "div": 1.6},
+    {"ticker": "WDAY", "sym": "WDAY", "name": "Workday Inc.", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Tecnologia", "shares": 0.26, "capUnit": "Mld", "div": 0.0},
     {"ticker": "HAS", "sym": "HAS", "name": "Hasbro Inc.", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.14, "capUnit": "Mld", "div": 4.2},
     {"ticker": "WHR", "sym": "WHR", "name": "Whirlpool Corporation", "exchange": "S&P 500 / NYSE", "currency": "$", "sector": "Lusso & Consumi", "shares": 0.055, "capUnit": "Mld", "div": 6.5},
     {"ticker": "AAL", "sym": "AAL", "name": "American Airlines Group", "exchange": "S&P 500 / NASDAQ", "currency": "$", "sector": "Industria & Energia", "shares": 0.655, "capUnit": "Mld", "div": 0.0},
@@ -1362,10 +1362,10 @@ def compute_institutional_model(chart_result, news_list, market_regime, market_t
     final_score = int(max(48, min(97, round(scaled_score))))
 
     # STOP LOSS & TARGET PRICE DINAMICI BASATI SU ATR(14) per Orizzonte 5 Giorni
-    # Stop loss a 1.8x ATR (distanza proporzionata alla vera volatilità del titolo)
-    stop_distance = 1.8 * atr14
-    stop_loss = round(current_price - stop_distance, 2)
-    stop_pct = round((stop_distance / current_price) * 100, 1)
+    # Stop loss a 1.8x ATR (distanza proporzionata alla vera volatilità del titolo, max 15% dal prezzo)
+    stop_distance = min(1.8 * atr14, current_price * 0.15)
+    stop_loss = round(max(0.01, current_price - stop_distance), 2)
+    stop_pct = round(((current_price - stop_loss) / (current_price + 1e-9)) * 100, 1)
 
     # Target Price a 2.5x - 3.3x ATR in base alla forza reale del punteggio
     score_norm = max(0.0, min(1.0, (raw_score - 65.0) / 30.0))
