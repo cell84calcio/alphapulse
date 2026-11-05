@@ -81253,9 +81253,6 @@ async function refreshLiveQuotesClientSide(data) {
   data.eu.sort((a, b) => (b.rawScore || b.score) - (a.rawScore || a.score));
   data.usa.sort((a, b) => (b.rawScore || b.score) - (a.rawScore || a.score));
 
-  const now = new Date();
-  const pad = n => String(n).padStart(2, '0');
-  data.lastUpdated = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())} CET`;
   return data;
 }
 
@@ -81271,16 +81268,18 @@ async function triggerFullMarketRefresh(source = 'button') {
     ptrBar.classList.remove('pulling', 'ready');
     ptrBar.classList.add('refreshing');
     ptrIcon.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
-    ptrText.textContent = `Aggiornamento Live Europa, FTSE MIB & USA in corso...`;
+    ptrText.textContent = `Sincronizzazione prezzi live in corso...`;
   }
 
   if (elements.refreshBtn) {
-    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Scansione EU, IT &amp; USA...`;
+    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Scansione Prezzi...`;
     elements.refreshBtn.disabled = true;
   }
 
   let updated = false;
+  let isLocalEngine = false;
 
+  // 1. Se l'utente esegue l'app in locale con server.py, interroga il motore Python live al secondo
   try {
     const res = await fetch('/api/refresh', { cache: 'no-store' });
     if (res.ok) {
@@ -81288,35 +81287,57 @@ async function triggerFullMarketRefresh(source = 'button') {
       if (data && (data.eu || data.it || data.usa)) {
         applyRealMarketData(data);
         updated = true;
+        isLocalEngine = true;
       }
     }
   } catch (_) {
-    // Fallback su market_data.json + quote live client-side per EU, IT e USA
+    // Modalità Web statica (GitHub Pages)
   }
 
+  // 2. Se in modalità Web statica, scarica l'ultimo dataset reale bypassando la cache CDN
   if (!updated) {
     try {
-      let baseData = REAL_DATASET;
+      let baseData = null;
       try {
         const fRes = await fetch('market_data.json?t=' + Date.now(), { cache: 'no-store' });
         if (fRes.ok) {
           baseData = await fRes.json();
         }
       } catch (_) {}
-      const liveData = await refreshLiveQuotesClientSide(baseData);
-      applyRealMarketData(liveData);
-      updated = true;
+
+      // Fallback immediato su CDN GitHub raw per evitare ritardi di cache del CDN Pages
+      if (!baseData) {
+        try {
+          const rawRes = await fetch('https://raw.githubusercontent.com/cell84calcio/alphapulse/main/market_data.json?t=' + Date.now(), { cache: 'no-store' });
+          if (rawRes.ok) {
+            baseData = await rawRes.json();
+          }
+        } catch (_) {}
+      }
+
+      if (baseData) {
+        applyRealMarketData(baseData);
+        updated = true;
+      } else {
+        renderStocks();
+      }
     } catch (e) {
       renderStocks();
     }
   }
 
+  const timeLabel = (REAL_DATASET && REAL_DATASET.lastUpdated) ? REAL_DATASET.lastUpdated.split(' ')[1].slice(0, 5) : '';
+
   if (ptrBar && ptrIcon && ptrText) {
     ptrIcon.innerHTML = `<i class="fa-solid fa-check text-emerald"></i>`;
-    ptrText.textContent = `Dati Europa, FTSE MIB & USA Aggiornati!`;
+    ptrText.textContent = isLocalEngine 
+      ? `Prezzi Live Scansionati al Secondo!` 
+      : `Dati Sincronizzati al Cloud (${timeLabel ? timeLabel + ' CET' : 'Live'})`;
   }
   if (elements.refreshBtn) {
-    elements.refreshBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> Mercati Aggiornati!`;
+    elements.refreshBtn.innerHTML = isLocalEngine 
+      ? `<i class="fa-solid fa-bolt text-emerald"></i> Prezzi Live Aggiornati!` 
+      : `<i class="fa-solid fa-check text-emerald"></i> Dati Allineati (${timeLabel || 'OK'})`;
   }
 
   setTimeout(() => {
@@ -81325,7 +81346,7 @@ async function triggerFullMarketRefresh(source = 'button') {
       ptrBar.style.height = '0px';
       ptrBar.style.opacity = '0';
       ptrIcon.innerHTML = `<i class="fa-solid fa-arrow-down"></i>`;
-      ptrText.textContent = `Trascina in basso per aggiornare Europa, FTSE MIB & USA`;
+      ptrText.textContent = `Trascina in basso per sincronizzare i mercati`;
     }
     if (elements.refreshBtn) {
       elements.refreshBtn.innerHTML = `<i class="fa-solid fa-rotate"></i> Aggiorna Dati`;
@@ -81349,12 +81370,25 @@ async function loadLiveData() {
     }
   } catch (e) {
     try {
-      const fRes = await fetch('market_data.json?t=' + Date.now(), { cache: 'no-store' });
-      if (fRes.ok) {
-        const data = await fRes.json();
+      let data = null;
+      try {
+        const fRes = await fetch('market_data.json?t=' + Date.now(), { cache: 'no-store' });
+        if (fRes.ok) {
+          data = await fRes.json();
+        }
+      } catch (_) {}
+
+      if (!data) {
+        try {
+          const rawRes = await fetch('https://raw.githubusercontent.com/cell84calcio/alphapulse/main/market_data.json?t=' + Date.now(), { cache: 'no-store' });
+          if (rawRes.ok) {
+            data = await rawRes.json();
+          }
+        } catch (_) {}
+      }
+
+      if (data) {
         applyRealMarketData(data);
-        // Aggiorna subito in background le quotazioni live intraday di Europa & USA
-        refreshLiveQuotesClientSide(data).then(liveData => applyRealMarketData(liveData)).catch(() => {});
       }
     } catch (err) {
       console.log('Utilizzo dataset reale incorporato.');

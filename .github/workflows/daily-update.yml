@@ -2,11 +2,8 @@ name: Aggiornamento Automatico Dati Borsa
 
 on:
   schedule:
-    # Aggiornamento automatico ogni 30 minuti dalle 09:00 alle 24:00 (Lunedì - Venerdì)
-    # Range 07:00 - 23:00 UTC (ogni 30 min):
-    # - In orario invernale (CET = UTC+1): copre dalle 08:00 alle 24:00 CET
-    # - In orario estivo (CEST = UTC+2): copre dalle 09:00 alle 01:00 CEST
-    - cron: '0,30 7-23 * * 1-5'
+    # Aggiornamento automatico continuo ogni 30 minuti (Lunedì - Venerdì)
+    - cron: '*/30 * * * 1-5'
   workflow_dispatch: # Permette anche di avviarlo manualmente con un pulsante su GitHub
 
 jobs:
