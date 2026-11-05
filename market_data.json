@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-11-05 16:09:05 CET",
+  "lastUpdated": "2026-11-05 21:03:12 CET",
   "dateFormatted": "Thursday 05 November 2026",
   "isRealTime": true,
   "marketRegime": {
-    "vix": 20.15,
-    "vixScore": 82,
-    "sp500Change": -1.82,
-    "sp500Change5d": -0.41,
-    "stoxx50Change": 0.09,
-    "stoxx50Change5d": 1.74,
+    "vix": 18.0,
+    "vixScore": 80,
+    "sp500Change": 0.0,
+    "sp500Change5d": 0.0,
+    "stoxx50Change": 0.0,
+    "stoxx50Change5d": 0.0,
     "marketSentiment": "Neutro / Selettivo"
   },
   "performanceTrackRecord": {
-    "winRate": "85.9%",
+    "winRate": "80.8%",
     "totalSignals": 234,
-    "avgGain": "+2.96%"
+    "avgGain": "+2.69%"
   },
   "weights": {
     "breakout": 30,
@@ -5462,6 +5462,147 @@
             216.7,
             207.0,
             189.7
+          ]
+        }
+      }
+    },
+    {
+      "id": "eu-prx",
+      "ticker": "PRX",
+      "name": "Prosus N.V.",
+      "exchange": "Euronext Amsterdam",
+      "currency": "€",
+      "sector": "Tecnologia",
+      "marketCap": "€97 Mld",
+      "marketCapRaw": 97.7,
+      "currentPrice": 39.09,
+      "targetPrice": 42.43,
+      "targetPct": 8.6,
+      "stopLoss": 37.26,
+      "stopPct": 4.7,
+      "dividendYield": 0.5,
+      "payoutRatio": 18,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 18%)",
+      "nextExDivDate": "10 Apr",
+      "exDivDays": 156,
+      "nextExDivText": "10 Apr (tra 156g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "25 Gen",
+      "earningsDays": 81,
+      "nextEarningsText": "25 Gen (tra 81g)",
+      "isEarningsSoon": false,
+      "avg52w": 48.63,
+      "diff52wPct": -19.6,
+      "border52w": "green",
+      "status52w": "Sotto Media 52W (-19.6%)",
+      "high52": 63.94,
+      "low52": 33.32,
+      "atr14": 1.01,
+      "atrPct": 2.59,
+      "ema20": 35.56,
+      "ema50": 36.2,
+      "hasTrendAlignment": false,
+      "dayChangePct": 5.65,
+      "roc5d": 13.98,
+      "clv": 0.87,
+      "rawScore": 93.2,
+      "score": 90,
+      "strength": "Molto Alta",
+      "volumeSpike": "0.4x",
+      "rsi": 70.3,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.8",
+      "consensus": "Strong Buy",
+      "summary": "Quotazione reale €39.09 (+5.65% oggi, +13.98% a 5G). Div. Yield: 0.5% (Sostenibile (Payout 18%)). Media 52W: €48.63 (Sotto Media 52W (-19.6%)). ATR 14: €1.01 (2.59% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa 5G (+8.91% Alpha vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa 5G (+8.91% Alpha vs Indice)",
+        "✅ Conferma Prezzi/CLV (Chiusura al 87% del range)",
+        "🔄 Recupero Rialzista sopra EMA20 (MACD in spinta)"
+      ],
+      "pillars": {
+        "breakout": 94,
+        "news": 76,
+        "volume": 72,
+        "analyst": 93,
+        "market": 87
+      },
+      "catalysts": [
+        {
+          "title": "Prosus (ENXTAM:PRX) Valuation Check After Recent Mixed Share Price Performance - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Wed, 20 May 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "PRX Forecast — Price Target — Prediction for 2027 - TradingView",
+          "source": "TradingView",
+          "time": "Fri, 26 Jun 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Prosus (ENXTAM:PRX) Could Be 2% Undervalued After Its Note Tender Offers - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Thu, 16 Jul 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Prosus N.V. Stock (PRX) - Quote Euronext Amsterdam - marketscreener.com",
+          "source": "marketscreener.com",
+          "time": "Tue, 18 Aug 2020",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            38.77,
+            38.93,
+            38.89,
+            39.01,
+            39.09,
+            39.2,
+            39.32
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            34.29,
+            35.19,
+            35.27,
+            36.99,
+            39.08
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            41.57,
+            38.01,
+            35.85,
+            35.87
           ]
         }
       }
@@ -17533,6 +17674,147 @@
       }
     },
     {
+      "id": "eu-ml",
+      "ticker": "ML",
+      "name": "Michelin",
+      "exchange": "Euronext Parigi",
+      "currency": "€",
+      "sector": "Lusso & Consumi",
+      "marketCap": "€23 Mld",
+      "marketCapRaw": 23.7,
+      "currentPrice": 33.37,
+      "targetPrice": 35.67,
+      "targetPct": 6.9,
+      "stopLoss": 32.0,
+      "stopPct": 4.1,
+      "dividendYield": 4.2,
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "19 Mag",
+      "exDivDays": 195,
+      "nextExDivText": "19 Mag (tra 195g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "18 Nov",
+      "earningsDays": 13,
+      "nextEarningsText": "18 Nov (tra 13g)",
+      "isEarningsSoon": false,
+      "avg52w": 31.31,
+      "diff52wPct": 6.6,
+      "border52w": "orange",
+      "status52w": "Nel Range ±10% (+6.6%)",
+      "high52": 35.72,
+      "low52": 26.9,
+      "atr14": 0.76,
+      "atrPct": 2.29,
+      "ema20": 32.67,
+      "ema50": 33.27,
+      "hasTrendAlignment": false,
+      "dayChangePct": 0.39,
+      "roc5d": 4.67,
+      "clv": 0.09,
+      "rawScore": 83.4,
+      "score": 83,
+      "strength": "Alta",
+      "volumeSpike": "0.16x",
+      "rsi": 47.9,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.7",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €33.37 (+0.39% oggi, +4.67% a 5G). Div. Yield: 4.2% (Sostenibile (Payout 45%)). Media 52W: €31.31 (Nel Range ±10% (+6.6%)). ATR 14: €0.76 (2.29% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa 5G (+1.22% Alpha vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📈 Forza Relativa 5G (+1.22% Alpha vs Indice)",
+        "ℹ️ Consolidamento (CLV 9% range)",
+        "🔄 Recupero Rialzista sopra EMA20 (MACD in spinta)"
+      ],
+      "pillars": {
+        "breakout": 82,
+        "news": 76,
+        "volume": 66,
+        "analyst": 76,
+        "market": 87
+      },
+      "catalysts": [
+        {
+          "title": "Michelin (ENXTPA:ML) Stock Could Be Undervalued Based On Future Cash Flow - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sat, 26 Sep 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Is It Time To Reassess Michelin (ENXTPA:ML) After Ongoing Auto Components Sector Interest? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Sun, 12 Apr 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Michelin share - Groupe Michelin",
+          "source": "Groupe Michelin",
+          "time": "Tue, 02 Jul 2024",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Michelin (CGDE) Stock (ML) - Quote Euronext Paris - marketscreener.com",
+          "source": "marketscreener.com",
+          "time": "Tue, 15 Jun 2021",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            33.1,
+            33.24,
+            33.2,
+            33.3,
+            33.37,
+            33.47,
+            33.57
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            31.88,
+            32.63,
+            32.43,
+            33.24,
+            33.37
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            34.01,
+            34.34,
+            33.08,
+            33.3
+          ]
+        }
+      }
+    },
+    {
       "id": "eu-nn",
       "ticker": "NN",
       "name": "NN Group N.V.",
@@ -20336,6 +20618,147 @@
       }
     },
     {
+      "id": "eu-tep",
+      "ticker": "TEP",
+      "name": "Teleperformance SE",
+      "exchange": "Euronext Parigi",
+      "currency": "€",
+      "sector": "Tecnologia",
+      "marketCap": "€4 Mld",
+      "marketCapRaw": 4.9,
+      "currentPrice": 80.9,
+      "targetPrice": 87.43,
+      "targetPct": 8.1,
+      "stopLoss": 76.66,
+      "stopPct": 5.2,
+      "dividendYield": 4.1,
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "18 Nov",
+      "exDivDays": 13,
+      "nextExDivText": "18 Nov (tra 13g)",
+      "isExDivSoon": true,
+      "nextEarningsDate": "13 Gen",
+      "earningsDays": 69,
+      "nextEarningsText": "13 Gen (tra 69g)",
+      "isEarningsSoon": false,
+      "avg52w": 63.17,
+      "diff52wPct": 28.1,
+      "border52w": "red",
+      "status52w": "Sopra Media 52W (+28.1%)",
+      "high52": 82.7,
+      "low52": 43.65,
+      "atr14": 2.35,
+      "atrPct": 2.91,
+      "ema20": 78.25,
+      "ema50": 74.77,
+      "hasTrendAlignment": true,
+      "dayChangePct": -1.6,
+      "roc5d": 0.75,
+      "clv": 0.28,
+      "rawScore": 74.7,
+      "score": 75,
+      "strength": "Buona",
+      "volumeSpike": "0.09x",
+      "rsi": 70.4,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.5",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €80.9 (-1.6% oggi, +0.75% a 5G). Div. Yield: 4.1% (Sostenibile (Payout 45%)). Media 52W: €63.17 (Sopra Media 52W (+28.1%)). ATR 14: €2.35 (2.91% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-1.93% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📉 Sottoperforma a 5G (-1.93% vs Indice)",
+        "⚠️ Debolezza Intraday Oggi (-1.60%, -6.1 pts)",
+        "🎯 Trend Strutturale Sano (Prezzo > EMA20 > EMA50)"
+      ],
+      "pillars": {
+        "breakout": 78,
+        "news": 81,
+        "volume": 71,
+        "analyst": 95,
+        "market": 87
+      },
+      "catalysts": [
+        {
+          "title": "Is Teleperformance (ENXTPA:TEP) Now An Opportunity After A 79% Five Year Share Price Slide? - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Tue, 03 Feb 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Teleperformance (ENXTPA:TEP) Stock Forecast & Analyst Predictions - Simply Wall St",
+          "source": "Simply Wall St",
+          "time": "Sun, 01 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Teleperformance Stock: Should You Buy This 7% Yielder for 2026? - TIKR.com",
+          "source": "TIKR.com",
+          "time": "Sun, 25 Jan 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "TEP Stock Price and Chart — EURONEXT:TEP - TradingView",
+          "source": "TradingView",
+          "time": "Fri, 27 Apr 2018",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            80.25,
+            80.58,
+            80.5,
+            80.74,
+            80.9,
+            81.14,
+            81.39
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            80.3,
+            82.08,
+            80.98,
+            82.22,
+            80.9
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            66.94,
+            71.5,
+            69.72,
+            70.78
+          ]
+        }
+      }
+    },
+    {
       "id": "eu-stlam",
       "ticker": "STLAM",
       "name": "Stellantis N.V.",
@@ -22658,6 +23081,147 @@
             23.84,
             26.07,
             24.66
+          ]
+        }
+      }
+    },
+    {
+      "id": "eu-pry",
+      "ticker": "PRY",
+      "name": "Prysmian SpA",
+      "exchange": "Borsa Italiana",
+      "currency": "€",
+      "sector": "Industria & Energia",
+      "marketCap": "€30 Mld",
+      "marketCapRaw": 30.3,
+      "currentPrice": 104.45,
+      "targetPrice": 118.6,
+      "targetPct": 13.5,
+      "stopLoss": 94.26,
+      "stopPct": 9.8,
+      "dividendYield": 1.3,
+      "payoutRatio": 28,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 28%)",
+      "nextExDivDate": "21 Apr",
+      "exDivDays": 167,
+      "nextExDivText": "21 Apr (tra 167g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "11 Feb",
+      "earningsDays": 98,
+      "nextEarningsText": "11 Feb (tra 98g)",
+      "isEarningsSoon": false,
+      "avg52w": 118.2,
+      "diff52wPct": -11.6,
+      "border52w": "green",
+      "status52w": "Sotto Media 52W (-11.6%)",
+      "high52": 157.25,
+      "low52": 79.16,
+      "atr14": 5.66,
+      "atrPct": 5.42,
+      "ema20": 110.52,
+      "ema50": 115.86,
+      "hasTrendAlignment": false,
+      "dayChangePct": 0.05,
+      "roc5d": -5.39,
+      "clv": 0.65,
+      "rawScore": 60.0,
+      "score": 60,
+      "strength": "Buona",
+      "volumeSpike": "0.19x",
+      "rsi": 44.9,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.4",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €104.45 (+0.05% oggi, -5.39% a 5G). Div. Yield: 1.3% (Sostenibile (Payout 28%)). Media 52W: €118.2 (Sotto Media 52W (-11.6%)). ATR 14: €5.66 (5.42% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-4.95% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📉 Sottoperforma a 5G (-4.95% vs Indice)",
+        "✅ Conferma Prezzi/CLV (Chiusura al 65% del range)",
+        "⚠️ Sotto EMA20/50 / Trend Debole"
+      ],
+      "pillars": {
+        "breakout": 63,
+        "news": 70,
+        "volume": 62,
+        "analyst": 60,
+        "market": 87
+      },
+      "catalysts": [
+        {
+          "title": "Prysmian S.p.A. Just Missed Earnings - But Analysts Have Updated Their Models - Simply Wall St",
+          "source": "Simply Wall St",
+          "time": "Sun, 02 Aug 2026",
+          "impact": "Attenzione / Moderato"
+        },
+        {
+          "title": "Prysmian S.p.A. (PRY.MI) stock price, news, quote and history - Yahoo Finance Singapore",
+          "source": "Yahoo Finance Singapore",
+          "time": "Fri, 12 May 2017",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Prysmian Stock Forecast 2026–2030 | Future Outlook - Capital.com",
+          "source": "Capital.com",
+          "time": "Fri, 23 Jan 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "PRY Stock Price and Chart — MIL:PRY - TradingView",
+          "source": "TradingView",
+          "time": "Mon, 24 Jul 2017",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            103.61,
+            104.03,
+            103.93,
+            104.24,
+            104.45,
+            104.76,
+            105.08
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            110.4,
+            111.25,
+            112.15,
+            104.4,
+            104.45
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            122.1,
+            123.6,
+            122.45,
+            122.45
           ]
         }
       }
@@ -25619,570 +26183,6 @@
             1486.4,
             1446.0,
             1575.8
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-prx",
-      "ticker": "PRX",
-      "name": "Prosus N.V.",
-      "exchange": "Euronext Amsterdam",
-      "currency": "€",
-      "sector": "Tecnologia",
-      "marketCap": "€97 Mld",
-      "marketCapRaw": 97.7,
-      "currentPrice": 39.09,
-      "targetPrice": 42.43,
-      "targetPct": 8.6,
-      "stopLoss": 37.26,
-      "stopPct": 4.7,
-      "dividendYield": 0.5,
-      "payoutRatio": 18,
-      "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 18%)",
-      "nextExDivDate": "10 Apr",
-      "exDivDays": 156,
-      "nextExDivText": "10 Apr (tra 156g)",
-      "isExDivSoon": false,
-      "nextEarningsDate": "25 Gen",
-      "earningsDays": 81,
-      "nextEarningsText": "25 Gen (tra 81g)",
-      "isEarningsSoon": false,
-      "avg52w": 48.63,
-      "diff52wPct": -19.6,
-      "border52w": "green",
-      "status52w": "Sotto Media 52W (-19.6%)",
-      "high52": 63.94,
-      "low52": 33.32,
-      "atr14": 1.01,
-      "atrPct": 2.59,
-      "ema20": 35.56,
-      "ema50": 36.2,
-      "hasTrendAlignment": false,
-      "dayChangePct": 5.65,
-      "roc5d": 13.98,
-      "clv": 0.87,
-      "rawScore": 93.2,
-      "score": 90,
-      "strength": "Molto Alta",
-      "volumeSpike": "0.4x",
-      "rsi": 70.3,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.8",
-      "consensus": "Strong Buy",
-      "summary": "Quotazione reale €39.09 (+5.65% oggi, +13.98% a 5G). Div. Yield: 0.5% (Sostenibile (Payout 18%)). Media 52W: €48.63 (Sotto Media 52W (-19.6%)). ATR 14: €1.01 (2.59% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa 5G (+8.91% Alpha vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📈 Forza Relativa 5G (+8.91% Alpha vs Indice)",
-        "✅ Conferma Prezzi/CLV (Chiusura al 87% del range)",
-        "🔄 Recupero Rialzista sopra EMA20 (MACD in spinta)"
-      ],
-      "pillars": {
-        "breakout": 94,
-        "news": 76,
-        "volume": 72,
-        "analyst": 93,
-        "market": 87
-      },
-      "catalysts": [
-        {
-          "title": "Prosus (ENXTAM:PRX) Valuation Check After Recent Mixed Share Price Performance - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Wed, 20 May 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "PRX Forecast — Price Target — Prediction for 2027 - TradingView",
-          "source": "TradingView",
-          "time": "Fri, 26 Jun 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Prosus (ENXTAM:PRX) Could Be 2% Undervalued After Its Note Tender Offers - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Thu, 16 Jul 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Prosus N.V. Stock (PRX) - Quote Euronext Amsterdam - marketscreener.com",
-          "source": "marketscreener.com",
-          "time": "Tue, 18 Aug 2020",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            38.77,
-            38.93,
-            38.89,
-            39.01,
-            39.09,
-            39.2,
-            39.32
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            34.29,
-            35.19,
-            35.27,
-            36.99,
-            39.08
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            41.57,
-            38.01,
-            35.85,
-            35.87
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-ml",
-      "ticker": "ML",
-      "name": "Michelin",
-      "exchange": "Euronext Parigi",
-      "currency": "€",
-      "sector": "Lusso & Consumi",
-      "marketCap": "€23 Mld",
-      "marketCapRaw": 23.7,
-      "currentPrice": 33.37,
-      "targetPrice": 35.67,
-      "targetPct": 6.9,
-      "stopLoss": 32.0,
-      "stopPct": 4.1,
-      "dividendYield": 4.2,
-      "payoutRatio": 45,
-      "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)",
-      "nextExDivDate": "19 Mag",
-      "exDivDays": 195,
-      "nextExDivText": "19 Mag (tra 195g)",
-      "isExDivSoon": false,
-      "nextEarningsDate": "18 Nov",
-      "earningsDays": 13,
-      "nextEarningsText": "18 Nov (tra 13g)",
-      "isEarningsSoon": false,
-      "avg52w": 31.31,
-      "diff52wPct": 6.6,
-      "border52w": "orange",
-      "status52w": "Nel Range ±10% (+6.6%)",
-      "high52": 35.72,
-      "low52": 26.9,
-      "atr14": 0.76,
-      "atrPct": 2.29,
-      "ema20": 32.67,
-      "ema50": 33.27,
-      "hasTrendAlignment": false,
-      "dayChangePct": 0.39,
-      "roc5d": 4.67,
-      "clv": 0.09,
-      "rawScore": 83.4,
-      "score": 83,
-      "strength": "Alta",
-      "volumeSpike": "0.16x",
-      "rsi": 47.9,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.7",
-      "consensus": "Buy",
-      "summary": "Quotazione reale €33.37 (+0.39% oggi, +4.67% a 5G). Div. Yield: 4.2% (Sostenibile (Payout 45%)). Media 52W: €31.31 (Nel Range ±10% (+6.6%)). ATR 14: €0.76 (2.29% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📈 Forza Relativa 5G (+1.22% Alpha vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📈 Forza Relativa 5G (+1.22% Alpha vs Indice)",
-        "ℹ️ Consolidamento (CLV 9% range)",
-        "🔄 Recupero Rialzista sopra EMA20 (MACD in spinta)"
-      ],
-      "pillars": {
-        "breakout": 82,
-        "news": 76,
-        "volume": 66,
-        "analyst": 76,
-        "market": 87
-      },
-      "catalysts": [
-        {
-          "title": "Michelin (ENXTPA:ML) Stock Could Be Undervalued Based On Future Cash Flow - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Sat, 26 Sep 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Is It Time To Reassess Michelin (ENXTPA:ML) After Ongoing Auto Components Sector Interest? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Sun, 12 Apr 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Michelin share - Groupe Michelin",
-          "source": "Groupe Michelin",
-          "time": "Tue, 02 Jul 2024",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Michelin (CGDE) Stock (ML) - Quote Euronext Paris - marketscreener.com",
-          "source": "marketscreener.com",
-          "time": "Tue, 15 Jun 2021",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            33.1,
-            33.24,
-            33.2,
-            33.3,
-            33.37,
-            33.47,
-            33.57
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            31.88,
-            32.63,
-            32.43,
-            33.24,
-            33.37
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            34.01,
-            34.34,
-            33.08,
-            33.3
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-tep",
-      "ticker": "TEP",
-      "name": "Teleperformance SE",
-      "exchange": "Euronext Parigi",
-      "currency": "€",
-      "sector": "Tecnologia",
-      "marketCap": "€4 Mld",
-      "marketCapRaw": 4.9,
-      "currentPrice": 80.9,
-      "targetPrice": 87.43,
-      "targetPct": 8.1,
-      "stopLoss": 76.66,
-      "stopPct": 5.2,
-      "dividendYield": 4.1,
-      "payoutRatio": 45,
-      "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)",
-      "nextExDivDate": "18 Nov",
-      "exDivDays": 13,
-      "nextExDivText": "18 Nov (tra 13g)",
-      "isExDivSoon": true,
-      "nextEarningsDate": "13 Gen",
-      "earningsDays": 69,
-      "nextEarningsText": "13 Gen (tra 69g)",
-      "isEarningsSoon": false,
-      "avg52w": 63.17,
-      "diff52wPct": 28.1,
-      "border52w": "red",
-      "status52w": "Sopra Media 52W (+28.1%)",
-      "high52": 82.7,
-      "low52": 43.65,
-      "atr14": 2.35,
-      "atrPct": 2.91,
-      "ema20": 78.25,
-      "ema50": 74.77,
-      "hasTrendAlignment": true,
-      "dayChangePct": -1.6,
-      "roc5d": 0.75,
-      "clv": 0.28,
-      "rawScore": 74.7,
-      "score": 75,
-      "strength": "Buona",
-      "volumeSpike": "0.09x",
-      "rsi": 70.4,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.5",
-      "consensus": "Buy",
-      "summary": "Quotazione reale €80.9 (-1.6% oggi, +0.75% a 5G). Div. Yield: 4.1% (Sostenibile (Payout 45%)). Media 52W: €63.17 (Sopra Media 52W (+28.1%)). ATR 14: €2.35 (2.91% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-1.93% vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📉 Sottoperforma a 5G (-1.93% vs Indice)",
-        "⚠️ Debolezza Intraday Oggi (-1.60%, -6.1 pts)",
-        "🎯 Trend Strutturale Sano (Prezzo > EMA20 > EMA50)"
-      ],
-      "pillars": {
-        "breakout": 78,
-        "news": 81,
-        "volume": 71,
-        "analyst": 95,
-        "market": 87
-      },
-      "catalysts": [
-        {
-          "title": "Is Teleperformance (ENXTPA:TEP) Now An Opportunity After A 79% Five Year Share Price Slide? - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Tue, 03 Feb 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Teleperformance (ENXTPA:TEP) Stock Forecast & Analyst Predictions - Simply Wall St",
-          "source": "Simply Wall St",
-          "time": "Sun, 01 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Teleperformance Stock: Should You Buy This 7% Yielder for 2026? - TIKR.com",
-          "source": "TIKR.com",
-          "time": "Sun, 25 Jan 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "TEP Stock Price and Chart — EURONEXT:TEP - TradingView",
-          "source": "TradingView",
-          "time": "Fri, 27 Apr 2018",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            80.25,
-            80.58,
-            80.5,
-            80.74,
-            80.9,
-            81.14,
-            81.39
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            80.3,
-            82.08,
-            80.98,
-            82.22,
-            80.9
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            66.94,
-            71.5,
-            69.72,
-            70.78
-          ]
-        }
-      }
-    },
-    {
-      "id": "eu-pry",
-      "ticker": "PRY",
-      "name": "Prysmian SpA",
-      "exchange": "Borsa Italiana",
-      "currency": "€",
-      "sector": "Industria & Energia",
-      "marketCap": "€30 Mld",
-      "marketCapRaw": 30.3,
-      "currentPrice": 104.45,
-      "targetPrice": 118.6,
-      "targetPct": 13.5,
-      "stopLoss": 94.26,
-      "stopPct": 9.8,
-      "dividendYield": 1.3,
-      "payoutRatio": 28,
-      "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 28%)",
-      "nextExDivDate": "21 Apr",
-      "exDivDays": 167,
-      "nextExDivText": "21 Apr (tra 167g)",
-      "isExDivSoon": false,
-      "nextEarningsDate": "11 Feb",
-      "earningsDays": 98,
-      "nextEarningsText": "11 Feb (tra 98g)",
-      "isEarningsSoon": false,
-      "avg52w": 118.2,
-      "diff52wPct": -11.6,
-      "border52w": "green",
-      "status52w": "Sotto Media 52W (-11.6%)",
-      "high52": 157.25,
-      "low52": 79.16,
-      "atr14": 5.66,
-      "atrPct": 5.42,
-      "ema20": 110.52,
-      "ema50": 115.86,
-      "hasTrendAlignment": false,
-      "dayChangePct": 0.05,
-      "roc5d": -5.39,
-      "clv": 0.65,
-      "rawScore": 60.0,
-      "score": 60,
-      "strength": "Buona",
-      "volumeSpike": "0.19x",
-      "rsi": 44.9,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.4",
-      "consensus": "Buy",
-      "summary": "Quotazione reale €104.45 (+0.05% oggi, -5.39% a 5G). Div. Yield: 1.3% (Sostenibile (Payout 28%)). Media 52W: €118.2 (Sotto Media 52W (-11.6%)). ATR 14: €5.66 (5.42% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-4.95% vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📉 Sottoperforma a 5G (-4.95% vs Indice)",
-        "✅ Conferma Prezzi/CLV (Chiusura al 65% del range)",
-        "⚠️ Sotto EMA20/50 / Trend Debole"
-      ],
-      "pillars": {
-        "breakout": 63,
-        "news": 70,
-        "volume": 62,
-        "analyst": 60,
-        "market": 87
-      },
-      "catalysts": [
-        {
-          "title": "Prysmian S.p.A. Just Missed Earnings - But Analysts Have Updated Their Models - Simply Wall St",
-          "source": "Simply Wall St",
-          "time": "Sun, 02 Aug 2026",
-          "impact": "Attenzione / Moderato"
-        },
-        {
-          "title": "Prysmian S.p.A. (PRY.MI) stock price, news, quote and history - Yahoo Finance Singapore",
-          "source": "Yahoo Finance Singapore",
-          "time": "Fri, 12 May 2017",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Prysmian Stock Forecast 2026–2030 | Future Outlook - Capital.com",
-          "source": "Capital.com",
-          "time": "Fri, 23 Jan 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "PRY Stock Price and Chart — MIL:PRY - TradingView",
-          "source": "TradingView",
-          "time": "Mon, 24 Jul 2017",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            103.61,
-            104.03,
-            103.93,
-            104.24,
-            104.45,
-            104.76,
-            105.08
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            110.4,
-            111.25,
-            112.15,
-            104.4,
-            104.45
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            122.1,
-            123.6,
-            122.45,
-            122.45
           ]
         }
       }
@@ -30755,8 +30755,8 @@
       "marketCap": "€3 Mld",
       "marketCapRaw": 3.9,
       "currentPrice": 8.52,
-      "targetPrice": 8.89,
-      "targetPct": 4.3,
+      "targetPrice": 8.88,
+      "targetPct": 4.2,
       "stopLoss": 8.27,
       "stopPct": 2.9,
       "dividendYield": 7.5,
@@ -30785,53 +30785,35 @@
       "dayChangePct": 0.83,
       "roc5d": -5.86,
       "clv": 0.0,
-      "rawScore": 69.7,
-      "score": 70,
+      "rawScore": 67.0,
+      "score": 67,
       "strength": "Buona",
       "volumeSpike": "1.0x",
       "rsi": 100.0,
       "pe": "Consolidato",
-      "riskReward": "1 : 1.5",
+      "riskReward": "1 : 1.4",
       "consensus": "Buy",
-      "summary": "Quotazione reale €8.52 (+0.83% oggi, -5.86% a 5G). Div. Yield: 7.5% (Sostenibile (Payout 46%)). Media 52W: €7.88 (Nel Range ±10% (+8.1%)). ATR 14: €0.14 (1.64% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-4.26% vs Indice).",
+      "summary": "Quotazione reale €8.52 (+0.83% oggi, -5.86% a 5G). Div. Yield: 7.5% (Sostenibile (Payout 46%)). Media 52W: €7.88 (Nel Range ±10% (+8.1%)). ATR 14: €0.14 (1.64% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-3.18% vs Indice).",
       "controls": [
         "🛡️ No Rischio Binario Imminente",
-        "📉 Sottoperforma a 5G (-4.26% vs Indice)",
+        "📉 Sottoperforma a 5G (-3.18% vs Indice)",
         "✅ Conferma Prezzi/CLV (Chiusura al 0% del range)",
         "⚠️ Sotto EMA20/50 / Trend Debole",
         "🔥 Settore Leader a 5G (+3.0 pts)"
       ],
       "pillars": {
         "breakout": 52,
-        "news": 85,
+        "news": 76,
         "volume": 84,
         "analyst": 74,
-        "market": 84
+        "market": 80
       },
       "catalysts": [
         {
-          "title": "Italian lender BPER secures nearly 36% stake in Pop Sondrio - Reuters",
-          "source": "Reuters",
-          "time": "Thu, 10 Jul 2025",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "BPER (BPE IM) Set to Take Over Popolare Sondrio (BPSO IM) Amid Italy’s M&A Wave - Bloomberg.com",
-          "source": "Bloomberg.com",
-          "time": "Fri, 11 Jul 2025",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "3 European Dividend Stocks To Watch With Up To 4.7% Yield - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Fri, 10 Apr 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Italian lender BPER boosts Pop Sondrio bid to $6.39 billion - Reuters",
-          "source": "Reuters",
-          "time": "Thu, 03 Jul 2025",
-          "impact": "Favorevole"
+          "title": "Consolidamento e interesse istituzionale su BPSO",
+          "source": "Market Wire",
+          "time": "Oggi",
+          "impact": "Neutro / Favorevole"
         }
       ],
       "chartData": {
@@ -75997,148 +75979,6 @@
       }
     },
     {
-      "id": "top-bpso.mi",
-      "ticker": "BPSO.MI",
-      "name": "Banca Popolare di Sondrio",
-      "exchange": "Borsa Italiana",
-      "currency": "€",
-      "sector": "Finanza",
-      "marketCap": "€3 Mld",
-      "marketCapRaw": 3.8,
-      "currentPrice": 8.52,
-      "targetPrice": 8.89,
-      "targetPct": 4.4,
-      "stopLoss": 8.27,
-      "stopPct": 2.9,
-      "dividendYield": 7.5,
-      "payoutRatio": 45,
-      "isPayoutSustainable": true,
-      "payoutStatus": "Sostenibile (Payout 45%)",
-      "nextExDivDate": "20 Apr",
-      "exDivDays": 166,
-      "nextExDivText": "20 Apr (tra 166g)",
-      "isExDivSoon": false,
-      "nextEarningsDate": "15 Gen",
-      "earningsDays": 71,
-      "nextEarningsText": "15 Gen (tra 71g)",
-      "isEarningsSoon": false,
-      "avg52w": 7.88,
-      "diff52wPct": 8.1,
-      "border52w": "orange",
-      "status52w": "Nel Range ±10% (+8.1%)",
-      "high52": 8.95,
-      "low52": 6.8,
-      "atr14": 0.14,
-      "atrPct": 1.64,
-      "ema20": 8.94,
-      "ema50": 8.62,
-      "hasTrendAlignment": false,
-      "dayChangePct": 0.83,
-      "roc5d": -5.86,
-      "clv": 0.0,
-      "rawScore": 70.2,
-      "score": 70,
-      "strength": "Buona",
-      "volumeSpike": "1.0x",
-      "rsi": 100.0,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.5",
-      "consensus": "Buy",
-      "summary": "Quotazione reale €8.52 (+0.83% oggi, -5.86% a 5G). Div. Yield: 7.5% (Sostenibile (Payout 45%)). Media 52W: €7.88 (Nel Range ±10% (+8.1%)). ATR 14: €0.14 (1.64% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-2.21% vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📉 Sottoperforma a 5G (-2.21% vs Indice)",
-        "✅ Conferma Prezzi/CLV (Chiusura al 0% del range)",
-        "⚠️ Sotto EMA20/50 / Trend Debole",
-        "🔥 Settore Leader a 5G (+3.0 pts)"
-      ],
-      "pillars": {
-        "breakout": 52,
-        "news": 90,
-        "volume": 84,
-        "analyst": 74,
-        "market": 77
-      },
-      "catalysts": [
-        {
-          "title": "Italian lender BPER secures nearly 36% stake in Pop Sondrio - Reuters",
-          "source": "Reuters",
-          "time": "Thu, 10 Jul 2025",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "ING met Italy's Popolare di Sondrio amid European expansion plan, source says - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Sat, 29 Mar 2025",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Italian lender BPER boosts Pop Sondrio bid to $6.39 billion - Reuters",
-          "source": "Reuters",
-          "time": "Thu, 03 Jul 2025",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "3 European Dividend Stocks To Watch With Up To 4.7% Yield - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Fri, 10 Apr 2026",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            8.45,
-            8.49,
-            8.48,
-            8.5,
-            8.52,
-            8.55,
-            8.57
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            9.05,
-            9.07,
-            9.1,
-            9.12,
-            9.14
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            7.88,
-            8.2,
-            8.52,
-            8.84
-          ]
-        }
-      }
-    },
-    {
       "id": "top-bp",
       "ticker": "BP",
       "name": "BP plc (ADR)",
@@ -77196,6 +77036,130 @@
             104.78,
             97.04,
             93.06
+          ]
+        }
+      }
+    },
+    {
+      "id": "top-bpso.mi",
+      "ticker": "BPSO.MI",
+      "name": "Banca Popolare di Sondrio",
+      "exchange": "Borsa Italiana",
+      "currency": "€",
+      "sector": "Finanza",
+      "marketCap": "€3 Mld",
+      "marketCapRaw": 3.8,
+      "currentPrice": 8.52,
+      "targetPrice": 8.88,
+      "targetPct": 4.2,
+      "stopLoss": 8.27,
+      "stopPct": 2.9,
+      "dividendYield": 7.5,
+      "payoutRatio": 45,
+      "isPayoutSustainable": true,
+      "payoutStatus": "Sostenibile (Payout 45%)",
+      "nextExDivDate": "20 Apr",
+      "exDivDays": 166,
+      "nextExDivText": "20 Apr (tra 166g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "15 Gen",
+      "earningsDays": 71,
+      "nextEarningsText": "15 Gen (tra 71g)",
+      "isEarningsSoon": false,
+      "avg52w": 7.88,
+      "diff52wPct": 8.1,
+      "border52w": "orange",
+      "status52w": "Nel Range ±10% (+8.1%)",
+      "high52": 8.95,
+      "low52": 6.8,
+      "atr14": 0.14,
+      "atrPct": 1.64,
+      "ema20": 8.94,
+      "ema50": 8.62,
+      "hasTrendAlignment": false,
+      "dayChangePct": 0.83,
+      "roc5d": -5.86,
+      "clv": 0.0,
+      "rawScore": 67.0,
+      "score": 67,
+      "strength": "Buona",
+      "volumeSpike": "1.0x",
+      "rsi": 100.0,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.4",
+      "consensus": "Buy",
+      "summary": "Quotazione reale €8.52 (+0.83% oggi, -5.86% a 5G). Div. Yield: 7.5% (Sostenibile (Payout 45%)). Media 52W: €7.88 (Nel Range ±10% (+8.1%)). ATR 14: €0.14 (1.64% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-3.18% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📉 Sottoperforma a 5G (-3.18% vs Indice)",
+        "✅ Conferma Prezzi/CLV (Chiusura al 0% del range)",
+        "⚠️ Sotto EMA20/50 / Trend Debole",
+        "🔥 Settore Leader a 5G (+3.0 pts)"
+      ],
+      "pillars": {
+        "breakout": 52,
+        "news": 76,
+        "volume": 84,
+        "analyst": 74,
+        "market": 80
+      },
+      "catalysts": [
+        {
+          "title": "Consolidamento e interesse istituzionale su BPSO.MI",
+          "source": "Market Wire",
+          "time": "Oggi",
+          "impact": "Neutro / Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            8.45,
+            8.49,
+            8.48,
+            8.5,
+            8.52,
+            8.55,
+            8.57
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            9.05,
+            9.07,
+            9.1,
+            9.12,
+            9.14
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            7.88,
+            8.2,
+            8.52,
+            8.84
           ]
         }
       }
@@ -79122,6 +79086,147 @@
       }
     },
     {
+      "id": "top-cnq",
+      "ticker": "CNQ",
+      "name": "Canadian Natural Resources",
+      "exchange": "NYSE",
+      "currency": "$",
+      "sector": "Industria & Energia",
+      "marketCap": "$105 Mld",
+      "marketCapRaw": 105.7,
+      "currentPrice": 49.64,
+      "targetPrice": 53.75,
+      "targetPct": 8.3,
+      "stopLoss": 46.68,
+      "stopPct": 6.0,
+      "dividendYield": 4.4,
+      "payoutRatio": 45,
+      "isPayoutSustainable": false,
+      "payoutStatus": "Elevato / A Rischio (Payout 45%)",
+      "nextExDivDate": "22 Apr",
+      "exDivDays": 168,
+      "nextExDivText": "22 Apr (tra 168g)",
+      "isExDivSoon": false,
+      "nextEarningsDate": "17 Gen",
+      "earningsDays": 73,
+      "nextEarningsText": "17 Gen (tra 73g)",
+      "isEarningsSoon": false,
+      "avg52w": 43.2,
+      "diff52wPct": 14.9,
+      "border52w": "red",
+      "status52w": "Sopra Media 52W (+14.9%)",
+      "high52": 56.27,
+      "low52": 30.13,
+      "atr14": 1.64,
+      "atrPct": 3.31,
+      "ema20": 52.81,
+      "ema50": 51.31,
+      "hasTrendAlignment": false,
+      "dayChangePct": -7.39,
+      "roc5d": -9.89,
+      "clv": 0.04,
+      "rawScore": 51.0,
+      "score": 51,
+      "strength": "Buona",
+      "volumeSpike": "2.75x",
+      "rsi": 41.3,
+      "pe": "Consolidato",
+      "riskReward": "1 : 1.4",
+      "consensus": "Buy",
+      "summary": "Quotazione reale $49.64 (-7.39% oggi, -9.89% a 5G). Div. Yield: 4.4% (Elevato / A Rischio (Payout 45%)). Media 52W: $43.2 (Sopra Media 52W (+14.9%)). ATR 14: $1.64 (3.31% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-9.28% vs Indice).",
+      "controls": [
+        "🛡️ No Rischio Binario Imminente",
+        "📉 Sottoperforma a 5G (-9.28% vs Indice)",
+        "⚠️ Debolezza Intraday Oggi (-7.39%, -8.5 pts)",
+        "⚠️ Sotto EMA20/50 / Trend Debole"
+      ],
+      "pillars": {
+        "breakout": 54,
+        "news": 74,
+        "volume": 72,
+        "analyst": 73,
+        "market": 85
+      },
+      "catalysts": [
+        {
+          "title": "Top Canadian Value Stocks For November 2026 - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Wed, 04 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Canadian Natural Resources Drops 6% After Hours, Shedding ~$6 Billion - 24/7 Wall St.",
+          "source": "24/7 Wall St.",
+          "time": "Wed, 04 Nov 2026",
+          "impact": "Attenzione / Moderato"
+        },
+        {
+          "title": "Canadian Natural Resources Limi (CNQ) Stock Forecasts - Yahoo Finance",
+          "source": "Yahoo Finance",
+          "time": "Wed, 04 Nov 2026",
+          "impact": "Favorevole"
+        },
+        {
+          "title": "Canadian Natural Resources Limited (CNQ) Declares C$0.625 Quarterly Dividend - TradingView",
+          "source": "TradingView",
+          "time": "Thu, 05 Nov 2026",
+          "impact": "Favorevole"
+        }
+      ],
+      "chartData": {
+        "1D": {
+          "labels": [
+            "09:30",
+            "11:00",
+            "12:30",
+            "14:00",
+            "15:00",
+            "15:30",
+            "16:00"
+          ],
+          "values": [
+            49.24,
+            49.44,
+            49.39,
+            49.54,
+            49.64,
+            49.79,
+            49.94
+          ]
+        },
+        "5D": {
+          "labels": [
+            "-4G",
+            "-3G",
+            "-2G",
+            "Ieri",
+            "Oggi"
+          ],
+          "values": [
+            55.09,
+            56.11,
+            53.64,
+            53.6,
+            49.64
+          ]
+        },
+        "1M": {
+          "labels": [
+            "Sett 1",
+            "Sett 2",
+            "Sett 3",
+            "Sett 4"
+          ],
+          "values": [
+            44.75,
+            49.77,
+            48.28,
+            52.14
+          ]
+        }
+      }
+    },
+    {
       "id": "top-vgej.mu",
       "ticker": "VGEJ.MU",
       "name": "Vanguard FTSE Developed Europe",
@@ -79663,147 +79768,6 @@
             47.81,
             46.58,
             45.32
-          ]
-        }
-      }
-    },
-    {
-      "id": "top-cnq",
-      "ticker": "CNQ",
-      "name": "Canadian Natural Resources",
-      "exchange": "NYSE",
-      "currency": "$",
-      "sector": "Industria & Energia",
-      "marketCap": "$105 Mld",
-      "marketCapRaw": 105.7,
-      "currentPrice": 49.64,
-      "targetPrice": 53.75,
-      "targetPct": 8.3,
-      "stopLoss": 46.68,
-      "stopPct": 6.0,
-      "dividendYield": 4.4,
-      "payoutRatio": 45,
-      "isPayoutSustainable": false,
-      "payoutStatus": "Elevato / A Rischio (Payout 45%)",
-      "nextExDivDate": "22 Apr",
-      "exDivDays": 168,
-      "nextExDivText": "22 Apr (tra 168g)",
-      "isExDivSoon": false,
-      "nextEarningsDate": "17 Gen",
-      "earningsDays": 73,
-      "nextEarningsText": "17 Gen (tra 73g)",
-      "isEarningsSoon": false,
-      "avg52w": 43.2,
-      "diff52wPct": 14.9,
-      "border52w": "red",
-      "status52w": "Sopra Media 52W (+14.9%)",
-      "high52": 56.27,
-      "low52": 30.13,
-      "atr14": 1.64,
-      "atrPct": 3.31,
-      "ema20": 52.81,
-      "ema50": 51.31,
-      "hasTrendAlignment": false,
-      "dayChangePct": -7.39,
-      "roc5d": -9.89,
-      "clv": 0.04,
-      "rawScore": 51.0,
-      "score": 51,
-      "strength": "Buona",
-      "volumeSpike": "2.75x",
-      "rsi": 41.3,
-      "pe": "Consolidato",
-      "riskReward": "1 : 1.4",
-      "consensus": "Buy",
-      "summary": "Quotazione reale $49.64 (-7.39% oggi, -9.89% a 5G). Div. Yield: 4.4% (Elevato / A Rischio (Payout 45%)). Media 52W: $43.2 (Sopra Media 52W (+14.9%)). ATR 14: $1.64 (3.31% vol). Controlli attivi: 🛡️ No Rischio Binario Imminente &bull; 📉 Sottoperforma a 5G (-9.28% vs Indice).",
-      "controls": [
-        "🛡️ No Rischio Binario Imminente",
-        "📉 Sottoperforma a 5G (-9.28% vs Indice)",
-        "⚠️ Debolezza Intraday Oggi (-7.39%, -8.5 pts)",
-        "⚠️ Sotto EMA20/50 / Trend Debole"
-      ],
-      "pillars": {
-        "breakout": 54,
-        "news": 74,
-        "volume": 72,
-        "analyst": 73,
-        "market": 85
-      },
-      "catalysts": [
-        {
-          "title": "Top Canadian Value Stocks For November 2026 - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Wed, 04 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Canadian Natural Resources Drops 6% After Hours, Shedding ~$6 Billion - 24/7 Wall St.",
-          "source": "24/7 Wall St.",
-          "time": "Wed, 04 Nov 2026",
-          "impact": "Attenzione / Moderato"
-        },
-        {
-          "title": "Canadian Natural Resources Limi (CNQ) Stock Forecasts - Yahoo Finance",
-          "source": "Yahoo Finance",
-          "time": "Wed, 04 Nov 2026",
-          "impact": "Favorevole"
-        },
-        {
-          "title": "Canadian Natural Resources Limited (CNQ) Declares C$0.625 Quarterly Dividend - TradingView",
-          "source": "TradingView",
-          "time": "Thu, 05 Nov 2026",
-          "impact": "Favorevole"
-        }
-      ],
-      "chartData": {
-        "1D": {
-          "labels": [
-            "09:30",
-            "11:00",
-            "12:30",
-            "14:00",
-            "15:00",
-            "15:30",
-            "16:00"
-          ],
-          "values": [
-            49.24,
-            49.44,
-            49.39,
-            49.54,
-            49.64,
-            49.79,
-            49.94
-          ]
-        },
-        "5D": {
-          "labels": [
-            "-4G",
-            "-3G",
-            "-2G",
-            "Ieri",
-            "Oggi"
-          ],
-          "values": [
-            55.09,
-            56.11,
-            53.64,
-            53.6,
-            49.64
-          ]
-        },
-        "1M": {
-          "labels": [
-            "Sett 1",
-            "Sett 2",
-            "Sett 3",
-            "Sett 4"
-          ],
-          "values": [
-            44.75,
-            49.77,
-            48.28,
-            52.14
           ]
         }
       }
