@@ -33,8 +33,8 @@ console.log('======================================================\n');
 console.log('--- 1. VERIFICA BOTTONI ED ELEMENTI INTERATTIVI NEL DOM ---');
 
 const requiredIds = [
-  // Navigazione & Dock Bar
-  'bottomTabIT', 'bottomTabEU', 'bottomTabUSA', 'bottomTabTop', 'bottomTabAll', 'bottomTabSummary',
+  // Navigazione & Dock Bar (Dock bar a 5 pulsanti, tabSummary solo in alto)
+  'bottomTabIT', 'bottomTabEU', 'bottomTabUSA', 'bottomTabTop', 'bottomTabAll',
   'tabIT', 'tabEU', 'tabUSA', 'tabTop', 'tabAll', 'tabSummary',
   // Filtri Rapidi (Pills)
   'qfModelV7', 'qfCap10B', 'qfDrop1pct', 'qfDiv4', 'qfUnder52w', 'qfCombo',
@@ -86,8 +86,16 @@ assert(
   'Pulsante tabAll posizionato dopo tabTop e prima di tabSummary nel carosello in alto'
 );
 assert(
-  indexHtml.indexOf('id="bottomTabTop"') < indexHtml.indexOf('id="bottomTabAll"') && indexHtml.indexOf('id="bottomTabAll"') < indexHtml.indexOf('id="bottomTabSummary"'),
-  'Pulsante bottomTabAll posizionato dopo bottomTabTop e prima di bottomTabSummary nella dock bar'
+  indexHtml.indexOf('id="bottomTabTop"') < indexHtml.indexOf('id="bottomTabAll"'),
+  'Pulsante bottomTabAll posizionato dopo bottomTabTop nella dock bar'
+);
+assert(
+  !indexHtml.includes('id="bottomTabSummary"'),
+  'Pulsante Riepilogo (bottomTabSummary) rimosso dalla dock bar inferiore come richiesto'
+);
+assert(
+  indexHtml.includes('id="tabSummary"'),
+  'Pulsante Riepilogo (tabSummary) preservato nella barra carosello superiore'
 );
 
 // ---------------------------------------------------------------------------
