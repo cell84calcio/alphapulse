@@ -81265,7 +81265,7 @@ async function triggerFullMarketRefresh(source = 'button') {
   const ptrIcon = document.getElementById('ptrIcon');
   const ptrText = document.getElementById('ptrText');
 
-  if (ptrBar && ptrIcon && ptrText) {
+  if (source !== 'market_switch' && ptrBar && ptrIcon && ptrText) {
     ptrBar.classList.remove('pulling', 'ready');
     ptrBar.classList.add('refreshing');
     ptrIcon.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i>`;
@@ -81329,7 +81329,7 @@ async function triggerFullMarketRefresh(source = 'button') {
 
   const timeLabel = (REAL_DATASET && REAL_DATASET.lastUpdated) ? REAL_DATASET.lastUpdated.split(' ')[1].slice(0, 5) : '';
 
-  if (ptrBar && ptrIcon && ptrText) {
+  if (source !== 'market_switch' && ptrBar && ptrIcon && ptrText) {
     ptrIcon.innerHTML = `<i class="fa-solid fa-check text-emerald"></i>`;
     ptrText.textContent = isLocalEngine 
       ? `Prezzi Live Scansionati al Secondo!` 
@@ -81342,7 +81342,7 @@ async function triggerFullMarketRefresh(source = 'button') {
   }
 
   setTimeout(() => {
-    if (ptrBar && ptrIcon && ptrText) {
+    if (source !== 'market_switch' && ptrBar && ptrIcon && ptrText) {
       ptrBar.classList.remove('refreshing', 'ready', 'pulling');
       ptrBar.style.height = '0px';
       ptrBar.style.opacity = '0';
@@ -82346,6 +82346,9 @@ function switchMarketSection(market, scrollIfNeeded = false, fromCarouselSwipe =
 
   updateMarketHeaderInfo();
   renderStocks();
+
+  // Trigger automatico aggiornamento dati real-time al cambio mercato
+  triggerFullMarketRefresh('market_switch');
 
   if (scrollIfNeeded && window.scrollY > 320) {
     const mainEl = document.querySelector('.main-content');

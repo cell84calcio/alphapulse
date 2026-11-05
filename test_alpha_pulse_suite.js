@@ -118,6 +118,13 @@ assert(
   'index.html: intestazione iniziale della pagina impostata su FTSE MIB (Italia)'
 );
 
+// Verifica trigger automatico Aggiorna Dati al cambio mercato
+assert(
+  appJs.includes("triggerFullMarketRefresh('market_switch')") &&
+  appJs.includes("function switchMarketSection"),
+  'app.js: switchMarketSection scatena in automatico triggerFullMarketRefresh(\'market_switch\') per prezzi live'
+);
+
 // ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)
 // ---------------------------------------------------------------------------
