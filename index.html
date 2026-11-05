@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261105-v22">
+  <link rel="stylesheet" href="style.css?v=20261105-v23">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -487,7 +487,7 @@
           <p class="view-description" id="currentMarketDesc">Tutti i componenti monitorati dell'indice EuroStoxx 600 (senza filtri e senza modello applicato).</p>
         </div>
         <div class="view-actions">
-          <span class="stocks-count-badge"><span id="visibleStocksCount">109</span> Titoli</span>
+          <span class="stocks-count-badge"><span id="visibleStocksCount">188</span> Titoli</span>
           <button class="btn-secondary" id="refreshBtn"><i class="fa-solid fa-rotate"></i> Aggiorna Dati</button>
         </div>
       </div>
@@ -534,7 +534,7 @@
                 <p>Paniere ufficiale EuroStoxx 600 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeEU">109 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeEU">188 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -570,7 +570,7 @@
                 <p>Paniere ufficiale Borsa Italiana (Piazza Affari) &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeIT">38 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeIT">39 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -606,7 +606,7 @@
                 <p>Paniere ufficiale S&amp;P 500 &bull; Clicca su una riga per aprire l'analisi completa</p>
               </div>
             </div>
-            <span class="badge model-tag" id="summaryBadgeUSA">84 Titoli Live</span>
+            <span class="badge model-tag" id="summaryBadgeUSA">209 Titoli Live</span>
           </div>
           <div class="stocks-table-wrapper">
             <table class="stocks-table summary-compact-table">
@@ -906,17 +906,17 @@
       <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
         <span class="bnav-icon">🇪🇺</span>
         <span class="bnav-label">EuroStoxx 600</span>
-        <span class="bnav-badge">109</span>
+        <span class="bnav-badge">188</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
         <span class="bnav-icon">🇮🇹</span>
         <span class="bnav-label">FTSE MIB</span>
-        <span class="bnav-badge">38</span>
+        <span class="bnav-badge">39</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA" title="S&amp;P 500 (USA)">
         <span class="bnav-icon">🇺🇸</span>
         <span class="bnav-label">S&amp;P 500</span>
-        <span class="bnav-badge">84</span>
+        <span class="bnav-badge">209</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="top" id="bottomTabTop" title="TOP Selezionati (138 Titoli)">
         <span class="bnav-icon">⭐</span>
@@ -926,12 +926,12 @@
       <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary" title="Riepilogo Generale">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
-        <span class="bnav-badge">369</span>
+        <span class="bnav-badge">574</span>
       </button>
     </div>
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261105-v22"></script>
+  <script src="app.js?v=20261105-v23"></script>
 </body>
 </html>
