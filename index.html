@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261105-v24">
+  <link rel="stylesheet" href="style.css?v=20261105-v25">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -872,8 +872,13 @@
             <!-- Riempito dinamicamente -->
           </div>
         </div>
-        <div class="drawer-footer">
-          <button class="btn-outline" id="clearWatchlistBtn">Svuota Watchlist</button>
+        <div class="drawer-footer" style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button class="btn-primary" id="addTopToWatchlistBtn" style="flex: 1; min-width: 150px; justify-content: center; font-size: 0.82rem; padding: 10px 12px;">
+            <i class="fa-solid fa-star"></i> Aggiungi Titoli TOP (138)
+          </button>
+          <button class="btn-outline" id="clearWatchlistBtn" style="flex: 1; min-width: 140px; justify-content: center; font-size: 0.82rem; padding: 10px 12px; color: var(--color-bearish); border-color: rgba(239, 68, 68, 0.4);">
+            <i class="fa-solid fa-trash-can"></i> Svuota Watchlist
+          </button>
         </div>
       </div>
     </div>
@@ -932,6 +937,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261105-v24"></script>
+  <script src="app.js?v=20261105-v25"></script>
 </body>
 </html>

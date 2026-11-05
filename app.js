@@ -80997,7 +80997,8 @@ const elements = {
   wsAvgProb: document.getElementById('wsAvgProb'),
   wsAvgUpside: document.getElementById('wsAvgUpside'),
   watchlistItemsList: document.getElementById('watchlistItemsList'),
-  clearWatchlistBtn: document.getElementById('clearWatchlistBtn')
+  clearWatchlistBtn: document.getElementById('clearWatchlistBtn'),
+  addTopToWatchlistBtn: document.getElementById('addTopToWatchlistBtn')
 };
 
 // ==========================================================================
@@ -81020,19 +81021,40 @@ function formatDateDisplay() {
 }
 
 function isStockInWatchlist(id) {
-  return state.watchlist.includes(id);
+  if (state.watchlist.includes(id)) return true;
+  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || []), ...(MARKET_DATA.top || [])];
+  const targetStock = allStocks.find(s => s.id === id);
+  if (!targetStock) return false;
+  const targetRoot = (targetStock.ticker || '').split('.')[0].toUpperCase();
+  return state.watchlist.some(savedId => {
+    const saved = allStocks.find(s => s.id === savedId);
+    if (!saved) return false;
+    const savedRoot = (saved.ticker || '').split('.')[0].toUpperCase();
+    return savedRoot === targetRoot;
+  });
 }
 
 function toggleWatchlist(id) {
+  const allStocks = [...(MARKET_DATA.eu || []), ...(MARKET_DATA.it || []), ...(MARKET_DATA.usa || []), ...(MARKET_DATA.top || [])];
+  const target = allStocks.find(s => s.id === id);
+  const targetRoot = target ? (target.ticker || '').split('.')[0].toUpperCase() : null;
+
   if (isStockInWatchlist(id)) {
-    state.watchlist = state.watchlist.filter(item => item !== id);
+    state.watchlist = state.watchlist.filter(item => {
+      if (item === id) return false;
+      if (targetRoot) {
+        const s = allStocks.find(x => x.id === item);
+        if (s && (s.ticker || '').split('.')[0].toUpperCase() === targetRoot) return false;
+      }
+      return true;
+    });
   } else {
     state.watchlist.push(id);
   }
   localStorage.setItem('alphapulse_watchlist', JSON.stringify(state.watchlist));
   updateWatchlistUI();
   renderStocks();
-  if (state.selectedStock && state.selectedStock.id === id) {
+  if (state.selectedStock && (state.selectedStock.id === id || (targetRoot && (state.selectedStock.ticker || '').split('.')[0].toUpperCase() === targetRoot))) {
     updateModalWatchlistBtn();
   }
 }
@@ -82446,6 +82468,32 @@ Notizia Reale Rilevata: ${s.catalysts && s.catalysts[0] ? s.catalysts[0].title :
       if (state.selectedStock) updateModalWatchlistBtn();
     }
   });
+
+  if (elements.addTopToWatchlistBtn) {
+    elements.addTopToWatchlistBtn.addEventListener('click', () => {
+      const topStocks = MARKET_DATA.top || [];
+      let addedCount = 0;
+      topStocks.forEach(s => {
+        if (!state.watchlist.includes(s.id)) {
+          state.watchlist.push(s.id);
+          addedCount++;
+        }
+      });
+      localStorage.setItem('alphapulse_watchlist', JSON.stringify(state.watchlist));
+      updateWatchlistUI();
+      renderStocks();
+      if (state.selectedStock) updateModalWatchlistBtn();
+      if (elements.summaryTablesPage && !elements.summaryTablesPage.classList.contains('hidden')) {
+        renderSummaryTables();
+      }
+
+      const origHtml = elements.addTopToWatchlistBtn.innerHTML;
+      elements.addTopToWatchlistBtn.innerHTML = `<i class="fa-solid fa-check text-emerald"></i> ${addedCount > 0 ? addedCount + ' Aggiunti!' : 'Già Presenti!'}`;
+      setTimeout(() => {
+        elements.addTopToWatchlistBtn.innerHTML = origHtml;
+      }, 2000);
+    });
+  }
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {

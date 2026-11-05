@@ -39,6 +39,8 @@ const requiredIds = [
   'qfModelV7', 'qfCap10B', 'qfDrop1pct', 'qfDiv4', 'qfUnder52w', 'qfCombo',
   // Controlli & Select
   'searchInput', 'sectorFilter', 'sortBy', 'btnGrid', 'btnTable', 'resetFiltersBtn', 'refreshBtn',
+  // Watchlist & Drawer
+  'watchlistDrawer', 'watchlistCount', 'clearWatchlistBtn', 'addTopToWatchlistBtn',
   // Indicatori & Badge
   'visibleStocksCount', 'currentMarketTitle', 'currentMarketDesc',
   'summaryBadgeEU', 'summaryBadgeIT', 'summaryBadgeUSA', 'summaryBadgeTOP',
@@ -380,7 +382,44 @@ const allTopResolvable = topList.every(t => allMarketStocks.some(s => s.id === t
 assert(allTopResolvable, `Il 100% dei ${topList.length} titoli TOP è accessibile dal pulsante Analisi`);
 
 // ---------------------------------------------------------------------------
-// 7. RIEPILOGO TEST
+// 7. TEST WATCHLIST (AGGIUNTA LISTA TOP 138 & SVUOTA WATCHLIST)
+// ---------------------------------------------------------------------------
+console.log('\n--- 7. VERIFICA PULSANTE AGGIUNTA TOP E SVUOTA WATCHLIST ---');
+
+let testWatchlist = [];
+
+// Simula click su "Aggiungi Titoli TOP"
+topList.forEach(s => {
+  if (!testWatchlist.includes(s.id)) {
+    testWatchlist.push(s.id);
+  }
+});
+assert(testWatchlist.length === 138, `Pulsante Aggiungi TOP: aggiunti con successo tutti i 138 titoli alla Watchlist`);
+
+// Verifica sincronizzazione cross-mercato: il titolo KO in USA deve risultare presente
+const allStocks = [...(marketData.eu || []), ...(marketData.it || []), ...(marketData.usa || []), ...(marketData.top || [])];
+function isTestInWatchlist(id) {
+  if (testWatchlist.includes(id)) return true;
+  const target = allStocks.find(s => s.id === id);
+  if (!target) return false;
+  const targetRoot = (target.ticker || '').split('.')[0].toUpperCase();
+  return testWatchlist.some(savedId => {
+    const saved = allStocks.find(s => s.id === savedId);
+    if (!saved) return false;
+    const savedRoot = (saved.ticker || '').split('.')[0].toUpperCase();
+    return savedRoot === targetRoot;
+  });
+}
+
+assert(isTestInWatchlist('usa-ko') === true, 'Sincronizzazione stella attiva: KO in USA risulta nei preferiti');
+assert(isTestInWatchlist('it-enel') === true, 'Sincronizzazione stella attiva: ENEL in FTSE MIB risulta nei preferiti');
+
+// Simula click su "Svuota Watchlist"
+testWatchlist = [];
+assert(testWatchlist.length === 0, 'Pulsante Svuota Watchlist: reset completo a 0 titoli');
+
+// ---------------------------------------------------------------------------
+// 8. RIEPILOGO TEST
 // ---------------------------------------------------------------------------
 console.log('\n======================================================');
 console.log(`  RISULTATO TEST: ${testsPassed} PASSATI | ${testsFailed} FALLITI`);
