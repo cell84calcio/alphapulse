@@ -1587,7 +1587,7 @@ def update_ledger_track_record(top_picks, market_type="eu", live_prices=None):
         "recentLedger": ledger[-3:] if ledger else []
     }
 
-def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
+def analyze_market_universe(symbols_list, market_regime, market_type="eu", existing_pool=None):
     """Scansiona in parallelo l'intero paniere (EuroStoxx 600 / FTSE MIB / S&P 500) applicando rotazione settoriale a 5G e il modello v7.0"""
     index_label = "EUROSTOXX 600" if market_type == "eu" else ("FTSE MIB" if market_type == "it" else ("TOP CUSTOM" if market_type == "top" else "S&P 500"))
     print(f"\n[AlphaPulse Engine v7.0] Scansione paniere {index_label}: {len(symbols_list)} titoli in parallelo...")
@@ -1738,6 +1738,13 @@ def analyze_market_universe(symbols_list, market_regime, market_type="eu"):
             if res:
                 analyzed.append(res)
 
+    # Preserva i titoli precedenti se qualche richiesta di rete verso Yahoo ha avuto un timeout
+    if existing_pool:
+        present_tickers = {s["ticker"] for s in analyzed}
+        for old_s in existing_pool:
+            if old_s.get("ticker") not in present_tickers:
+                analyzed.append(old_s)
+
     # Ordina esclusivamente per punteggio quantitativo (rawScore e a parità momentum 5G)
     analyzed.sort(key=lambda s: (s.get("rawScore", s["score"]), s.get("roc5d", 0.0)), reverse=True)
     for s in analyzed[:12]:
@@ -1754,10 +1761,18 @@ def update_entire_market_dataset():
     regime = fetch_market_regime()
     print(f"\n[Regime di Mercato] VIX: {regime['vix']} | EuroStoxx 1G/5G: {regime['stoxx50Change']}% / {regime.get('stoxx50Change5d', 0)}% | S&P 500 1G/5G: {regime['sp500Change']}% / {regime.get('sp500Change5d', 0)}% | Stato: {regime['marketSentiment']}")
 
-    eu_pool, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu")
-    it_pool, it_prices = analyze_market_universe(IT_SYMBOLS, regime, "it")
-    usa_pool, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa")
-    top_pool, top_prices = analyze_market_universe(TOP_SYMBOLS, regime, "top")
+    existing_data = {}
+    if os.path.exists(DATA_FILE):
+        try:
+            with open(DATA_FILE, "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+        except Exception:
+            pass
+
+    eu_pool, eu_prices = analyze_market_universe(EU_SYMBOLS, regime, "eu", existing_data.get("eu", []))
+    it_pool, it_prices = analyze_market_universe(IT_SYMBOLS, regime, "it", existing_data.get("it", []))
+    usa_pool, usa_prices = analyze_market_universe(USA_SYMBOLS, regime, "usa", existing_data.get("usa", []))
+    top_pool, top_prices = analyze_market_universe(TOP_SYMBOLS, regime, "top", existing_data.get("top", []))
 
     # Aggiorna il registro delle performance storiche con verifica prezzi reali sui Top 10
     eu_tracker = update_ledger_track_record(eu_pool[:10], "eu", eu_prices)
