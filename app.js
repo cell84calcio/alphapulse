@@ -82771,4 +82771,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initPullToRefresh();
   renderStocks();
   loadLiveData();
+
+  // Controllo automatico ogni 2.5 minuti per recepire nuovi aggiornamenti rilasciati da GitHub Actions
+  setInterval(() => {
+    if (!state.isRefreshing && document.visibilityState === 'visible') {
+      loadLiveData();
+    }
+  }, 150000);
 });

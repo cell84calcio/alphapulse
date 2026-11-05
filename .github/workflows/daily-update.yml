@@ -2,16 +2,11 @@ name: Aggiornamento Automatico Dati Borsa
 
 on:
   schedule:
-    # 1. Apertura Europa: 08:30 UTC (09:30 CET - Prezzi live apertura Milano/Francoforte/Parigi)
-    - cron: '30 8 * * 1-5'
-    # 2. Mattinata Europa: 10:30 UTC (11:30 CET - Aggiornamento intraday mercati europei)
-    - cron: '30 10 * * 1-5'
-    # 3. Pomeriggio / Pre-Wall Street: 13:45 UTC (14:45 CET - Apertura borsa americana)
-    - cron: '45 13 * * 1-5'
-    # 4. Chiusura Europa / Metà seduta USA: 16:45 UTC (17:45 CET - Chiusura Piazza Affari)
-    - cron: '45 16 * * 1-5'
-    # 5. Chiusura Wall Street: 21:30 UTC (22:30 CET - Chiusura mercati USA)
-    - cron: '30 21 * * 1-5'
+    # Aggiornamento automatico ogni 30 minuti dalle 09:00 alle 24:00 (Lunedì - Venerdì)
+    # Range 07:00 - 23:00 UTC (ogni 30 min):
+    # - In orario invernale (CET = UTC+1): copre dalle 08:00 alle 24:00 CET
+    # - In orario estivo (CEST = UTC+2): copre dalle 09:00 alle 01:00 CEST
+    - cron: '0,30 7-23 * * 1-5'
   workflow_dispatch: # Permette anche di avviarlo manualmente con un pulsante su GitHub
 
 jobs:
@@ -38,4 +33,4 @@ jobs:
           git config --global user.name "AlphaPulse Bot"
           git config --global user.email "bot@alphapulse.local"
           git add market_data.json history_ledger.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d %H:%M')" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Dati reali di borsa del $(date +'%Y-%m-%d %H:%M')" && git pull --rebase && git push)
