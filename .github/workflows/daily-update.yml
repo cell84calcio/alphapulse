@@ -2,10 +2,16 @@ name: Aggiornamento Automatico Dati Borsa
 
 on:
   schedule:
-    # 1. Aggiornamento Mattutino: 07:30 UTC (08:30 CET italiane - Prima dell'apertura borse EU)
-    - cron: '30 7 * * 1-5'
-    # 2. Aggiornamento Pomeridiano: 14:00 UTC (15:00 CET italiane - Prima dell'apertura Wall Street)
-    - cron: '0 14 * * 1-5'
+    # 1. Apertura Europa: 08:30 UTC (09:30 CET - Prezzi live apertura Milano/Francoforte/Parigi)
+    - cron: '30 8 * * 1-5'
+    # 2. Mattinata Europa: 10:30 UTC (11:30 CET - Aggiornamento intraday mercati europei)
+    - cron: '30 10 * * 1-5'
+    # 3. Pomeriggio / Pre-Wall Street: 13:45 UTC (14:45 CET - Apertura borsa americana)
+    - cron: '45 13 * * 1-5'
+    # 4. Chiusura Europa / Metà seduta USA: 16:45 UTC (17:45 CET - Chiusura Piazza Affari)
+    - cron: '45 16 * * 1-5'
+    # 5. Chiusura Wall Street: 21:30 UTC (22:30 CET - Chiusura mercati USA)
+    - cron: '30 21 * * 1-5'
   workflow_dispatch: # Permette anche di avviarlo manualmente con un pulsante su GitHub
 
 jobs:
