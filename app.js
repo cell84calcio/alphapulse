@@ -80912,10 +80912,11 @@ const state = {
 // ==========================================================================
 
 const elements = {
-  tabEU: document.getElementById('tabEU'),
   tabIT: document.getElementById('tabIT'),
+  tabEU: document.getElementById('tabEU'),
   tabUSA: document.getElementById('tabUSA'),
   tabTop: document.getElementById('tabTop'),
+  tabAll: document.getElementById('tabAll'),
   tabSummary: document.getElementById('tabSummary'),
   currentMarketTitle: document.getElementById('currentMarketTitle'),
   currentMarketDesc: document.getElementById('currentMarketDesc'),
@@ -81513,6 +81514,15 @@ function filterAndSortList(rawList) {
 }
 
 function getFilteredAndSortedStocks() {
+  if (state.currentMarket === 'all') {
+    const all = [
+      ...(MARKET_DATA.it || []),
+      ...(MARKET_DATA.eu || []),
+      ...(MARKET_DATA.usa || []),
+      ...(MARKET_DATA.top || [])
+    ];
+    return filterAndSortList(all);
+  }
   const mktKey = (state.currentMarket === 'usa') ? 'usa' : ((state.currentMarket === 'it') ? 'it' : ((state.currentMarket === 'top') ? 'top' : 'eu'));
   return filterAndSortList(MARKET_DATA[mktKey] || []);
 }
@@ -81771,18 +81781,21 @@ function renderSummaryPage() {
   }
 
   // Sincronizza badge numerici nella dock bar inferiore
-  const bEU = document.getElementById('bottomTabEU');
   const bIT = document.getElementById('bottomTabIT');
+  const bEU = document.getElementById('bottomTabEU');
   const bUSA = document.getElementById('bottomTabUSA');
   const bTop = document.getElementById('bottomTabTop');
+  const bAll = document.getElementById('bottomTabAll');
   const bSum = document.getElementById('bottomTabSummary');
-  if (bEU) { const badge = bEU.querySelector('.bnav-badge'); if (badge) badge.textContent = euList.length; }
+  const totalAll = itList.length + euList.length + usaList.length + topList.length;
   if (bIT) { const badge = bIT.querySelector('.bnav-badge'); if (badge) badge.textContent = itList.length; }
+  if (bEU) { const badge = bEU.querySelector('.bnav-badge'); if (badge) badge.textContent = euList.length; }
   if (bUSA) { const badge = bUSA.querySelector('.bnav-badge'); if (badge) badge.textContent = usaList.length; }
   if (bTop) { const badge = bTop.querySelector('.bnav-badge'); if (badge) badge.textContent = topList.length; }
-  if (bSum) { const badge = bSum.querySelector('.bnav-badge'); if (badge) badge.textContent = euList.length + itList.length + usaList.length + topList.length; }
+  if (bAll) { const badge = bAll.querySelector('.bnav-badge'); if (badge) badge.textContent = totalAll; }
+  if (bSum) { const badge = bSum.querySelector('.bnav-badge'); if (badge) badge.textContent = totalAll; }
 
-  return euList.length + itList.length + usaList.length + topList.length;
+  return totalAll;
 }
 
 // ==========================================================================
@@ -82258,6 +82271,14 @@ function updateMarketHeaderInfo() {
       elements.currentMarketTitle.innerHTML = `⭐ TOP Selezionati &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
       elements.currentMarketDesc.textContent = `Tutti i 138 titoli del portafoglio custom TOP monitorati${extraNote} (senza filtri e senza modello applicato).`;
     }
+  } else if (state.currentMarket === 'all') {
+    if (isV7) {
+      elements.currentMarketTitle.innerHTML = `🌐 Tutti i Mercati (ALL) &bull; Modello Quantitativo v7.0${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati (FTSE MIB + Europa + USA + TOP)${extraNote} ordinati secondo il modello quantitativo v7.0.`;
+    } else {
+      elements.currentMarketTitle.innerHTML = `🌐 Tutti i Mercati (ALL) &bull; Tutti i Titoli per Capitalizzazione${extraNote}`;
+      elements.currentMarketDesc.textContent = `Tutti i titoli monitorati (FTSE MIB + Europa + USA + TOP)${extraNote} (senza filtri e senza modello applicato).`;
+    }
   } else {
     elements.currentMarketTitle.innerHTML = `Riepilogo Completo Live &bull; EuroStoxx 600 + FTSE MIB + S&amp;P 500 + TOP`;
     elements.currentMarketDesc.textContent = `Vista tabellare quadrupla sincronizzata in tempo reale con tutti i titoli monitorati.`;
@@ -82293,10 +82314,11 @@ function switchMarketSection(market, scrollIfNeeded = false, fromCarouselSwipe =
   state.currentMarket = market;
 
   // Sincronizza tab in alto
-  if (elements.tabEU) elements.tabEU.classList.toggle('active', market === 'eu');
   if (elements.tabIT) elements.tabIT.classList.toggle('active', market === 'it');
+  if (elements.tabEU) elements.tabEU.classList.toggle('active', market === 'eu');
   if (elements.tabUSA) elements.tabUSA.classList.toggle('active', market === 'usa');
   if (elements.tabTop) elements.tabTop.classList.toggle('active', market === 'top');
+  if (elements.tabAll) elements.tabAll.classList.toggle('active', market === 'all');
   if (elements.tabSummary) elements.tabSummary.classList.toggle('active', market === 'summary');
 
   // Sincronizza indicatori carosello mobile
@@ -82305,15 +82327,17 @@ function switchMarketSection(market, scrollIfNeeded = false, fromCarouselSwipe =
   });
 
   // Sincronizza barra fissa in basso
-  const bEU = document.getElementById('bottomTabEU');
   const bIT = document.getElementById('bottomTabIT');
+  const bEU = document.getElementById('bottomTabEU');
   const bUSA = document.getElementById('bottomTabUSA');
   const bTop = document.getElementById('bottomTabTop');
+  const bAll = document.getElementById('bottomTabAll');
   const bSum = document.getElementById('bottomTabSummary');
-  if (bEU) bEU.classList.toggle('active', market === 'eu');
   if (bIT) bIT.classList.toggle('active', market === 'it');
+  if (bEU) bEU.classList.toggle('active', market === 'eu');
   if (bUSA) bUSA.classList.toggle('active', market === 'usa');
   if (bTop) bTop.classList.toggle('active', market === 'top');
+  if (bAll) bAll.classList.toggle('active', market === 'all');
   if (bSum) bSum.classList.toggle('active', market === 'summary');
 
   if (!fromCarouselSwipe) {
@@ -82330,10 +82354,11 @@ function switchMarketSection(market, scrollIfNeeded = false, fromCarouselSwipe =
 }
 
 function initEventListeners() {
-  if (elements.tabEU) elements.tabEU.addEventListener('click', () => switchMarketSection('eu', false));
   if (elements.tabIT) elements.tabIT.addEventListener('click', () => switchMarketSection('it', false));
+  if (elements.tabEU) elements.tabEU.addEventListener('click', () => switchMarketSection('eu', false));
   if (elements.tabUSA) elements.tabUSA.addEventListener('click', () => switchMarketSection('usa', false));
   if (elements.tabTop) elements.tabTop.addEventListener('click', () => switchMarketSection('top', false));
+  if (elements.tabAll) elements.tabAll.addEventListener('click', () => switchMarketSection('all', false));
   if (elements.tabSummary) {
     elements.tabSummary.addEventListener('click', () => switchMarketSection('summary', false));
   }
@@ -82369,15 +82394,17 @@ function initEventListeners() {
     });
   });
 
-  const bEU = document.getElementById('bottomTabEU');
   const bIT = document.getElementById('bottomTabIT');
+  const bEU = document.getElementById('bottomTabEU');
   const bUSA = document.getElementById('bottomTabUSA');
   const bTop = document.getElementById('bottomTabTop');
+  const bAll = document.getElementById('bottomTabAll');
   const bSum = document.getElementById('bottomTabSummary');
-  if (bEU) bEU.addEventListener('click', () => switchMarketSection('eu', true));
   if (bIT) bIT.addEventListener('click', () => switchMarketSection('it', true));
+  if (bEU) bEU.addEventListener('click', () => switchMarketSection('eu', true));
   if (bUSA) bUSA.addEventListener('click', () => switchMarketSection('usa', true));
   if (bTop) bTop.addEventListener('click', () => switchMarketSection('top', true));
+  if (bAll) bAll.addEventListener('click', () => switchMarketSection('all', true));
   if (bSum) bSum.addEventListener('click', () => switchMarketSection('summary', true));
 
   elements.searchInput.addEventListener('input', (e) => {

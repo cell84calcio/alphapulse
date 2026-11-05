@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Fogli di stile personalizzati -->
-  <link rel="stylesheet" href="style.css?v=20261105-v29">
+  <link rel="stylesheet" href="style.css?v=20261105-v30">
   <style>
     /* Critical CSS: Floating Pill Dock Bar + 6 Pulsanti Rapidi (3 Mercati + 3 Filtri Quantitativi) */
     .bottom-nav-bar {
@@ -397,10 +397,11 @@
         <div class="pills-control-group">
           <!-- 4 Pulsanti Selezione Mercato -->
           <div class="market-carousel-dots" id="marketCarouselDots">
-            <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
             <button type="button" class="m-carousel-dot" data-market="it" id="tabIT">🇮🇹 FTSE MIB</button>
+            <button type="button" class="m-carousel-dot active" data-market="eu" id="tabEU">🇪🇺 Europa</button>
             <button type="button" class="m-carousel-dot" data-market="usa" id="tabUSA">🇺🇸 USA</button>
             <button type="button" class="m-carousel-dot" data-market="top" id="tabTop">⭐ TOP</button>
+            <button type="button" class="m-carousel-dot" data-market="all" id="tabAll">🌐 ALL</button>
             <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
 
@@ -908,15 +909,15 @@
   <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (EuroStoxx 600 / FTSE MIB / S&P 500 / TOP / Riepilogo) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
-      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
-        <span class="bnav-icon">🇪🇺</span>
-        <span class="bnav-label">EuroStoxx 600</span>
-        <span class="bnav-badge">188</span>
-      </button>
       <button type="button" class="bottom-nav-item" data-market="it" id="bottomTabIT" title="FTSE MIB (Italia)">
         <span class="bnav-icon">🇮🇹</span>
         <span class="bnav-label">FTSE MIB</span>
         <span class="bnav-badge">39</span>
+      </button>
+      <button type="button" class="bottom-nav-item active" data-market="eu" id="bottomTabEU" title="EuroStoxx 600 (Europa)">
+        <span class="bnav-icon">🇪🇺</span>
+        <span class="bnav-label">EuroStoxx 600</span>
+        <span class="bnav-badge">188</span>
       </button>
       <button type="button" class="bottom-nav-item" data-market="usa" id="bottomTabUSA" title="S&amp;P 500 (USA)">
         <span class="bnav-icon">🇺🇸</span>
@@ -928,6 +929,11 @@
         <span class="bnav-label">TOP</span>
         <span class="bnav-badge">138</span>
       </button>
+      <button type="button" class="bottom-nav-item" data-market="all" id="bottomTabAll" title="Tutti i Titoli (FTSE MIB + Europa + USA + TOP)">
+        <span class="bnav-icon">🌐</span>
+        <span class="bnav-label">ALL</span>
+        <span class="bnav-badge">574</span>
+      </button>
       <button type="button" class="bottom-nav-item" data-market="summary" id="bottomTabSummary" title="Riepilogo Generale">
         <span class="bnav-icon">📊</span>
         <span class="bnav-label">Riepilogo</span>
@@ -937,6 +943,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261105-v29"></script>
+  <script src="app.js?v=20261105-v30"></script>
 </body>
 </html>

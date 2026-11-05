@@ -34,7 +34,8 @@ console.log('--- 1. VERIFICA BOTTONI ED ELEMENTI INTERATTIVI NEL DOM ---');
 
 const requiredIds = [
   // Navigazione & Dock Bar
-  'bottomTabEU', 'bottomTabIT', 'bottomTabUSA', 'bottomTabTop', 'bottomTabSummary',
+  'bottomTabIT', 'bottomTabEU', 'bottomTabUSA', 'bottomTabTop', 'bottomTabAll', 'bottomTabSummary',
+  'tabIT', 'tabEU', 'tabUSA', 'tabTop', 'tabAll', 'tabSummary',
   // Filtri Rapidi (Pills)
   'qfModelV7', 'qfCap10B', 'qfDrop1pct', 'qfDiv4', 'qfUnder52w', 'qfCombo',
   // Controlli & Select
@@ -71,6 +72,24 @@ requiredSectorOptions.forEach(sec => {
   assert(exists, `Opzione settore '${sec}' presente nel dropdown #sectorFilter`);
 });
 
+// Verifica ordinamento pulsanti mercati (FTSE MIB prima di Europa, ALL dopo TOP e prima di Riepilogo)
+assert(
+  indexHtml.indexOf('id="tabIT"') < indexHtml.indexOf('id="tabEU"'),
+  'Ordinamento tab carosello in alto: FTSE MIB posizionato prima di Europa'
+);
+assert(
+  indexHtml.indexOf('id="bottomTabIT"') < indexHtml.indexOf('id="bottomTabEU"'),
+  'Ordinamento dock bar in basso: FTSE MIB posizionato prima di Europa'
+);
+assert(
+  indexHtml.indexOf('id="tabTop"') < indexHtml.indexOf('id="tabAll"') && indexHtml.indexOf('id="tabAll"') < indexHtml.indexOf('id="tabSummary"'),
+  'Pulsante tabAll posizionato dopo tabTop e prima di tabSummary nel carosello in alto'
+);
+assert(
+  indexHtml.indexOf('id="bottomTabTop"') < indexHtml.indexOf('id="bottomTabAll"') && indexHtml.indexOf('id="bottomTabAll"') < indexHtml.indexOf('id="bottomTabSummary"'),
+  'Pulsante bottomTabAll posizionato dopo bottomTabTop e prima di bottomTabSummary nella dock bar'
+);
+
 // ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)
 // ---------------------------------------------------------------------------
@@ -93,6 +112,7 @@ assert(topList.length === 138, `Paniere ⭐ TOP completo: ${topList.length} tito
 
 const totalStocks = euList.length + itList.length + usaList.length + topList.length;
 assert(totalStocks >= 570, `Totale aggregato superiore a 570 titoli: ${totalStocks} titoli monitorati`);
+assert(totalStocks === 574, `Paniere ALL: combinazione esatta dei 4 mercati per un totale di ${totalStocks} titoli monitorati (FTSE MIB + Europa + USA + TOP)`);
 
 // Verifica coerenza quantitativa su tutti i titoli
 let allStocksValid = true;
