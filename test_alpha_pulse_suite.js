@@ -125,6 +125,14 @@ assert(
   'app.js: switchMarketSection scatena in automatico triggerFullMarketRefresh(\'market_switch\') per prezzi live'
 );
 
+// Verifica connessione al backend Google Cloud Run
+assert(
+  appJs.includes("const GOOGLE_CLOUD_API = 'https://alphapulse-1002987883318.europe-west8.run.app';") &&
+  appJs.includes("${GOOGLE_CLOUD_API}/api/refresh") &&
+  appJs.includes("${GOOGLE_CLOUD_API}/api/market-data"),
+  'app.js: connessione diretta al backend Google Cloud Run (europe-west8 Milano) per prezzi live'
+);
+
 // ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)
 // ---------------------------------------------------------------------------

@@ -80887,8 +80887,10 @@ let MARKET_DATA = {
 };
 
 // ==========================================================================
-// 2. STATO DELL'APPLICAZIONE
+// 2. STATO DELL'APPLICAZIONE & BACKEND CLOUD
 // ==========================================================================
+
+const GOOGLE_CLOUD_API = 'https://alphapulse-1002987883318.europe-west8.run.app';
 
 const state = {
   currentMarket: 'it', // DEFAULT: 'it' (FTSE MIB Piazza Affari)
@@ -81278,24 +81280,30 @@ async function triggerFullMarketRefresh(source = 'button') {
   }
 
   let updated = false;
-  let isLocalEngine = false;
+  let isCloudOrLocal = false;
 
-  // 1. Se l'utente esegue l'app in locale con server.py, interroga il motore Python live al secondo
+  // 1. Chiamata in tempo reale al backend Google Cloud Run (o server locale)
   try {
-    const res = await fetch('/api/refresh', { cache: 'no-store' });
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const refreshUrl = isLocal ? '/api/refresh' : `${GOOGLE_CLOUD_API}/api/refresh`;
+    const res = await fetch(refreshUrl, { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
-      if (data && (data.eu || data.it || data.usa)) {
+      if (data && (data.eu || data.it || data.usa || data.top)) {
         applyRealMarketData(data);
         updated = true;
-        isLocalEngine = true;
+        isCloudOrLocal = true;
+        state.isLiveServerConnected = true;
+        if (elements.liveFeedStatus) {
+          elements.liveFeedStatus.innerHTML = `<i class="fa-solid fa-bolt text-emerald"></i> GOOGLE CLOUD LIVE ATTIVO`;
+        }
       }
     }
   } catch (_) {
-    // Modalità Web statica (GitHub Pages)
+    // Fallback automatico su archivio cloud se offline
   }
 
-  // 2. Se in modalità Web statica, scarica l'ultimo dataset reale bypassando la cache CDN
+  // 2. Se in modalità Web statica o fallback, scarica l'ultimo dataset reale bypassando la cache CDN
   if (!updated) {
     try {
       let baseData = null;
@@ -81331,12 +81339,12 @@ async function triggerFullMarketRefresh(source = 'button') {
 
   if (source !== 'market_switch' && ptrBar && ptrIcon && ptrText) {
     ptrIcon.innerHTML = `<i class="fa-solid fa-check text-emerald"></i>`;
-    ptrText.textContent = isLocalEngine 
-      ? `Prezzi Live Scansionati al Secondo!` 
+    ptrText.textContent = isCloudOrLocal 
+      ? `Prezzi Live Scansionati al Secondo (Google Cloud)!` 
       : `Dati Sincronizzati al Cloud (${timeLabel ? timeLabel + ' CET' : 'Live'})`;
   }
   if (elements.refreshBtn) {
-    elements.refreshBtn.innerHTML = isLocalEngine 
+    elements.refreshBtn.innerHTML = isCloudOrLocal 
       ? `<i class="fa-solid fa-bolt text-emerald"></i> Prezzi Live Aggiornati!` 
       : `<i class="fa-solid fa-check text-emerald"></i> Dati Allineati (${timeLabel || 'OK'})`;
   }
@@ -81359,13 +81367,15 @@ async function triggerFullMarketRefresh(source = 'button') {
 
 async function loadLiveData() {
   try {
-    const res = await fetch('/api/market-data', { cache: 'no-store' });
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const dataUrl = isLocal ? '/api/market-data' : `${GOOGLE_CLOUD_API}/api/market-data`;
+    const res = await fetch(dataUrl, { cache: 'no-store' });
     if (res.ok) {
       const data = await res.json();
       applyRealMarketData(data);
       state.isLiveServerConnected = true;
       if (elements.liveFeedStatus) {
-        elements.liveFeedStatus.innerHTML = `<i class="fa-solid fa-bolt"></i> SERVER LIVE ATTIVO (Yahoo & News)`;
+        elements.liveFeedStatus.innerHTML = `<i class="fa-solid fa-bolt text-emerald"></i> GOOGLE CLOUD LIVE ATTIVO (Milano)`;
       }
       return;
     }
