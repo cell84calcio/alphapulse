@@ -28,7 +28,7 @@ import urllib.parse
 import xml.etree.ElementTree as ET
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-PORT = 8080
+PORT = int(os.environ.get("PORT", 8080))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "market_data.json")
 LEDGER_FILE = os.path.join(BASE_DIR, "history_ledger.json")
