@@ -933,6 +933,73 @@
 
   </div>
 
+  <!-- Floating Action Button AI Copilot (Powered by Google Gemini) -->
+  <button type="button" class="ai-fab-btn" id="aiFabBtn" aria-label="Apri AlphaPulse AI Copilot" title="AlphaPulse AI Copilot (Gemini 3.8 Flash)">
+    <div class="ai-fab-glow"></div>
+    <div class="ai-fab-icon-wrap">
+      <svg class="ai-gemini-sparkle" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C12 7.52285 7.52285 12 2 12C7.52285 12 12 16.4772 12 22C12 16.4772 16.4772 12 22 12C16.4772 12 12 7.52285 12 2Z" fill="url(#gemini_grad)"/>
+        <defs>
+          <linearGradient id="gemini_grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#38BDF8"/>
+            <stop offset="0.5" stop-color="#818CF8"/>
+            <stop offset="1" stop-color="#C084FC"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="ai-fab-badge">AI</span>
+    </div>
+    <span class="ai-fab-pulse"></span>
+  </button>
+
+  <!-- Modal / Drawer AI Copilot (Gemini Finanziario) -->
+  <div class="ai-drawer-overlay" id="aiDrawerOverlay" aria-hidden="true">
+    <div class="ai-drawer-container" id="aiDrawerContainer" role="dialog" aria-modal="true" aria-labelledby="aiDrawerTitle">
+      <header class="ai-drawer-header">
+        <div class="ai-drawer-title-group">
+          <div class="ai-title-row">
+            <span class="ai-sparkle-mini">✨</span>
+            <h3 id="aiDrawerTitle">AlphaPulse AI Copilot</h3>
+            <span class="ai-tag-gemini"><i class="fa-brands fa-google"></i> Gemini 3.8</span>
+          </div>
+          <p class="ai-subtitle">Analista Quantitativo & Macro &bull; 574 Titoli Live</p>
+        </div>
+        <div class="ai-drawer-actions">
+          <button type="button" class="ai-action-btn" id="aiClearHistoryBtn" title="Azzera conversazione"><i class="fa-solid fa-trash-can"></i></button>
+          <button type="button" class="ai-action-btn ai-close-btn" id="aiCloseDrawerBtn" title="Chiudi"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </header>
+
+      <!-- Quick Question Chips -->
+      <div class="ai-quick-chips" id="aiQuickChips">
+        <button type="button" class="ai-chip" data-prompt="Quali sono i migliori 3 titoli BUY secondo il modello oggi e perché?">⚡ Top 3 Buy</button>
+        <button type="button" class="ai-chip" data-prompt="Quali titoli staccano dividendo nei prossimi 14 giorni con il rendimento più alto?">📅 Dividendi a Breve</button>
+        <button type="button" class="ai-chip" data-prompt="ENI è buy o sell secondo il modello? Dammi target price, RSI e analisi">🇮🇹 Analisi ENI</button>
+        <button type="button" class="ai-chip" data-prompt="Come apre Wall Street lunedì e qual è il regime di mercato attuale con VIX?">🇺🇸 Sentiment Wall Street</button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="ai-msg ai-msg-bot">
+          <div class="ai-msg-avatar"><i class="fa-solid fa-brain"></i></div>
+          <div class="ai-msg-body">
+            <p><strong>Ciao Alberto!</strong> Sono il tuo analista quantitativo istituzionale potenziato da <strong>Google Gemini 3.8 Flash</strong>.</p>
+            <p>Conosco in tempo reale tutti i <strong>574 titoli</strong> di AlphaPulse (Italia, Europa, USA), i punteggi del modello v7.0, le date dei dividendi e il regime di volatilità del mercato.</p>
+            <p>Fammi qualsiasi domanda: <em>"ENI è buy o sell?"</em>, <em>"Dividendi della prossima settimana?"</em>, <em>"Migliori titoli tech?"</em> oppure tocca uno dei suggerimenti in alto!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <form class="ai-input-form" id="aiChatForm">
+        <input type="text" class="ai-chat-input" id="aiChatInput" placeholder="Chiedi su titoli, dividendi, buy/sell, Wall Street..." autocomplete="off">
+        <button type="submit" class="ai-send-btn" id="aiSendBtn" title="Invia messaggio" aria-label="Invia">
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!-- Floating Pill Dock Bar Sempre in Primo Piano in Basso (FTSE MIB / EuroStoxx 600 / S&P 500 / TOP / ALL) -->
   <nav class="bottom-nav-bar" id="bottomNavBar" aria-label="Selezione Sezione">
     <div class="bottom-nav-inner">
@@ -965,6 +1032,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261106-v35"></script>
+  <script src="app.js?v=20261106-v36"></script>
 </body>
 </html>

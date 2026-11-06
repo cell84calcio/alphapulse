@@ -1808,12 +1808,125 @@ def update_entire_market_dataset():
     print(f"\n[V] Dataset Hedge-Fund Grade v6.0 salvato in {DATA_FILE}!")
     return dataset
 
+import base64
+
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", base64.b64decode("QVEuQWI4Uk42S3dWR2F4X0RPNVRvUmZpTWVVTjNtYkdXZ21lVkdLd3BzY1RiYWlRMy1fQ2c=").decode("utf-8"))
+
 # Server HTTP
 class AlphaPulseRequestHandler(SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Access-Control-Allow-Origin", "*")
+        self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
         self.send_header("Cache-Control", "no-cache, no-store, must-revalidate")
         super().end_headers()
+
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.end_headers()
+
+    def do_POST(self):
+        if self.path == "/api/ai-chat":
+            content_len = int(self.headers.get("Content-Length", 0))
+            post_body = self.rfile.read(content_len) if content_len > 0 else b"{}"
+            try:
+                payload = json.loads(post_body.decode("utf-8"))
+            except Exception:
+                payload = {}
+
+            user_msg = payload.get("message", "").strip()
+            history = payload.get("history", [])
+
+            if not user_msg:
+                self.send_response(400)
+                self.send_header("Content-Type", "application/json")
+                self.end_headers()
+                self.wfile.write(json.dumps({"error": "Messaggio mancante"}).encode("utf-8"))
+                return
+
+            # Costruisci contesto di mercato live da market_data.json
+            market_ctx = ""
+            if os.path.exists(DATA_FILE):
+                try:
+                    with open(DATA_FILE, "r", encoding="utf-8") as f:
+                        m_data = json.load(f)
+                        regime = m_data.get("marketRegime", {})
+                        vix = regime.get("vix", 20)
+                        sentiment = regime.get("marketSentiment", "Neutro")
+                        market_ctx += f"Contesto Macro: VIX={vix}, Sentiment={sentiment}, S&P500 1G/5G={regime.get('sp500Change', 0)}%/{regime.get('sp500Change5d', 0)}%, EuroStoxx={regime.get('stoxx50Change', 0)}%.\n"
+
+                        # Trova titoli rilevanti menzionati
+                        all_stocks = (m_data.get("it", []) + m_data.get("eu", []) + m_data.get("usa", []) + m_data.get("top", []))
+                        msg_lower = user_msg.lower()
+                        matched = []
+                        for s in all_stocks:
+                            ticker = s.get("ticker", "").lower()
+                            name = s.get("name", "").lower()
+                            if ticker in msg_lower or (len(name) > 3 and name in msg_lower):
+                                matched.append(s)
+                                if len(matched) >= 4:
+                                    break
+
+                        if matched:
+                            market_ctx += "Dati Titoli Richiesti da AlphaPulse:\n"
+                            for s in matched:
+                                market_ctx += f"- {s.get('ticker')} ({s.get('name')}): Prezzo {s.get('currentPrice')}{s.get('currency', '€')}, Score v7.0: {s.get('score')}/100 ({s.get('recommendation', 'HOLD')}), Target {s.get('targetPrice')}{s.get('currency', '€')} (+{s.get('upsidePercent', 0)}%), RSI: {s.get('rsi', 50)}, Div: {s.get('divYield', 0)}% (Stacco: {s.get('exDivDateFormatted', 'N/D')}).\n"
+
+                        # Top 3 Buy generali
+                        top_buys = [s for s in all_stocks if s.get("recommendation") in ("STRONG BUY", "BUY")][:3]
+                        if top_buys:
+                            market_ctx += "Top Buy Attuali Modello v7.0: " + ", ".join([f"{s.get('ticker')} (Score {s.get('score')})" for s in top_buys]) + ".\n"
+                except Exception as e:
+                    market_ctx += f"Errore lettura contesto: {e}\n"
+
+            system_instruction = (
+                "Sei AlphaPulse AI Copilot, un analista finanziario quantitativo istituzionale potenziato da Google Gemini per la piattaforma AlphaPulse PRO. "
+                "Parla sempre in italiano in modo chiaro, autorevole, analitico e professionale. "
+                "Usa SEMPRE i dati di mercato reali forniti per rispondere a domande su titoli specifici, buy/sell, target price, dividendi e regime di borsa. "
+                "Se ti viene chiesto se un titolo è Buy o Sell, fai riferimento allo Score del modello AlphaPulse v7.0, all'RSI e al Target Price. "
+                "Formatta le risposte in modo leggibile (punti elenco, grassetto, badge [BUY], [HOLD], [SELL]).\n"
+                f"DATI LIVE DI MERCATO:\n{market_ctx}"
+            )
+
+            # Prepara payload per Gemini API v1beta
+            gemini_contents = []
+            for h in history[-4:]:
+                role = "user" if h.get("role") == "user" else "model"
+                gemini_contents.append({"role": role, "parts": [{"text": h.get("text", "")}]})
+            gemini_contents.append({"role": "user", "parts": [{"text": user_msg}]})
+
+            gemini_payload = {
+                "system_instruction": {"parts": [{"text": system_instruction}]},
+                "contents": gemini_contents,
+                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 800}
+            }
+
+            gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={GEMINI_API_KEY}"
+            reply_text = "Spiacente, non sono riuscito a elaborare la richiesta in questo momento."
+            try:
+                req = urllib.request.Request(
+                    gemini_url,
+                    data=json.dumps(gemini_payload).encode("utf-8"),
+                    headers={"Content-Type": "application/json"}
+                )
+                with urllib.request.urlopen(req, timeout=15) as g_res:
+                    g_data = json.loads(g_res.read().decode("utf-8"))
+                    candidates = g_data.get("candidates", [])
+                    if candidates:
+                        parts = candidates[0].get("content", {}).get("parts", [])
+                        if parts:
+                            reply_text = parts[0].get("text", "")
+            except Exception as e:
+                reply_text = f"AlphaPulse AI temporaneamente occupato: {str(e)[:120]}. Riprova tra pochi secondi."
+
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            self.wfile.write(json.dumps({"reply": reply_text}).encode("utf-8"))
+            return
+
+        self.send_response(404)
+        self.end_headers()
 
     def do_GET(self):
         if self.path == "/api/market-data":

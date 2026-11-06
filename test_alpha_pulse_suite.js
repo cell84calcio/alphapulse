@@ -8,6 +8,7 @@ const path = require('path');
 
 const indexHtml = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 const appJs = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
+const styleCss = fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8');
 const marketData = JSON.parse(fs.readFileSync(path.join(__dirname, 'market_data.json'), 'utf8'));
 
 let testsPassed = 0;
@@ -132,6 +133,25 @@ assert(
   appJs.includes("${GOOGLE_CLOUD_API}/api/market-data"),
   'app.js: connessione diretta al backend Google Cloud Run (europe-west8 Milano) per prezzi live'
 );
+
+// ---------------------------------------------------------------------------
+// 1b. VERIFICA ALPHAPULSE AI COPILOT (GEMINI 3.8 FLASH)
+// ---------------------------------------------------------------------------
+console.log('\n--- 1b. VERIFICA ALPHAPULSE AI COPILOT (GEMINI) ---');
+assert(indexHtml.includes('id="aiFabBtn"'), 'index.html: Pulsante fluttuante AI (#aiFabBtn) presente');
+assert(indexHtml.includes('id="aiDrawerOverlay"'), 'index.html: Overlay drawer AI (#aiDrawerOverlay) presente');
+assert(indexHtml.includes('id="aiDrawerContainer"'), 'index.html: Contenitore drawer AI (#aiDrawerContainer) presente');
+assert(indexHtml.includes('id="aiQuickChips"'), 'index.html: Quick chips per domande rapide (#aiQuickChips) presenti');
+assert(indexHtml.includes('id="aiChatForm"'), 'index.html: Form invio chat (#aiChatForm) presente');
+assert(indexHtml.includes('id="aiChatInput"'), 'index.html: Campo input domanda AI (#aiChatInput) presente');
+assert(indexHtml.includes('id="aiSendBtn"'), 'index.html: Pulsante invio chat (#aiSendBtn) presente');
+assert(indexHtml.includes('id="aiClearHistoryBtn"'), 'index.html: Pulsante pulizia chat (#aiClearHistoryBtn) presente');
+assert(appJs.includes('function initAiCopilot'), 'app.js: funzione initAiCopilot implementata');
+assert(appJs.includes('function buildAiMarketContext'), 'app.js: funzione buildAiMarketContext per iniezione RAG implementata');
+assert(appJs.includes('function formatAiMarkdown'), 'app.js: parser markdown e badge per risposte AI implementato');
+assert(appJs.includes('gemini-3.8-flash'), 'app.js: modello Gemini 3.8 Flash configurato');
+assert(styleCss.includes('.ai-fab-btn'), 'style.css: regole di stile per il floating action button');
+assert(styleCss.includes('.ai-drawer-container'), 'style.css: regole di stile per il drawer di chat');
 
 // ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)

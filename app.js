@@ -82832,6 +82832,302 @@ function initPullToRefresh() {
 }
 
 // ==========================================================================
+// 11b. ALPHAPULSE AI COPILOT (POWERED BY GOOGLE GEMINI 3.8 FLASH)
+// ==========================================================================
+
+const GEMINI_API_KEY = (typeof window !== 'undefined' && window.localStorage && window.localStorage.getItem('alphapulse_gemini_key')) || (typeof atob === 'function' ? atob('QVEuQWI4Uk42S3dWR2F4X0RPNVRvUmZpTWVVTjNtYkdXZ21lVkdLd3BzY1RiYWlRMy1fQ2c=') : '');
+
+function formatAiMarkdown(raw) {
+  if (!raw) return '';
+  let text = String(raw).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  text = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/\*(.+?)\*/g, '<em>$1</em>');
+  text = text.replace(/\[(STRONG BUY|BUY)\]/gi, '<span style="color:#10b981;font-weight:700;">[$1]</span>');
+  text = text.replace(/\[(HOLD|NEUTRO)\]/gi, '<span style="color:#f59e0b;font-weight:700;">[$1]</span>');
+  text = text.replace(/\[(SELL|TAKE PROFIT)\]/gi, '<span style="color:#ef4444;font-weight:700;">[$1]</span>');
+  const lines = text.split('\n');
+  let inList = false;
+  let html = [];
+  for (let line of lines) {
+    const trimmed = line.trim();
+    if (trimmed.startsWith('* ') || trimmed.startsWith('- ')) {
+      if (!inList) { html.push('<ul>'); inList = true; }
+      html.push('<li>' + trimmed.substring(2) + '</li>');
+    } else {
+      if (inList) { html.push('</ul>'); inList = false; }
+      if (trimmed === '') {
+        html.push('<br>');
+      } else {
+        html.push('<p>' + trimmed + '</p>');
+      }
+    }
+  }
+  if (inList) html.push('</ul>');
+  return html.join('');
+}
+
+function buildAiMarketContext(userMsg) {
+  let ctx = '';
+  const regime = state.marketRegime || {};
+  ctx += `Regime Macro: VIX=${regime.vix || 25} (${regime.marketSentiment || 'Neutro'}), S&P 500 1G=${regime.sp500Change || 0}%, EuroStoxx=${regime.stoxx50Change || 0}%.\n`;
+
+  const msgLower = (userMsg || '').toLowerCase();
+  const all = state.allStocks || [];
+
+  // 1. Cerca titoli citati nel messaggio dell'utente
+  const matched = [];
+  for (const s of all) {
+    const t = (s.ticker || '').toLowerCase();
+    const n = (s.name || '').toLowerCase();
+    if (t && msgLower.includes(t)) {
+      matched.push(s);
+    } else if (n && n.length > 3 && msgLower.includes(n)) {
+      matched.push(s);
+    }
+    if (matched.length >= 5) break;
+  }
+
+  if (matched.length > 0) {
+    ctx += 'Schede Titoli Richiesti da AlphaPulse:\n';
+    matched.forEach(s => {
+      ctx += `- ${s.ticker} (${s.name}): Prezzo ${s.currentPrice}${s.currency || '€'}, Score v7.0: ${s.score}/100 (${s.recommendation || 'HOLD'}), Target ${s.targetPrice}${s.currency || '€'} (+${s.upsidePercent || 0}%), RSI: ${s.rsi || 50}, Div: ${s.divYield || 0}% (Stacco: ${s.exDivDateFormatted || 'N/D'}).\n`;
+    });
+  }
+
+  // 2. Dividendi in stacco a breve se l'utente chiede dividendi
+  if (msgLower.includes('dividend') || msgLower.includes('stacc') || msgLower.includes('cedol')) {
+    const divStocks = all
+      .filter(s => typeof s.daysToExDiv === 'number' && s.daysToExDiv >= 0 && s.daysToExDiv <= 21 && (s.divYield || 0) > 0)
+      .sort((a, b) => a.daysToExDiv - b.daysToExDiv)
+      .slice(0, 6);
+    if (divStocks.length > 0) {
+      ctx += 'Prossimi Stacchi Dividendo Rilevati:\n';
+      divStocks.forEach(s => {
+        ctx += `- ${s.ticker} (${s.name}): Stacco tra ${s.daysToExDiv} giorni (${s.exDivDateFormatted}), Rendimento: ${s.divYield}%, Prezzo: ${s.currentPrice}${s.currency}.\n`;
+      });
+    }
+  }
+
+  // 3. Top 3 BUY attuali del modello
+  const topBuys = all
+    .filter(s => s.recommendation === 'STRONG BUY' || s.recommendation === 'BUY')
+    .slice(0, 3);
+  if (topBuys.length > 0) {
+    ctx += 'Top Buy del Modello v7.0: ' + topBuys.map(s => `${s.ticker} (${s.score}/100, Target +${s.upsidePercent}%)`).join(', ') + '.\n';
+  }
+
+  return ctx;
+}
+
+function initAiCopilot() {
+  const fabBtn = document.getElementById('aiFabBtn');
+  const drawerOverlay = document.getElementById('aiDrawerOverlay');
+  const drawerContainer = document.getElementById('aiDrawerContainer');
+  const closeBtn = document.getElementById('aiCloseDrawerBtn');
+  const clearBtn = document.getElementById('aiClearHistoryBtn');
+  const chatForm = document.getElementById('aiChatForm');
+  const chatInput = document.getElementById('aiChatInput');
+  const sendBtn = document.getElementById('aiSendBtn');
+  const messagesContainer = document.getElementById('aiChatMessages');
+  const quickChips = document.getElementById('aiQuickChips');
+
+  if (!fabBtn || !drawerOverlay) return;
+
+  const chatHistory = [];
+
+  function openAiDrawer() {
+    drawerOverlay.classList.add('open');
+    drawerOverlay.setAttribute('aria-hidden', 'false');
+    setTimeout(() => {
+      if (chatInput) chatInput.focus();
+    }, 150);
+  }
+
+  function closeAiDrawer() {
+    drawerOverlay.classList.remove('open');
+    drawerOverlay.setAttribute('aria-hidden', 'true');
+  }
+
+  fabBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (drawerOverlay.classList.contains('open')) {
+      closeAiDrawer();
+    } else {
+      openAiDrawer();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeAiDrawer();
+    });
+  }
+
+  drawerOverlay.addEventListener('click', (e) => {
+    if (e.target === drawerOverlay) {
+      closeAiDrawer();
+    }
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => {
+      chatHistory.length = 0;
+      if (messagesContainer) {
+        messagesContainer.innerHTML = `
+          <div class="ai-msg ai-msg-bot">
+            <div class="ai-msg-avatar"><i class="fa-solid fa-brain"></i></div>
+            <div class="ai-msg-body">
+              <p><strong>Conversazione azzerata.</strong> Come posso aiutarti ora sui mercati finanziari?</p>
+            </div>
+          </div>
+        `;
+      }
+    });
+  }
+
+  if (quickChips) {
+    quickChips.addEventListener('click', (e) => {
+      const chip = e.target.closest('.ai-chip');
+      if (!chip) return;
+      const prompt = chip.getAttribute('data-prompt');
+      if (prompt && chatInput) {
+        chatInput.value = prompt;
+        submitAiQuestion(prompt);
+      }
+    });
+  }
+
+  async function submitAiQuestion(userText) {
+    const text = (userText || (chatInput ? chatInput.value : '')).trim();
+    if (!text) return;
+
+    if (chatInput) chatInput.value = '';
+    if (sendBtn) sendBtn.disabled = true;
+
+    // Aggiungi messaggio utente
+    const userMsgEl = document.createElement('div');
+    userMsgEl.className = 'ai-msg ai-msg-user';
+    userMsgEl.innerHTML = `
+      <div class="ai-msg-body">
+        <p>${text.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</p>
+      </div>
+    `;
+    messagesContainer.appendChild(userMsgEl);
+
+    // Aggiungi indicatore di caricamento
+    const loadingEl = document.createElement('div');
+    loadingEl.className = 'ai-msg ai-msg-bot ai-msg-loading';
+    loadingEl.innerHTML = `
+      <div class="ai-msg-avatar"><i class="fa-solid fa-brain"></i></div>
+      <div class="ai-msg-body">
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+        <span class="typing-dot"></span>
+      </div>
+    `;
+    messagesContainer.appendChild(loadingEl);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    chatHistory.push({ role: 'user', text: text });
+
+    let botReply = '';
+    const marketCtx = buildAiMarketContext(text);
+
+    // 1. Prova prima tramite backend Cloud Run
+    try {
+      const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const aiEndpoint = isLocal ? '/api/ai-chat' : `${GOOGLE_CLOUD_API}/api/ai-chat`;
+      const res = await fetch(aiEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text, history: chatHistory.slice(-4) }),
+        signal: AbortSignal.timeout(12000)
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data && data.reply) {
+          botReply = data.reply;
+        }
+      }
+    } catch (_) {}
+
+    // 2. Se backend offline o non disponibile, chiama direttamente Gemini API
+    if (!botReply) {
+      try {
+        const systemInstruction = (
+          "Sei AlphaPulse AI Copilot, un analista finanziario quantitativo istituzionale potenziato da Google Gemini per la piattaforma AlphaPulse PRO. " +
+          "Parla sempre in italiano in modo chiaro, autorevole, analitico e professionale. " +
+          "Usa SEMPRE i dati quantitativi forniti nel contesto (prezzi reali, score del modello AlphaPulse v7.0, target price, RSI, dividendi). " +
+          "Se ti viene chiesto se un titolo è Buy o Sell, fai riferimento allo Score del modello AlphaPulse v7.0, all'RSI e al Target Price. " +
+          "Formatta le risposte in modo leggibile (punti elenco, grassetto per ticker e cifre, badge [BUY], [HOLD], [SELL]).\n" +
+          `DATI LIVE DI MERCATO ATTUALI:\n${marketCtx}`
+        );
+
+        const geminiContents = chatHistory.slice(-4).map(h => ({
+          role: h.role === 'user' ? 'user' : 'model',
+          parts: [{ text: h.text }]
+        }));
+
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${GEMINI_API_KEY}`;
+        const gRes = await fetch(geminiUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: systemInstruction }] },
+            contents: geminiContents,
+            generationConfig: { temperature: 0.4, maxOutputTokens: 800 }
+          }),
+          signal: AbortSignal.timeout(15000)
+        });
+
+        if (gRes.ok) {
+          const gData = await gRes.json();
+          const cand = gData && gData.candidates && gData.candidates[0];
+          if (cand && cand.content && cand.content.parts && cand.content.parts[0]) {
+            botReply = cand.content.parts[0].text;
+          }
+        }
+      } catch (err) {
+        botReply = "Spiacente, si è verificato un errore di connessione con il servizio AI. Riprova tra pochi istanti.";
+      }
+    }
+
+    if (!botReply) {
+      botReply = "Non è stato possibile ottenere una risposta in questo momento. Verifica la connessione e riprova.";
+    }
+
+    chatHistory.push({ role: 'model', text: botReply });
+
+    // Rimuovi loading e aggiungi risposta
+    if (loadingEl && loadingEl.parentNode) {
+      loadingEl.parentNode.removeChild(loadingEl);
+    }
+
+    const botMsgEl = document.createElement('div');
+    botMsgEl.className = 'ai-msg ai-msg-bot';
+    botMsgEl.innerHTML = `
+      <div class="ai-msg-avatar"><i class="fa-solid fa-brain"></i></div>
+      <div class="ai-msg-body">
+        ${formatAiMarkdown(botReply)}
+      </div>
+    `;
+    messagesContainer.appendChild(botMsgEl);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+    if (sendBtn) sendBtn.disabled = false;
+    if (chatInput) chatInput.focus();
+  }
+
+  if (chatForm) {
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitAiQuestion();
+    });
+  }
+}
+
+// ==========================================================================
 // 12. INIZIALIZZAZIONE ALL'AVVIO
 // ==========================================================================
 
@@ -82843,6 +83139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateFilterPillsUI();
   initEventListeners();
   initPullToRefresh();
+  initAiCopilot();
   renderStocks();
   loadLiveData();
 
