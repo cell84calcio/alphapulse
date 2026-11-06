@@ -13,8 +13,8 @@
         "score": 89,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": 1.89,
-        "currentPrice": 22.63
+        "resultPct": 1.98,
+        "currentPrice": 22.65
       },
       {
         "ticker": "TTE",
@@ -26,8 +26,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -4.92,
-        "currentPrice": 79.31
+        "resultPct": -4.41,
+        "currentPrice": 79.73
       },
       {
         "ticker": "SAN-FR",
@@ -39,8 +39,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": 2.75,
-        "currentPrice": 83.76
+        "resultPct": 2.72,
+        "currentPrice": 83.74
       },
       {
         "ticker": "ENI",
@@ -52,8 +52,8 @@
         "score": 86,
         "startDate": "2026-11-03",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -5.37,
-        "currentPrice": 24.95
+        "resultPct": -4.97,
+        "currentPrice": 25.05
       },
       {
         "ticker": "OR",
@@ -65,8 +65,8 @@
         "score": 85,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": 3.91,
-        "currentPrice": 450.25
+        "resultPct": 3.81,
+        "currentPrice": 449.8
       }
     ]
   },
@@ -84,8 +84,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -10.62,
-        "currentPrice": 360.92
+        "resultPct": -11.29,
+        "currentPrice": 358.22
       },
       {
         "ticker": "V",
@@ -97,8 +97,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": -0.81,
-        "currentPrice": 422.05
+        "resultPct": -0.67,
+        "currentPrice": 422.65
       },
       {
         "ticker": "COST",
@@ -110,8 +110,8 @@
         "score": 94,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": 1.78,
-        "currentPrice": 1059.05
+        "resultPct": 1.25,
+        "currentPrice": 1053.56
       },
       {
         "ticker": "WMT",
@@ -123,8 +123,8 @@
         "score": 91,
         "startDate": "2026-11-03",
         "status": "In Monitoraggio (2G rim.)",
-        "resultPct": -1.26,
-        "currentPrice": 126.08
+        "resultPct": -1.7,
+        "currentPrice": 125.52
       },
       {
         "ticker": "XOM",
@@ -136,8 +136,8 @@
         "score": 87,
         "startDate": "2026-11-03",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -7.42,
-        "currentPrice": 166.34
+        "resultPct": -7.68,
+        "currentPrice": 165.87
       }
     ]
   },
@@ -150,39 +150,39 @@
         "name": "Ferrari N.V.",
         "currency": "€",
         "entryPrice": 375.0,
-        "currentPrice": 375.15,
+        "currentPrice": 373.85,
         "targetPrice": 397.73,
         "stopLoss": 362.79,
         "score": 97,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 0.04
+        "resultPct": -0.31
       },
       {
         "ticker": "INVE-B",
         "name": "Investor AB",
         "currency": "SEK ",
         "entryPrice": 428.5,
-        "currentPrice": 428.05,
+        "currentPrice": 428.15,
         "targetPrice": 451.47,
         "stopLoss": 416.16,
         "score": 94,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -0.11
+        "resultPct": -0.08
       },
       {
         "ticker": "NEXI",
         "name": "Nexi SpA",
         "currency": "€",
         "entryPrice": 4.5,
-        "currentPrice": 4.47,
+        "currentPrice": 4.5,
         "targetPrice": 4.84,
         "stopLoss": 4.31,
         "score": 94,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -0.6
+        "resultPct": -0.04
       },
       {
         "ticker": "NOVO-B",
@@ -202,13 +202,13 @@
         "name": "Bayer AG",
         "currency": "€",
         "entryPrice": 51.84,
-        "currentPrice": 55.34,
+        "currentPrice": 55.58,
         "targetPrice": 56.63,
         "stopLoss": 49.26,
         "score": 93,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 6.75
+        "resultPct": 7.21
       }
     ]
   },
@@ -221,65 +221,65 @@
         "name": "Altria Group Inc.",
         "currency": "$",
         "entryPrice": 76.94,
-        "currentPrice": 76.61,
+        "currentPrice": 76.12,
         "targetPrice": 83.02,
         "stopLoss": 73.67,
         "score": 96,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -0.43
+        "resultPct": -1.07
       },
       {
         "ticker": "TXN",
         "name": "Texas Instruments",
         "currency": "$",
         "entryPrice": 312.49,
-        "currentPrice": 275.79,
+        "currentPrice": 277.36,
         "targetPrice": 349.37,
         "stopLoss": 292.67,
         "score": 94,
         "startDate": "2026-11-04",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -11.74
+        "resultPct": -11.24
       },
       {
         "ticker": "KO",
         "name": "Coca-Cola Company",
         "currency": "$",
         "entryPrice": 94.8,
-        "currentPrice": 95.91,
+        "currentPrice": 95.67,
         "targetPrice": 100.96,
         "stopLoss": 91.49,
         "score": 94,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 1.17
+        "resultPct": 0.92
       },
       {
         "ticker": "VZ",
         "name": "Verizon Communications",
         "currency": "$",
         "entryPrice": 45.24,
-        "currentPrice": 45.66,
+        "currentPrice": 45.69,
         "targetPrice": 49.61,
         "stopLoss": 42.89,
         "score": 93,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 0.93
+        "resultPct": 0.99
       },
       {
         "ticker": "BRK-B",
         "name": "Berkshire Hathaway",
         "currency": "$",
         "entryPrice": 557.07,
-        "currentPrice": 570.7,
+        "currentPrice": 570.89,
         "targetPrice": 583.14,
         "stopLoss": 543.06,
         "score": 93,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 2.45
+        "resultPct": 2.48
       }
     ]
   },
@@ -292,65 +292,65 @@
         "name": "Ferrari N.V.",
         "currency": "€",
         "entryPrice": 382.55,
-        "currentPrice": 375.1,
+        "currentPrice": 373.85,
         "targetPrice": 414.66,
         "stopLoss": 365.3,
         "score": 97,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -1.95
+        "resultPct": -2.27
       },
       {
         "ticker": "BC",
         "name": "Brunello Cucinelli",
         "currency": "€",
         "entryPrice": 87.6,
-        "currentPrice": 87.14,
+        "currentPrice": 86.62,
         "targetPrice": 95.71,
         "stopLoss": 83.24,
         "score": 97,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -0.53
+        "resultPct": -1.12
       },
       {
         "ticker": "MONC",
         "name": "Moncler SpA",
         "currency": "€",
         "entryPrice": 46.9,
-        "currentPrice": 45.28,
+        "currentPrice": 45.37,
         "targetPrice": 51.42,
         "stopLoss": 44.47,
         "score": 95,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -3.45
+        "resultPct": -3.26
       },
       {
         "ticker": "MB",
         "name": "Mediobanca",
         "currency": "€",
         "entryPrice": 26.56,
-        "currentPrice": 26.2,
+        "currentPrice": 26.18,
         "targetPrice": 28.57,
         "stopLoss": 25.48,
         "score": 95,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": -1.36
+        "resultPct": -1.43
       },
       {
         "ticker": "FBK",
         "name": "FinecoBank",
         "currency": "€",
         "entryPrice": 22.19,
-        "currentPrice": 22.48,
+        "currentPrice": 22.38,
         "targetPrice": 23.99,
         "stopLoss": 21.22,
         "score": 94,
         "startDate": "2026-11-04",
         "status": "In Monitoraggio (3G rim.)",
-        "resultPct": 1.31
+        "resultPct": 0.86
       }
     ]
   },
@@ -363,65 +363,65 @@
         "name": "Ferrari N.V.",
         "currency": "€",
         "entryPrice": 382.55,
-        "currentPrice": 375.15,
+        "currentPrice": 373.85,
         "targetPrice": 412.17,
         "stopLoss": 366.63,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -1.93
+        "resultPct": -2.27
       },
       {
         "ticker": "ABI",
         "name": "AB InBev",
         "currency": "€",
         "entryPrice": 75.28,
-        "currentPrice": 76.0,
+        "currentPrice": 75.7,
         "targetPrice": 80.97,
         "stopLoss": 72.22,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": 0.96
+        "resultPct": 0.56
       },
       {
         "ticker": "GIVN",
         "name": "Givaudan SA",
         "currency": "CHF",
         "entryPrice": 4073.0,
-        "currentPrice": 4055.0,
+        "currentPrice": 4054.0,
         "targetPrice": 4302.24,
         "stopLoss": 3949.83,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -0.44
+        "resultPct": -0.47
       },
       {
         "ticker": "DHL",
         "name": "DHL Group",
         "currency": "€",
         "entryPrice": 60.26,
-        "currentPrice": 57.54,
+        "currentPrice": 58.02,
         "targetPrice": 63.78,
         "stopLoss": 58.37,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -4.51
+        "resultPct": -3.72
       },
       {
         "ticker": "OR",
         "name": "L'Oréal S.A.",
         "currency": "€",
         "entryPrice": 444.75,
-        "currentPrice": 450.25,
+        "currentPrice": 449.8,
         "targetPrice": 473.76,
         "stopLoss": 429.16,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": 1.24
+        "resultPct": 1.14
       }
     ]
   },
@@ -434,65 +434,65 @@
         "name": "Ferrari N.V.",
         "currency": "€",
         "entryPrice": 382.55,
-        "currentPrice": 375.1,
+        "currentPrice": 373.85,
         "targetPrice": 412.17,
         "stopLoss": 366.63,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -1.95
+        "resultPct": -2.27
       },
       {
         "ticker": "BC",
         "name": "Brunello Cucinelli",
         "currency": "€",
         "entryPrice": 87.6,
-        "currentPrice": 87.14,
+        "currentPrice": 86.62,
         "targetPrice": 95.47,
         "stopLoss": 83.37,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -0.53
+        "resultPct": -1.12
       },
       {
         "ticker": "ENEL",
         "name": "Enel SpA",
         "currency": "€",
         "entryPrice": 9.68,
-        "currentPrice": 9.67,
+        "currentPrice": 9.69,
         "targetPrice": 10.16,
         "stopLoss": 9.42,
         "score": 96,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -0.1
+        "resultPct": 0.13
       },
       {
         "ticker": "NEXI",
         "name": "Nexi SpA",
         "currency": "€",
         "entryPrice": 4.64,
-        "currentPrice": 4.48,
+        "currentPrice": 4.5,
         "targetPrice": 4.98,
         "stopLoss": 4.46,
         "score": 96,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -3.51
+        "resultPct": -3.06
       },
       {
         "ticker": "MONC",
         "name": "Moncler SpA",
         "currency": "€",
         "entryPrice": 46.9,
-        "currentPrice": 45.28,
+        "currentPrice": 45.37,
         "targetPrice": 51.13,
         "stopLoss": 44.63,
         "score": 95,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -3.45
+        "resultPct": -3.26
       }
     ]
   },
@@ -505,65 +505,65 @@
         "name": "Coca-Cola Company",
         "currency": "$",
         "entryPrice": 95.8,
-        "currentPrice": 95.91,
+        "currentPrice": 95.67,
         "targetPrice": 101.92,
         "stopLoss": 92.51,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": 0.11
+        "resultPct": -0.14
       },
       {
         "ticker": "MDLZ",
         "name": "Mondelez International",
         "currency": "$",
         "entryPrice": 67.38,
-        "currentPrice": 66.5,
+        "currentPrice": 66.02,
         "targetPrice": 72.66,
         "stopLoss": 64.54,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -1.31
+        "resultPct": -2.02
       },
       {
         "ticker": "CNC",
         "name": "Centene Corporation",
         "currency": "$",
         "entryPrice": 76.01,
-        "currentPrice": 69.63,
+        "currentPrice": 69.74,
         "targetPrice": 87.4,
         "stopLoss": 69.89,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -8.39
+        "resultPct": -8.25
       },
       {
         "ticker": "PG",
         "name": "Procter & Gamble",
         "currency": "$",
         "entryPrice": 167.32,
-        "currentPrice": 166.04,
+        "currentPrice": 165.4,
         "targetPrice": 179.13,
         "stopLoss": 160.97,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -0.77
+        "resultPct": -1.15
       },
       {
         "ticker": "DIS",
         "name": "Walt Disney Company",
         "currency": "$",
         "entryPrice": 118.95,
-        "currentPrice": 117.01,
+        "currentPrice": 116.75,
         "targetPrice": 126.5,
         "stopLoss": 114.89,
         "score": 97,
         "startDate": "2026-11-05",
         "status": "In Monitoraggio (4G rim.)",
-        "resultPct": -1.63
+        "resultPct": -1.85
       }
     ]
   },
@@ -576,65 +576,65 @@
         "name": "L'Oréal S.A.",
         "currency": "€",
         "entryPrice": 455.6,
-        "currentPrice": 450.25,
+        "currentPrice": 449.8,
         "targetPrice": 485.88,
         "stopLoss": 439.33,
         "score": 97,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.17
+        "resultPct": -1.27
       },
       {
         "ticker": "ZAL",
         "name": "Zalando SE",
         "currency": "€",
         "entryPrice": 28.48,
-        "currentPrice": 27.59,
+        "currentPrice": 27.72,
         "targetPrice": 32.02,
         "stopLoss": 26.58,
         "score": 96,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -3.13
+        "resultPct": -2.67
       },
       {
         "ticker": "BAS",
         "name": "BASF SE",
         "currency": "€",
         "entryPrice": 56.09,
-        "currentPrice": 54.23,
+        "currentPrice": 54.28,
         "targetPrice": 59.24,
         "stopLoss": 54.4,
         "score": 96,
         "startDate": "2026-11-06",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -3.32
+        "resultPct": -3.23
       },
       {
         "ticker": "ABI",
         "name": "AB InBev",
         "currency": "€",
         "entryPrice": 75.66,
-        "currentPrice": 76.0,
+        "currentPrice": 75.7,
         "targetPrice": 81.64,
         "stopLoss": 72.45,
         "score": 96,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.45
+        "resultPct": 0.05
       },
       {
         "ticker": "AD",
         "name": "Ahold Delhaize",
         "currency": "€",
         "entryPrice": 34.64,
-        "currentPrice": 34.18,
+        "currentPrice": 34.22,
         "targetPrice": 37.01,
         "stopLoss": 33.36,
         "score": 96,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.33
+        "resultPct": -1.21
       }
     ]
   },
@@ -647,65 +647,65 @@
         "name": "Campari Group",
         "currency": "€",
         "entryPrice": 6.75,
-        "currentPrice": 6.63,
+        "currentPrice": 6.64,
         "targetPrice": 7.35,
         "stopLoss": 6.42,
         "score": 93,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.72
+        "resultPct": -1.63
       },
       {
         "ticker": "G",
         "name": "Assicurazioni Generali",
         "currency": "€",
         "entryPrice": 44.56,
-        "currentPrice": 43.48,
+        "currentPrice": 43.73,
         "targetPrice": 47.02,
         "stopLoss": 43.24,
         "score": 92,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -2.42
+        "resultPct": -1.86
       },
       {
         "ticker": "NEXI",
         "name": "Nexi SpA",
         "currency": "€",
         "entryPrice": 4.67,
-        "currentPrice": 4.48,
+        "currentPrice": 4.5,
         "targetPrice": 5.01,
         "stopLoss": 4.48,
         "score": 92,
         "startDate": "2026-11-06",
         "status": "Stop Loss Toccato ❌",
-        "resultPct": -4.13
+        "resultPct": -3.68
       },
       {
         "ticker": "ENEL",
         "name": "Enel SpA",
         "currency": "€",
         "entryPrice": 9.77,
-        "currentPrice": 9.67,
+        "currentPrice": 9.69,
         "targetPrice": 10.29,
         "stopLoss": 9.49,
         "score": 92,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.02
+        "resultPct": -0.79
       },
       {
         "ticker": "FBK",
         "name": "FinecoBank",
         "currency": "€",
         "entryPrice": 22.73,
-        "currentPrice": 22.48,
+        "currentPrice": 22.38,
         "targetPrice": 24.53,
         "stopLoss": 21.76,
         "score": 92,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -1.1
+        "resultPct": -1.54
       }
     ]
   },
@@ -718,65 +718,65 @@
         "name": "Kimberly-Clark",
         "currency": "$",
         "entryPrice": 110.46,
-        "currentPrice": 108.2,
+        "currentPrice": 108.43,
         "targetPrice": 121.29,
         "stopLoss": 104.64,
         "score": 95,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -2.05
+        "resultPct": -1.84
       },
       {
         "ticker": "CMG",
         "name": "Chipotle Mexican Grill",
         "currency": "$",
         "entryPrice": 35.4,
-        "currentPrice": 34.68,
+        "currentPrice": 34.43,
         "targetPrice": 39.59,
         "stopLoss": 33.15,
         "score": 94,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -2.02
+        "resultPct": -2.74
       },
       {
         "ticker": "CAH",
         "name": "Cardinal Health",
         "currency": "$",
         "entryPrice": 267.82,
-        "currentPrice": 267.16,
+        "currentPrice": 271.72,
         "targetPrice": 286.85,
         "stopLoss": 257.59,
         "score": 94,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.25
+        "resultPct": 1.46
       },
       {
         "ticker": "COST",
         "name": "Costco Wholesale",
         "currency": "$",
         "entryPrice": 1065.59,
-        "currentPrice": 1059.05,
+        "currentPrice": 1053.56,
         "targetPrice": 1127.75,
         "stopLoss": 1032.19,
         "score": 94,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": -0.61
+        "resultPct": -1.13
       },
       {
         "ticker": "BDX",
         "name": "Becton, Dickinson and Company",
         "currency": "$",
         "entryPrice": 213.55,
-        "currentPrice": 213.67,
+        "currentPrice": 211.88,
         "targetPrice": 227.43,
         "stopLoss": 206.09,
         "score": 94,
         "startDate": "2026-11-06",
         "status": "In Monitoraggio (5G rim.)",
-        "resultPct": 0.06
+        "resultPct": -0.78
       }
     ]
   }
