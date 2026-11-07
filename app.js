@@ -80894,6 +80894,7 @@ const GOOGLE_CLOUD_API = 'https://alphapulse-1002987883318.europe-west8.run.app'
 
 const state = {
   currentMarket: 'it', // DEFAULT: 'it' (FTSE MIB Piazza Affari)
+  isSniperActive: false, // DEFAULT FALSE: Modalità Cecchino Sniper v8.0 (>80% Win Rate)
   isModelV7Active: false, // DEFAULT FALSE: Tutti i titoli per capitalizzazione senza modello!
   isCap10BActive: false,  // DEFAULT FALSE: Senza filtro capitalizzazione
   isDrop1PctActive: false, // DEFAULT FALSE: Filtro Prezzo < -1% (Quotazione in ribasso)
@@ -80914,6 +80915,9 @@ const state = {
 // ==========================================================================
 
 const elements = {
+  qfSniper: document.getElementById('qfSniper'),
+  macroKillSwitchBanner: document.getElementById('macroKillSwitchBanner'),
+  mBreakEvenVal: document.getElementById('mBreakEvenVal'),
   tabIT: document.getElementById('tabIT'),
   tabEU: document.getElementById('tabEU'),
   tabUSA: document.getElementById('tabUSA'),
@@ -81407,6 +81411,27 @@ async function loadLiveData() {
   }
 }
 
+function updateMacroKillSwitchUI(regime) {
+  const banner = document.getElementById('macroKillSwitchBanner');
+  const title = document.getElementById('mksTitle');
+  const desc = document.getElementById('mksDesc');
+  if (!banner) return;
+
+  const vix = regime && regime.vix ? Number(regime.vix) : (state.marketRegime?.vix || 28.18);
+  const isKillSwitch = vix >= 23.5 || (regime && regime.macroKillSwitch && regime.macroKillSwitch.active);
+
+  banner.style.display = 'flex';
+  if (isKillSwitch) {
+    banner.className = 'macro-kill-switch-banner active-kill-switch';
+    if (title) title.innerHTML = `<i class="fa-solid fa-shield-halved"></i> MACRO KILL-SWITCH ATTIVO &bull; MODALITÀ DIFENSIVA (VIX: ${vix})`;
+    if (desc) desc.textContent = `Volatilità sistemica elevata (VIX > 23.5). Il modello v8.0 blocca gli acquisti generici e consiglia 100% Cash o sole entrate Sniper a pareggio garantito.`;
+  } else {
+    banner.className = 'macro-kill-switch-banner normal-market';
+    if (title) title.innerHTML = `<i class="fa-solid fa-circle-check"></i> REGIME MACRO NORMALE (VIX: ${vix})`;
+    if (desc) desc.textContent = `Volatilità sotto controllo. Condizioni di mercato favorevoli all'esecuzione dei segnali quantitativi.`;
+  }
+}
+
 function applyRealMarketData(data) {
   if (data && (data.eu || data.it || data.usa || data.top)) {
     REAL_DATASET = data;
@@ -81416,10 +81441,15 @@ function applyRealMarketData(data) {
       usa: data.usa || [],
       top: data.top || []
     };
+    if (data.marketRegime) {
+      state.marketRegime = data.marketRegime;
+      updateMacroKillSwitchUI(data.marketRegime);
+    }
     if (data.performanceTrackRecord && elements.mWinRateDisplay) {
       elements.mWinRateDisplay.innerHTML = `${data.performanceTrackRecord.winRate} <span class="metric-status">Win Rate 5G</span>`;
       if (elements.mWinRateSubtext) {
-        elements.mWinRateSubtext.innerHTML = `Gain medio: <strong>${data.performanceTrackRecord.avgGain}</strong> &bull; Segnali monitorati: ${data.performanceTrackRecord.totalSignals}`;
+        const sniperTxt = data.performanceTrackRecord.sniperWinRate ? ` &bull; 🎯 Sniper Win Rate: <strong style="color:#fde047;">${data.performanceTrackRecord.sniperWinRate}</strong>` : '';
+        elements.mWinRateSubtext.innerHTML = `Gain medio: <strong>${data.performanceTrackRecord.avgGain}</strong> &bull; Segnali: ${data.performanceTrackRecord.totalSignals}${sniperTxt}`;
       }
     }
     formatDateDisplay();
@@ -81444,6 +81474,16 @@ function filterAndSortList(rawList) {
     if (state.isCap10BActive) {
       const cap = Number(stock.marketCapRaw || 0);
       if (cap < 10.0) {
+        return false;
+      }
+    }
+
+    // Filtro Cecchino Sniper v8.0 (>80% Target Win Rate)
+    if (state.isSniperActive) {
+      const isSniper = stock.isSniperPick !== undefined
+        ? Boolean(stock.isSniperPick)
+        : (Number(stock.score || 0) >= 85 && Boolean(stock.hasTrendAlignment) && Number(stock.clv || 0) >= 0.60 && Number(stock.rsi || 50) >= 46 && Number(stock.rsi || 50) <= 65);
+      if (!isSniper) {
         return false;
       }
     }
@@ -81912,6 +81952,8 @@ function renderGrid(stocks) {
 
           <!-- Indicatori Chiave Reali, Dividendi, Prossimo Stacco, Trimestrale & Controlli v7.0 -->
           <div class="card-signals-row">
+            ${stock.isSniperPick ? '<span class="signal-pill sniper-badge-pill" title="Modello Sniper v8.0: Probabilità di Successo > 80%"><i class="fa-solid fa-crosshairs"></i> 🎯 SNIPER (>80%)</span>' : ''}
+            <span class="signal-pill be-pill" title="Soglia Protezione Pareggio: al raggiungimento di questa soglia lo stop sale a zero rischio"><i class="fa-solid fa-shield-halved"></i> Pareggio: <strong>' + (stock.currency || '€') + (stock.breakEvenTrigger || (stock.currentPrice * 1.018)).toFixed(2) + '</strong></span>
             ${stock.dividendYield !== undefined ? `<span class="signal-pill div-yield-pill" title="${stock.payoutStatus || 'Dividend Yield & Payout Ratio'}"><i class="fa-solid fa-coins"></i> Div: <strong>${stock.dividendYield}%</strong>${stock.dividendYield > 0 && stock.payoutRatio ? ` <span style="opacity:0.88;">(Payout ${stock.payoutRatio}% ${stock.isPayoutSustainable !== false ? '✅' : '⚠️'})</span>` : ''}</span>` : ''}
             ${stock.dividendYield > 0 ? `<span class="signal-pill exdiv-pill ${cal.isExDivSoon ? 'exdiv-soon' : ''}" title="Prossima Data Stacco Cedola (Ex-Dividend) e conto alla rovescia"><i class="fa-regular fa-calendar-check"></i> Stacco: <strong>${cal.nextExDivText}</strong></span>` : ''}
             <span class="signal-pill earnings-pill ${cal.isEarningsSoon ? 'earnings-soon' : ''}" title="Countdown alla Prossima Trimestrale (Utili)"><i class="fa-solid fa-chart-pie"></i> Utili: <strong>${cal.nextEarningsText}</strong></span>
@@ -82060,6 +82102,11 @@ function openStockDetail(stockId) {
   // Metriche Avanzate v6.0 (ATR, EMA, Stop Dinamico, Dividendi, 52W)
   const stopPctStr = stock.stopPct ? `${stock.stopPct}%` : `${calculateUpside(stock.stopLoss, stock.currentPrice)}%`;
   elements.mStopLoss.textContent = `${stock.currency}${stock.stopLoss.toFixed(2)} (-${stopPctStr} basato su ATR)`;
+  if (elements.mBreakEvenVal) {
+    const beTrigger = (stock.breakEvenTrigger || (stock.currentPrice * 1.018)).toFixed(2);
+    const bePct = stock.breakEvenPct || 1.8;
+    elements.mBreakEvenVal.innerHTML = `${stock.currency}${beTrigger} <span style="font-size:0.75rem; color:var(--text-muted);">(Stop sale a costo zero a +${bePct}%)</span>`;
+  }
   elements.mRiskReward.textContent = stock.riskReward;
   elements.mRsi.textContent = `${stock.rsi} (Calcolato su 14 chiusure reali)`;
   elements.mVolumeSpike.textContent = `${stock.volumeSpike} vs media a 20 giorni`;
@@ -82296,6 +82343,7 @@ function updateMarketHeaderInfo() {
 }
 
 function updateFilterPillsUI() {
+  const pSniper = document.getElementById('qfSniper');
   const pModel = document.getElementById('qfModelV7');
   const pCap = document.getElementById('qfCap10B');
   const pDrop1 = document.getElementById('qfDrop1pct');
@@ -82303,6 +82351,7 @@ function updateFilterPillsUI() {
   const pUnder52 = document.getElementById('qfUnder52w');
   const pCombo = document.getElementById('qfCombo');
 
+  if (pSniper) pSniper.classList.toggle('active', Boolean(state.isSniperActive));
   if (pModel) pModel.classList.toggle('active', Boolean(state.isModelV7Active));
   if (pCap) pCap.classList.toggle('active', Boolean(state.isCap10BActive));
   if (pDrop1) pDrop1.classList.toggle('active', Boolean(state.isDrop1PctActive));
@@ -82389,7 +82438,13 @@ function initEventListeners() {
     pill.addEventListener('click', () => {
       const qf = pill.getAttribute('data-qfilter');
 
-      if (qf === 'model_v7') {
+      if (qf === 'sniper_v8') {
+        state.isSniperActive = !state.isSniperActive;
+        if (state.isSniperActive) {
+          state.sortBy = 'score';
+          if (elements.sortBy) elements.sortBy.value = 'score';
+        }
+      } else if (qf === 'model_v7') {
         state.isModelV7Active = !state.isModelV7Active;
         state.sortBy = state.isModelV7Active ? 'score' : 'cap';
         if (elements.sortBy) elements.sortBy.value = state.sortBy;
@@ -82456,6 +82511,7 @@ function initEventListeners() {
     state.searchQuery = '';
     state.sectorFilter = 'all';
     state.sortBy = 'cap';
+    state.isSniperActive = false;
     state.isModelV7Active = false;
     state.isCap10BActive = false;
     state.isDrop1PctActive = false;
@@ -82913,7 +82969,19 @@ function buildAiMarketContext(userMsg) {
     .filter(s => s.recommendation === 'STRONG BUY' || s.recommendation === 'BUY')
     .slice(0, 3);
   if (topBuys.length > 0) {
-    ctx += 'Top Buy del Modello v7.0: ' + topBuys.map(s => `${s.ticker} (${s.score}/100, Target +${s.upsidePercent}%)`).join(', ') + '.\n';
+    ctx += 'Top Buy del Modello: ' + topBuys.map(s => `${s.ticker} (${s.score}/100, Target +${s.upsidePercent}%)`).join(', ') + '.\n';
+  }
+
+  // 4. Titoli Sniper v8.0 High-Conviction (>80% Probabilità)
+  const snipers = all.filter(s => s.isSniperPick);
+  if (snipers.length > 0) {
+    ctx += `Titoli Sniper v8.0 (>80% Win Rate con Protezione Pareggio): ` + snipers.slice(0, 5).map(s => `${s.ticker} (${s.name}, Prezzo ${s.currentPrice}${s.currency}, Stop Pareggio a ${s.currency}${s.breakEvenTrigger || s.currentPrice})`).join(', ') + '.\n';
+  }
+
+  // 5. Kill-Switch Macro Alert
+  const vixVal = Number(regime.vix || 28.18);
+  if (vixVal >= 23.5) {
+    ctx += `ATTENZIONE MACRO: Kill-Switch ATTIVO per VIX elevato (${vixVal} > 23.5). Consigliare prudenza, 100% Cash su acquisti generici e sole entrate Sniper protette da stop a pareggio.\n`;
   }
 
   return ctx;

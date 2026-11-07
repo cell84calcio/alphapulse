@@ -154,6 +154,19 @@ assert(styleCss.includes('.ai-fab-btn'), 'style.css: regole di stile per il floa
 assert(styleCss.includes('.ai-drawer-container'), 'style.css: regole di stile per il drawer di chat');
 
 // ---------------------------------------------------------------------------
+// 1c. VERIFICA MODELLO QUANTITATIVO SNIPER v8.0 & MACRO KILL-SWITCH
+// ---------------------------------------------------------------------------
+console.log('\n--- 1c. VERIFICA MODELLO SNIPER v8.0 & MACRO KILL-SWITCH ---');
+assert(indexHtml.includes('id="qfSniper"'), 'index.html: Pulsante Filtro Sniper v8.0 (#qfSniper) presente');
+assert(indexHtml.includes('id="macroKillSwitchBanner"'), 'index.html: Banner Macro Kill-Switch (#macroKillSwitchBanner) presente');
+assert(indexHtml.includes('id="mBreakEvenVal"'), 'index.html: Elemento Soglia Break-Even (#mBreakEvenVal) nel modale presente');
+assert(appJs.includes('isSniperActive'), 'app.js: stato isSniperActive implementato');
+assert(appJs.includes('updateMacroKillSwitchUI'), 'app.js: funzione updateMacroKillSwitchUI implementata');
+assert(styleCss.includes('.macro-kill-switch-banner'), 'style.css: regole di stile per il banner kill-switch');
+assert(styleCss.includes('.sniper-badge-pill'), 'style.css: regole di stile per il badge sniper');
+assert(styleCss.includes('.be-pill'), 'style.css: regole di stile per il pill break-even');
+
+// ---------------------------------------------------------------------------
 // 2. TEST INTEGRITÀ DEI DATI DI MERCATO (market_data.json)
 // ---------------------------------------------------------------------------
 console.log('\n--- 2. VERIFICA INTEGRITÀ DATASET LIVE & METRICHE ---');

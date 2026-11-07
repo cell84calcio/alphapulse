@@ -432,8 +432,18 @@
             <button type="button" class="m-carousel-dot" data-market="summary" id="tabSummary">📊 Riepilogo</button>
           </div>
 
-          <!-- 6 Pulsanti Filtro e Ordinamento Rapido -->
+          <!-- Banner Macro Kill-Switch v8.0 (Protezione Capitale quando VIX > 23.5) -->
+          <div class="macro-kill-switch-banner" id="macroKillSwitchBanner" style="display: none;">
+            <div class="mks-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="mks-content">
+              <strong id="mksTitle">MACRO KILL-SWITCH ATTIVO</strong>
+              <span id="mksDesc">VIX elevato. Gli acquisti rischiosi sono bloccati per preservare il capitale.</span>
+            </div>
+          </div>
+
+          <!-- Pulsanti Filtro e Ordinamento Rapido -->
           <div class="quick-filter-pills" id="quickFilterPills">
+            <button type="button" class="quick-filter-pill pill-sniper" data-qfilter="sniper_v8" id="qfSniper" title="Filtro Cecchino v8.0 (>80% Win Rate): Mostra solo i titoli con trend EMA, volumi alti, CLV > 0.60 e protezione Break-Even">🎯 Sniper v8.0 (&gt;80%)</button>
             <button type="button" class="quick-filter-pill" data-qfilter="model_v7" id="qfModelV7" title="Attiva il Modello Quantitativo Istituzionale v7.0 (Ordina per Probabilità di Salita calcolata su 5 pilastri e controlli di rischio)">🧠 Modello Quant v7</button>
             <button type="button" class="quick-filter-pill" data-qfilter="cap10b" id="qfCap10B" title="Filtra solo le azioni con Capitalizzazione > 10 Miliardi (€/$ 10 Mrd)">🏢 Cap &gt; 10 Mrd</button>
             <button type="button" class="quick-filter-pill" data-qfilter="drop1pct" id="qfDrop1pct" title="Filtra le azioni che in questo momento stanno perdendo più del -1% (Quotazione Odierna < -1.0%) per cogliere flessioni e ribassi">🔻 Prezzo &lt; -1%</button>
@@ -833,6 +843,10 @@
               <span class="km-value text-red" id="mStopLoss">$132.80 (-4.1%)</span>
             </div>
             <div class="key-metric-item">
+              <span class="km-label">Soglia Attivazione Pareggio (+1.2x ATR)</span>
+              <span class="km-value text-cyan" id="mBreakEvenVal">--</span>
+            </div>
+            <div class="key-metric-item">
               <span class="km-label">Rapporto Rischio/Rendimento</span>
               <span class="km-value text-emerald" id="mRiskReward">1 : 2.9</span>
             </div>
@@ -972,6 +986,7 @@
 
       <!-- Quick Question Chips -->
       <div class="ai-quick-chips" id="aiQuickChips">
+        <button type="button" class="ai-chip" data-prompt="Mostrami i migliori titoli SNIPER v8.0 (>80% probabilità) e spiegami perché superano i filtri istituzionali">🎯 Titoli Sniper (&gt;80%)</button>
         <button type="button" class="ai-chip" data-prompt="Quali sono i migliori 3 titoli BUY secondo il modello oggi e perché?">⚡ Top 3 Buy</button>
         <button type="button" class="ai-chip" data-prompt="Quali titoli staccano dividendo nei prossimi 14 giorni con il rendimento più alto?">📅 Dividendi a Breve</button>
         <button type="button" class="ai-chip" data-prompt="ENI è buy o sell secondo il modello? Dammi target price, RSI e analisi">🇮🇹 Analisi ENI</button>
@@ -1032,6 +1047,6 @@
   </nav>
 
   <!-- Script Applicativo Principale -->
-  <script src="app.js?v=20261106-v36"></script>
+  <script src="app.js?v=20261107-v37"></script>
 </body>
 </html>
